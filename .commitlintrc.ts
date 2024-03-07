@@ -20,6 +20,7 @@ const config: UserConfig = {
   rules: {
     'scope-enum': [Severity.Error, 'always', scopes([
       'chore',
+      'content',
       'data',
       'nodes',
       'spec'
