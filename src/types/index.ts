@@ -3,6 +3,7 @@
  * @module esast/types
  */
 
+export type { default as EcmaVersion } from './ecma-version'
 export type { default as ImportKind } from './kind-import'
 export type { default as MethodKind } from './kind-method'
 export type { default as PropertyKind } from './kind-property'
