@@ -1,0 +1,21 @@
+/**
+ * @file Type Tests - NumberLiteral
+ * @module esast/nodes/tests/unit-d/NumberLiteral
+ */
+
+import type { Literal } from '@flex-development/esast'
+import type TestSubject from '../literal-number'
+
+describe('unit-d:nodes/NumberLiteral', () => {
+  it('should extend Literal', () => {
+    expectTypeOf<TestSubject>().toMatchTypeOf<Literal>()
+  })
+
+  it('should match [type: "number"]', () => {
+    expectTypeOf<TestSubject>().toHaveProperty('type').toEqualTypeOf<'number'>()
+  })
+
+  it('should match [value: number]', () => {
+    expectTypeOf<TestSubject>().toHaveProperty('value').toEqualTypeOf<number>()
+  })
+})
