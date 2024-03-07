@@ -4,5 +4,6 @@
  */
 
 export type * from './literal'
+export type * from './pattern'
 export type * from './primitive'
 export type * from './statement'
