@@ -7,6 +7,7 @@
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
+export type { default as MetaIdentifier } from './identifier-meta'
 export type { default as Literal } from './literal'
 export type { default as BigIntLiteral } from './literal-bigint'
 export type { default as BooleanLiteral } from './literal-boolean'
