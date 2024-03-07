@@ -4,4 +4,5 @@
  */
 
 export type * from './data'
+export type * from './nodes'
 export type * from './types'

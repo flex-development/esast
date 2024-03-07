@@ -98,7 +98,7 @@ the node is said to be [*generated*][unist-generated] and it must not have posit
 interface Point {
   column: number // >= 1
   line: number // >= 1
-  offset: number // >= 0
+  offset?: number | undefined // >= 0
 }
 ```
 
