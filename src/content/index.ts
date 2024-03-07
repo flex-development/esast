@@ -3,6 +3,7 @@
  * @module esast/content
  */
 
+export type * from './expression'
 export type * from './literal'
 export type * from './pattern'
 export type * from './primitive'
