@@ -11,3 +11,4 @@ export type { default as AssignmentOperator } from './operator-assignment'
 export type {
   default as BitwiseBinaryOperator
 } from './operator-bitwise-binary'
+export type { default as BitwiseShiftOperator } from './operator-bitwise-shift'
