@@ -4,6 +4,7 @@
  * @see https://github.com/syntax-tree/unist#nodes
  */
 
+export type { default as Directive, DirectiveData } from './directive'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
