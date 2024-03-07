@@ -15,3 +15,4 @@ export type {
 } from './operator-bitwise-binary'
 export type { default as BitwiseShiftOperator } from './operator-bitwise-shift'
 export type { default as EqualityOperator } from './operator-equality'
+export type { default as RelationalOperator } from './operator-relational'
