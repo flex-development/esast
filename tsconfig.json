@@ -30,6 +30,7 @@
     "outDir": "dist",
     "paths": {
       "#src/*": ["src/*"],
+      "#tests/*": ["__tests__/*"],
       "@flex-development/esast": ["src/index"]
     },
     "preserveConstEnums": true,

@@ -3,7 +3,8 @@
  * @module esast/content/tests/unit-d/statement
  */
 
-import type { EmptyStatement } from '@flex-development/esast'
+import type { NodeObject } from '#tests/types'
+import type { BlockStatement, EmptyStatement } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
 
 describe('unit-d:content/statement', () => {
@@ -15,10 +16,14 @@ describe('unit-d:content/statement', () => {
   })
 
   describe('StatementMap', () => {
-    it('should match [emptyStatement: EmptyStatement]', () => {
+    it('should match NodeObject<BlockStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
-        .toHaveProperty('emptyStatement')
-        .toEqualTypeOf<EmptyStatement>
+        .toMatchTypeOf<NodeObject<BlockStatement>>()
+    })
+
+    it('should match NodeObject<EmptyStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<EmptyStatement>>()
     })
   })
 })
