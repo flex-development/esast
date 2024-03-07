@@ -8,7 +8,7 @@ import type unist from 'unist'
 /**
  * Info associated with esast nodes.
  *
- * This space is guaranteed to never be specified by unist or esast, but it can
+ * This space is guaranteed to never be specified by esast or unist, but it can
  * be used by utilities and plugins to store custom data.
  *
  * @example
