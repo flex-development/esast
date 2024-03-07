@@ -3,4 +3,4 @@
  * @module esast
  */
 
-export {}
+export type * from './data'
