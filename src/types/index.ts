@@ -14,3 +14,4 @@ export type {
   default as BitwiseBinaryOperator
 } from './operator-bitwise-binary'
 export type { default as BitwiseShiftOperator } from './operator-bitwise-shift'
+export type { default as EqualityOperator } from './operator-equality'
