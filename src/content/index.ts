@@ -3,4 +3,5 @@
  * @module esast/content
  */
 
+export type * from './literal'
 export type * from './primitive'
