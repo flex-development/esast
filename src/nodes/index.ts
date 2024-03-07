@@ -20,3 +20,7 @@ export type { default as StringLiteral } from './literal-string'
 export type { default as UndefinedLiteral } from './literal-undefined'
 export type { default as Node } from './node'
 export type { default as Parent } from './parent'
+export type {
+  default as EmptyStatement,
+  EmptyStatementData
+} from './statement-empty'
