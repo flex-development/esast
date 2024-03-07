@@ -123,14 +123,15 @@ Its `value` field is a `string`.
 
 ### `Parent`
 
-**TODO**: `Parent.children` type definition
-
 ```ts
-interface Parent extends unist.Parent {}
+interface Parent extends unist.Parent {
+  children: (Node | null | undefined)[]
+}
 ```
 
 **Parent** ([**unist.Parent**][unist-parent]) represents an abstract interface in esast containing other nodes (said to
-be [*children*][unist-child]).
+be [*children*][unist-child]). The value `null` is used as a placeholder for certain higher-level parents. When using
+TypeScript plugins and utilities, `undefined` allows for optional child nodes.
 
 ## Nodes
 
