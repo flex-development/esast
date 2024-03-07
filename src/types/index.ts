@@ -9,6 +9,7 @@ export type { default as PropertyKind } from './kind-property'
 export type { default as VariableKind } from './kind-variable'
 export type { default as ArithmeticOperator } from './operator-arithmetic'
 export type { default as AssignmentOperator } from './operator-assignment'
+export type { default as BinaryOperator } from './operator-binary'
 export type { default as BitwiseOperator } from './operator-bitwise'
 export type {
   default as BitwiseBinaryOperator
