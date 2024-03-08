@@ -49,6 +49,10 @@ export type {
   DebuggerStatementData
 } from './statement-debugger'
 export type {
+  default as DoWhileStatement,
+  DoWhileStatementData
+} from './statement-do-while'
+export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'

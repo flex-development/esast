@@ -8,6 +8,7 @@ import type {
   BreakStatement,
   ContinueStatement,
   DebuggerStatement,
+  DoWhileStatement,
   EmptyStatement
 } from '@flex-development/esast'
 
@@ -36,6 +37,7 @@ interface StatementMap {
   breakStatement: BreakStatement
   continueStatement: ContinueStatement
   debuggerStatement: DebuggerStatement
+  doWhileStatement: DoWhileStatement
   emptyStatement: EmptyStatement
 }
 
