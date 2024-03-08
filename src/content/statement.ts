@@ -8,6 +8,7 @@ import type {
   BreakStatement,
   ContinueStatement,
   DebuggerStatement,
+  DeclarationMap,
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
@@ -34,8 +35,10 @@ type Statement = StatementMap[keyof StatementMap]
  *      customStatement: CustomStatement
  *    }
  *  }
+ *
+ * @extends {DeclarationMap}
  */
-interface StatementMap {
+interface StatementMap extends DeclarationMap {
   blockStatement: BlockStatement
   breakStatement: BreakStatement
   continueStatement: ContinueStatement

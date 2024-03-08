@@ -9,6 +9,7 @@ import type {
   BreakStatement,
   ContinueStatement,
   DebuggerStatement,
+  DeclarationMap,
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
@@ -26,6 +27,10 @@ describe('unit-d:content/statement', () => {
   })
 
   describe('StatementMap', () => {
+    it('should extend DeclarationMap', () => {
+      expectTypeOf<TestSubject.StatementMap>().toMatchTypeOf<DeclarationMap>()
+    })
+
     it('should match NodeObject<BlockStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<BlockStatement>>()

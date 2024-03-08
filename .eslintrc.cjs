@@ -10,7 +10,15 @@
  */
 const config = {
   extends: ['./.eslintrc.base.cjs'],
-  overrides: [...require('./.eslintrc.base.cjs').overrides],
+  overrides: [
+    ...require('./.eslintrc.base.cjs').overrides,
+    {
+      files: ['src/content/declaration.ts'],
+      rules: {
+        'unicorn/no-keyword-prefix': 0
+      }
+    }
+  ],
   root: true
 }
 
