@@ -56,3 +56,7 @@ export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'
+export type {
+  default as ExpressionStatement,
+  ExpressionStatementData
+} from './statement-expression'

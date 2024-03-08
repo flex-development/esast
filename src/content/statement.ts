@@ -9,7 +9,8 @@ import type {
   ContinueStatement,
   DebuggerStatement,
   DoWhileStatement,
-  EmptyStatement
+  EmptyStatement,
+  ExpressionStatement
 } from '@flex-development/esast'
 
 /**
@@ -39,6 +40,7 @@ interface StatementMap {
   debuggerStatement: DebuggerStatement
   doWhileStatement: DoWhileStatement
   emptyStatement: EmptyStatement
+  expressionStatement: ExpressionStatement
 }
 
 export type { Statement, StatementMap }
