@@ -71,3 +71,4 @@ export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'
+export type { default as This, ThisData } from './this'

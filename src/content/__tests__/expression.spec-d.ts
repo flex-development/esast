@@ -3,7 +3,8 @@
  * @module esast/content/tests/unit-d/expression
  */
 
-import type { Identifier, LiteralMap } from '@flex-development/esast'
+import type { NodeObject } from '#tests/types'
+import type { Identifier, LiteralMap, This } from '@flex-development/esast'
 import type * as TestSubject from '../expression'
 
 describe('unit-d:content/expression', () => {
@@ -22,10 +23,14 @@ describe('unit-d:content/expression', () => {
       expectTypeOf<TestSubject.ExpressionMap>().toMatchTypeOf<LiteralMap>()
     })
 
-    it('should match [identifier: Identifier]', () => {
+    it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
-        .toHaveProperty('identifier')
-        .toEqualTypeOf<Identifier>
+        .toMatchTypeOf<NodeObject<Identifier>>()
+    })
+
+    it('should match NodeObject<This>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<This>>()
     })
   })
 })
