@@ -72,4 +72,5 @@ export type {
   ThrowStatementData
 } from './statement-throw'
 export type { default as Super, SuperData } from './super'
+export type { default as SwitchCase, SwitchCaseData } from './switch-case'
 export type { default as This, ThisData } from './this'
