@@ -4,7 +4,12 @@
  */
 
 import type { NodeObject } from '#tests/types'
-import type { Identifier, LiteralMap, This } from '@flex-development/esast'
+import type {
+  FunctionExpression,
+  Identifier,
+  LiteralMap,
+  This
+} from '@flex-development/esast'
 import type * as TestSubject from '../expression'
 
 describe('unit-d:content/expression', () => {
@@ -21,6 +26,11 @@ describe('unit-d:content/expression', () => {
   describe('ExpressionMap', () => {
     it('should extend LiteralMap', () => {
       expectTypeOf<TestSubject.ExpressionMap>().toMatchTypeOf<LiteralMap>()
+    })
+
+    it('should match NodeObject<FunctionExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<FunctionExpression>>()
     })
 
     it('should match NodeObject<Identifier>', () => {

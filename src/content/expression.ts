@@ -3,7 +3,12 @@
  * @module esast/content/expression
  */
 
-import type { Identifier, LiteralMap, This } from '@flex-development/esast'
+import type {
+  FunctionExpression,
+  Identifier,
+  LiteralMap,
+  This
+} from '@flex-development/esast'
 
 /**
  * Union of registered esast nodes that can occur where an expression is
@@ -29,6 +34,7 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  * @extends {LiteralMap}
  */
 interface ExpressionMap extends LiteralMap {
+  functionExpression: FunctionExpression
   identifier: Identifier
   this: This
 }

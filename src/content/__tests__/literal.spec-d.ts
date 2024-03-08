@@ -3,6 +3,7 @@
  * @module esast/content/tests/unit-d/literal
  */
 
+import type { NodeObject } from '#tests/types'
 import type { PrimitiveMap, RegExpLiteral } from '@flex-development/esast'
 import type * as TestSubject from '../literal'
 
@@ -12,10 +13,9 @@ describe('unit-d:content/literal', () => {
       expectTypeOf<TestSubject.LiteralMap>().toMatchTypeOf<PrimitiveMap>()
     })
 
-    it('should match [regexp: RegExpLiteral]', () => {
+    it('should match NodeObject<RegExpLiteral>', () => {
       expectTypeOf<TestSubject.LiteralMap>()
-        .toHaveProperty('regexp')
-        .toEqualTypeOf<RegExpLiteral>
+        .toMatchTypeOf<NodeObject<RegExpLiteral>>()
     })
   })
 
