@@ -3,7 +3,7 @@
  * @module esast/nodes/BlockStatement
  */
 
-import type { Data, Parent, Statement } from '@flex-development/esast'
+import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
@@ -35,9 +35,10 @@ interface BlockStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Statement}
    */
-  children: Statement[]
+  children: (Comment | Statement)[]
 
   /**
    * Info from the ecosystem.

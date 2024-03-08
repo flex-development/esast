@@ -5,18 +5,7 @@
  */
 
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
-export type {
-  default as DocblockComment,
-  DocblockCommentData
-} from './comment-docblock'
-export type {
-  default as MultiLineComment,
-  MultiLineCommentData
-} from './comment-multi-line'
-export type {
-  default as SingleLineComment,
-  SingleLineCommentData
-} from './comment-single-line'
+export type { default as Comment, CommentData } from './comment'
 export type {
   default as PropertyDefinition,
   PropertyDefinitionData

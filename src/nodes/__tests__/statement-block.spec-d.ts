@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/BlockStatement
  */
 
-import type { Data, Parent, Statement } from '@flex-development/esast'
+import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-block'
 
@@ -15,10 +15,10 @@ describe('unit-d:nodes/BlockStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: Statement[]]', () => {
+  it('should match [children: (Comment | Statement)[]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<Statement[]>()
+      .toEqualTypeOf<(Comment | Statement)[]>()
   })
 
   it('should match [data?: Optional<BlockStatementData>]', () => {
