@@ -8,6 +8,7 @@ import type {
   FunctionExpression,
   Identifier,
   LiteralMap,
+  MemberExpression,
   This
 } from '@flex-development/esast'
 
@@ -38,6 +39,7 @@ interface ExpressionMap extends LiteralMap {
   arrayExpression: ArrayExpression
   functionExpression: FunctionExpression
   identifier: Identifier
+  memberExpression: MemberExpression
   this: This
 }
 

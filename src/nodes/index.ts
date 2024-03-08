@@ -40,6 +40,10 @@ export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'
+export type {
+  default as MemberExpression,
+  MemberExpressionData
+} from './expression-member'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'

@@ -4,7 +4,11 @@
  */
 
 import type { NodeObject } from '#tests/types'
-import type { Identifier, RestElement } from '@flex-development/esast'
+import type {
+  Identifier,
+  MemberExpression,
+  RestElement
+} from '@flex-development/esast'
 import type * as TestSubject from '../pattern'
 
 describe('unit-d:content/pattern', () => {
@@ -19,6 +23,11 @@ describe('unit-d:content/pattern', () => {
     it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.PatternMap>()
         .toMatchTypeOf<NodeObject<Identifier>>()
+    })
+
+    it('should match NodeObject<MemberExpression>', () => {
+      expectTypeOf<TestSubject.PatternMap>()
+        .toMatchTypeOf<NodeObject<MemberExpression>>()
     })
 
     it('should match NodeObject<RestElement>', () => {
