@@ -11,7 +11,8 @@ import type {
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
-  IfStatement
+  IfStatement,
+  ThrowStatement
 } from '@flex-development/esast'
 
 /**
@@ -43,6 +44,7 @@ interface StatementMap {
   emptyStatement: EmptyStatement
   expressionStatement: ExpressionStatement
   ifStatement: IfStatement
+  throwStatement: ThrowStatement
 }
 
 export type { Statement, StatementMap }

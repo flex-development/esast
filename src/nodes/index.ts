@@ -61,3 +61,7 @@ export type {
   ExpressionStatementData
 } from './statement-expression'
 export type { default as IfStatement, IfStatementData } from './statement-if'
+export type {
+  default as ThrowStatement,
+  ThrowStatementData
+} from './statement-throw'

@@ -12,7 +12,8 @@ import type {
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
-  IfStatement
+  IfStatement,
+  ThrowStatement
 } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
 
@@ -63,6 +64,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<IfStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<IfStatement>>()
+    })
+
+    it('should match NodeObject<ThrowStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<ThrowStatement>>()
     })
   })
 })
