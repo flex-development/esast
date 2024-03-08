@@ -4,6 +4,7 @@
  * @see https://github.com/syntax-tree/unist#nodes
  */
 
+export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type {
   default as DocblockComment,
   DocblockCommentData
