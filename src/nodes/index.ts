@@ -38,6 +38,10 @@ export type { default as RegExpLiteral } from './literal-regexp'
 export type { default as StringLiteral } from './literal-string'
 export type { default as UndefinedLiteral } from './literal-undefined'
 export type { default as Node } from './node'
+export type {
+  default as ParameterList,
+  ParameterListData
+} from './parameter-list'
 export type { default as Parent } from './parent'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type {
