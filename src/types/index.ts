@@ -3,6 +3,7 @@
  * @module esast/types
  */
 
+export type { default as Comment } from './comment'
 export type { default as EcmaVersion } from './ecma-version'
 export type { default as ImportKind } from './kind-import'
 export type { default as MethodKind } from './kind-method'
