@@ -37,6 +37,10 @@ export type {
   BlockStatementData
 } from './statement-block'
 export type {
+  default as BreakStatement,
+  BreakStatementData
+} from './statement-break'
+export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'

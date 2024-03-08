@@ -4,7 +4,11 @@
  */
 
 import type { NodeObject } from '#tests/types'
-import type { BlockStatement, EmptyStatement } from '@flex-development/esast'
+import type {
+  BlockStatement,
+  BreakStatement,
+  EmptyStatement
+} from '@flex-development/esast'
 import type * as TestSubject from '../statement'
 
 describe('unit-d:content/statement', () => {
@@ -19,6 +23,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<BlockStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<BlockStatement>>()
+    })
+
+    it('should match NodeObject<BreakStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<BreakStatement>>()
     })
 
     it('should match NodeObject<EmptyStatement>', () => {

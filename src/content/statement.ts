@@ -3,7 +3,11 @@
  * @module esast/content/statement
  */
 
-import type { BlockStatement, EmptyStatement } from '@flex-development/esast'
+import type {
+  BlockStatement,
+  BreakStatement,
+  EmptyStatement
+} from '@flex-development/esast'
 
 /**
  * Union of registered esast nodes that can occur where a statement is expected.
@@ -27,6 +31,7 @@ type Statement = StatementMap[keyof StatementMap]
  */
 interface StatementMap {
   blockStatement: BlockStatement
+  breakStatement: BreakStatement
   emptyStatement: EmptyStatement
 }
 
