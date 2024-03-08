@@ -17,6 +17,10 @@ export type {
   default as SingleLineComment,
   SingleLineCommentData
 } from './comment-single-line'
+export type {
+  default as PropertyDefinition,
+  PropertyDefinitionData
+} from './definition-property'
 export type { default as Directive, DirectiveData } from './directive'
 export type { default as RestElement, RestElementData } from './element-rest'
 export type {
