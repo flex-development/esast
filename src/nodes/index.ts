@@ -7,6 +7,10 @@
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as Comment, CommentData } from './comment'
 export type {
+  default as VariableDeclaration,
+  VariableDeclarationData
+} from './declaration-variable'
+export type {
   default as PropertyDefinition,
   PropertyDefinitionData
 } from './definition-property'
