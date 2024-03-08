@@ -37,6 +37,10 @@ export type {
   ArrayExpressionData
 } from './expression-array'
 export type {
+  default as AssignmentExpression,
+  AssignmentExpressionData
+} from './expression-assignment'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'
@@ -67,6 +71,10 @@ export type {
   default as ArrayPattern,
   ArrayPatternData
 } from './pattern-array'
+export type {
+  default as AssignmentPattern,
+  AssignmentPatternData
+} from './pattern-assignment'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type {
   default as BlockStatement,
