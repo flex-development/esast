@@ -21,7 +21,7 @@ type LiteralValue = LiteralMap[keyof LiteralMap]
  * This interface can be augmented to register custom node types.
  *
  * @example
- *  declare module '@flex-development/docast' {
+ *  declare module '@flex-development/esast' {
  *    interface LiteralMap {
  *      custom: CustomLiteral
  *    }
