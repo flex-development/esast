@@ -4,6 +4,10 @@
  * @see https://github.com/syntax-tree/unist#nodes
  */
 
+export type {
+  default as DocblockComment,
+  DocblockCommentData
+} from './comment-docblock'
 export type { default as Directive, DirectiveData } from './directive'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
