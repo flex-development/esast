@@ -1,0 +1,33 @@
+/**
+ * @file Type Tests - Super
+ * @module esast/nodes/tests/unit-d/Super
+ */
+
+import type { Data, Node } from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
+import type * as TestSubject from '../super'
+
+describe('unit-d:nodes/Super', () => {
+  type Subject = TestSubject.default
+  type SubjectData = TestSubject.SuperData
+
+  it('should extend Node', () => {
+    expectTypeOf<Subject>().toMatchTypeOf<Node>()
+  })
+
+  it('should match [data?: Optional<SuperData>]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('data')
+      .toEqualTypeOf<Optional<SubjectData>>()
+  })
+
+  it('should match [type: "super"]', () => {
+    expectTypeOf<Subject>().toHaveProperty('type').toEqualTypeOf<'super'>()
+  })
+
+  describe('SuperData', () => {
+    it('should extend Data', () => {
+      expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
+    })
+  })
+})
