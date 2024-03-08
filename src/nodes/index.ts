@@ -12,6 +12,10 @@ export type {
   default as MultiLineComment,
   MultiLineCommentData
 } from './comment-multi-line'
+export type {
+  default as SingleLineComment,
+  SingleLineCommentData
+} from './comment-single-line'
 export type { default as Directive, DirectiveData } from './directive'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
