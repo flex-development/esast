@@ -63,6 +63,10 @@ export type {
   ParameterListData
 } from './parameter-list'
 export type { default as Parent } from './parent'
+export type {
+  default as ArrayPattern,
+  ArrayPatternData
+} from './pattern-array'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type {
   default as BlockStatement,

@@ -5,6 +5,7 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
+  ArrayPattern,
   Identifier,
   MemberExpression,
   RestElement
@@ -20,6 +21,11 @@ describe('unit-d:content/pattern', () => {
   })
 
   describe('PatternMap', () => {
+    it('should match NodeObject<ArrayPattern>', () => {
+      expectTypeOf<TestSubject.PatternMap>()
+        .toMatchTypeOf<NodeObject<ArrayPattern>>()
+    })
+
     it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.PatternMap>()
         .toMatchTypeOf<NodeObject<Identifier>>()

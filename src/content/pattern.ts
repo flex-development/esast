@@ -4,6 +4,7 @@
  */
 
 import type {
+  ArrayPattern,
   Identifier,
   MemberExpression,
   RestElement
@@ -30,6 +31,7 @@ type Pattern = PatternMap[keyof PatternMap]
  *  }
  */
 interface PatternMap {
+  arrayPattern: ArrayPattern
   identifier: Identifier
   memberExpression: MemberExpression
   restElement: RestElement
