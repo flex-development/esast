@@ -27,6 +27,14 @@ export type {
   default as SpreadElement,
   SpreadElementData
 } from './element-spread'
+export type {
+  default as ExportSpecifier,
+  ExportSpecifierData
+} from './export-specifier'
+export type {
+  default as ExportSpecifiers,
+  ExportSpecifiersData
+} from './export-specifiers'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
