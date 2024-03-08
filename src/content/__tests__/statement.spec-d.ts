@@ -11,7 +11,8 @@ import type {
   DebuggerStatement,
   DoWhileStatement,
   EmptyStatement,
-  ExpressionStatement
+  ExpressionStatement,
+  IfStatement
 } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
 
@@ -57,6 +58,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ExpressionStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ExpressionStatement>>()
+    })
+
+    it('should match NodeObject<IfStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<IfStatement>>()
     })
   })
 })

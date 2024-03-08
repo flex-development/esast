@@ -60,3 +60,4 @@ export type {
   default as ExpressionStatement,
   ExpressionStatementData
 } from './statement-expression'
+export type { default as IfStatement, IfStatementData } from './statement-if'
