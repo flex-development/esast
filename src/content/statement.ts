@@ -6,6 +6,7 @@
 import type {
   BlockStatement,
   BreakStatement,
+  ContinueStatement,
   EmptyStatement
 } from '@flex-development/esast'
 
@@ -32,6 +33,7 @@ type Statement = StatementMap[keyof StatementMap]
 interface StatementMap {
   blockStatement: BlockStatement
   breakStatement: BreakStatement
+  continueStatement: ContinueStatement
   emptyStatement: EmptyStatement
 }
 

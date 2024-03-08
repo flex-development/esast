@@ -41,6 +41,10 @@ export type {
   BreakStatementData
 } from './statement-break'
 export type {
+  default as ContinueStatement,
+  ContinueStatementData
+} from './statement-continue'
+export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'
