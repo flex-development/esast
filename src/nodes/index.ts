@@ -45,6 +45,10 @@ export type {
   ContinueStatementData
 } from './statement-continue'
 export type {
+  default as DebuggerStatement,
+  DebuggerStatementData
+} from './statement-debugger'
+export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'

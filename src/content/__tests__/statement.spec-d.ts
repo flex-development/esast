@@ -8,6 +8,7 @@ import type {
   BlockStatement,
   BreakStatement,
   ContinueStatement,
+  DebuggerStatement,
   EmptyStatement
 } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
@@ -34,6 +35,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ContinueStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ContinueStatement>>()
+    })
+
+    it('should match NodeObject<DebuggerStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<DebuggerStatement>>()
     })
 
     it('should match NodeObject<EmptyStatement>', () => {
