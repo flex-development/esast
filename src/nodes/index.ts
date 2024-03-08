@@ -18,6 +18,7 @@ export type {
   SingleLineCommentData
 } from './comment-single-line'
 export type { default as Directive, DirectiveData } from './directive'
+export type { default as RestElement, RestElementData } from './element-rest'
 export type {
   default as SpreadElement,
   SpreadElementData

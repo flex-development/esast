@@ -3,7 +3,7 @@
  * @module esast/content/pattern
  */
 
-import type { Identifier } from '@flex-development/esast'
+import type { Identifier, RestElement } from '@flex-development/esast'
 
 /**
  * Union of registered esast nodes that can occur where a pattern is expected.
@@ -27,6 +27,7 @@ type Pattern = PatternMap[keyof PatternMap]
  */
 interface PatternMap {
   identifier: Identifier
+  restElement: RestElement
 }
 
 export type { Pattern, PatternMap }

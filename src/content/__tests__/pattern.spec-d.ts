@@ -3,7 +3,8 @@
  * @module esast/content/tests/unit-d/pattern
  */
 
-import type { Identifier } from '@flex-development/esast'
+import type { NodeObject } from '#tests/types'
+import type { Identifier, RestElement } from '@flex-development/esast'
 import type * as TestSubject from '../pattern'
 
 describe('unit-d:content/pattern', () => {
@@ -15,10 +16,14 @@ describe('unit-d:content/pattern', () => {
   })
 
   describe('PatternMap', () => {
-    it('should match [identifier: Identifier]', () => {
+    it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.PatternMap>()
-        .toHaveProperty('identifier')
-        .toEqualTypeOf<Identifier>
+        .toMatchTypeOf<NodeObject<Identifier>>()
+    })
+
+    it('should match NodeObject<RestElement>', () => {
+      expectTypeOf<TestSubject.PatternMap>()
+        .toMatchTypeOf<NodeObject<RestElement>>()
     })
   })
 })
