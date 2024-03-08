@@ -5,6 +5,7 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
+  ArrayExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -26,6 +27,11 @@ describe('unit-d:content/expression', () => {
   describe('ExpressionMap', () => {
     it('should extend LiteralMap', () => {
       expectTypeOf<TestSubject.ExpressionMap>().toMatchTypeOf<LiteralMap>()
+    })
+
+    it('should match NodeObject<ArrayExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ArrayExpression>>()
     })
 
     it('should match NodeObject<FunctionExpression>', () => {

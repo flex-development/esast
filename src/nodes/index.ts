@@ -33,6 +33,10 @@ export type {
   ExportSpecifiersData
 } from './export-specifiers'
 export type {
+  default as ArrayExpression,
+  ArrayExpressionData
+} from './expression-array'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'

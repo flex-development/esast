@@ -4,6 +4,7 @@
  */
 
 import type {
+  ArrayExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -34,6 +35,7 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  * @extends {LiteralMap}
  */
 interface ExpressionMap extends LiteralMap {
+  arrayExpression: ArrayExpression
   functionExpression: FunctionExpression
   identifier: Identifier
   this: This
