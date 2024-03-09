@@ -19,6 +19,7 @@ import type {
   LiteralMap,
   LogicalExpression,
   MemberExpression,
+  MetaProperty,
   ObjectExpression,
   SequenceExpression,
   TaggedTemplateExpression,
@@ -109,6 +110,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<MemberExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<MemberExpression>>()
+    })
+
+    it('should match NodeObject<MetaProperty>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<MetaProperty>>()
     })
 
     it('should match NodeObject<ObjectExpression>', () => {

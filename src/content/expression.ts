@@ -18,6 +18,7 @@ import type {
   LiteralMap,
   LogicalExpression,
   MemberExpression,
+  MetaProperty,
   ObjectExpression,
   SequenceExpression,
   TaggedTemplateExpression,
@@ -65,6 +66,7 @@ interface ExpressionMap extends LiteralMap {
   importExpression: ImportExpression
   logicalExpression: LogicalExpression
   memberExpression: MemberExpression
+  metaProperty: MetaProperty
   objectExpression: ObjectExpression
   sequenceExpression: SequenceExpression
   taggedTemplateExpression: TaggedTemplateExpression
