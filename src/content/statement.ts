@@ -16,7 +16,8 @@ import type {
   ForOfStatement,
   ForStatement,
   IfStatement,
-  ThrowStatement
+  ThrowStatement,
+  WithStatement
 } from '@flex-development/esast'
 
 /**
@@ -54,6 +55,7 @@ interface StatementMap extends DeclarationMap {
   forStatement: ForStatement
   ifStatement: IfStatement
   throwStatement: ThrowStatement
+  withStatement: WithStatement
 }
 
 export type { Statement, StatementMap }

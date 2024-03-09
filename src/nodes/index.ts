@@ -125,6 +125,10 @@ export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'
+export type {
+  default as WithStatement,
+  WithStatementData
+} from './statement-with'
 export type { default as Super, SuperData } from './super'
 export type { default as SwitchCase, SwitchCaseData } from './switch-case'
 export type { default as This, ThisData } from './this'

@@ -17,7 +17,8 @@ import type {
   ForOfStatement,
   ForStatement,
   IfStatement,
-  ThrowStatement
+  ThrowStatement,
+  WithStatement
 } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
 
@@ -92,6 +93,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ThrowStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ThrowStatement>>()
+    })
+
+    it('should match NodeObject<WithStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<WithStatement>>()
     })
   })
 })
