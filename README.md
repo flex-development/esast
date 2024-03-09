@@ -41,11 +41,12 @@ of esast started in March 2024. This specification is written in a [TypeScript][
 
 ### Where this specification fits
 
-**TODO**: document [`docast`][docast] relation\
-**TODO**: document estree relation\
-**TODO**: document javascript relation
-
 esast extends [unist][unist], a format for syntax trees, to benefit from its [ecosystem of utilities][unist-utilities].
+
+esast relates to [ESTree][estree] in that the first is inspired by the latter; an esast is a unist-flavored estree.
+
+esast relates to [JavaScript][javascript] in that it represents it, but esast is not limited to JavaScript and can be
+extended to support other JavaScript-based languages, like [TypeScript][typescript].
 
 ### ESTree
 
@@ -172,7 +173,8 @@ community you agree to abide by its terms.
 <!-- [esast-util-to-js]: https://github.com/flex-development/esast-util-to-js -->
 
 [estree-util-is-identifier-name]: https://github.com/syntax-tree/estree-util-is-identifier-name
-[javascript]: https://www.ecma-international.org/ecma-262/9.0/index.html
+[estree]: https://github.com/estree/estree
+[javascript]: https://tc39.es/ecma262
 [mdast]: https://github.com/syntax-tree/mdast
 [typescript]: https://typescriptlang.org
 [unist-child]: https://github.com/syntax-tree/unist#child
