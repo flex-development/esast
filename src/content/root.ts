@@ -3,14 +3,19 @@
  * @module esast/content/root
  */
 
-import type { Comment, Directive, StatementMap } from '@flex-development/esast'
+import type {
+  Comment,
+  Directive,
+  ModuleDeclarationMap,
+  StatementMap
+} from '@flex-development/esast'
 
 /**
  * Union of registered esast nodes that can occur where a root child node is
  * expected.
  *
- * To register custom esast nodes, augment {@linkcode RootMap}. They will
- * be added to this union automatically.
+ * To register custom esast nodes, augment {@linkcode RootMap}. They will be
+ * added to this union automatically.
  */
 type RootChild = RootMap[keyof RootMap]
 
@@ -26,9 +31,10 @@ type RootChild = RootMap[keyof RootMap]
  *    }
  *  }
  *
+ * @extends {ModuleDeclarationMap}
  * @extends {StatementMap}
  */
-interface RootMap extends StatementMap {
+interface RootMap extends ModuleDeclarationMap, StatementMap {
   comment: Comment
   directive: Directive
 }

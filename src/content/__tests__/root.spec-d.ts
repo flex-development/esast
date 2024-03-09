@@ -4,7 +4,12 @@
  */
 
 import type { NodeObject } from '#tests/types'
-import type { Comment, Directive, StatementMap } from '@flex-development/esast'
+import type {
+  Comment,
+  Directive,
+  ModuleDeclarationMap,
+  StatementMap
+} from '@flex-development/esast'
 import type * as TestSubject from '../root'
 
 describe('unit-d:content/root', () => {
@@ -19,6 +24,10 @@ describe('unit-d:content/root', () => {
   })
 
   describe('RootMap', () => {
+    it('should extend ModuleDeclarationMap', () => {
+      expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<ModuleDeclarationMap>()
+    })
+
     it('should extend StatementMap', () => {
       expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<StatementMap>()
     })
