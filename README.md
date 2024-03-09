@@ -25,8 +25,6 @@ It implements the [**unist**][unist] spec.
 - [Types](#types)
 - [Nodes (abstract)](#nodes-abstract)
   - [`Node`](#node)
-    - [`Position`](#position)
-    - [`Point`](#point)
   - [`Literal`](#literal)
   - [`Parent`](#parent)
 - [Nodes](#nodes)
@@ -62,77 +60,47 @@ yarn add @flex-development/esast @flex-development/docast @types/mdast @types/un
 
 ## Nodes (abstract)
 
-### Node
+### `Node`
 
 ```ts
-interface Node extends unist.Node {
-  position?: Position | undefined
-}
+interface Node extends unist.Node {}
 ```
 
 **Node** ([**unist.Node**][unist-node]) is a syntactic unit in esast syntax trees.
-
-The `position` field represents the location of a node in a source document. The value of the `position` field implements
-the [`Position`](#position) interface. The `position` field must not be present if a node is [*generated*][unist-generated].
-
-#### `Position`
-
-```ts
-interface Position {
-  end: Point
-  start: Point
-}
-```
-
-**Position** represents the location of a node in a source [*file*][unist-file].
-
-The `start` field of **Position** represents the index of the first character of the parsed source region. The `end`
-field represents the index of the first character after the parsed source region, whether it exists or not. The value
-of the `start` and `end` fields implement the [**Point**](#point) interface.
-
-If the syntactic unit represented by a node is not present in the source [*file*][unist-file] at the time of parsing,
-the node is said to be [*generated*][unist-generated] and it must not have positional information.
-
-#### `Point`
-
-```ts
-interface Point {
-  column: number // >= 1
-  line: number // >= 1
-  offset?: number | undefined // >= 0
-}
-```
-
-**Point** represents one place in a source [*file*][unist-file].
-
-The `line` and `column` fields are `1`-indexed integers representing a line and column in a source file. The offset
-field (`0`-indexed integer) represents a character in a source file.
-
-The term character refers to a (UTF-16) code unit as defined by the [Web IDL specification][webidl-spec].
 
 ### `Literal`
 
 ```ts
 interface Literal extends Node {
-  value: string
+  value: RegExp | bigint | boolean | number | string | null | undefined
 }
 ```
 
 **Literal** represents an abstract interface in esast containing a value.
 
-Its `value` field is a `string`.
+Its `value` field is one of the following:
+
+- a regular expression (`RegExp`)
+- a `bigint` primitive
+- a `boolean`
+- a `number`
+- a `string`
+- `null`
+- `undefined`
 
 ### `Parent`
 
 ```ts
-interface Parent extends unist.Parent {
+interface Parent extends Node {
   children: (Node | null | undefined)[]
 }
 ```
 
-**Parent** ([**unist.Parent**][unist-parent]) represents an abstract interface in esast containing other nodes (said to
-be [*children*][unist-child]). The value `null` is used as a placeholder for certain higher-level parents. When using
-TypeScript plugins and utilities, `undefined` allows for optional child nodes.
+**Parent** represents an abstract interface in esast containing other nodes (said to be [*children*][unist-child]).
+
+The `children` field is a list representing the children of a node. The value `null` is used as a placeholder for
+parents with a fixed number of children. When using TypeScript plugins and utilities, `undefined` allows for optional
+child nodes.
 
 ## Nodes
 
@@ -178,14 +146,8 @@ community you agree to abide by its terms.
 [mdast]: https://github.com/syntax-tree/mdast
 [typescript]: https://typescriptlang.org
 [unist-child]: https://github.com/syntax-tree/unist#child
-[unist-file]: https://github.com/syntax-tree/unist#file
-[unist-generated]: https://github.com/syntax-tree/unist#generated
 [unist-glossary]: https://github.com/syntax-tree/unist#glossary
-
-<!-- [unist-leaf]: https://github.com/syntax-tree/unist#leaf -->
-
 [unist-node]: https://github.com/syntax-tree/unist#node
-[unist-parent]: https://github.com/syntax-tree/unist#parent
 
 <!-- [unist-root]: https://github.com/syntax-tree/unist#root -->
 
@@ -195,4 +157,3 @@ community you agree to abide by its terms.
 
 [unist-utilities]: https://github.com/syntax-tree/unist#list-of-utilities
 [unist]: https://github.com/syntax-tree/unist
-[webidl-spec]: https://webidl.spec.whatwg.org/
