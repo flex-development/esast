@@ -3,6 +3,7 @@
  * @module esast/content
  */
 
+export type { default as Content } from './content'
 export type * from './declaration'
 export type * from './declaration-export'
 export type * from './declaration-module'

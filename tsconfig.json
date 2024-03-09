@@ -51,7 +51,12 @@
     "useUnknownInCatchVariables": true,
     "verbatimModuleSyntax": true
   },
-  "exclude": ["**/coverage", "**/dist", "**/node_modules"],
+  "exclude": [
+    "**/coverage",
+    "**/dist",
+    "**/node_modules",
+    "__tests__/setup/index.d.mts"
+  ],
   "include": [
     "**/**/*.json",
     "**/**/*.mjs",
