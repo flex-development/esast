@@ -21,6 +21,7 @@ import type {
   SequenceExpression,
   This,
   UnaryExpression,
+  UpdateExpression,
   YieldExpression
 } from '@flex-development/esast'
 
@@ -64,6 +65,7 @@ interface ExpressionMap extends LiteralMap {
   sequenceExpression: SequenceExpression
   this: This
   unaryExpression: UnaryExpression
+  updateExpression: UpdateExpression
   yieldExpression: YieldExpression
 }
 

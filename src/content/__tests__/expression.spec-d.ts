@@ -22,6 +22,7 @@ import type {
   SequenceExpression,
   This,
   UnaryExpression,
+  UpdateExpression,
   YieldExpression
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression'
@@ -120,6 +121,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<UnaryExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<UnaryExpression>>()
+    })
+
+    it('should match NodeObject<UpdateExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<UpdateExpression>>()
     })
 
     it('should match NodeObject<YieldExpression>', () => {

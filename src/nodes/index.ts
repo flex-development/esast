@@ -89,6 +89,10 @@ export type {
   UnaryExpressionData
 } from './expression-unary'
 export type {
+  default as UpdateExpression,
+  UpdateExpressionData
+} from './expression-update'
+export type {
   default as YieldExpression,
   YieldExpressionData
 } from './expression-yield'
