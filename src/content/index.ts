@@ -5,6 +5,7 @@
 
 export type * from './declaration'
 export type * from './expression'
+export type * from './heritage'
 export type * from './literal'
 export type * from './pattern'
 export type * from './primitive'
