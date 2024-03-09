@@ -16,6 +16,10 @@ export type {
   ClassDeclarationData
 } from './declaration-class'
 export type {
+  default as ExportAllDeclaration,
+  ExportAllDeclarationData
+} from './declaration-export-all'
+export type {
   default as FunctionDeclaration,
   FunctionDeclarationData
 } from './declaration-function'
