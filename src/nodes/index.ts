@@ -48,6 +48,10 @@ export type {
   default as MemberExpression,
   MemberExpressionData
 } from './expression-member'
+export type {
+  default as ObjectExpression,
+  ObjectExpressionData
+} from './expression-object'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
@@ -67,14 +71,15 @@ export type {
   ParameterListData
 } from './parameter-list'
 export type { default as Parent } from './parent'
-export type {
-  default as ArrayPattern,
-  ArrayPatternData
-} from './pattern-array'
+export type { default as ArrayPattern, ArrayPatternData } from './pattern-array'
 export type {
   default as AssignmentPattern,
   AssignmentPatternData
 } from './pattern-assignment'
+export type {
+  default as ObjectPattern,
+  ObjectPatternData
+} from './pattern-object'
 export type { default as Property, PropertyData } from './property'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type {

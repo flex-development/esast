@@ -11,6 +11,7 @@ import type {
   Identifier,
   LiteralMap,
   MemberExpression,
+  ObjectExpression,
   This
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression'
@@ -54,6 +55,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<MemberExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<MemberExpression>>()
+    })
+
+    it('should match NodeObject<ObjectExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ObjectExpression>>()
     })
 
     it('should match NodeObject<This>', () => {

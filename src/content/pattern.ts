@@ -8,6 +8,7 @@ import type {
   AssignmentPattern,
   Identifier,
   MemberExpression,
+  ObjectPattern,
   RestElement
 } from '@flex-development/esast'
 
@@ -20,7 +21,7 @@ import type {
 type Pattern = PatternMap[keyof PatternMap]
 
 /**
- * Registry of nodes that can occur where an {@linkcode Pattern} is expected.
+ * Registry of nodes that can occur where a {@linkcode Pattern} is expected.
  *
  * This interface can be augmented to register custom node types.
  *
@@ -36,6 +37,7 @@ interface PatternMap {
   assignmentPattern: AssignmentPattern
   identifier: Identifier
   memberExpression: MemberExpression
+  objectPattern: ObjectPattern
   restElement: RestElement
 }
 

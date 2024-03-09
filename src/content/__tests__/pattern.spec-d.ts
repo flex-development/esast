@@ -9,6 +9,7 @@ import type {
   AssignmentPattern,
   Identifier,
   MemberExpression,
+  ObjectPattern,
   RestElement
 } from '@flex-development/esast'
 import type * as TestSubject from '../pattern'
@@ -40,6 +41,11 @@ describe('unit-d:content/pattern', () => {
     it('should match NodeObject<MemberExpression>', () => {
       expectTypeOf<TestSubject.PatternMap>()
         .toMatchTypeOf<NodeObject<MemberExpression>>()
+    })
+
+    it('should match NodeObject<ObjectPattern>', () => {
+      expectTypeOf<TestSubject.PatternMap>()
+        .toMatchTypeOf<NodeObject<ObjectPattern>>()
     })
 
     it('should match NodeObject<RestElement>', () => {

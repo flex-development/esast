@@ -10,6 +10,7 @@ import type {
   Identifier,
   LiteralMap,
   MemberExpression,
+  ObjectExpression,
   This
 } from '@flex-development/esast'
 
@@ -42,6 +43,7 @@ interface ExpressionMap extends LiteralMap {
   functionExpression: FunctionExpression
   identifier: Identifier
   memberExpression: MemberExpression
+  objectExpression: ObjectExpression
   this: This
 }
 
