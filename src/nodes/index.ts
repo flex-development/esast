@@ -122,6 +122,10 @@ export type {
 export type { default as ForXStatement } from './statement-for-x'
 export type { default as IfStatement, IfStatementData } from './statement-if'
 export type {
+  default as LabeledStatement,
+  LabeledStatementData
+} from './statement-labeled'
+export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'
