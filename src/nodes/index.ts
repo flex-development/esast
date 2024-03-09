@@ -137,6 +137,7 @@ export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'
+export type { default as TryStatement, TryStatementData } from './statement-try'
 export type {
   default as WithStatement,
   WithStatementData

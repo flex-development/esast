@@ -20,6 +20,7 @@ import type {
   ReturnStatement,
   SwitchStatement,
   ThrowStatement,
+  TryStatement,
   WithStatement
 } from '@flex-development/esast'
 
@@ -61,6 +62,7 @@ interface StatementMap extends DeclarationMap {
   returnStatement: ReturnStatement
   switchStatement: SwitchStatement
   throwStatement: ThrowStatement
+  tryStatement: TryStatement
   withStatement: WithStatement
 }
 

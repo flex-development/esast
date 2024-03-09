@@ -21,6 +21,7 @@ import type {
   ReturnStatement,
   SwitchStatement,
   ThrowStatement,
+  TryStatement,
   WithStatement
 } from '@flex-development/esast'
 import type * as TestSubject from '../statement'
@@ -111,6 +112,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ThrowStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ThrowStatement>>()
+    })
+
+    it('should match NodeObject<TryStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<TryStatement>>()
     })
 
     it('should match NodeObject<WithStatement>', () => {
