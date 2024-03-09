@@ -151,6 +151,7 @@ export type {
 } from './pattern-object'
 export type { default as Property, PropertyData } from './property'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
+export type { default as Root, RootData } from './root'
 export type {
   default as BlockStatement,
   BlockStatementData
