@@ -4,6 +4,7 @@
  */
 
 export type * from './declaration'
+export type * from './declaration-export'
 export type * from './expression'
 export type * from './heritage'
 export type * from './literal'
