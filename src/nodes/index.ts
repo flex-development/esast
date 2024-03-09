@@ -69,6 +69,10 @@ export type {
   ImportExpressionData
 } from './expression-import'
 export type {
+  default as LogicalExpression,
+  LogicalExpressionData
+} from './expression-logical'
+export type {
   default as MemberExpression,
   MemberExpressionData
 } from './expression-member'
