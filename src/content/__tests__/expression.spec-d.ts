@@ -8,6 +8,7 @@ import type {
   ArrayExpression,
   AssignmentExpression,
   AwaitExpression,
+  BinaryExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -47,6 +48,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<AwaitExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<AwaitExpression>>()
+    })
+
+    it('should match NodeObject<BinaryExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<BinaryExpression>>()
     })
 
     it('should match NodeObject<FunctionExpression>', () => {

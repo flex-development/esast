@@ -45,6 +45,10 @@ export type {
   AwaitExpressionData
 } from './expression-await'
 export type {
+  default as BinaryExpression,
+  BinaryExpressionData
+} from './expression-binary'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'
