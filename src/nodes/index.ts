@@ -25,6 +25,10 @@ export type {
   SpreadElementData
 } from './element-spread'
 export type {
+  default as TemplateElement,
+  TemplateElementData
+} from './element-template'
+export type {
   default as ExportSpecifier,
   ExportSpecifierData
 } from './export-specifier'
