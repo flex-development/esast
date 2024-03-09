@@ -5,7 +5,7 @@
 
 import type { Data, ExportSpecifier, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../export-specifiers'
+import type * as TestSubject from '../specifiers-export'
 
 describe('unit-d:nodes/ExportSpecifiers', () => {
   type Subject = TestSubject.default

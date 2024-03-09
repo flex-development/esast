@@ -54,14 +54,6 @@ export type {
   TemplateElementData
 } from './element-template'
 export type {
-  default as ExportSpecifier,
-  ExportSpecifierData
-} from './export-specifier'
-export type {
-  default as ExportSpecifiers,
-  ExportSpecifiersData
-} from './export-specifiers'
-export type {
   default as ArrayExpression,
   ArrayExpressionData
 } from './expression-array'
@@ -164,6 +156,22 @@ export type {
 export type { default as Property, PropertyData } from './property'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type { default as Root, RootData } from './root'
+export type {
+  default as ExportSpecifier,
+  ExportSpecifierData
+} from './specifier-export'
+export type {
+  default as ImportSpecifier,
+  ImportSpecifierData
+} from './specifier-import'
+export type {
+  default as ExportSpecifiers,
+  ExportSpecifiersData
+} from './specifiers-export'
+export type {
+  default as ImportSpecifiers,
+  ImportSpecifiersData
+} from './specifiers-import'
 export type {
   default as BlockStatement,
   BlockStatementData

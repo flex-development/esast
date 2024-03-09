@@ -1,6 +1,6 @@
 /**
- * @file Type Tests - ExportSpecifier
- * @module esast/nodes/tests/unit-d/ExportSpecifier
+ * @file Type Tests - ImportSpecifier
+ * @module esast/nodes/tests/unit-d/ImportSpecifier
  */
 
 import type {
@@ -10,35 +10,35 @@ import type {
   StringLiteral
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../export-specifier'
+import type * as TestSubject from '../specifier-import'
 
-describe('unit-d:nodes/ExportSpecifier', () => {
+describe('unit-d:nodes/ImportSpecifier', () => {
   type Subject = TestSubject.default
-  type SubjectData = TestSubject.ExportSpecifierData
+  type SubjectData = TestSubject.ImportSpecifierData
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Identifier | StringLiteral, Identifier | StringLiteral]]', () => {
+  it('should match [children: [Identifier | StringLiteral, Identifier] | [Identifier]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<[Identifier | StringLiteral, Identifier | StringLiteral]>()
+      .toEqualTypeOf<[Identifier | StringLiteral, Identifier] | [Identifier]>()
   })
 
-  it('should match [data?: Optional<ExportSpecifierData>]', () => {
+  it('should match [data?: Optional<ImportSpecifierData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [type: "exportSpecifier"]', () => {
+  it('should match [type: "importSpecifier"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')
-      .toEqualTypeOf<'exportSpecifier'>()
+      .toEqualTypeOf<'importSpecifier'>()
   })
 
-  describe('ExportSpecifierData', () => {
+  describe('ImportSpecifierData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
