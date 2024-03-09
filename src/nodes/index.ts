@@ -15,6 +15,10 @@ export type {
   VariableDeclarationData
 } from './declaration-variable'
 export type {
+  default as MethodDefinition,
+  MethodDefinitionData
+} from './definition-method'
+export type {
   default as PropertyDefinition,
   PropertyDefinitionData
 } from './definition-property'
