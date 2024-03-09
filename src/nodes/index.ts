@@ -53,6 +53,10 @@ export type {
   CallExpressionData
 } from './expression-call'
 export type {
+  default as ChainExpression,
+  ChainExpressionData
+} from './expression-chain'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'

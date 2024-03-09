@@ -9,6 +9,7 @@ import type {
   AwaitExpression,
   BinaryExpression,
   CallExpression,
+  ChainExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -47,6 +48,7 @@ interface ExpressionMap extends LiteralMap {
   awaitExpression: AwaitExpression
   binaryExpression: BinaryExpression
   callExpression: CallExpression
+  chainExpression: ChainExpression
   functionExpression: FunctionExpression
   identifier: Identifier
   memberExpression: MemberExpression
