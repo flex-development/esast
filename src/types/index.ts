@@ -3,6 +3,7 @@
  * @module esast/types
  */
 
+export type { default as AnyClass } from './any-class'
 export type { default as AnyFunction } from './any-function'
 export type { default as EcmaVersion } from './ecma-version'
 export type { default as CommentKind } from './kind-comment'
