@@ -10,6 +10,7 @@ import type {
   BinaryExpression,
   CallExpression,
   ChainExpression,
+  ClassExpression,
   ConditionalExpression,
   FunctionExpression,
   Identifier,
@@ -57,6 +58,7 @@ interface ExpressionMap extends LiteralMap {
   binaryExpression: BinaryExpression
   callExpression: CallExpression
   chainExpression: ChainExpression
+  classExpression: ClassExpression
   conditionalExpression: ConditionalExpression
   functionExpression: FunctionExpression
   identifier: Identifier

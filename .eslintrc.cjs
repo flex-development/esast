@@ -13,7 +13,10 @@ const config = {
   overrides: [
     ...require('./.eslintrc.base.cjs').overrides,
     {
-      files: ['src/content/declaration.ts'],
+      files: [
+        'src/content/declaration.ts',
+        'src/content/expression.ts'
+      ],
       rules: {
         'unicorn/no-keyword-prefix': 0
       }

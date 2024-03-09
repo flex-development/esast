@@ -4,6 +4,7 @@
  */
 
 import type {
+  ClassDeclaration,
   FunctionDeclaration,
   VariableDeclaration
 } from '@flex-development/esast'
@@ -30,6 +31,7 @@ type Declaration = DeclarationMap[keyof DeclarationMap]
  *  }
  */
 interface DeclarationMap {
+  classDeclaration: ClassDeclaration
   functionDeclaration: FunctionDeclaration
   variableDeclaration: VariableDeclaration
 }

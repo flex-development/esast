@@ -12,6 +12,10 @@ export type {
 } from './class-heritage'
 export type { default as Comment, CommentData } from './comment'
 export type {
+  default as ClassDeclaration,
+  ClassDeclarationData
+} from './declaration-class'
+export type {
   default as FunctionDeclaration,
   FunctionDeclarationData
 } from './declaration-function'
@@ -69,6 +73,10 @@ export type {
   default as ChainExpression,
   ChainExpressionData
 } from './expression-chain'
+export type {
+  default as ClassExpression,
+  ClassExpressionData
+} from './expression-class'
 export type {
   default as ConditionalExpression,
   ConditionalExpressionData
