@@ -104,6 +104,15 @@ export type {
   default as ExpressionStatement,
   ExpressionStatementData
 } from './statement-expression'
+export type {
+  default as ForInStatement,
+  ForInStatementData
+} from './statement-for-in'
+export type {
+  default as ForOfStatement,
+  ForOfStatementData
+} from './statement-for-of'
+export type { default as ForXStatement } from './statement-for-x'
 export type { default as IfStatement, IfStatementData } from './statement-if'
 export type {
   default as ThrowStatement,

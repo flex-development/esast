@@ -13,6 +13,8 @@ import type {
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
+  ForInStatement,
+  ForOfStatement,
   IfStatement,
   ThrowStatement
 } from '@flex-development/esast'
@@ -64,6 +66,16 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ExpressionStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ExpressionStatement>>()
+    })
+
+    it('should match NodeObject<ForInStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<ForInStatement>>()
+    })
+
+    it('should match NodeObject<ForOfStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<ForOfStatement>>()
     })
 
     it('should match NodeObject<IfStatement>', () => {

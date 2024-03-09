@@ -12,6 +12,8 @@ import type {
   DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
+  ForInStatement,
+  ForOfStatement,
   IfStatement,
   ThrowStatement
 } from '@flex-development/esast'
@@ -46,6 +48,8 @@ interface StatementMap extends DeclarationMap {
   doWhileStatement: DoWhileStatement
   emptyStatement: EmptyStatement
   expressionStatement: ExpressionStatement
+  forInStatement: ForInStatement
+  forOfStatement: ForOfStatement
   ifStatement: IfStatement
   throwStatement: ThrowStatement
 }
