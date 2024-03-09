@@ -4,7 +4,7 @@
  */
 
 import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with block statements.
@@ -13,12 +13,7 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface BlockStatementData extends Data {
-  /**
-   * Static block statement?
-   */
-  static?: Nilable<boolean>
-}
+interface BlockStatementData extends Data {}
 
 /**
  * A block statement.

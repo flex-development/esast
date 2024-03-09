@@ -19,6 +19,7 @@ import type {
   IfStatement,
   LabeledStatement,
   ReturnStatement,
+  StaticBlock,
   SwitchStatement,
   ThrowStatement,
   TryStatement,
@@ -103,6 +104,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ReturnStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ReturnStatement>>()
+    })
+
+    it('should match NodeObject<StaticBlock>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<StaticBlock>>()
     })
 
     it('should match NodeObject<SwitchStatement>', () => {

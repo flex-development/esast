@@ -1,15 +1,15 @@
 /**
- * @file Type Tests - BlockStatement
- * @module esast/nodes/tests/unit-d/BlockStatement
+ * @file Type Tests - StaticBlock
+ * @module esast/nodes/tests/unit-d/StaticBlock
  */
 
 import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../statement-block'
+import type * as TestSubject from '../static-block'
 
-describe('unit-d:nodes/BlockStatement', () => {
+describe('unit-d:nodes/StaticBlock', () => {
   type Subject = TestSubject.default
-  type SubjectData = TestSubject.BlockStatementData
+  type SubjectData = TestSubject.StaticBlockData
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
@@ -21,19 +21,19 @@ describe('unit-d:nodes/BlockStatement', () => {
       .toEqualTypeOf<(Comment | Statement)[]>()
   })
 
-  it('should match [data?: Optional<BlockStatementData>]', () => {
+  it('should match [data?: Optional<StaticBlockData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [type: "blockStatement"]', () => {
+  it('should match [type: "staticBlock"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')
-      .toEqualTypeOf<'blockStatement'>()
+      .toEqualTypeOf<'staticBlock'>()
   })
 
-  describe('BlockStatementData', () => {
+  describe('StaticBlockData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })

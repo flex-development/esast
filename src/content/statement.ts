@@ -18,6 +18,7 @@ import type {
   IfStatement,
   LabeledStatement,
   ReturnStatement,
+  StaticBlock,
   SwitchStatement,
   ThrowStatement,
   TryStatement,
@@ -61,6 +62,7 @@ interface StatementMap extends DeclarationMap {
   ifStatement: IfStatement
   labeledStatement: LabeledStatement
   returnStatement: ReturnStatement
+  staticBlock: StaticBlock
   switchStatement: SwitchStatement
   throwStatement: ThrowStatement
   tryStatement: TryStatement
