@@ -139,6 +139,10 @@ export type {
 } from './statement-throw'
 export type { default as TryStatement, TryStatementData } from './statement-try'
 export type {
+  default as WhileStatement,
+  WhileStatementData
+} from './statement-while'
+export type {
   default as WithStatement,
   WithStatementData
 } from './statement-with'
