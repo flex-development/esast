@@ -106,6 +106,8 @@ child nodes.
 
 **TODO**: nodes
 
+This specification is a work in progess. Please refer to the [source code](src/nodes/) for preliminary documentation.
+
 ## Glossary
 
 See the [unist glossary][unist-glossary].
