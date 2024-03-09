@@ -85,6 +85,10 @@ export type {
   SequenceExpressionData
 } from './expression-sequence'
 export type {
+  default as UnaryExpression,
+  UnaryExpressionData
+} from './expression-unary'
+export type {
   default as YieldExpression,
   YieldExpressionData
 } from './expression-yield'
