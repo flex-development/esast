@@ -20,6 +20,10 @@ export type {
   ExportAllDeclarationData
 } from './declaration-export-all'
 export type {
+  default as ExportDefaultDeclaration,
+  ExportDefaultDeclarationData
+} from './declaration-export-default'
+export type {
   default as FunctionDeclaration,
   FunctionDeclarationData
 } from './declaration-function'
