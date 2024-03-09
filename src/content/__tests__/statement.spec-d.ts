@@ -19,6 +19,7 @@ import type {
   IfStatement,
   LabeledStatement,
   ReturnStatement,
+  SwitchStatement,
   ThrowStatement,
   WithStatement
 } from '@flex-development/esast'
@@ -100,6 +101,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<ReturnStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<ReturnStatement>>()
+    })
+
+    it('should match NodeObject<SwitchStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<SwitchStatement>>()
     })
 
     it('should match NodeObject<ThrowStatement>', () => {

@@ -130,6 +130,10 @@ export type {
   ReturnStatementData
 } from './statement-return'
 export type {
+  default as SwitchStatement,
+  SwitchStatementData
+} from './statement-switch'
+export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'

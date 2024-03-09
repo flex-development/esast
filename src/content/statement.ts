@@ -18,6 +18,7 @@ import type {
   IfStatement,
   LabeledStatement,
   ReturnStatement,
+  SwitchStatement,
   ThrowStatement,
   WithStatement
 } from '@flex-development/esast'
@@ -58,6 +59,7 @@ interface StatementMap extends DeclarationMap {
   ifStatement: IfStatement
   labeledStatement: LabeledStatement
   returnStatement: ReturnStatement
+  switchStatement: SwitchStatement
   throwStatement: ThrowStatement
   withStatement: WithStatement
 }
