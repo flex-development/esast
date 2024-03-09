@@ -126,6 +126,10 @@ export type {
   LabeledStatementData
 } from './statement-labeled'
 export type {
+  default as ReturnStatement,
+  ReturnStatementData
+} from './statement-return'
+export type {
   default as ThrowStatement,
   ThrowStatementData
 } from './statement-throw'

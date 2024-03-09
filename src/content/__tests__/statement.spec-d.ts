@@ -18,6 +18,7 @@ import type {
   ForStatement,
   IfStatement,
   LabeledStatement,
+  ReturnStatement,
   ThrowStatement,
   WithStatement
 } from '@flex-development/esast'
@@ -94,6 +95,11 @@ describe('unit-d:content/statement', () => {
     it('should match NodeObject<LabeledStatement>', () => {
       expectTypeOf<TestSubject.StatementMap>()
         .toMatchTypeOf<NodeObject<LabeledStatement>>()
+    })
+
+    it('should match NodeObject<ReturnStatement>', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<NodeObject<ReturnStatement>>()
     })
 
     it('should match NodeObject<ThrowStatement>', () => {
