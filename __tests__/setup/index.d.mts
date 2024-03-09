@@ -24,6 +24,10 @@ declare module '@flex-development/esast' {
 }
 
 declare module '@flex-development/docast' {
+  interface CommentData {
+    docast: true
+  }
+
   interface Data {
     data: typeof import('@flex-development/esast').DATA
   }

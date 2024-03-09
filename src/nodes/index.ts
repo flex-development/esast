@@ -12,6 +12,14 @@ export type {
 } from './class-heritage'
 export type { default as Comment, CommentData } from './comment'
 export type { default as BlockComment, BlockCommentData } from './comment-block'
+export type {
+  default as DocblockComment,
+  DocblockCommentData
+} from './comment-docblock'
+export type {
+  default as HashbangComment,
+  HashbangCommentData
+} from './comment-hashbang'
 export type { default as LineComment, LineCommentData } from './comment-line'
 export type {
   default as ClassDeclaration,
