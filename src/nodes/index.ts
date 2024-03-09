@@ -24,6 +24,10 @@ export type {
   ExportDefaultDeclarationData
 } from './declaration-export-default'
 export type {
+  default as ExportNamedDeclaration,
+  ExportNamedDeclarationData
+} from './declaration-export-named'
+export type {
   default as FunctionDeclaration,
   FunctionDeclarationData
 } from './declaration-function'
