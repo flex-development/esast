@@ -14,6 +14,7 @@ import type {
   ConditionalExpression,
   FunctionExpression,
   Identifier,
+  ImportExpression,
   LiteralMap,
   MemberExpression,
   ObjectExpression,
@@ -81,6 +82,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<Identifier>>()
+    })
+
+    it('should match NodeObject<ImportExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ImportExpression>>()
     })
 
     it('should match NodeObject<MemberExpression>', () => {

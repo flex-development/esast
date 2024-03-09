@@ -65,6 +65,10 @@ export type {
   FunctionExpressionData
 } from './expression-function'
 export type {
+  default as ImportExpression,
+  ImportExpressionData
+} from './expression-import'
+export type {
   default as MemberExpression,
   MemberExpressionData
 } from './expression-member'

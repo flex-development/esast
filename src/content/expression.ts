@@ -13,6 +13,7 @@ import type {
   ConditionalExpression,
   FunctionExpression,
   Identifier,
+  ImportExpression,
   LiteralMap,
   MemberExpression,
   ObjectExpression,
@@ -53,6 +54,7 @@ interface ExpressionMap extends LiteralMap {
   conditionalExpression: ConditionalExpression
   functionExpression: FunctionExpression
   identifier: Identifier
+  importExpression: ImportExpression
   memberExpression: MemberExpression
   objectExpression: ObjectExpression
   this: This
