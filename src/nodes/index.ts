@@ -196,6 +196,10 @@ export type {
 } from './statement-with'
 export type { default as Super, SuperData } from './super'
 export type { default as SwitchCase, SwitchCaseData } from './switch-case'
+export type {
+  default as TemplateLiteral,
+  TemplateLiteralData
+} from './template-literal'
 export type { default as This, ThisData } from './this'
 export type {
   default as VariableDeclarator,

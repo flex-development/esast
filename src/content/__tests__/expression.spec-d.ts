@@ -20,6 +20,7 @@ import type {
   MemberExpression,
   ObjectExpression,
   SequenceExpression,
+  TemplateLiteral,
   This,
   UnaryExpression,
   UpdateExpression,
@@ -111,6 +112,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<SequenceExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<SequenceExpression>>()
+    })
+
+    it('should match NodeObject<TemplateLiteral>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<TemplateLiteral>>()
     })
 
     it('should match NodeObject<This>', () => {
