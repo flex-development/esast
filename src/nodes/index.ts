@@ -57,6 +57,10 @@ export type {
   ChainExpressionData
 } from './expression-chain'
 export type {
+  default as ConditionalExpression,
+  ConditionalExpressionData
+} from './expression-conditional'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'

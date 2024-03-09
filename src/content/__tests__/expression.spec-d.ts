@@ -11,6 +11,7 @@ import type {
   BinaryExpression,
   CallExpression,
   ChainExpression,
+  ConditionalExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -65,6 +66,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ChainExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ChainExpression>>()
+    })
+
+    it('should match NodeObject<ConditionalExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ConditionalExpression>>()
     })
 
     it('should match NodeObject<FunctionExpression>', () => {
