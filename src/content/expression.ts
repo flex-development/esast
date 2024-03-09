@@ -6,6 +6,7 @@
 import type {
   ArrayExpression,
   AssignmentExpression,
+  AwaitExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -41,6 +42,7 @@ type Expression = ExpressionMap[keyof ExpressionMap]
 interface ExpressionMap extends LiteralMap {
   arrayExpression: ArrayExpression
   assignmentExpression: AssignmentExpression
+  awaitExpression: AwaitExpression
   functionExpression: FunctionExpression
   identifier: Identifier
   memberExpression: MemberExpression

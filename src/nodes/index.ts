@@ -41,6 +41,10 @@ export type {
   AssignmentExpressionData
 } from './expression-assignment'
 export type {
+  default as AwaitExpression,
+  AwaitExpressionData
+} from './expression-await'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'
