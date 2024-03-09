@@ -104,6 +104,7 @@ export type {
   default as ExpressionStatement,
   ExpressionStatementData
 } from './statement-expression'
+export type { default as ForStatement, ForStatementData } from './statement-for'
 export type {
   default as ForInStatement,
   ForInStatementData
