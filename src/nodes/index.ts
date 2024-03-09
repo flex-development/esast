@@ -5,6 +5,7 @@
  */
 
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
+export type { default as ClassBody, ClassBodyData } from './class-body'
 export type { default as Comment, CommentData } from './comment'
 export type {
   default as FunctionDeclaration,
