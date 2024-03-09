@@ -6,6 +6,6 @@
 /**
  * Comment kinds.
  */
-type CommentKind = 'block' | 'doc' | 'hashbang' | 'line'
+type CommentKind = 'block' | 'docblock' | 'hashbang' | 'line'
 
 export type { CommentKind as default }

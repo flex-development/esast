@@ -10,8 +10,8 @@ describe('unit-d:types/CommentKind', () => {
     expectTypeOf<TestSubject>().extract<'block'>().not.toBeNever()
   })
 
-  it('should extract "doc"', () => {
-    expectTypeOf<TestSubject>().extract<'doc'>().not.toBeNever()
+  it('should extract "docblock"', () => {
+    expectTypeOf<TestSubject>().extract<'docblock'>().not.toBeNever()
   })
 
   it('should extract "hashbang"', () => {

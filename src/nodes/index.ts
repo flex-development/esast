@@ -11,6 +11,8 @@ export type {
   ClassHeritageData
 } from './class-heritage'
 export type { default as Comment, CommentData } from './comment'
+export type { default as BlockComment, BlockCommentData } from './comment-block'
+export type { default as LineComment, LineCommentData } from './comment-line'
 export type {
   default as ClassDeclaration,
   ClassDeclarationData

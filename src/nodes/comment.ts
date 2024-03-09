@@ -4,26 +4,34 @@
  */
 
 import * as docast from '@flex-development/docast'
-import type { CommentKind } from '@flex-development/esast'
+import type { CommentKind, Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with comments.
  *
- * @see {@linkcode docast.CommentData}
+ * @see {@linkcode Data}
  *
- * @extends {docast.CommentData}
+ * @extends {Data}
  */
-interface CommentData extends docast.CommentData {}
+interface CommentData extends Data {}
 
 /**
  * A docblock, hashbang, block, or line comment.
  *
- * @see {@linkcode docast.Comment}
+ * @see {@linkcode Parent}
  *
- * @extends {docast.Comment}
+ * @extends {Parent}
  */
-interface Comment extends docast.Comment {
+interface Comment extends Parent {
+  /**
+   * List of children.
+   *
+   * @see {@linkcode docast.DescriptionContent}
+   * @see {@linkcode docast.FlowContent}
+   */
+  children: (docast.DescriptionContent | docast.FlowContent)[]
+
   /**
    * Info from the ecosystem.
    *
@@ -37,6 +45,11 @@ interface Comment extends docast.Comment {
    * @see {@linkcode CommentKind}
    */
   kind: CommentKind
+
+  /**
+   * Node type.
+   */
+  type: 'comment'
 }
 
 export type { CommentData, Comment as default }
