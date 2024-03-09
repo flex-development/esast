@@ -81,6 +81,10 @@ export type {
   ObjectExpressionData
 } from './expression-object'
 export type {
+  default as SequenceExpression,
+  SequenceExpressionData
+} from './expression-sequence'
+export type {
   default as YieldExpression,
   YieldExpressionData
 } from './expression-yield'

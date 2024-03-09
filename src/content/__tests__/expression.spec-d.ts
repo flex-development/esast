@@ -19,6 +19,7 @@ import type {
   LogicalExpression,
   MemberExpression,
   ObjectExpression,
+  SequenceExpression,
   This,
   YieldExpression
 } from '@flex-development/esast'
@@ -103,6 +104,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ObjectExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ObjectExpression>>()
+    })
+
+    it('should match NodeObject<SequenceExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<SequenceExpression>>()
     })
 
     it('should match NodeObject<This>', () => {
