@@ -75,6 +75,7 @@ export type {
   default as AssignmentPattern,
   AssignmentPatternData
 } from './pattern-assignment'
+export type { default as Property, PropertyData } from './property'
 export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type {
   default as BlockStatement,
