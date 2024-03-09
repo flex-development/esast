@@ -58,6 +58,13 @@ TypeScript users can integrate `esast` type definitions into their project by in
 yarn add @flex-development/esast @flex-development/docast @types/mdast @types/unist
 ```
 
+<blockquote>
+  <small>
+    See <a href='https://yarnpkg.com/protocol/git'>Git - Protocols | Yarn</a>
+    &nbsp;for details regarding installing from Git.
+  </small>
+</blockquote>
+
 ## Nodes (abstract)
 
 ### `Node`
