@@ -32,6 +32,10 @@ export type {
   FunctionDeclarationData
 } from './declaration-function'
 export type {
+  default as ImportDeclaration,
+  ImportDeclarationData
+} from './declaration-import'
+export type {
   default as VariableDeclaration,
   VariableDeclarationData
 } from './declaration-variable'

@@ -3,7 +3,10 @@
  * @module esast/content/moduleDeclaration
  */
 
-import type { ExportDeclarationMap } from '@flex-development/esast'
+import type {
+  ExportDeclarationMap,
+  ImportDeclaration
+} from '@flex-development/esast'
 
 /**
  * Union of registered esast nodes that can occur where a module declaration is
@@ -27,6 +30,8 @@ type ModuleDeclaration = ModuleDeclarationMap[keyof ModuleDeclarationMap]
  *    }
  *  }
  */
-interface ModuleDeclarationMap extends ExportDeclarationMap {}
+interface ModuleDeclarationMap extends ExportDeclarationMap {
+  importDeclaration: ImportDeclaration
+}
 
 export type { ModuleDeclaration, ModuleDeclarationMap }

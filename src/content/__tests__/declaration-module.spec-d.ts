@@ -3,7 +3,11 @@
  * @module esast/content/tests/unit-d/moduleDeclaration
  */
 
-import type { ExportDeclarationMap } from '@flex-development/esast'
+import type { NodeObject } from '#tests/types'
+import type {
+  ExportDeclarationMap,
+  ImportDeclaration
+} from '@flex-development/esast'
 import type * as TestSubject from '../declaration-module'
 
 describe('unit-d:content/moduleDeclaration', () => {
@@ -22,6 +26,11 @@ describe('unit-d:content/moduleDeclaration', () => {
     it('should extend ExportDeclarationMap', () => {
       expectTypeOf<TestSubject.ModuleDeclarationMap>()
         .toMatchTypeOf<ExportDeclarationMap>()
+    })
+
+    it('should match NodeObject<ImportDeclaration>', () => {
+      expectTypeOf<TestSubject.ModuleDeclarationMap>()
+        .toMatchTypeOf<NodeObject<ImportDeclaration>>()
     })
   })
 })
