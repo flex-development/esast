@@ -8,6 +8,7 @@ import type {
   AssignmentExpression,
   AwaitExpression,
   BinaryExpression,
+  CallExpression,
   FunctionExpression,
   Identifier,
   LiteralMap,
@@ -45,6 +46,7 @@ interface ExpressionMap extends LiteralMap {
   assignmentExpression: AssignmentExpression
   awaitExpression: AwaitExpression
   binaryExpression: BinaryExpression
+  callExpression: CallExpression
   functionExpression: FunctionExpression
   identifier: Identifier
   memberExpression: MemberExpression

@@ -49,6 +49,10 @@ export type {
   BinaryExpressionData
 } from './expression-binary'
 export type {
+  default as CallExpression,
+  CallExpressionData
+} from './expression-call'
+export type {
   default as FunctionExpression,
   FunctionExpressionData
 } from './expression-function'
