@@ -3,6 +3,7 @@
  * @module esast/content/tests/unit-d/primitive
  */
 
+import type { NodeObject } from '#tests/types'
 import type {
   BigIntLiteral,
   BooleanLiteral,
@@ -22,40 +23,34 @@ describe('unit-d:content/primitive', () => {
   })
 
   describe('PrimitiveMap', () => {
-    it('should match [bigint: BigIntLiteral]', () => {
+    it('should match NodeObject<BigIntLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('bigint')
-        .toEqualTypeOf<BigIntLiteral>
+        .toMatchTypeOf<NodeObject<BigIntLiteral>>()
     })
 
-    it('should match [boolean: BooleanLiteral]', () => {
+    it('should match NodeObject<BooleanLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('boolean')
-        .toEqualTypeOf<BooleanLiteral>
+        .toMatchTypeOf<NodeObject<BooleanLiteral>>()
     })
 
-    it('should match [null: NullLiteral]', () => {
+    it('should match NodeObject<NullLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('null')
-        .toEqualTypeOf<NullLiteral>
+        .toMatchTypeOf<NodeObject<NullLiteral>>()
     })
 
-    it('should match [number: NumberLiteral]', () => {
+    it('should match NodeObject<NumberLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('number')
-        .toEqualTypeOf<NumberLiteral>
+        .toMatchTypeOf<NodeObject<NumberLiteral>>()
     })
 
-    it('should match [string: StringLiteral]', () => {
+    it('should match NodeObject<StringLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('string')
-        .toEqualTypeOf<StringLiteral>
+        .toMatchTypeOf<NodeObject<StringLiteral>>()
     })
 
-    it('should match [undefined: UndefinedLiteral]', () => {
+    it('should match NodeObject<UndefinedLiteral>', () => {
       expectTypeOf<TestSubject.PrimitiveMap>()
-        .toHaveProperty('undefined')
-        .toEqualTypeOf<UndefinedLiteral>
+        .toMatchTypeOf<NodeObject<UndefinedLiteral>>()
     })
   })
 })

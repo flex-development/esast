@@ -89,6 +89,10 @@ export type {
   SequenceExpressionData
 } from './expression-sequence'
 export type {
+  default as TaggedTemplateExpression,
+  TaggedTemplateExpressionData
+} from './expression-tagged-template'
+export type {
   default as UnaryExpression,
   UnaryExpressionData
 } from './expression-unary'

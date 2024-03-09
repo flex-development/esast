@@ -19,6 +19,7 @@ import type {
   MemberExpression,
   ObjectExpression,
   SequenceExpression,
+  TaggedTemplateExpression,
   TemplateLiteral,
   This,
   UnaryExpression,
@@ -64,6 +65,7 @@ interface ExpressionMap extends LiteralMap {
   memberExpression: MemberExpression
   objectExpression: ObjectExpression
   sequenceExpression: SequenceExpression
+  taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral
   this: This
   unaryExpression: UnaryExpression
