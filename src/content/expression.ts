@@ -11,7 +11,8 @@ import type {
   LiteralMap,
   MemberExpression,
   ObjectExpression,
-  This
+  This,
+  YieldExpression
 } from '@flex-development/esast'
 
 /**
@@ -45,6 +46,7 @@ interface ExpressionMap extends LiteralMap {
   memberExpression: MemberExpression
   objectExpression: ObjectExpression
   this: This
+  yieldExpression: YieldExpression
 }
 
 export type { Expression, ExpressionMap }
