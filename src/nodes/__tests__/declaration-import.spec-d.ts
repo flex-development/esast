@@ -5,7 +5,6 @@
 
 import type {
   Data,
-  ImportKind,
   ImportSpecifiers,
   Parent,
   StringLiteral
@@ -31,10 +30,6 @@ describe('unit-d:nodes/ImportDeclaration', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
-  })
-
-  it('should match [kind: ImportKind]', () => {
-    expectTypeOf<Subject>().toHaveProperty('kind').toEqualTypeOf<ImportKind>()
   })
 
   it('should match [type: "importDeclaration"]', () => {

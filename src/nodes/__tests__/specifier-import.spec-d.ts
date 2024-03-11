@@ -6,6 +6,7 @@
 import type {
   Data,
   Identifier,
+  ImportSpecifierKind,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -30,6 +31,12 @@ describe('unit-d:nodes/ImportSpecifier', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
+  })
+
+  it('should match [kind: ImportSpecifierKind]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('kind')
+      .toEqualTypeOf<ImportSpecifierKind>()
   })
 
   it('should match [type: "importSpecifier"]', () => {

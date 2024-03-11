@@ -5,7 +5,6 @@
 
 import type {
   Data,
-  ImportKind,
   ImportSpecifiers,
   Parent,
   StringLiteral
@@ -43,13 +42,6 @@ interface ImportDeclaration extends Parent {
    * @see {@linkcode ImportDeclarationData}
    */
   data?: Optional<ImportDeclarationData>
-
-  /**
-   * Import kind.
-   *
-   * @see {@linkcode ImportKind}
-   */
-  kind: ImportKind
 
   /**
    * Node type.

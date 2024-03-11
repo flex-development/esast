@@ -6,6 +6,7 @@
 import type {
   Data,
   Identifier,
+  ImportSpecifierKind,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -44,6 +45,13 @@ interface ImportSpecifier extends Parent {
    * @see {@linkcode ImportSpecifierData}
    */
   data?: Optional<ImportSpecifierData>
+
+  /**
+   * Import specifier kind.
+   *
+   * @see {@linkcode ImportSpecifierKind}
+   */
+  kind: ImportSpecifierKind
 
   /**
    * Node type.
