@@ -1,3 +1,10 @@
+## [1.0.0-alpha.2](https://github.com/flex-development/esast/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2024-03-11)
+
+### :sparkles: Features
+
+- [[`5caa8b4`](https://github.com/flex-development/esast/commit/5caa8b44baabe71053b98fbde5b856efd76c9070)] **content:** `AnyNode`, `AnyParent`, `Child`, `NodeMap`
+- [[`7fb1573`](https://github.com/flex-development/esast/commit/7fb15735a90f90e6bb6816b28f81382cc94971dd)] **nodes:** `Nothing`
+
 ## 1.0.0-alpha.1 (2024-03-09)
 
 ### :package: Build
@@ -150,5 +157,6 @@
 ### :mechanical_arm: Refactors
 
 - [[`1fbe902`](https://github.com/flex-development/esast/commit/1fbe902a306f53e9c8a4fadb88e8cd24a8dc0cd2)] **types:** `SourceType` -> `SourceMode`
+
 
 
