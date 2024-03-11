@@ -21,13 +21,13 @@ describe('unit-d:nodes/TryStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [BlockStatement, CatchClause | Nothing, BlockStatement | Nothing]]', () => {
+  it('should match [children: [BlockStatement, CatchClause, BlockStatement] | [BlockStatement, CatchClause] | [BlockStatement, Nothing, BlockStatement] | [BlockStatement]]', () => {
     // Arrange
-    type Expect = [
-      BlockStatement,
-      CatchClause | Nothing,
-      BlockStatement | Nothing
-    ]
+    type Expect =
+      | [BlockStatement, CatchClause, BlockStatement]
+      | [BlockStatement, CatchClause]
+      | [BlockStatement, Nothing, BlockStatement]
+      | [BlockStatement]
 
     // Expect
     expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()

@@ -36,11 +36,11 @@ interface TryStatement extends Parent {
    * @see {@linkcode CatchClause}
    * @see {@linkcode Nothing}
    */
-  children: [
-    block: BlockStatement,
-    handler: CatchClause | Nothing,
-    finalizer: BlockStatement | Nothing
-  ]
+  children:
+    | [block: BlockStatement, handler: CatchClause, finalizer: BlockStatement]
+    | [block: BlockStatement, handler: CatchClause]
+    | [block: BlockStatement, handler: Nothing, finalizer: BlockStatement]
+    | [block: BlockStatement]
 
   /**
    * Info from the ecosystem.
