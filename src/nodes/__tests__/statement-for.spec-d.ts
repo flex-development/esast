@@ -6,11 +6,12 @@
 import type {
   Data,
   Expression,
+  Nothing,
   Parent,
   Statement,
   VariableDeclaration
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-for'
 
 describe('unit-d:nodes/ForStatement', () => {
@@ -21,12 +22,12 @@ describe('unit-d:nodes/ForStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Nullable<Expression | VariableDeclaration>, Nullable<Expression>, Nullable<Expression>, Statement]]', () => {
+  it('should match [children: [Expression | Nothing | VariableDeclaration, Expression | Nothing, Expression | Nothing, Statement]]', () => {
     // Arrange
     type Expect = [
-      Nullable<Expression | VariableDeclaration>,
-      Nullable<Expression>,
-      Nullable<Expression>,
+      Expression | Nothing | VariableDeclaration,
+      Expression | Nothing,
+      Expression | Nothing,
       Statement
     ]
 

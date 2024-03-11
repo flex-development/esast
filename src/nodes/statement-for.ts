@@ -6,11 +6,12 @@
 import type {
   Data,
   Expression,
+  Nothing,
   Parent,
   Statement,
   VariableDeclaration
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `for` statements.
@@ -33,13 +34,14 @@ interface ForStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Expression}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Statement}
    * @see {@linkcode VariableDeclaration}
    */
   children: [
-    init: Nullable<Expression | VariableDeclaration>,
-    test: Nullable<Expression>,
-    update: Nullable<Expression>,
+    init: Expression | Nothing | VariableDeclaration,
+    test: Expression | Nothing,
+    update: Expression | Nothing,
     body: Statement
   ]
 

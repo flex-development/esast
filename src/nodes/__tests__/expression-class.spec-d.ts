@@ -8,9 +8,10 @@ import type {
   ClassHeritage,
   Data,
   Identifier,
+  Nothing,
   Parent
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-class'
 
 describe('unit-d:nodes/ClassExpression', () => {
@@ -21,10 +22,10 @@ describe('unit-d:nodes/ClassExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Nullable<Identifier>, ClassHeritage, ClassBody]]', () => {
+  it('should match [children: [Identifier | Nothing, ClassHeritage, ClassBody]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<[Nullable<Identifier>, ClassHeritage, ClassBody]>()
+      .toEqualTypeOf<[Identifier | Nothing, ClassHeritage, ClassBody]>()
   })
 
   it('should match [data?: Optional<ClassExpressionData>]', () => {

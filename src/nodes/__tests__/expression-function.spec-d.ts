@@ -8,10 +8,11 @@ import type {
   Data,
   Expression,
   Identifier,
+  Nothing,
   ParameterList,
   Parent
 } from '@flex-development/esast'
-import type { Nilable, Nullable, Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-function'
 
 describe('unit-d:nodes/FunctionExpression', () => {
@@ -22,10 +23,10 @@ describe('unit-d:nodes/FunctionExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Nullable<Identifier>, ParameterList, BlockStatement | Expression]]', () => {
+  it('should match [children: [Identifier | Nothing, ParameterList, BlockStatement | Expression]]', () => {
     // Arrange
     type Expect = [
-      Nullable<Identifier>,
+      Identifier | Nothing,
       ParameterList,
       BlockStatement | Expression
     ]

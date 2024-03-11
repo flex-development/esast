@@ -7,10 +7,11 @@ import type {
   Comment,
   Data,
   Expression,
+  Nothing,
   Parent,
   SpreadElement
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with array expressions.
@@ -34,9 +35,10 @@ interface ArrayExpression extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
+   * @see {@linkcode Nothing}
    * @see {@linkcode SpreadElement}
    */
-  children: Nullable<Comment | Expression | SpreadElement>[]
+  children: (Comment | Expression | Nothing | SpreadElement)[]
 
   /**
    * Info from the ecosystem.

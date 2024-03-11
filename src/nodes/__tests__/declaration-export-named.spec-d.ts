@@ -7,10 +7,11 @@ import type {
   Data,
   Declaration,
   ExportSpecifiers,
+  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-export-named'
 
 describe('unit-d:nodes/ExportNamedDeclaration', () => {
@@ -21,11 +22,11 @@ describe('unit-d:nodes/ExportNamedDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Nullable<Declaration>, ExportSpecifiers, StringLiteral] | [Nullable<Declaration>, ExportSpecifiers]]', () => {
+  it('should match [children: [Declaration | Nothing, ExportSpecifiers, StringLiteral] | [Declaration | Nothing, ExportSpecifiers]]', () => {
     // Arrange
     type Expect =
-      | [Nullable<Declaration>, ExportSpecifiers, StringLiteral]
-      | [Nullable<Declaration>, ExportSpecifiers]
+      | [Declaration | Nothing, ExportSpecifiers, StringLiteral]
+      | [Declaration | Nothing, ExportSpecifiers]
 
     // Expect
     expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()

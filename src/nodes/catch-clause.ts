@@ -6,10 +6,11 @@
 import type {
   BlockStatement,
   Data,
+  Nothing,
   Parent,
   Pattern
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `catch` clauses.
@@ -32,9 +33,10 @@ interface CatchClause extends Parent {
    * List of children.
    *
    * @see {@linkcode BlockStatement}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Pattern}
    */
-  children: [param: Nullable<Pattern>, body: BlockStatement]
+  children: [param: Nothing | Pattern, body: BlockStatement]
 
   /**
    * Info from the ecosystem.

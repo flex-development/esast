@@ -6,10 +6,11 @@
 import type {
   Data,
   Expression,
+  Nothing,
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `switch` cases.
@@ -32,9 +33,10 @@ interface SwitchCase extends Parent {
    * List of children.
    *
    * @see {@linkcode Expression}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Statement}
    */
-  children: [test?: Nullable<Expression>, ...consequent: Statement[]]
+  children: [test: Expression | Nothing, ...consequent: Statement[]]
 
   /**
    * Info from the ecosystem.

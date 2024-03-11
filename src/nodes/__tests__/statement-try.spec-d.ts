@@ -7,9 +7,10 @@ import type {
   BlockStatement,
   CatchClause,
   Data,
+  Nothing,
   Parent
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-try'
 
 describe('unit-d:nodes/TryStatement', () => {
@@ -20,9 +21,13 @@ describe('unit-d:nodes/TryStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [BlockStatement, Nullable<CatchClause>?, BlockStatement?]]', () => {
+  it('should match [children: [BlockStatement, CatchClause | Nothing, BlockStatement | Nothing]]', () => {
     // Arrange
-    type Expect = [BlockStatement, Nullable<CatchClause>?, BlockStatement?]
+    type Expect = [
+      BlockStatement,
+      CatchClause | Nothing,
+      BlockStatement | Nothing
+    ]
 
     // Expect
     expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()

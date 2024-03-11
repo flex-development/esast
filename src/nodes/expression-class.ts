@@ -8,9 +8,10 @@ import type {
   ClassHeritage,
   Data,
   Identifier,
+  Nothing,
   Parent
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `class` expressions.
@@ -34,8 +35,9 @@ interface ClassExpression extends Parent {
    *
    * @see {@linkcode ClassBody}
    * @see {@linkcode Identifier}
+   * @see {@linkcode Nothing}
    */
-  children: [id: Nullable<Identifier>, heritage: ClassHeritage, body: ClassBody]
+  children: [id: Identifier | Nothing, heritage: ClassHeritage, body: ClassBody]
 
   /**
    * Info from the ecosystem.

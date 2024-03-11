@@ -7,9 +7,10 @@ import type {
   BlockStatement,
   CatchClause,
   Data,
+  Nothing,
   Parent
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with try statements.
@@ -33,11 +34,12 @@ interface TryStatement extends Parent {
    *
    * @see {@linkcode BlockStatement}
    * @see {@linkcode CatchClause}
+   * @see {@linkcode Nothing}
    */
   children: [
     block: BlockStatement,
-    handler?: Nullable<CatchClause>,
-    finalizer?: BlockStatement
+    handler: CatchClause | Nothing,
+    finalizer: BlockStatement | Nothing
   ]
 
   /**

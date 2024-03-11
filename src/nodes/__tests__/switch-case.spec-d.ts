@@ -6,10 +6,11 @@
 import type {
   Data,
   Expression,
+  Nothing,
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../switch-case'
 
 describe('unit-d:nodes/SwitchCase', () => {
@@ -20,10 +21,10 @@ describe('unit-d:nodes/SwitchCase', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Nullable<Expression>?, ...Statement[]]]', () => {
+  it('should match [children: [Expression | Nothing, ...Statement[]]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<[Nullable<Expression>?, ...Statement[]]>()
+      .toEqualTypeOf<[Expression | Nothing, ...Statement[]]>()
   })
 
   it('should match [data?: Optional<SwitchCaseData>]', () => {

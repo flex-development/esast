@@ -7,10 +7,11 @@ import type {
   Data,
   Declaration,
   ExportSpecifiers,
+  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with named `export` declarations.
@@ -34,15 +35,16 @@ interface ExportNamedDeclaration extends Parent {
    *
    * @see {@linkcode Declaration}
    * @see {@linkcode ExportSpecifiers}
+   * @see {@linkcode Nothing}
    * @see {@linkcode StringLiteral}
    */
   children:
     | [
-      declaration: Nullable<Declaration>,
+      declaration: Declaration | Nothing,
       specifiers: ExportSpecifiers,
       source: StringLiteral
     ]
-    | [declaration: Nullable<Declaration>, specifiers: ExportSpecifiers]
+    | [declaration: Declaration | Nothing, specifiers: ExportSpecifiers]
 
   /**
    * Info from the ecosystem.

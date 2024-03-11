@@ -4,7 +4,6 @@
  */
 
 import type { Node } from '@flex-development/esast'
-import type { Nilable } from '@flex-development/tutils'
 import type TestSubject from '../parent'
 
 describe('unit-d:nodes/Parent', () => {
@@ -12,9 +11,9 @@ describe('unit-d:nodes/Parent', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [children: Nilable<Node>[] | Node[]]', () => {
+  it('should match [children: Node[]]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<Nilable<Node>[] | Node[]>()
+      .toEqualTypeOf<Node[]>()
   })
 })

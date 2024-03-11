@@ -7,10 +7,11 @@ import type {
   Comment,
   Data,
   Expression,
+  Nothing,
   Parent,
   SpreadElement
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-array'
 
 describe('unit-d:nodes/ArrayExpression', () => {
@@ -21,10 +22,10 @@ describe('unit-d:nodes/ArrayExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: Nullable<Comment | Expression | Spread>[]]', () => {
+  it('should match [children: (Comment | Expression | Nothing | SpreadElement)[]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<Nullable<Comment | Expression | SpreadElement>[]>()
+      .toEqualTypeOf<(Comment | Expression | Nothing | SpreadElement)[]>()
   })
 
   it('should match [data?: Optional<ArrayExpressionData>]', () => {

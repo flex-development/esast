@@ -3,8 +3,9 @@
  * @module esast/nodes/ArrayPattern
  */
 
-import type { Comment, Data, Parent, Pattern } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Comment, Data, Nothing, Parent,
+  Pattern } from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with array patterns.
@@ -27,9 +28,10 @@ interface ArrayPattern extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Pattern}
    */
-  children: Nullable<(Comment | Pattern)>[]
+  children: (Comment | Nothing | Pattern)[]
 
   /**
    * Info from the ecosystem.

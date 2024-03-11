@@ -8,10 +8,11 @@ import type {
   Data,
   Expression,
   Identifier,
+  Nothing,
   ParameterList,
   Parent
 } from '@flex-development/esast'
-import type { Nilable, Nullable, Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with function expressions.
@@ -53,10 +54,11 @@ interface FunctionExpression extends Parent {
    *
    * @see {@linkcode BlockStatement}
    * @see {@linkcode Identifier}
+   * @see {@linkcode Nothing}
    * @see {@linkcode ParameterList}
    */
   children: [
-    id: Nullable<Identifier>,
+    id: Identifier | Nothing,
     params: ParameterList,
     body: BlockStatement | Expression
   ]

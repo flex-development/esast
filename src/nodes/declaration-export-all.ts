@@ -6,10 +6,11 @@
 import type {
   Data,
   Identifier,
+  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Nullable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with aggregate `export` declarations.
@@ -32,10 +33,11 @@ interface ExportAllDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode Identifier}
+   * @see {@linkcode Nothing}
    * @see {@linkcode StringLiteral}
    */
   children: [
-    exported: Nullable<Identifier | StringLiteral>,
+    exported: Identifier | Nothing | StringLiteral,
     source: StringLiteral
   ]
 

@@ -99,15 +99,13 @@ Its `value` field is one of the following:
 
 ```ts
 interface Parent extends Node {
-  children: (Node | null | undefined)[]
+  children: Node[]
 }
 ```
 
 **Parent** represents an abstract interface in esast containing other nodes (said to be [*children*][unist-child]).
 
-The `children` field is a list representing the children of a node. The value `null` is used as a placeholder for
-parents with a fixed number of children. When using TypeScript plugins and utilities, `undefined` allows for optional
-child nodes.
+The `children` field is a list representing the children of a node.
 
 ## Nodes
 
