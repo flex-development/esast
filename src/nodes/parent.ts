@@ -3,7 +3,7 @@
  * @module esast/nodes/Parent
  */
 
-import type { Node } from '@flex-development/esast'
+import type { Child, Node } from '@flex-development/esast'
 
 /**
  * Abstract esast node that contains other nodes.
@@ -16,9 +16,9 @@ interface Parent extends Node {
   /**
    * List of children.
    *
-   * @see {@linkcode Node}
+   * @see {@linkcode Child}
    */
-  children: Node[]
+  children: Child[]
 }
 
 export type { Parent as default }

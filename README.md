@@ -99,7 +99,7 @@ Its `value` field is one of the following:
 
 ```ts
 interface Parent extends Node {
-  children: Node[]
+  children: Child[]
 }
 ```
 

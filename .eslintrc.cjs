@@ -15,7 +15,8 @@ const config = {
     {
       files: [
         'src/content/declaration.ts',
-        'src/content/expression.ts'
+        'src/content/expression.ts',
+        'src/content/node.ts'
       ],
       rules: {
         'unicorn/no-keyword-prefix': 0
