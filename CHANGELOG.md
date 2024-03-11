@@ -1,3 +1,9 @@
+## [1.0.0-alpha.3](https://github.com/flex-development/esast/compare/1.0.0-alpha.2...1.0.0-alpha.3) (2024-03-11)
+
+### :bug: Fixes
+
+- [[`7cf7fb4`](https://github.com/flex-development/esast/commit/7cf7fb474ac107f3cb906468ab940c63e88804c1)] **nodes:** [`TryStatement`] define `children` as tuple union
+
 ## [1.0.0-alpha.2](https://github.com/flex-development/esast/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2024-03-11)
 
 ### :sparkles: Features
@@ -157,6 +163,7 @@
 ### :mechanical_arm: Refactors
 
 - [[`1fbe902`](https://github.com/flex-development/esast/commit/1fbe902a306f53e9c8a4fadb88e8cd24a8dc0cd2)] **types:** `SourceType` -> `SourceMode`
+
 
 
 
