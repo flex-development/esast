@@ -39,12 +39,9 @@ interface ExportNamedDeclaration extends Parent {
    * @see {@linkcode StringLiteral}
    */
   children:
-    | [
-      declaration: Declaration | Nothing,
-      specifiers: ExportSpecifiers,
-      source: StringLiteral
-    ]
-    | [declaration: Declaration | Nothing, specifiers: ExportSpecifiers]
+    | [declaration: Declaration]
+    | [specifiers: ExportSpecifiers, source: StringLiteral]
+    | [specifiers: ExportSpecifiers]
 
   /**
    * Info from the ecosystem.

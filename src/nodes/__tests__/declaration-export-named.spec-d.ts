@@ -7,7 +7,6 @@ import type {
   Data,
   Declaration,
   ExportSpecifiers,
-  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -22,11 +21,12 @@ describe('unit-d:nodes/ExportNamedDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Declaration | Nothing, ExportSpecifiers, StringLiteral] | [Declaration | Nothing, ExportSpecifiers]]', () => {
+  it('should match [children: [Declaration] | [ExportSpecifiers, StringLiteral] | [ExportSpecifiers]]', () => {
     // Arrange
     type Expect =
-      | [Declaration | Nothing, ExportSpecifiers, StringLiteral]
-      | [Declaration | Nothing, ExportSpecifiers]
+      | [Declaration]
+      | [ExportSpecifiers, StringLiteral]
+      | [ExportSpecifiers]
 
     // Expect
     expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
