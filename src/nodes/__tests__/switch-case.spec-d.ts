@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comment,
   Data,
   Expression,
   Nothing,
@@ -21,10 +22,10 @@ describe('unit-d:nodes/SwitchCase', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Expression | Nothing, ...Statement[]]]', () => {
+  it('should match [children: [Expression | Nothing, ...(Comment | Statement)[]]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<[Expression | Nothing, ...Statement[]]>()
+      .toEqualTypeOf<[Expression | Nothing, ...(Comment | Statement)[]]>()
   })
 
   it('should match [data?: Optional<SwitchCaseData>]', () => {

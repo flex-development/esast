@@ -3,7 +3,12 @@
  * @module esast/nodes/tests/unit-d/ImportSpecifiers
  */
 
-import type { Data, ImportSpecifier, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Data,
+  ImportSpecifier,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../specifiers-import'
 
@@ -15,10 +20,10 @@ describe('unit-d:nodes/ImportSpecifiers', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: ImportSpecifier[]]', () => {
+  it('should match [children: (Comment | ImportSpecifier)[]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<ImportSpecifier[]>()
+      .toEqualTypeOf<(Comment | ImportSpecifier)[]>()
   })
 
   it('should match [data?: Optional<ImportSpecifiersData>]', () => {

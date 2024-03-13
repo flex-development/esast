@@ -3,8 +3,8 @@
  * @module esast/nodes/ClassHeritage
  */
 
-import type { Data, Heritage, Parent } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
+import type { Comment, Data, Heritage, Parent } from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `class` heritage clauses.
@@ -26,9 +26,10 @@ interface ClassHeritage extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Heritage}
    */
-  children: EmptyArray | [Heritage, ...Heritage[]]
+  children: (Comment | Heritage)[]
 
   /**
    * Info from the ecosystem.

@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comment,
   Data,
   Expression,
   Parent,
@@ -32,13 +33,14 @@ interface CallExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode SpreadElement}
    * @see {@linkcode Super}
    */
   children: [
     callee: Expression | Super,
-    ...arguments: (Expression | SpreadElement)[]
+    ...arguments: (Comment | Expression | SpreadElement)[]
   ]
 
   /**

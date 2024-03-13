@@ -3,7 +3,12 @@
  * @module esast/nodes/ImportSpecifiers
  */
 
-import type { Data, ImportSpecifier, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Data,
+  ImportSpecifier,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +31,10 @@ interface ImportSpecifiers extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode ImportSpecifier}
    */
-  children: ImportSpecifier[]
+  children: (Comment | ImportSpecifier)[]
 
   /**
    * Info from the ecosystem.

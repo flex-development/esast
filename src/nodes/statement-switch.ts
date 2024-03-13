@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comment,
   Data,
   Expression,
   Parent,
@@ -31,10 +32,11 @@ interface SwitchStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode SwitchCase}
    */
-  children: [discriminant: Expression, ...cases: SwitchCase[]]
+  children: [discriminant: Expression, ...cases: (Comment | SwitchCase)[]]
 
   /**
    * Info from the ecosystem.

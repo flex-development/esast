@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comment,
   Data,
   Expression,
   Parent,
@@ -21,10 +22,15 @@ describe('unit-d:nodes/CallExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: [Expression | Super, ...(Expression | Spread)[]]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression | Super, ...(Expression | SpreadElement)[]]>()
+  it('should match [children: [Expression | Super, ...(Comment | Expression | SpreadElement)[]]]', () => {
+    // Arrange
+    type Expect = [
+      Expression | Super,
+      ...(Comment | Expression | SpreadElement)[]
+    ]
+
+    // Expect
+    expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
   })
 
   it('should match [data?: Optional<CallExpressionData>]', () => {

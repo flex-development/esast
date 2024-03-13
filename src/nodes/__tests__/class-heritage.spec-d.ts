@@ -3,8 +3,8 @@
  * @module esast/nodes/tests/unit-d/ClassHeritage
  */
 
-import type { Data, Heritage, Parent } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
+import type { Comment, Data, Heritage, Parent } from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../class-heritage'
 
 describe('unit-d:nodes/ClassHeritage', () => {
@@ -15,10 +15,10 @@ describe('unit-d:nodes/ClassHeritage', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [children: EmptyArray | [Heritage, ...Heritage[]]]', () => {
+  it('should match [children: (Comment | Heritage)[]]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('children')
-      .toEqualTypeOf<EmptyArray | [Heritage, ...Heritage[]]>()
+      .toEqualTypeOf<(Comment | Heritage)[]>()
   })
 
   it('should match [data?: Optional<ClassHeritageData>]', () => {
