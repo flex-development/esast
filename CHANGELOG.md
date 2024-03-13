@@ -1,3 +1,32 @@
+## [1.0.0-alpha.4](https://github.com/flex-development/esast/compare/1.0.0-alpha.3...1.0.0-alpha.4) (2024-03-13)
+
+### ⚠ BREAKING CHANGES
+
+- **nodes:** [`ImportSpecifier`] `kind`
+
+### :package: Build
+
+- [[`296765f`](https://github.com/flex-development/esast/commit/296765ffd952d7d759efd79431de542cb55df2d3)] **deps-dev:** Bump the commitlint group with 1 update ([#15](https://github.com/flex-development/esast/issues/15))
+- [[`560d2dd`](https://github.com/flex-development/esast/commit/560d2dd78fd0b40a68034d35a1aeb0463586ff30)] **deps-dev:** Bump the typescript-eslint group with 2 updates ([#14](https://github.com/flex-development/esast/issues/14))
+
+### :robot: Continuous Integration
+
+- [[`51af83d`](https://github.com/flex-development/esast/commit/51af83d2552263100e99be406627a4985e89fa1b)] **deps:** Bump actions/checkout from 4.1.1 to 4.1.2 ([#16](https://github.com/flex-development/esast/issues/16))
+
+### :sparkles: Features
+
+- [[`e614e86`](https://github.com/flex-development/esast/commit/e614e867caf9991b17e8aef4fd6ae375b33e9ecb)] **content:** [node] `EsastNode`
+- [[`0c8009b`](https://github.com/flex-development/esast/commit/0c8009b6822b5963e76ee5e61d4ecab61269db00)] **nodes:** [`ImportSpecifier`] `kind`
+
+### :bug: Fixes
+
+- [[`0c95017`](https://github.com/flex-development/esast/commit/0c950173bd387bc12dced0dfa87b034b21bab383)] **nodes:** [`ExportNamedDeclaration`] define `children` as tuple union
+
+### :mechanical_arm: Refactors
+
+- [[`8604747`](https://github.com/flex-development/esast/commit/86047473dec6ec07335cbda8ede6d398b21b1094)] comment parents
+- [[`80a80bd`](https://github.com/flex-development/esast/commit/80a80bd81617fc49285a5a014015969d3d059190)] unist-util-types integration
+
 ## [1.0.0-alpha.3](https://github.com/flex-development/esast/compare/1.0.0-alpha.2...1.0.0-alpha.3) (2024-03-11)
 
 ### :bug: Fixes
@@ -163,6 +192,7 @@
 ### :mechanical_arm: Refactors
 
 - [[`1fbe902`](https://github.com/flex-development/esast/commit/1fbe902a306f53e9c8a4fadb88e8cd24a8dc0cd2)] **types:** `SourceType` -> `SourceMode`
+
 
 
 
