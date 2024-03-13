@@ -81,6 +81,7 @@
     "@flex-development/mkbuild": "1.0.0-alpha.23",
     "@flex-development/mlly": "1.0.0-alpha.18",
     "@flex-development/pathe": "2.0.0",
+    "@flex-development/unist-util-types": "1.0.0",
     "@types/eslint": "8.56.5",
     "@types/estree": "1.0.5",
     "@types/estree-jsx": "1.0.5",
@@ -134,6 +135,7 @@
   },
   "peerDependencies": {
     "@flex-development/docast": ">=1.0.0-alpha.14",
+    "@flex-development/unist-util-types": ">=1.0.0",
     "@types/mdast": ">=4.0.3",
     "@types/unist": ">=3.0.2"
   },

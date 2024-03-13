@@ -5,6 +5,9 @@
 
 export type { default as AnyClass } from './any-class'
 export type { default as AnyFunction } from './any-function'
+export type { default as AnyNode } from './any-node'
+export type { default as AnyParent } from './any-parent'
+export type { default as Child } from './child'
 export type { default as EcmaVersion } from './ecma-version'
 export type { default as CommentKind } from './kind-comment'
 export type { default as ImportSpecifierKind } from './kind-import-specifier'

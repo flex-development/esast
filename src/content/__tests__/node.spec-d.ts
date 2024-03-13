@@ -3,8 +3,6 @@
  * @module esast/content/tests/unit-d/node
  */
 
-import type { AnyNodeHelper } from '#tests/types'
-import * as docast from '@flex-development/docast'
 import type {
   CatchClause,
   ClassBody,
@@ -17,7 +15,6 @@ import type {
   MethodDefinition,
   Nothing,
   ParameterList,
-  Parent,
   PatternMap,
   Property,
   PropertyDefinition,
@@ -30,30 +27,10 @@ import type {
   TemplateElement,
   VariableDeclarator
 } from '@flex-development/esast'
+import type { InclusiveDescendant } from '@flex-development/unist-util-types'
 import type * as TestSubject from '../node'
 
 describe('unit-d:content/node', () => {
-  describe('AnyNode', () => {
-    it('should equal NodeMap[keyof NodeMap]', () => {
-      expectTypeOf<TestSubject.AnyNode>()
-        .toEqualTypeOf<TestSubject.NodeMap[keyof TestSubject.NodeMap]>
-    })
-  })
-
-  describe('AnyParent', () => {
-    it('should equal Extract<AnyNode, Parent>', () => {
-      expectTypeOf<TestSubject.AnyParent>()
-        .toEqualTypeOf<Extract<TestSubject.AnyNode, Parent>>
-    })
-  })
-
-  describe('Child', () => {
-    it('should equal Exclude<AnyNode, { type: "root" }>', () => {
-      expectTypeOf<TestSubject.Child>()
-        .toEqualTypeOf<Exclude<TestSubject.AnyNode, { type: 'root' }>>
-    })
-  })
-
   describe('NodeMap', () => {
     it('should extend HeritageMap', () => {
       expectTypeOf<TestSubject.NodeMap>().toMatchTypeOf<HeritageMap>()
@@ -69,21 +46,6 @@ describe('unit-d:content/node', () => {
 
     it('should extend StatementMap', () => {
       expectTypeOf<TestSubject.NodeMap>().toMatchTypeOf<StatementMap>()
-    })
-
-    it('should extend docast.BlockTagContentMap', () => {
-      expectTypeOf<TestSubject.NodeMap>()
-        .toMatchTypeOf<docast.BlockTagContentMap>()
-    })
-
-    it('should extend docast.BlockTagContentMap', () => {
-      expectTypeOf<TestSubject.NodeMap>()
-        .toMatchTypeOf<docast.BlockTagContentMap>()
-    })
-
-    it('should extend docast.FlowContentMap', () => {
-      expectTypeOf<TestSubject.NodeMap>()
-        .toMatchTypeOf<docast.FlowContentMap>()
     })
 
     it('should match [catchClause: CatchClause]', () => {
@@ -196,10 +158,11 @@ describe('unit-d:content/node', () => {
 
     it('should register all nodes', () => {
       // Arrange
-      type Registry = TestSubject.NodeMap[keyof TestSubject.NodeMap]
+      type Nodes = InclusiveDescendant<Root>
+      type Subject = TestSubject.NodeMap[keyof TestSubject.NodeMap]
 
       // Expect
-      expectTypeOf<Exclude<AnyNodeHelper, Registry>>().toEqualTypeOf<never>()
+      expectTypeOf<Exclude<Subject, Nodes>>().toEqualTypeOf<never>()
     })
   })
 })

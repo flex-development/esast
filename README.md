@@ -55,7 +55,7 @@ extended to support other JavaScript-based languages, like [TypeScript][typescri
 TypeScript users can integrate `esast` type definitions into their project by installing the appropriate packages:
 
 ```sh
-yarn add @flex-development/esast @flex-development/docast @types/mdast @types/unist
+yarn add @flex-development/esast @flex-development/docast @flex-development/unist-util-types @types/mdast @types/unist
 ```
 
 <blockquote>
