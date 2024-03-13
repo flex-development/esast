@@ -29,6 +29,20 @@ import type {
 } from '@flex-development/esast'
 
 /**
+ * Union of registered esast nodes.
+ *
+ * To register custom esast nodes, augment one of the following maps:
+ *
+ * - {@linkcode HeritageMap}
+ * - {@linkcode NodeMap}
+ * - {@linkcode PatternMap}
+ * - {@linkcode StatementMap}
+ *
+ * They will be added to this union automatically.
+ */
+type EsastNode = NodeMap[keyof NodeMap]
+
+/**
  * Registry of esast nodes.
  *
  * This interface can be augmented to register custom node types.
@@ -66,4 +80,4 @@ interface NodeMap extends HeritageMap, PatternMap, RootMap, StatementMap {
   variableDeclarator: VariableDeclarator
 }
 
-export type { NodeMap }
+export type { EsastNode, NodeMap }

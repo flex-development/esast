@@ -31,6 +31,13 @@ import type { InclusiveDescendant } from '@flex-development/unist-util-types'
 import type * as TestSubject from '../node'
 
 describe('unit-d:content/node', () => {
+  describe('EsastNode', () => {
+    it('should equal NodeMap[keyof NodeMap]', () => {
+      expectTypeOf<TestSubject.EsastNode>()
+        .toEqualTypeOf<TestSubject.NodeMap[keyof TestSubject.NodeMap]>
+    })
+  })
+
   describe('NodeMap', () => {
     it('should extend HeritageMap', () => {
       expectTypeOf<TestSubject.NodeMap>().toMatchTypeOf<HeritageMap>()
