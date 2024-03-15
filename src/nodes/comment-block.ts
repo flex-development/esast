@@ -5,7 +5,7 @@
 
 import * as docast from '@flex-development/docast'
 import type { Comment, CommentData, CommentKind } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with block comments.
@@ -14,7 +14,23 @@ import type { Optional } from '@flex-development/tutils'
  *
  * @extends {CommentData}
  */
-interface BlockCommentData extends CommentData {}
+interface BlockCommentData extends CommentData {
+  /**
+   * Leading comment?
+   *
+   * Leading comments start and end on the same `start` line as the node they
+   * precede.
+   */
+  leading?: Nilable<boolean>
+
+  /**
+   * Trailing comment?
+   *
+   * Trailing comments start and end on the same `end` line as the node they
+   * succeed.
+   */
+  trailing?: Nilable<boolean>
+}
 
 /**
  * A block comment.

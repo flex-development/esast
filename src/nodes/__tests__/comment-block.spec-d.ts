@@ -4,7 +4,7 @@
  */
 
 import type { Comment, CommentData } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../comment-block'
 
 describe('unit-d:nodes/BlockComment', () => {
@@ -28,6 +28,18 @@ describe('unit-d:nodes/BlockComment', () => {
   describe('BlockCommentData', () => {
     it('should extend CommentData', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<CommentData>()
+    })
+
+    it('should match [leading?: Nilable<boolean>]', () => {
+      expectTypeOf<SubjectData>()
+        .toHaveProperty('leading')
+        .toEqualTypeOf<Nilable<boolean>>()
+    })
+
+    it('should match [trailing?: Nilable<boolean>]', () => {
+      expectTypeOf<SubjectData>()
+        .toHaveProperty('trailing')
+        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })
