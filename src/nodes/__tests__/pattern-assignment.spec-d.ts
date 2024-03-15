@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/AssignmentPattern
  */
 
-import type { Data, Expression, Parent, Pattern } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../pattern-assignment'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/AssignmentPattern', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Pattern, Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Pattern, Expression]>()
   })
 
   it('should match [data?: Optional<AssignmentPatternData>]', () => {

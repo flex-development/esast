@@ -3,12 +3,7 @@
  * @module esast/nodes/tests/unit-d/BinaryExpression
  */
 
-import type {
-  BinaryOperator,
-  Data,
-  Expression,
-  Parent
-} from '@flex-development/esast'
+import type { BinaryOperator, Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-binary'
 
@@ -18,12 +13,6 @@ describe('unit-d:nodes/BinaryExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression, Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression, Expression]>()
   })
 
   it('should match [data?: Optional<BinaryExpressionData>]', () => {

@@ -5,6 +5,7 @@
 
 import type {
   AssignmentOperator,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -32,10 +33,11 @@ interface AssignmentExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
    */
-  children: [left: Pattern, right: Expression]
+  children: [left: Pattern, ...comments: Comments, right: Expression]
 
   /**
    * Info from the ecosystem.

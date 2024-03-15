@@ -3,7 +3,14 @@
  * @module esast/nodes/VariableDeclarator
  */
 
-import type { Data, Expression, Parent, Pattern } from '@flex-development/esast'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Expression,
+  Parent,
+  Pattern
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,10 +33,13 @@ interface VariableDeclarator extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
    */
-  children: [id: Pattern, init: Expression] | [id: Pattern]
+  children:
+    | [id: Pattern, ...comments: Comments, init: Expression]
+    | [id: Pattern]
 
   /**
    * Info from the ecosystem.

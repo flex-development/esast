@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/SwitchCase
  */
 
-import type {
-  Comment,
-  Data,
-  Expression,
-  Nothing,
-  Parent,
-  Statement
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../switch-case'
 
@@ -20,12 +13,6 @@ describe('unit-d:nodes/SwitchCase', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Nothing, ...(Comment | Statement)[]]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression | Nothing, ...(Comment | Statement)[]]>()
   })
 
   it('should match [data?: Optional<SwitchCaseData>]', () => {

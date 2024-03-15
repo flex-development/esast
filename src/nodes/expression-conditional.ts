@@ -3,7 +3,14 @@
  * @module esast/nodes/ConditionalExpression
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type { InternalComments } from '#internal'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Expression,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +33,16 @@ interface ConditionalExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: [test: Expression, alternate: Expression, consequent: Expression]
+  children: [
+    test: Expression,
+    ...comments: Comments,
+    alternate: Expression,
+    ...comments: InternalComments,
+    consequent: Expression
+  ]
 
   /**
    * Info from the ecosystem.

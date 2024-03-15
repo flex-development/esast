@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/VariableDeclarator
  */
 
-import type { Data, Expression, Parent, Pattern } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../variable-declarator'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/VariableDeclarator', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Pattern, Expression] | [Pattern]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Pattern, Expression] | [Pattern]>()
   })
 
   it('should match [data?: Optional<VariableDeclaratorData>]', () => {

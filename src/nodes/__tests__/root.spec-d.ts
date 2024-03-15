@@ -7,7 +7,6 @@ import type {
   Data,
   EcmaVersion,
   Parent,
-  RootChild,
   SourceMode
 } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
@@ -19,12 +18,6 @@ describe('unit-d:nodes/Root', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: RootChild[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<RootChild[]>()
   })
 
   it('should match [data?: Optional<RootData>]', () => {

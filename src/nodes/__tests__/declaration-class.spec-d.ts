@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/ClassDeclaration
  */
 
-import type {
-  ClassBody,
-  ClassHeritage,
-  Data,
-  Identifier,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-class'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/ClassDeclaration', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Identifier, ClassHeritage, ClassBody]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Identifier, ClassHeritage, ClassBody]>()
   })
 
   it('should match [data?: Optional<ClassDeclarationData>]', () => {

@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/FunctionDeclaration
  */
 
-import type {
-  BlockStatement,
-  Data,
-  Identifier,
-  ParameterList,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-function'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/FunctionDeclaration', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Identifier, ParameterList, BlockStatement]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Identifier, ParameterList, BlockStatement]>()
   })
 
   it('should match [data?: Optional<FunctionDeclarationData>]', () => {

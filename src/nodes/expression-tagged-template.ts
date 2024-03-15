@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,10 +33,11 @@ interface TaggedTemplateExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode TemplateLiteral}
    */
-  children: [tag: Expression, quasi: TemplateLiteral]
+  children: [tag: Expression, ...comments: Comments, quasi: TemplateLiteral]
 
   /**
    * Info from the ecosystem.

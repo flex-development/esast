@@ -29,6 +29,7 @@
     "noUnusedParameters": false,
     "outDir": "dist",
     "paths": {
+      "#internal": ["src/internal/index"],
       "#src/*": ["src/*"],
       "#tests/*": ["__tests__/*"],
       "@flex-development/esast": ["src/index"]

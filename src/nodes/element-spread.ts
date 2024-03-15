@@ -3,7 +3,12 @@
  * @module esast/nodes/SpreadElement
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type {
+  Comments,
+  Data,
+  Expression,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +31,11 @@ interface SpreadElement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
+   *
    * @see {@linkcode Expression}
    */
-  children: [argument: Expression]
+  children: [...comments: Comments, argument: Expression]
 
   /**
    * Info from the ecosystem.

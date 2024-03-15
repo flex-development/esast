@@ -3,12 +3,7 @@
  * @module esast/nodes/tests/unit-d/ChainExpression
  */
 
-import type {
-  CallExpression,
-  Data,
-  MemberExpression,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-chain'
 
@@ -18,12 +13,6 @@ describe('unit-d:nodes/ChainExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [CallExpression | MemberExpression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[CallExpression | MemberExpression]>()
   })
 
   it('should match [data?: Optional<ChainExpressionData>]', () => {

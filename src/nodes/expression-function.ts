@@ -3,8 +3,11 @@
  * @module esast/nodes/FunctionExpression
  */
 
+import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
+  Comment,
+  Comments,
   Data,
   Expression,
   Identifier,
@@ -53,13 +56,17 @@ interface FunctionExpression extends Parent {
    * Function expressions can only have block statement bodies.
    *
    * @see {@linkcode BlockStatement}
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode Nothing}
    * @see {@linkcode ParameterList}
    */
   children: [
+    ...comments: Comments,
     id: Identifier | Nothing,
+    ...comments: InternalComments,
     params: ParameterList,
+    ...comments: InternalComments,
     body: BlockStatement | Expression
   ]
 

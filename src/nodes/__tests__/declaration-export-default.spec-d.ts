@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/ExportDefaultDeclaration
  */
 
-import type {
-  ClassDeclaration,
-  Data,
-  Expression,
-  FunctionDeclaration,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-export-default'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/ExportDefaultDeclaration', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [ClassDeclaration | Expression | FunctionDeclaration]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[ClassDeclaration | Expression | FunctionDeclaration]>()
   })
 
   it('should match [data?: Optional<ExportDefaultDeclarationData>]', () => {

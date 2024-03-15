@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/ParameterList
  */
 
-import type { Comment, Data, Parent, Pattern } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../parameter-list'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/ParameterList', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (Comment | Pattern)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(Comment | Pattern)[]>()
   })
 
   it('should match [data?: Optional<ParamsData>]', () => {

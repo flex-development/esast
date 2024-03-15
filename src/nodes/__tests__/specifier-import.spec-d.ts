@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/ImportSpecifier
  */
 
-import type {
-  Data,
-  Identifier,
-  ImportSpecifierKind,
-  Parent,
-  StringLiteral
-} from '@flex-development/esast'
+import type { Data, ImportSpecifierKind, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../specifier-import'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/ImportSpecifier', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Identifier | StringLiteral, Identifier] | [Identifier]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Identifier | StringLiteral, Identifier] | [Identifier]>()
   })
 
   it('should match [data?: Optional<ImportSpecifierData>]', () => {

@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   LogicalOperator,
@@ -31,9 +33,10 @@ interface LogicalExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: [left: Expression, right: Expression]
+  children: [left: Expression, ...comments: Comments, right: Expression]
 
   /**
    * Info from the ecosystem.

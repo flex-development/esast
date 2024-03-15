@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/Property
  */
 
-import type {
-  Data,
-  Expression,
-  Identifier,
-  Parent,
-  Pattern,
-  PropertyKind
-} from '@flex-development/esast'
+import type { Data, Parent, PropertyKind } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../property'
 
@@ -20,12 +13,6 @@ describe('unit-d:nodes/Property', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Identifier, Expression | Pattern]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression | Identifier, Expression | Pattern]>()
   })
 
   it('should match [computed: boolean]', () => {

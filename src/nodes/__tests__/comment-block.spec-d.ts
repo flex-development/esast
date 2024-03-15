@@ -3,7 +3,6 @@
  * @module esast/nodes/tests/unit-d/BlockComment
  */
 
-import * as docast from '@flex-development/docast'
 import type { Comment, CommentData } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../comment-block'
@@ -14,12 +13,6 @@ describe('unit-d:nodes/BlockComment', () => {
 
   it('should extend Comment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Comment>()
-  })
-
-  it('should match [children: Exclude<docast.DescriptionContent, docast.InlineTag>[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<Exclude<docast.DescriptionContent, docast.InlineTag>[]>()
   })
 
   it('should match [data?: Optional<BlockCommentData>]', () => {

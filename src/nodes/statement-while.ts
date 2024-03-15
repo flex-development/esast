@@ -3,7 +3,10 @@
  * @module esast/nodes/WhileStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,10 +34,16 @@ interface WhileStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Statement}
    */
-  children: [test: Expression, body: Statement]
+  children: [
+    ...comments: Comments,
+    test: Expression,
+    ...comments: InternalComments,
+    body: Statement
+  ]
 
   /**
    * Info from the ecosystem.

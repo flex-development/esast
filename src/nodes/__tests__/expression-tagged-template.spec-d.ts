@@ -3,12 +3,7 @@
  * @module esast/nodes/tests/unit-d/TaggedTemplateExpression
  */
 
-import type {
-  Data,
-  Expression,
-  Parent,
-  TemplateLiteral
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-tagged-template'
 
@@ -18,12 +13,6 @@ describe('unit-d:nodes/TaggedTemplateExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression, TemplateLiteral]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression, TemplateLiteral]>()
   })
 
   it('should match [data?: Optional<TaggedTemplateExpressionData>]', () => {

@@ -3,7 +3,10 @@
  * @module esast/nodes/DoWhileStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,10 +34,16 @@ interface DoWhileStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Statement}
    */
-  children: [body: Statement, test: Expression]
+  children: [
+    ...comments: Comments,
+    body: Statement,
+    ...comments: InternalComments,
+    test: Expression
+  ]
 
   /**
    * Info from the ecosystem.

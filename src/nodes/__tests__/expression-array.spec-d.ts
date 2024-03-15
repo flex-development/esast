@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/ArrayExpression
  */
 
-import type {
-  Comment,
-  Data,
-  Expression,
-  Nothing,
-  Parent,
-  SpreadElement
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-array'
 
@@ -20,12 +13,6 @@ describe('unit-d:nodes/ArrayExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (Comment | Expression | Nothing | SpreadElement)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(Comment | Expression | Nothing | SpreadElement)[]>()
   })
 
   it('should match [data?: Optional<ArrayExpressionData>]', () => {

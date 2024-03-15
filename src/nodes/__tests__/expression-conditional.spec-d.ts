@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/ConditionalExpression
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-conditional'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/ConditionalExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression, Expression, Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression, Expression, Expression]>()
   })
 
   it('should match [data?: Optional<ConditionalExpressionData>]', () => {

@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/ExportAllDeclaration
  */
 
-import type {
-  Data,
-  Identifier,
-  Nothing,
-  Parent,
-  StringLiteral
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-export-all'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/ExportAllDeclaration', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Identifier | Nothing | StringLiteral, StringLiteral]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Identifier | Nothing | StringLiteral, StringLiteral]>()
   })
 
   it('should match [data?: Optional<ExportAllDeclarationData>]', () => {

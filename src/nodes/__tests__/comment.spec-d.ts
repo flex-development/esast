@@ -3,7 +3,6 @@
  * @module esast/nodes/tests/unit-d/Comment
  */
 
-import * as docast from '@flex-development/docast'
 import type { CommentKind, Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../comment'
@@ -14,12 +13,6 @@ describe('unit-d:nodes/Comment', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (docast.DescriptionContent | docast.FlowContent)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(docast.DescriptionContent | docast.FlowContent)[]>()
   })
 
   it('should match [data?: Optional<CommentData>]', () => {

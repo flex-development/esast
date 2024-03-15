@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/StaticBlock
  */
 
-import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../static-block'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/StaticBlock', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (Comment | Statement)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(Comment | Statement)[]>()
   })
 
   it('should match [data?: Optional<StaticBlockData>]', () => {

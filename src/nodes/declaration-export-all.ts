@@ -3,7 +3,10 @@
  * @module esast/nodes/ExportAllDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Identifier,
   Nothing,
@@ -32,12 +35,15 @@ interface ExportAllDeclaration extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode Nothing}
    * @see {@linkcode StringLiteral}
    */
   children: [
+    ...comments: Comments,
     exported: Identifier | Nothing | StringLiteral,
+    ...comments: InternalComments,
     source: StringLiteral
   ]
 

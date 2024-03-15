@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,9 +33,10 @@ interface UpdateExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: [argument: Expression]
+  children: [...comments: Comments, argument: Expression]
 
   /**
    * Info from the ecosystem.

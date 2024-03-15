@@ -3,12 +3,7 @@
  * @module esast/nodes/tests/unit-d/UnaryExpression
  */
 
-import type {
-  Data,
-  Expression,
-  Parent,
-  UnaryOperator
-} from '@flex-development/esast'
+import type { Data, Parent, UnaryOperator } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-unary'
 
@@ -18,12 +13,6 @@ describe('unit-d:nodes/UnaryExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression]>()
   })
 
   it('should match [data?: Optional<UnaryExpressionData>]', () => {

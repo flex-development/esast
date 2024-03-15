@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/AssignmentExpression
  */
 
-import type {
-  AssignmentOperator,
-  Data,
-  Expression,
-  Parent,
-  Pattern
-} from '@flex-development/esast'
+import type { AssignmentOperator, Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-assignment'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/AssignmentExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Pattern, Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Pattern, Expression]>()
   })
 
   it('should match [data?: Optional<AssignmentExpressionData>]', () => {

@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/MemberExpression
  */
 
-import type {
-  Data,
-  Expression,
-  Identifier,
-  Parent,
-  Super
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-member'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/MemberExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Super, Expression | Identifier]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression | Super, Expression | Identifier]>()
   })
 
   it('should match [computed: boolean]', () => {

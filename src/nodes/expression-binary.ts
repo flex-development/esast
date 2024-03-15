@@ -5,6 +5,7 @@
 
 import type {
   BinaryOperator,
+  Comments,
   Data,
   Expression,
   Parent
@@ -31,9 +32,10 @@ interface BinaryExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: [left: Expression, right: Expression]
+  children: [left: Expression, ...comments: Comments, right: Expression]
 
   /**
    * Info from the ecosystem.

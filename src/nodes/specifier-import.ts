@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Identifier,
   ImportSpecifierKind,
@@ -32,11 +34,16 @@ interface ImportSpecifier extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode StringLiteral}
    */
   children:
-    | [imported: Identifier | StringLiteral, local: Identifier]
+    | [
+      imported: Identifier | StringLiteral,
+      ...comments: Comments,
+      local: Identifier
+    ]
     | [local: Identifier]
 
   /**

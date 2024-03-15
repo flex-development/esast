@@ -3,9 +3,12 @@
  * @module esast/nodes/TryStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
   CatchClause,
+  Comment,
+  Comments,
   Data,
   Nothing,
   Parent
@@ -34,13 +37,24 @@ interface TryStatement extends Parent {
    *
    * @see {@linkcode BlockStatement}
    * @see {@linkcode CatchClause}
+   * @see {@linkcode Comment}
    * @see {@linkcode Nothing}
    */
   children:
-    | [block: BlockStatement, handler: CatchClause, finalizer: BlockStatement]
-    | [block: BlockStatement, handler: CatchClause]
-    | [block: BlockStatement, handler: Nothing, finalizer: BlockStatement]
-    | [block: BlockStatement]
+    | [
+      ...comments: Comments,
+      block: BlockStatement,
+      ...comments: InternalComments,
+      handler: CatchClause
+    ]
+    | [
+      ...comments: Comments,
+      block: BlockStatement,
+      ...comments: InternalComments,
+      handler: CatchClause | Nothing,
+      ...comments: InternalComments,
+      finalizer: BlockStatement
+    ]
 
   /**
    * Info from the ecosystem.

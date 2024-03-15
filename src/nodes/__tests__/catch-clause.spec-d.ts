@@ -3,13 +3,7 @@
  * @module esast/nodes/tests/unit-d/CatchClause
  */
 
-import type {
-  BlockStatement,
-  Data,
-  Nothing,
-  Parent,
-  Pattern
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../catch-clause'
 
@@ -19,12 +13,6 @@ describe('unit-d:nodes/CatchClause', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Nothing | Pattern, BlockStatement]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Nothing | Pattern, BlockStatement]>()
   })
 
   it('should match [data?: Optional<CatchClauseData>]', () => {

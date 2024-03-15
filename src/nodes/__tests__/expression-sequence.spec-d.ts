@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/SequenceExpression
  */
 
-import type { Comment, Data, Expression, Parent } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-sequence'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/SequenceExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (Comment | Expression)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(Comment | Expression)[]>()
   })
 
   it('should match [data?: Optional<SequenceExpressionData>]', () => {

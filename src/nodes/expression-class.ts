@@ -3,9 +3,12 @@
  * @module esast/nodes/ClassExpression
  */
 
+import type { InternalComments } from '#internal'
 import type {
   ClassBody,
   ClassHeritage,
+  Comment,
+  Comments,
   Data,
   Identifier,
   Nothing,
@@ -34,10 +37,18 @@ interface ClassExpression extends Parent {
    * List of children.
    *
    * @see {@linkcode ClassBody}
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode Nothing}
    */
-  children: [id: Identifier | Nothing, heritage: ClassHeritage, body: ClassBody]
+  children: [
+    ...comments: Comments,
+    id: Identifier | Nothing,
+    ...comments: InternalComments,
+    heritage: ClassHeritage,
+    ...comments: InternalComments,
+    body: ClassBody
+  ]
 
   /**
    * Info from the ecosystem.

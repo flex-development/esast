@@ -3,8 +3,11 @@
  * @module esast/nodes/FunctionDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
+  Comment,
+  Comments,
   Data,
   Identifier,
   ParameterList,
@@ -43,10 +46,18 @@ interface FunctionDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode BlockStatement}
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode ParameterList}
    */
-  children: [id: Identifier, params: ParameterList, body: BlockStatement]
+  children: [
+    ...comments: Comments,
+    id: Identifier,
+    ...comments: InternalComments,
+    params: ParameterList,
+    ...comments: InternalComments,
+    body: BlockStatement
+  ]
 
   /**
    * Info from the ecosystem.

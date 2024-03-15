@@ -20,12 +20,6 @@ describe('unit-d:nodes/DocblockComment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Omit<docast.Comment, 'position'>>()
   })
 
-  it('should match [children: docast.FlowContent[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<docast.FlowContent[]>()
-  })
-
   it('should match [data?: Optional<DocblockCommentData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')

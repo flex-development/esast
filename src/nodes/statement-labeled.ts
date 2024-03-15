@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Identifier,
   Parent,
@@ -31,10 +33,11 @@ interface LabeledStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    * @see {@linkcode Statement}
    */
-  children: [label: Identifier, body: Statement]
+  children: [label: Identifier, ...comments: Comments, body: Statement]
 
   /**
    * Info from the ecosystem.

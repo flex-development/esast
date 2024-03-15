@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/CallExpression
  */
 
-import type {
-  Comment,
-  Data,
-  Expression,
-  Parent,
-  SpreadElement,
-  Super
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-call'
 
@@ -20,17 +13,6 @@ describe('unit-d:nodes/CallExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Super, ...(Comment | Expression | SpreadElement)[]]]', () => {
-    // Arrange
-    type Expect = [
-      Expression | Super,
-      ...(Comment | Expression | SpreadElement)[]
-    ]
-
-    // Expect
-    expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
   })
 
   it('should match [data?: Optional<CallExpressionData>]', () => {

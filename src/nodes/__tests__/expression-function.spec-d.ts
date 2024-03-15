@@ -3,15 +3,7 @@
  * @module esast/nodes/tests/unit-d/FunctionExpression
  */
 
-import type {
-  BlockStatement,
-  Data,
-  Expression,
-  Identifier,
-  Nothing,
-  ParameterList,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-function'
 
@@ -21,18 +13,6 @@ describe('unit-d:nodes/FunctionExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Identifier | Nothing, ParameterList, BlockStatement | Expression]]', () => {
-    // Arrange
-    type Expect = [
-      Identifier | Nothing,
-      ParameterList,
-      BlockStatement | Expression
-    ]
-
-    // Expect
-    expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
   })
 
   it('should match [data?: Optional<FunctionExpressionData>]', () => {

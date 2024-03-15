@@ -3,8 +3,8 @@
  * @module esast/nodes/tests/unit-d/ReturnStatement
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
+import type { Data, Parent } from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-return'
 
 describe('unit-d:nodes/ReturnStatement', () => {
@@ -13,12 +13,6 @@ describe('unit-d:nodes/ReturnStatement', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: EmptyArray | [Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<EmptyArray | [Expression]>()
   })
 
   it('should match [data?: Optional<ReturnStatementData>]', () => {

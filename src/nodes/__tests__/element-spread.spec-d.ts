@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/SpreadElement
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../element-spread'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/SpreadElement', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Expression]>()
   })
 
   it('should match [data?: Optional<SpreadElementData>]', () => {

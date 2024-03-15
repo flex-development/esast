@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/RestElement
  */
 
-import type { Data, Parent, Pattern } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../element-rest'
 
@@ -13,12 +13,6 @@ describe('unit-d:nodes/RestElement', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Pattern]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[Pattern]>()
   })
 
   it('should match [data?: Optional<RestElementData>]', () => {

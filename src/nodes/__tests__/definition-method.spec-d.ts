@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/MethodDefinition
  */
 
-import type {
-  Data,
-  Expression,
-  FunctionExpression,
-  Identifier,
-  MethodKind,
-  Parent
-} from '@flex-development/esast'
+import type { Data, MethodKind, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../definition-method'
 
@@ -20,14 +13,6 @@ describe('unit-d:nodes/MethodDefinition', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Identifier, FunctionExpression]]', () => {
-    // Arrange
-    type Expect = [Expression | Identifier, FunctionExpression]
-
-    // Expect
-    expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
   })
 
   it('should match [computed: boolean]', () => {

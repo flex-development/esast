@@ -3,7 +3,10 @@
  * @module esast/nodes/PropertyDefinition
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Identifier,
@@ -31,12 +34,18 @@ interface PropertyDefinition extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
    */
   children:
-    | [key: Expression | Identifier, value: Expression]
-    | [key: Expression | Identifier]
+    | [
+      ...comments: Comments,
+      key: Expression | Identifier,
+      ...comments: InternalComments,
+      value: Expression
+    ]
+    | [...comments: Comments, key: Expression | Identifier]
 
   /**
    * Boolean indicating if property name is computed.

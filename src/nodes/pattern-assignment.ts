@@ -3,7 +3,14 @@
  * @module esast/nodes/AssignmentPattern
  */
 
-import type { Data, Expression, Parent, Pattern } from '@flex-development/esast'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Expression,
+  Parent,
+  Pattern
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,10 +33,11 @@ interface AssignmentPattern extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
    */
-  children: [left: Pattern, right: Expression]
+  children: [left: Pattern, ...comments: Comments, right: Expression]
 
   /**
    * Info from the ecosystem.

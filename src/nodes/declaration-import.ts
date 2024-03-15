@@ -3,7 +3,10 @@
  * @module esast/nodes/ImportDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   ImportSpecifiers,
   Parent,
@@ -31,10 +34,16 @@ interface ImportDeclaration extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode ImportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
-  children: [specifiers: ImportSpecifiers, source: StringLiteral]
+  children: [
+    ...comments: Comments,
+    specifiers: ImportSpecifiers,
+    ...comments: InternalComments,
+    source: StringLiteral
+  ]
 
   /**
    * Info from the ecosystem.

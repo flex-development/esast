@@ -3,7 +3,10 @@
  * @module esast/nodes/MethodDefinition
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   FunctionExpression,
@@ -33,11 +36,17 @@ interface MethodDefinition extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionExpression}
    * @see {@linkcode Identifier}
    */
-  children: [key: Expression | Identifier, value: FunctionExpression]
+  children: [
+    ...comments: Comments,
+    key: Expression | Identifier,
+    ...comments: InternalComments,
+    value: FunctionExpression
+  ]
 
   /**
    * Boolean indicating if method is a computed property.

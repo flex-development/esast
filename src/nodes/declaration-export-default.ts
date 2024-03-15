@@ -5,6 +5,8 @@
 
 import type {
   ClassDeclaration,
+  Comment,
+  Comments,
   Data,
   Expression,
   FunctionDeclaration,
@@ -33,10 +35,14 @@ interface ExportDefaultDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode ClassDeclaration}
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionDeclaration}
    */
-  children: [declaration: ClassDeclaration | Expression | FunctionDeclaration]
+  children: [
+    ...comments: Comments,
+    declaration: ClassDeclaration | Expression | FunctionDeclaration
+  ]
 
   /**
    * Info from the ecosystem.

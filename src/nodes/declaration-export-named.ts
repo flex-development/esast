@@ -3,11 +3,13 @@
  * @module esast/nodes/ExportNamedDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Declaration,
   ExportSpecifiers,
-  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -33,15 +35,20 @@ interface ExportNamedDeclaration extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Declaration}
    * @see {@linkcode ExportSpecifiers}
-   * @see {@linkcode Nothing}
    * @see {@linkcode StringLiteral}
    */
   children:
-    | [declaration: Declaration]
-    | [specifiers: ExportSpecifiers, source: StringLiteral]
-    | [specifiers: ExportSpecifiers]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers,
+      ...comments: InternalComments,
+      source: StringLiteral
+    ]
+    | [...comments: Comments, declaration: Declaration]
+    | [...comments: Comments, specifiers: ExportSpecifiers]
 
   /**
    * Info from the ecosystem.

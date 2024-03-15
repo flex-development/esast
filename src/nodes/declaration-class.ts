@@ -3,9 +3,11 @@
  * @module esast/nodes/ClassDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
   ClassBody,
   ClassHeritage,
+  Comments,
   Data,
   Identifier,
   Parent
@@ -36,7 +38,14 @@ interface ClassDeclaration extends Parent {
    * @see {@linkcode ClassHeritage}
    * @see {@linkcode Identifier}
    */
-  children: [id: Identifier, heritage: ClassHeritage, body: ClassBody]
+  children: [
+    ...comments: Comments,
+    id: Identifier,
+    ...comments: InternalComments,
+    heritage: ClassHeritage,
+    ...comments: InternalComments,
+    body: ClassBody
+  ]
 
   /**
    * Info from the ecosystem.

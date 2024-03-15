@@ -3,7 +3,10 @@
  * @module esast/nodes/WithStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,10 +34,16 @@ interface WithStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Statement}
    */
-  children: [object: Expression, body: Statement]
+  children: [
+    ...comments: Comments,
+    object: Expression,
+    ...comments: InternalComments,
+    body: Statement
+  ]
 
   /**
    * Info from the ecosystem.

@@ -3,7 +3,13 @@
  * @module esast/nodes/ContinueStatement
  */
 
-import type { Data, Identifier, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Identifier,
+  Parent
+} from '@flex-development/esast'
 import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +32,10 @@ interface ContinueStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    */
-  children: EmptyArray | [label: Identifier]
+  children: EmptyArray | [...comments: Comments, label: Identifier]
 
   /**
    * Info from the ecosystem.

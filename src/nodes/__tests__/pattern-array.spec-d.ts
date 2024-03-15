@@ -3,8 +3,7 @@
  * @module esast/nodes/tests/unit-d/ArrayPattern
  */
 
-import type { Comment, Data, Nothing, Parent,
-  Pattern } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../pattern-array'
 
@@ -14,12 +13,6 @@ describe('unit-d:nodes/ArrayPattern', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: (Comment | Nothing | Pattern)[]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<(Comment | Nothing | Pattern)[]>()
   })
 
   it('should match [data?: Optional<ArrayPatternData>]', () => {

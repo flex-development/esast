@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Identifier,
@@ -38,11 +40,16 @@ interface Property extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
    * @see {@linkcode Pattern}
    */
-  children: [key: Expression | Identifier, value: Expression | Pattern]
+  children: [
+    key: Expression | Identifier,
+    ...comments: Comments,
+    value: Expression | Pattern
+  ]
 
   /**
    * Boolean indicating if property is computed.

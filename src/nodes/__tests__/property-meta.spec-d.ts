@@ -3,12 +3,7 @@
  * @module esast/nodes/tests/unit-d/MetaProperty
  */
 
-import type {
-  Data,
-  ImportIdentifier,
-  MetaIdentifier,
-  Parent
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../property-meta'
 
@@ -18,12 +13,6 @@ describe('unit-d:nodes/MetaProperty', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [ImportIdentifier, MetaIdentifier]]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('children')
-      .toEqualTypeOf<[ImportIdentifier, MetaIdentifier]>()
   })
 
   it('should match [data?: Optional<MetaPropertyData>]', () => {

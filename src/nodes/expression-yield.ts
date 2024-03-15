@@ -3,7 +3,13 @@
  * @module esast/nodes/YieldExpression
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Expression,
+  Parent
+} from '@flex-development/esast'
 import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +32,10 @@ interface YieldExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: EmptyArray | [argument: Expression]
+  children: EmptyArray | [...comments: Comments, argument: Expression]
 
   /**
    * Info from the ecosystem.

@@ -3,7 +3,10 @@
  * @module esast/nodes/ForXStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Expression,
   Parent,
   Pattern,
@@ -22,14 +25,18 @@ interface ForXStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
    * @see {@linkcode Statement}
    * @see {@linkcode VariableDeclaration}
    */
   children: [
+    ...comments: Comments,
     left: Pattern | VariableDeclaration,
+    ...comments: InternalComments,
     right: Expression,
+    ...comments: InternalComments,
     body: Statement
   ]
 

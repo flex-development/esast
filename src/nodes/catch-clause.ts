@@ -3,6 +3,7 @@
  * @module esast/nodes/CatchClause
  */
 
+import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
   Data,
@@ -36,7 +37,12 @@ interface CatchClause extends Parent {
    * @see {@linkcode Nothing}
    * @see {@linkcode Pattern}
    */
-  children: [param: Nothing | Pattern, body: BlockStatement]
+  children: [
+    ...comments: InternalComments,
+    param: Nothing | Pattern,
+    ...comments: InternalComments,
+    body: BlockStatement
+  ]
 
   /**
    * Info from the ecosystem.

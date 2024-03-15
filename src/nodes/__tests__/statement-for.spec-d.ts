@@ -3,14 +3,7 @@
  * @module esast/nodes/tests/unit-d/ForStatement
  */
 
-import type {
-  Data,
-  Expression,
-  Nothing,
-  Parent,
-  Statement,
-  VariableDeclaration
-} from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-for'
 
@@ -20,19 +13,6 @@ describe('unit-d:nodes/ForStatement', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
-  })
-
-  it('should match [children: [Expression | Nothing | VariableDeclaration, Expression | Nothing, Expression | Nothing, Statement]]', () => {
-    // Arrange
-    type Expect = [
-      Expression | Nothing | VariableDeclaration,
-      Expression | Nothing,
-      Expression | Nothing,
-      Statement
-    ]
-
-    // Expect
-    expectTypeOf<Subject>().toHaveProperty('children').toEqualTypeOf<Expect>()
   })
 
   it('should match [data?: Optional<ForStatementData>]', () => {

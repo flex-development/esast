@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   ImportIdentifier,
   MetaIdentifier,
@@ -31,10 +33,15 @@ interface MetaProperty extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode ImportIdentifier}
    * @see {@linkcode MetaIdentifier}
    */
-  children: [meta: ImportIdentifier, property: MetaIdentifier]
+  children: [
+    meta: ImportIdentifier,
+    ...comments: Comments,
+    property: MetaIdentifier
+  ]
 
   /**
    * Info from the ecosystem.

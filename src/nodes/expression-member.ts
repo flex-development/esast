@@ -4,6 +4,8 @@
  */
 
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Identifier,
@@ -32,11 +34,16 @@ interface MemberExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
    * @see {@linkcode Super}
    */
-  children: [object: Expression | Super, property: Expression | Identifier]
+  children: [
+    object: Expression | Super,
+    ...comments: Comments,
+    property: Expression | Identifier
+  ]
 
   /**
    * Boolean indicating if member expression property is computed.

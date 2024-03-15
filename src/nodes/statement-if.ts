@@ -3,7 +3,10 @@
  * @module esast/nodes/IfStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
+  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
@@ -31,12 +34,25 @@ interface IfStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Statement}
    */
   children:
-    | [test: Expression, consequent: Statement, alternate: Statement]
-    | [test: Expression, consequent: Statement]
+    | [
+      ...comments: Comments,
+      test: Expression,
+      ...comments: InternalComments,
+      consequent: Statement
+    ]
+    | [
+      ...comments: Comments,
+      test: Expression,
+      ...comments: InternalComments,
+      consequent: Statement,
+      ...comments: InternalComments,
+      alternate: Statement
+    ]
 
   /**
    * Info from the ecosystem.

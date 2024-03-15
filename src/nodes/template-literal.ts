@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comment,
   Data,
   Expression,
   Parent,
@@ -31,10 +32,11 @@ interface TemplateLiteral extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode TemplateElement}
    */
-  children: (Expression | TemplateElement)[]
+  children: (Comment | Expression | TemplateElement)[]
 
   /**
    * Info from the ecosystem.

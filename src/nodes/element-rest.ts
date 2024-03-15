@@ -3,7 +3,7 @@
  * @module esast/nodes/RestElement
  */
 
-import type { Data, Parent, Pattern } from '@flex-development/esast'
+import type { Comments, Data, Parent, Pattern } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +26,11 @@ interface RestElement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
+   *
    * @see {@linkcode Pattern}
    */
-  children: [argument: Pattern]
+  children: [...comments: Comments, argument: Pattern]
 
   /**
    * Info from the ecosystem.

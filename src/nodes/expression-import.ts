@@ -3,7 +3,13 @@
  * @module esast/nodes/ImportExpression
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Expression,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,9 +32,10 @@ interface ImportExpression extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: [source: Expression]
+  children: [...comments: Comments, source: Expression]
 
   /**
    * Info from the ecosystem.
