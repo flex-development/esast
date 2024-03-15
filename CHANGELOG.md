@@ -1,3 +1,23 @@
+## [1.0.0-alpha.5](https://github.com/flex-development/esast/compare/1.0.0-alpha.4...1.0.0-alpha.5) (2024-03-15)
+
+### :package: Build
+
+- [[`a66cec6`](https://github.com/flex-development/esast/commit/a66cec6fd659434d72cb793b55e99aae58acac23)] **deps-dev:** Bump esbuild from 0.20.1 to 0.20.2 ([#19](https://github.com/flex-development/esast/issues/19))
+- [[`949d7c1`](https://github.com/flex-development/esast/commit/949d7c105f304e12ff3126c7092252fe75873283)] **deps-peer:** bump @flex-development/unist-util-types from 1.0.0 to 1.1.0
+
+### :pencil: Documentation
+
+- [[`5b0efc7`](https://github.com/flex-development/esast/commit/5b0efc71f83ba3353eb349e94e5da747d2e46264)] [contributing] fix commitlint config reference
+
+### :sparkles: Features
+
+- [[`f91b7cc`](https://github.com/flex-development/esast/commit/f91b7cc9b47ffb2fc7868a939582c7e9395bd58b)] **nodes:** leading and trailing comments
+- [[`0075a66`](https://github.com/flex-development/esast/commit/0075a668669f041ee6ff79b43ebfda245778b6e2)] **types:** `Comments`
+
+### :mechanical_arm: Refactors
+
+- [[`e87402e`](https://github.com/flex-development/esast/commit/e87402e07cae9c035ec5572e64404ebe627a0d15)] comment parents
+
 ## [1.0.0-alpha.4](https://github.com/flex-development/esast/compare/1.0.0-alpha.3...1.0.0-alpha.4) (2024-03-13)
 
 ### ⚠ BREAKING CHANGES
@@ -192,6 +212,7 @@
 ### :mechanical_arm: Refactors
 
 - [[`1fbe902`](https://github.com/flex-development/esast/commit/1fbe902a306f53e9c8a4fadb88e8cd24a8dc0cd2)] **types:** `SourceType` -> `SourceMode`
+
 
 
 
