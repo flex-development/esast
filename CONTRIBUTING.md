@@ -169,7 +169,7 @@ This means every commit must conform to the following format:
  │     │      │
  │     │      └─⫸ optional breaking change flag
  │     │
- │     └─⫸ see .commitlintrc.cts
+ │     └─⫸ see .commitlintrc.ts
  │
  └─⫸ build|ci|chore|docs|feat|fix|perf|refactor|revert|style|test|wip
 
@@ -200,7 +200,7 @@ e.g:
 - `build(deps-dev): bump cspell from 6.7.0 to 6.8.0`
 - `perf: lighten initial load`
 
-See [`.commitlintrc.cts`](.commitlintrc.cts) to view all commit guidelines.
+See [`.commitlintrc.ts`](.commitlintrc.ts) to view all commit guidelines.
 
 ### Code Style
 
