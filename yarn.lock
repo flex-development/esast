@@ -1462,7 +1462,7 @@ __metadata:
     "@flex-development/mlly": "npm:1.0.0-alpha.18"
     "@flex-development/pathe": "npm:2.0.0"
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
-    "@flex-development/unist-util-types": "npm:1.1.0"
+    "@flex-development/unist-util-types": "npm:1.2.0"
     "@types/eslint": "npm:8.56.5"
     "@types/estree": "npm:1.0.5"
     "@types/estree-jsx": "npm:1.0.5"
@@ -1851,12 +1851,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/unist-util-types@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@flex-development/unist-util-types@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.1.0%2Ff74a188ce824cf7bf97d448973ed979e0bbd78fb"
+"@flex-development/unist-util-types@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@flex-development/unist-util-types@npm:1.2.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.2.0%2Fe73575356fb70910ec1467d05a02825d69997f22"
   peerDependencies:
     "@types/unist": ">=3.0.2"
-  checksum: 10/718b2cfa8269cca737666bbc26cd12eec1506185472031eb244c37c6b9c0800d22b554d0a0122486f6d97ecc424d6063623cb7dcf23ce4c794c28e8faeea0d71
+  checksum: 10/01f73462d6bbdb16a67aca5c77e2421fb260acc671d01628d3d1aa0debf044e226d468c033601c3bfb5cff6c47f030690d87e4e84c55ff1dcad513a4419cde0c
   languageName: node
   linkType: hard
 
