@@ -16,10 +16,10 @@ import type {
   FunctionExpression,
   Identifier,
   ImportExpression,
+  ImportMeta,
   LiteralMap,
   LogicalExpression,
   MemberExpression,
-  MetaProperty,
   ObjectExpression,
   ParenthesizedExpression,
   SequenceExpression,
@@ -103,6 +103,11 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<ImportExpression>>()
     })
 
+    it('should match NodeObject<ImportMeta>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ImportMeta>>()
+    })
+
     it('should match NodeObject<LogicalExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<LogicalExpression>>()
@@ -111,11 +116,6 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<MemberExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<MemberExpression>>()
-    })
-
-    it('should match NodeObject<MetaProperty>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<MetaProperty>>()
     })
 
     it('should match NodeObject<ObjectExpression>', () => {

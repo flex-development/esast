@@ -148,6 +148,7 @@ export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
 export type { default as MetaIdentifier } from './identifier-meta'
 export type { default as RequireIdentifier } from './identifier-require'
+export type { default as ImportMeta, ImportMetaData } from './import-meta'
 export type { default as Literal } from './literal'
 export type { default as BigIntLiteral } from './literal-bigint'
 export type { default as BooleanLiteral } from './literal-boolean'
@@ -173,7 +174,6 @@ export type {
   ObjectPatternData
 } from './pattern-object'
 export type { default as Property, PropertyData } from './property'
-export type { default as MetaProperty, MetaPropertyData } from './property-meta'
 export type { default as Root, RootData } from './root'
 export type {
   default as ExportSpecifier,

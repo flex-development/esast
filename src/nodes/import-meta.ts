@@ -1,6 +1,6 @@
 /**
- * @file Nodes - MetaProperty
- * @module esast/nodes/MetaProperty
+ * @file Nodes - ImportMeta
+ * @module esast/nodes/ImportMeta
  */
 
 import type {
@@ -14,22 +14,22 @@ import type {
 import type { Optional } from '@flex-development/tutils'
 
 /**
- * Info associated with meta properties.
+ * Info associated with `import.meta` meta-properties.
  *
  * @see {@linkcode Data}
  *
  * @extends {Data}
  */
-interface MetaPropertyData extends Data {}
+interface ImportMetaData extends Data {}
 
 /**
- * A meta property (`import.meta`).
+ * The `import.meta` meta-property.
  *
  * @see {@linkcode Parent}
  *
  * @extends {Parent}
  */
-interface MetaProperty extends Parent {
+interface ImportMeta extends Parent {
   /**
    * List of children.
    *
@@ -38,22 +38,22 @@ interface MetaProperty extends Parent {
    * @see {@linkcode MetaIdentifier}
    */
   children: [
-    meta: ImportIdentifier,
+    import: ImportIdentifier,
     ...comments: Comments,
-    property: MetaIdentifier
+    meta: MetaIdentifier
   ]
 
   /**
    * Info from the ecosystem.
    *
-   * @see {@linkcode MetaPropertyData}
+   * @see {@linkcode ImportMetaData}
    */
-  data?: Optional<MetaPropertyData>
+  data?: Optional<ImportMetaData>
 
   /**
    * Node type.
    */
-  type: 'metaProperty'
+  type: 'importMeta'
 }
 
-export type { MetaPropertyData, MetaProperty as default }
+export type { ImportMetaData, ImportMeta as default }

@@ -15,10 +15,10 @@ import type {
   FunctionExpression,
   Identifier,
   ImportExpression,
+  ImportMeta,
   LiteralMap,
   LogicalExpression,
   MemberExpression,
-  MetaProperty,
   ObjectExpression,
   ParenthesizedExpression,
   SequenceExpression,
@@ -65,9 +65,9 @@ interface ExpressionMap extends LiteralMap {
   functionExpression: FunctionExpression
   identifier: Identifier
   importExpression: ImportExpression
+  importMeta: ImportMeta
   logicalExpression: LogicalExpression
   memberExpression: MemberExpression
-  metaProperty: MetaProperty
   objectExpression: ObjectExpression
   parenthesizedExpression: ParenthesizedExpression
   sequenceExpression: SequenceExpression
