@@ -4,6 +4,7 @@
  * @see https://github.com/syntax-tree/unist#nodes
  */
 
+export type { default as ArgumentList, ArgumentListData } from './argument-list'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
 export type {
