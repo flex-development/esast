@@ -4,7 +4,7 @@
  */
 
 import type { Data, Expression, Parent } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with expression statements.
@@ -13,12 +13,7 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface ExpressionStatementData extends Data {
-  /**
-   * Parenthesized expression?
-   */
-  parentheses?: Nilable<boolean>
-}
+interface ExpressionStatementData extends Data {}
 
 /**
  * An expression statement.

@@ -21,6 +21,7 @@ import type {
   MemberExpression,
   MetaProperty,
   ObjectExpression,
+  ParenthesizedExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -120,6 +121,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ObjectExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ObjectExpression>>()
+    })
+
+    it('should match NodeObject<ParenthesizedExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ParenthesizedExpression>>()
     })
 
     it('should match NodeObject<SequenceExpression>', () => {

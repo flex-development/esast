@@ -120,6 +120,10 @@ export type {
   ObjectExpressionData
 } from './expression-object'
 export type {
+  default as ParenthesizedExpression,
+  ParenthesizedExpressionData
+} from './expression-parenthesized'
+export type {
   default as SequenceExpression,
   SequenceExpressionData
 } from './expression-sequence'

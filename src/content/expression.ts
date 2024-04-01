@@ -20,6 +20,7 @@ import type {
   MemberExpression,
   MetaProperty,
   ObjectExpression,
+  ParenthesizedExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -68,6 +69,7 @@ interface ExpressionMap extends LiteralMap {
   memberExpression: MemberExpression
   metaProperty: MetaProperty
   objectExpression: ObjectExpression
+  parenthesizedExpression: ParenthesizedExpression
   sequenceExpression: SequenceExpression
   taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral
