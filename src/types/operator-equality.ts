@@ -10,6 +10,7 @@
  * the comparison is `true`.
  *
  * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators#equality_operators
+ * @see https://tc39.es/ecma262/#sec-equality-operators
  */
 type EqualityOperator = '!=' | '!==' | '==' | '==='
 

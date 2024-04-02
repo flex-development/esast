@@ -7,6 +7,7 @@ import type {
   ArithmeticOperator,
   BitwiseOperator,
   EqualityOperator,
+  LogicalOperator,
   RelationalOperator
 } from '@flex-development/esast'
 
@@ -15,6 +16,7 @@ import type {
  *
  * @see {@linkcode ArithmeticOperator}
  * @see {@linkcode BitwiseOperator}
+ * @see {@linkcode LogicalOperator}
  * @see {@linkcode EqualityOperator}
  * @see {@linkcode RelationalOperator}
  */
@@ -22,6 +24,7 @@ type BinaryOperator =
   | ArithmeticOperator
   | BitwiseOperator
   | EqualityOperator
+  | LogicalOperator
   | RelationalOperator
 
 export type { BinaryOperator as default }

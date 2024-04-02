@@ -4,40 +4,29 @@
  */
 
 import type {
-  Comment,
-  Comments,
-  Data,
-  Expression,
-  LogicalOperator,
-  Parent
+  BinaryExpression,
+  BinaryExpressionData,
+  LogicalOperator
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with logical expressions.
  *
- * @see {@linkcode Data}
+ * @see {@linkcode BinaryExpressionData}
  *
- * @extends {Data}
+ * @extends {BinaryExpressionData}
  */
-interface LogicalExpressionData extends Data {}
+interface LogicalExpressionData extends BinaryExpressionData {}
 
 /**
  * A logical expression.
  *
- * @see {@linkcode Parent}
+ * @see {@linkcode BinaryExpression}
  *
- * @extends {Parent}
+ * @extends {BinaryExpression}
  */
-interface LogicalExpression extends Parent {
-  /**
-   * List of children.
-   *
-   * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
-   */
-  children: [left: Expression, ...comments: Comments, right: Expression]
-
+interface LogicalExpression extends BinaryExpression {
   /**
    * Info from the ecosystem.
    *

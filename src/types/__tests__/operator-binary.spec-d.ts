@@ -7,6 +7,7 @@ import type {
   ArithmeticOperator,
   BitwiseOperator,
   EqualityOperator,
+  LogicalOperator,
   RelationalOperator
 } from '@flex-development/esast'
 import type TestSubject from '../operator-binary'
@@ -22,6 +23,10 @@ describe('unit-d:types/BinaryOperator', () => {
 
   it('should extract EqualityOperator', () => {
     expectTypeOf<TestSubject>().extract<EqualityOperator>().not.toBeNever()
+  })
+
+  it('should extract LogicalOperator', () => {
+    expectTypeOf<TestSubject>().extract<LogicalOperator>().not.toBeNever()
   })
 
   it('should extract RelationalOperator', () => {

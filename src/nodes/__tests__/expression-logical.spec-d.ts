@@ -3,7 +3,11 @@
  * @module esast/nodes/tests/unit-d/LogicalExpression
  */
 
-import type { Data, LogicalOperator, Parent } from '@flex-development/esast'
+import type {
+  BinaryExpression,
+  BinaryExpressionData,
+  LogicalOperator
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-logical'
 
@@ -11,8 +15,8 @@ describe('unit-d:nodes/LogicalExpression', () => {
   type Subject = TestSubject.default
   type SubjectData = TestSubject.LogicalExpressionData
 
-  it('should extend Parent', () => {
-    expectTypeOf<Subject>().toMatchTypeOf<Parent>()
+  it('should extend BinaryExpression', () => {
+    expectTypeOf<Subject>().toMatchTypeOf<BinaryExpression>()
   })
 
   it('should match [data?: Optional<LogicalExpressionData>]', () => {
@@ -34,8 +38,8 @@ describe('unit-d:nodes/LogicalExpression', () => {
   })
 
   describe('LogicalExpressionData', () => {
-    it('should extend Data', () => {
-      expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
+    it('should extend BinaryExpressionData', () => {
+      expectTypeOf<SubjectData>().toMatchTypeOf<BinaryExpressionData>()
     })
   })
 })
