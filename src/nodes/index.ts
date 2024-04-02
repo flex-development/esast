@@ -97,10 +97,6 @@ export type {
   CallExpressionData
 } from './expression-call'
 export type {
-  default as ChainExpression,
-  ChainExpressionData
-} from './expression-chain'
-export type {
   default as ClassExpression,
   ClassExpressionData
 } from './expression-class'

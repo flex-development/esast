@@ -32,17 +32,12 @@ describe('unit-d:esast', () => {
         TestSubject.AnyParent,
         | docast.DocastNode
         | mdast.Nodes
-        | TestSubject.ChainExpression
         | TestSubject.Comment
         | TestSubject.ExpressionStatement
       >
 
       // Expect
       expectTypeOf<Subject>().toEqualTypeOf<Expect>()
-    })
-
-    it('should not include ChainExpression', () => {
-      expectTypeOf<Subject>().extract<TestSubject.ChainExpression>().toBeNever()
     })
 
     it('should not include Comment', () => {

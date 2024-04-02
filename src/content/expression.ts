@@ -10,7 +10,6 @@ import type {
   AwaitExpression,
   BitwiseExpression,
   CallExpression,
-  ChainExpression,
   ClassExpression,
   ConditionalExpression,
   EqualityExpression,
@@ -63,7 +62,6 @@ interface ExpressionMap extends LiteralMap {
   awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression
   callExpression: CallExpression
-  chainExpression: ChainExpression
   classExpression: ClassExpression
   conditionalExpression: ConditionalExpression
   equalityExpression: EqualityExpression

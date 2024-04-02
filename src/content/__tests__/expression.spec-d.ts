@@ -11,7 +11,6 @@ import type {
   AwaitExpression,
   BitwiseExpression,
   CallExpression,
-  ChainExpression,
   ClassExpression,
   ConditionalExpression,
   EqualityExpression,
@@ -79,11 +78,6 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<CallExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<CallExpression>>()
-    })
-
-    it('should match NodeObject<ChainExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ChainExpression>>()
     })
 
     it('should match NodeObject<ClassExpression>', () => {
