@@ -4,14 +4,16 @@
  */
 
 import type {
+  ArithmeticExpression,
   ArrayExpression,
   AssignmentExpression,
   AwaitExpression,
-  BinaryExpression,
+  BitwiseExpression,
   CallExpression,
   ChainExpression,
   ClassExpression,
   ConditionalExpression,
+  EqualityExpression,
   FunctionExpression,
   Identifier,
   ImportExpression,
@@ -21,6 +23,7 @@ import type {
   MemberExpression,
   ObjectExpression,
   ParenthesizedExpression,
+  RelationalExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -54,14 +57,16 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  * @extends {LiteralMap}
  */
 interface ExpressionMap extends LiteralMap {
+  arithmeticExpression: ArithmeticExpression
   arrayExpression: ArrayExpression
   assignmentExpression: AssignmentExpression
   awaitExpression: AwaitExpression
-  binaryExpression: BinaryExpression
+  bitwiseExpression: BitwiseExpression
   callExpression: CallExpression
   chainExpression: ChainExpression
   classExpression: ClassExpression
   conditionalExpression: ConditionalExpression
+  equalityExpression: EqualityExpression
   functionExpression: FunctionExpression
   identifier: Identifier
   importExpression: ImportExpression
@@ -70,6 +75,7 @@ interface ExpressionMap extends LiteralMap {
   memberExpression: MemberExpression
   objectExpression: ObjectExpression
   parenthesizedExpression: ParenthesizedExpression
+  relationalExpression: RelationalExpression
   sequenceExpression: SequenceExpression
   taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral

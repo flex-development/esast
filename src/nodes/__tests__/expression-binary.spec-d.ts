@@ -27,12 +27,6 @@ describe('unit-d:nodes/BinaryExpression', () => {
       .toEqualTypeOf<BinaryOperator>()
   })
 
-  it('should match [type: "binaryExpression"]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('type')
-      .toEqualTypeOf<'binaryExpression'>()
-  })
-
   describe('BinaryExpressionData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()

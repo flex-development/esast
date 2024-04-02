@@ -69,6 +69,10 @@ export type {
   TemplateElementData
 } from './element-template'
 export type {
+  default as ArithmeticExpression,
+  ArithmeticExpressionData
+} from './expression-arithmetic'
+export type {
   default as ArrayExpression,
   ArrayExpressionData
 } from './expression-array'
@@ -85,6 +89,10 @@ export type {
   BinaryExpressionData
 } from './expression-binary'
 export type {
+  default as BitwiseExpression,
+  BitwiseExpressionData
+} from './expression-bitwise'
+export type {
   default as CallExpression,
   CallExpressionData
 } from './expression-call'
@@ -100,6 +108,10 @@ export type {
   default as ConditionalExpression,
   ConditionalExpressionData
 } from './expression-conditional'
+export type {
+  default as EqualityExpression,
+  EqualityExpressionData
+} from './expression-equality'
 export type {
   default as FunctionExpression,
   FunctionExpressionData
@@ -124,6 +136,10 @@ export type {
   default as ParenthesizedExpression,
   ParenthesizedExpressionData
 } from './expression-parenthesized'
+export type {
+  default as RelationalExpression,
+  RelationalExpressionData
+} from './expression-relational'
 export type {
   default as SequenceExpression,
   SequenceExpressionData

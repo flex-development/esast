@@ -50,11 +50,6 @@ interface BinaryExpression extends Parent {
    * @see {@linkcode BinaryOperator}
    */
   operator: BinaryOperator
-
-  /**
-   * Node type.
-   */
-  type: 'binaryExpression'
 }
 
 export type { BinaryExpressionData, BinaryExpression as default }

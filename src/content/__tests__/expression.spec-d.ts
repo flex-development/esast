@@ -5,14 +5,16 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
+  ArithmeticExpression,
   ArrayExpression,
   AssignmentExpression,
   AwaitExpression,
-  BinaryExpression,
+  BitwiseExpression,
   CallExpression,
   ChainExpression,
   ClassExpression,
   ConditionalExpression,
+  EqualityExpression,
   FunctionExpression,
   Identifier,
   ImportExpression,
@@ -22,6 +24,7 @@ import type {
   MemberExpression,
   ObjectExpression,
   ParenthesizedExpression,
+  RelationalExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -48,6 +51,11 @@ describe('unit-d:content/expression', () => {
       expectTypeOf<TestSubject.ExpressionMap>().toMatchTypeOf<LiteralMap>()
     })
 
+    it('should match NodeObject<ArithmeticExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ArithmeticExpression>>()
+    })
+
     it('should match NodeObject<ArrayExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ArrayExpression>>()
@@ -63,9 +71,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<AwaitExpression>>()
     })
 
-    it('should match NodeObject<BinaryExpression>', () => {
+    it('should match NodeObject<BitwiseExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<BinaryExpression>>()
+        .toMatchTypeOf<NodeObject<BitwiseExpression>>()
     })
 
     it('should match NodeObject<CallExpression>', () => {
@@ -86,6 +94,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ConditionalExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ConditionalExpression>>()
+    })
+
+    it('should match NodeObject<EqualityExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<EqualityExpression>>()
     })
 
     it('should match NodeObject<FunctionExpression>', () => {
@@ -126,6 +139,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ParenthesizedExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ParenthesizedExpression>>()
+    })
+
+    it('should match NodeObject<RelationalExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<RelationalExpression>>()
     })
 
     it('should match NodeObject<SequenceExpression>', () => {
