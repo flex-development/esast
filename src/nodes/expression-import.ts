@@ -4,7 +4,7 @@
  */
 
 import type {
-  Comment,
+  ArgumentList,
   Comments,
   Data,
   Expression,
@@ -32,10 +32,11 @@ interface ImportExpression extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode ArgumentList}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: [...comments: Comments, source: Expression]
+  children: [...comments: Comments, arguments: ArgumentList]
 
   /**
    * Info from the ecosystem.
