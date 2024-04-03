@@ -4,7 +4,7 @@
  */
 
 import type { Data, ForXStatement } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `for...of` statements.
@@ -13,12 +13,7 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface ForOfStatementData extends Data {
-  /**
-   * Asynchronous statement?
-   */
-  await?: Nilable<boolean>
-}
+interface ForOfStatementData extends Data {}
 
 /**
  * A `for...of` statement.
@@ -28,6 +23,13 @@ interface ForOfStatementData extends Data {
  * @extends {ForXStatement}
  */
 interface ForOfStatement extends ForXStatement {
+  /**
+   * Iterating over [async iterable objects][1]?
+   *
+   * [1]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols
+   */
+  await: boolean
+
   /**
    * Info from the ecosystem.
    *

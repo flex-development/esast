@@ -4,7 +4,7 @@
  */
 
 import type { Data, ForXStatement } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-for-of'
 
 describe('unit-d:nodes/ForOfStatement', () => {
@@ -13,6 +13,10 @@ describe('unit-d:nodes/ForOfStatement', () => {
 
   it('should extend ForXStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<ForXStatement>()
+  })
+
+  it('should match [await: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('await').toEqualTypeOf<boolean>()
   })
 
   it('should match [data?: Optional<ForOfStatementData>]', () => {
@@ -30,12 +34,6 @@ describe('unit-d:nodes/ForOfStatement', () => {
   describe('ForOfStatementData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
-    })
-
-    it('should match [await?: Nilable<boolean>]', () => {
-      expectTypeOf<SubjectData>()
-        .toHaveProperty('await')
-        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })
