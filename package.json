@@ -144,6 +144,6 @@
     "@types/unist": "3.0.2",
     "acorn": "8.11.3"
   },
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.1.1",
   "sideEffects": false
 }
