@@ -156,6 +156,7 @@ export type {
   default as YieldExpression,
   YieldExpressionData
 } from './expression-yield'
+export type { default as FinallyBlock, FinallyBlockData } from './finally-block'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'

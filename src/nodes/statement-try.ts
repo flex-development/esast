@@ -7,13 +7,13 @@ import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
   CatchClause,
-  Comment,
   Comments,
   Data,
   Nothing,
   Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
+import type FinallyBlock from './finally-block'
 
 /**
  * Info associated with try statements.
@@ -37,7 +37,8 @@ interface TryStatement extends Parent {
    *
    * @see {@linkcode BlockStatement}
    * @see {@linkcode CatchClause}
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
+   * @see {@linkcode FinallyBlock}
    * @see {@linkcode Nothing}
    */
   children:
@@ -51,9 +52,15 @@ interface TryStatement extends Parent {
       ...comments: Comments,
       block: BlockStatement,
       ...comments: InternalComments,
-      handler: CatchClause | Nothing,
+      handler: CatchClause,
       ...comments: InternalComments,
-      finalizer: BlockStatement
+      finalizer: FinallyBlock
+    ]
+    | [
+      ...comments: Comments,
+      block: BlockStatement,
+      ...comments: InternalComments,
+      handler: FinallyBlock
     ]
 
   /**
