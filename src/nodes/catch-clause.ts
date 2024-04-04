@@ -6,6 +6,7 @@
 import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
+  Comments,
   Data,
   Nothing,
   Parent,
@@ -34,15 +35,18 @@ interface CatchClause extends Parent {
    * List of children.
    *
    * @see {@linkcode BlockStatement}
+   * @see {@linkcode Comments}
    * @see {@linkcode Nothing}
    * @see {@linkcode Pattern}
    */
-  children: [
-    ...comments: InternalComments,
-    param: Nothing | Pattern,
-    ...comments: InternalComments,
-    body: BlockStatement
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      param: Pattern,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [...comments: Comments, body: BlockStatement]
 
   /**
    * Info from the ecosystem.
