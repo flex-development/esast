@@ -50,6 +50,7 @@ export type {
   default as VariableDeclaration,
   VariableDeclarationData
 } from './declaration-variable'
+export type { default as Decorator, DecoratorData } from './decorator'
 export type {
   default as MethodDefinition,
   MethodDefinitionData

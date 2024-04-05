@@ -15,10 +15,22 @@ describe('unit-d:nodes/PropertyDefinition', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
+  it('should match [accessor: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('accessor').toEqualTypeOf<boolean>()
+  })
+
+  it('should match [computed: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
+  })
+
   it('should match [data?: Optional<PropertyDefinitionData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
+  })
+
+  it('should match [static: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('static').toEqualTypeOf<boolean>()
   })
 
   it('should match [type: "propertyDefinition"]', () => {

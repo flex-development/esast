@@ -6,6 +6,7 @@
 import type {
   Comment,
   Data,
+  Decorator,
   MethodDefinition,
   Parent,
   PropertyDefinition,
@@ -34,11 +35,18 @@ interface ClassBody extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Decorator}
    * @see {@linkcode MethodDefinition}
    * @see {@linkcode PropertyDefinition}
    * @see {@linkcode StaticBlock}
    */
-  children: (Comment | MethodDefinition | PropertyDefinition | StaticBlock)[]
+  children: (
+    | Comment
+    | Decorator
+    | MethodDefinition
+    | PropertyDefinition
+    | StaticBlock
+  )[]
 
   /**
    * Info from the ecosystem.

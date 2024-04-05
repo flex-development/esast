@@ -32,6 +32,13 @@ interface PropertyDefinitionData extends Data {}
  */
 interface PropertyDefinition extends Parent {
   /**
+   * Boolean indicating if property is a [class auto accessor][1].
+   *
+   * [1]: https://github.com/tc39/proposal-decorators#introduction
+   */
+  accessor: boolean
+
+  /**
    * List of children.
    *
    * @see {@linkcode Comment}

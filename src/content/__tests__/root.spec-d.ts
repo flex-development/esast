@@ -6,6 +6,7 @@
 import type { NodeObject } from '#tests/types'
 import type {
   Comment,
+  Decorator,
   Directive,
   ModuleDeclarationMap,
   StatementMap
@@ -34,6 +35,10 @@ describe('unit-d:content/root', () => {
 
     it('should match NodeObject<Comment>', () => {
       expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<NodeObject<Comment>>()
+    })
+
+    it('should match NodeObject<Decorator>', () => {
+      expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<NodeObject<Decorator>>()
     })
 
     it('should match NodeObject<Directive>', () => {

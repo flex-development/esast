@@ -5,6 +5,7 @@
 
 import type {
   Comment,
+  Decorator,
   Directive,
   ModuleDeclarationMap,
   StatementMap
@@ -36,6 +37,7 @@ type RootChild = RootMap[keyof RootMap]
  */
 interface RootMap extends ModuleDeclarationMap, StatementMap {
   comment: Comment
+  decorator: Decorator
   directive: Directive
 }
 

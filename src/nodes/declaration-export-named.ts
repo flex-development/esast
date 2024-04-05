@@ -5,9 +5,12 @@
 
 import type { InternalComments } from '#internal'
 import type {
+  ClassDeclaration,
+  Comment,
   Comments,
   Data,
   Declaration,
+  Decorator,
   ExportSpecifiers,
   Parent,
   StringLiteral
@@ -34,8 +37,11 @@ interface ExportNamedDeclaration extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode ClassDeclaration}
    * @see {@linkcode Comments}
+   * @see {@linkcode Comment}
    * @see {@linkcode Declaration}
+   * @see {@linkcode Decorator}
    * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
@@ -46,6 +52,7 @@ interface ExportNamedDeclaration extends Parent {
       ...comments: InternalComments,
       source: StringLiteral
     ]
+    | [...(Comment | Decorator)[], declaration: ClassDeclaration]
     | [...comments: Comments, declaration: Declaration]
     | [...comments: Comments, specifiers: ExportSpecifiers]
 

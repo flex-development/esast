@@ -3,7 +3,13 @@
  * @module esast/nodes/ParameterList
  */
 
-import type { Comment, Data, Parameter, Parent } from '@flex-development/esast'
+import type {
+  Comment,
+  Data,
+  Decorator,
+  Parameter,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -27,9 +33,10 @@ interface ParameterList extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Decorator}
    * @see {@linkcode Parameter}
    */
-  children: (Comment | Parameter)[]
+  children: (Comment | Decorator | Parameter)[]
 
   /**
    * Info from the ecosystem.
