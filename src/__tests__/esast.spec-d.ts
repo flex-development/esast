@@ -34,6 +34,7 @@ describe('unit-d:esast', () => {
         | mdast.Nodes
         | TestSubject.Comment
         | TestSubject.ExpressionStatement
+        | TestSubject.Parameter
       >
 
       // Expect
@@ -48,6 +49,10 @@ describe('unit-d:esast', () => {
       expectTypeOf<Subject>()
         .extract<TestSubject.ExpressionStatement>()
         .toBeNever()
+    })
+
+    it('should not include Parameter', () => {
+      expectTypeOf<Subject>().extract<TestSubject.Parameter>().toBeNever()
     })
   })
 })

@@ -15,7 +15,7 @@ describe('unit-d:nodes/ParameterList', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ParamsData>]', () => {
+  it('should match [data?: Optional<ParamaterListData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
