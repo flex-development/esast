@@ -6,12 +6,10 @@
 import type { InternalComments } from '#internal'
 import type {
   BlockStatement,
-  Comment,
   Comments,
   Data,
   Expression,
   Identifier,
-  Nothing,
   ParameterList,
   Parent
 } from '@flex-development/esast'
@@ -56,19 +54,26 @@ interface FunctionExpression extends Parent {
    * Function expressions can only have block statement bodies.
    *
    * @see {@linkcode BlockStatement}
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
+   * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
-   * @see {@linkcode Nothing}
    * @see {@linkcode ParameterList}
    */
-  children: [
-    ...comments: Comments,
-    id: Identifier | Nothing,
-    ...comments: InternalComments,
-    params: ParameterList,
-    ...comments: InternalComments,
-    body: BlockStatement | Expression
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      body: BlockStatement | Expression
+    ]
 
   /**
    * Info from the ecosystem.
