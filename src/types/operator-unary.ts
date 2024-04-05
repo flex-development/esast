@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - UnaryOperator
+ * @file Type Aliases - UnaryOperator
  * @module esast/types/UnaryOperator
  */
 

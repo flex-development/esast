@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - MethodKind
+ * @file Type Aliases - MethodKind
  * @module esast/types/MethodKind
  */
 

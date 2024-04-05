@@ -1,5 +1,5 @@
 /**
- * @file Entry Point - Type Definitions
+ * @file Entry Point - Type Aliases
  * @module esast/types
  */
 

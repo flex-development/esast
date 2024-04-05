@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - VariableKind
+ * @file Type Aliases - VariableKind
  * @module esast/types/VariableKind
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - PropertyKind
+ * @file Type Aliases - PropertyKind
  * @module esast/types/PropertyKind
  */
 

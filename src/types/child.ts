@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - Child
+ * @file Type Aliases - Child
  * @module esast/types/Child
  */
 

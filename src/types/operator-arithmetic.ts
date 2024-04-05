@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - ArithmeticOperator
+ * @file Type Aliases - ArithmeticOperator
  * @module esast/types/ArithmeticOperator
  */
 

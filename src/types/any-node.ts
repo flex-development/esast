@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - AnyNode
+ * @file Type Aliases - AnyNode
  * @module esast/types/AnyNode
  */
 

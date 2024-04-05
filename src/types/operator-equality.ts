@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - EqualityOperator
+ * @file Type Aliases - EqualityOperator
  * @module esast/types/EqualityOperator
  */
 

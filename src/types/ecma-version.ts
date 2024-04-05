@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - EcmaVersion
+ * @file Type Aliases - EcmaVersion
  * @module esast/types/EcmaVersion
  */
 

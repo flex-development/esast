@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - Comments
+ * @file Type Aliases - Comments
  * @module esast/types/Comments
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - LogicalOperator
+ * @file Type Aliases - LogicalOperator
  * @module esast/types/LogicalOperator
  */
 

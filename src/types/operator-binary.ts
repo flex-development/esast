@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - BinaryOperator
+ * @file Type Aliases - BinaryOperator
  * @module esast/types/BinaryOperator
  */
 

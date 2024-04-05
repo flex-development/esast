@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - BitwiseShiftOperator
+ * @file Type Aliases - BitwiseShiftOperator
  * @module esast/types/BitwiseShiftOperator
  */
 

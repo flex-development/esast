@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - UpdateOperator
+ * @file Type Aliases - UpdateOperator
  * @module esast/types/UpdateOperator
  */
 

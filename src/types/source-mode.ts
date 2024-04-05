@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - SourceMode
+ * @file Type Aliases - SourceMode
  * @module esast/types/SourceMode
  */
 

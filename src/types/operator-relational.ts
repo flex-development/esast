@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - RelationalOperator
+ * @file Type Aliases - RelationalOperator
  * @module esast/types/RelationalOperator
  */
 

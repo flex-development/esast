@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - BitwiseBinaryOperator
+ * @file Type Aliases - BitwiseBinaryOperator
  * @module esast/types/BitwiseBinaryOperator
  */
 

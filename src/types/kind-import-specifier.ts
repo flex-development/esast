@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - ImportSpecifierKind
+ * @file Type Aliases - ImportSpecifierKind
  * @module esast/types/ImportSpecifierKind
  */
 

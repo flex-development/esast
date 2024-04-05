@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - AssignmentOperator
+ * @file Type Aliases - AssignmentOperator
  * @module esast/types/AssignmentOperator
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - AnyClass
+ * @file Type Aliases - AnyClass
  * @module esast/types/AnyClass
  */
 

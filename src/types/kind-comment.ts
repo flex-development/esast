@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - CommentKind
+ * @file Type Aliases - CommentKind
  * @module esast/types/CommentKind
  */
 

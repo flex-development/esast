@@ -1,5 +1,5 @@
 /**
- * @file Type Definitions - AnyParent
+ * @file Type Aliases - AnyParent
  * @module esast/types/AnyParent
  */
 
