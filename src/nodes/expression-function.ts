@@ -8,7 +8,6 @@ import type {
   BlockStatement,
   Comments,
   Data,
-  Expression,
   Identifier,
   ParameterList,
   Parent
@@ -24,23 +23,22 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  */
 interface FunctionExpressionData extends Data {
   /**
-   * Arrow function expression?
-   */
-  arrow?: Nilable<boolean>
-
-  /**
    * Asynchronous function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
    */
   async?: Nilable<boolean>
 
   /**
    * Generator function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/function*
    */
   generator?: Nilable<boolean>
 }
 
 /**
- * An arrow function expression or `function` expression.
+ * A `function` expression.
  *
  * @see {@linkcode Parent}
  *
@@ -50,12 +48,8 @@ interface FunctionExpression extends Parent {
   /**
    * List of children.
    *
-   * **Note**: Arrow functions can have block statement or expression bodies.
-   * Function expressions can only have block statement bodies.
-   *
    * @see {@linkcode BlockStatement}
    * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
    * @see {@linkcode ParameterList}
    */
@@ -72,7 +66,7 @@ interface FunctionExpression extends Parent {
       ...comments: Comments,
       params: ParameterList,
       ...comments: InternalComments,
-      body: BlockStatement | Expression
+      body: BlockStatement
     ]
 
   /**

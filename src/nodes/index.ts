@@ -113,6 +113,10 @@ export type {
   FunctionExpressionData
 } from './expression-function'
 export type {
+  default as ArrowFunctionExpression,
+  ArrowFunctionExpressionData
+} from './expression-function-arrow'
+export type {
   default as ImportExpression,
   ImportExpressionData
 } from './expression-import'

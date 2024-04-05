@@ -25,11 +25,15 @@ import type { Nilable, Optional } from '@flex-development/tutils'
 interface FunctionDeclarationData extends Data {
   /**
    * Asynchronous function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function
    */
   async?: Nilable<boolean>
 
   /**
    * Generator function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function*
    */
   generator?: Nilable<boolean>
 }

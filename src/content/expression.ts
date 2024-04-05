@@ -6,6 +6,7 @@
 import type {
   ArithmeticExpression,
   ArrayExpression,
+  ArrowFunctionExpression,
   AssignmentExpression,
   AwaitExpression,
   BitwiseExpression,
@@ -58,6 +59,7 @@ type Expression = ExpressionMap[keyof ExpressionMap]
 interface ExpressionMap extends LiteralMap {
   arithmeticExpression: ArithmeticExpression
   arrayExpression: ArrayExpression
+  arrowFunctionExpression: ArrowFunctionExpression
   assignmentExpression: AssignmentExpression
   awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression

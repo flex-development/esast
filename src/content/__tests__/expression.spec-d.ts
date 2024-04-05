@@ -7,6 +7,7 @@ import type { NodeObject } from '#tests/types'
 import type {
   ArithmeticExpression,
   ArrayExpression,
+  ArrowFunctionExpression,
   AssignmentExpression,
   AwaitExpression,
   BitwiseExpression,
@@ -58,6 +59,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ArrayExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ArrayExpression>>()
+    })
+
+    it('should match NodeObject<ArrowFunctionExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ArrowFunctionExpression>>()
     })
 
     it('should match NodeObject<AssignmentExpression>', () => {

@@ -15,7 +15,9 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  */
 interface IdentifierData extends Data {
   /**
-   * Private identifier?
+   * Private field?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties
    */
   private?: Nilable<boolean>
 }
