@@ -5,7 +5,6 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Declaration,
@@ -35,7 +34,7 @@ interface ExportNamedDeclaration extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Declaration}
    * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode StringLiteral}

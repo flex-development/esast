@@ -5,11 +5,9 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Identifier,
-  Nothing,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -35,17 +33,18 @@ interface ExportAllDeclaration extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
-   * @see {@linkcode Nothing}
    * @see {@linkcode StringLiteral}
    */
-  children: [
-    ...comments: Comments,
-    exported: Identifier | Nothing | StringLiteral,
-    ...comments: InternalComments,
-    source: StringLiteral
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      exported: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      source: StringLiteral
+    ]
+    | [...comments: Comments, source: StringLiteral]
 
   /**
    * Info from the ecosystem.
