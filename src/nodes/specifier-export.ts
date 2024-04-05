@@ -37,11 +37,13 @@ interface ExportSpecifier extends Parent {
    * @see {@linkcode Identifier}
    * @see {@linkcode StringLiteral}
    */
-  children: [
-    local: Identifier | StringLiteral,
-    ...comments: Comments,
-    exported: Identifier | StringLiteral
-  ]
+  children:
+    | [
+      local: Identifier | StringLiteral,
+      ...comments: Comments,
+      exported: Identifier | StringLiteral
+    ]
+    | [exported: Identifier | StringLiteral]
 
   /**
    * Info from the ecosystem.
