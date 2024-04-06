@@ -8,7 +8,7 @@ import type {
   Comment,
   Decorator,
   Directive,
-  ModuleDeclarationMap,
+  ModuleReferenceMap,
   StatementMap
 } from '@flex-development/esast'
 import type * as TestSubject from '../root'
@@ -25,8 +25,8 @@ describe('unit-d:content/root', () => {
   })
 
   describe('RootMap', () => {
-    it('should extend ModuleDeclarationMap', () => {
-      expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<ModuleDeclarationMap>()
+    it('should extend ModuleReferenceMap', () => {
+      expectTypeOf<TestSubject.RootMap>().toMatchTypeOf<ModuleReferenceMap>()
     })
 
     it('should extend StatementMap', () => {

@@ -9,7 +9,7 @@ import type {
   Expression,
   Heritage,
   LiteralValue,
-  ModuleDeclaration,
+  ModuleReference,
   Pattern,
   Primitive,
   RootChild,
@@ -38,8 +38,8 @@ describe('unit-d:content/Content', () => {
     expectTypeOf<TestSubject>().extract<LiteralValue>().not.toBeNever()
   })
 
-  it('should extract ModuleDeclaration', () => {
-    expectTypeOf<TestSubject>().extract<ModuleDeclaration>().not.toBeNever()
+  it('should extract ModuleReference', () => {
+    expectTypeOf<TestSubject>().extract<ModuleReference>().not.toBeNever()
   })
 
   it('should extract Pattern', () => {
