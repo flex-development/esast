@@ -27,6 +27,10 @@ export type {
   ClassDeclarationData
 } from './declaration-class'
 export type {
+  default as EnumDeclaration,
+  EnumDeclarationData
+} from './declaration-enum'
+export type {
   default as ExportAllDeclaration,
   ExportAllDeclarationData
 } from './declaration-export-all'
@@ -69,6 +73,8 @@ export type {
   default as TemplateElement,
   TemplateElementData
 } from './element-template'
+export type { default as EnumBody, EnumBodyData } from './enum-body'
+export type { default as EnumMember, EnumMemberData } from './enum-member'
 export type {
   default as ArithmeticExpression,
   ArithmeticExpressionData

@@ -5,6 +5,7 @@
 
 import type {
   ClassDeclaration,
+  EnumDeclaration,
   FunctionDeclaration,
   VariableDeclaration
 } from '@flex-development/esast'
@@ -32,6 +33,7 @@ type Declaration = DeclarationMap[keyof DeclarationMap]
  */
 interface DeclarationMap {
   classDeclaration: ClassDeclaration
+  enumDeclaration: EnumDeclaration
   functionDeclaration: FunctionDeclaration
   variableDeclaration: VariableDeclaration
 }
