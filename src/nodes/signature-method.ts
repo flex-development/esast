@@ -5,15 +5,13 @@
 
 import type { InternalComments } from '#internal'
 import type {
+  CallSignature,
   Comments,
   Data,
   MethodKind,
   ModifierList,
-  ParameterList,
   Parent,
-  TypeAnnotation,
-  TypeExpression,
-  TypeParameterList
+  TypeExpression
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -37,145 +35,29 @@ interface MethodSignature extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode CallSignature}
    * @see {@linkcode Comments}
    * @see {@linkcode ModifierList}
-   * @see {@linkcode ParameterList}
-   * @see {@linkcode TypeAnnotation}
    * @see {@linkcode TypeExpression}
-   * @see {@linkcode TypeParameterList}
    */
   children:
     | [
       ...comments: Comments,
       name: TypeExpression,
       ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
+      value: CallSignature
     ]
     | [
       modifiers: ModifierList,
       ...comments: Comments,
       name: TypeExpression,
       ...comments: InternalComments,
-      params: ParameterList
+      value: CallSignature
     ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: TypeExpression,
-      ...comments: InternalComments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      name: TypeExpression,
-      ...comments: Comments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      name: TypeExpression,
-      ...comments: Comments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      name: TypeExpression,
-      ...comments: Comments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [name: TypeExpression, ...comments: Comments, params: ParameterList]
+    | [name: TypeExpression, ...comments: Comments, value: CallSignature]
 
   /**
-   * Boolean indicating if method name is computed.
+   * Boolean indicating if method signature name is computed.
    */
   computed: boolean
 

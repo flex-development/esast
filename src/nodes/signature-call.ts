@@ -7,7 +7,6 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
-  ModifierList,
   ParameterList,
   Parent,
   TypeAnnotation,
@@ -37,36 +36,12 @@ interface CallSignature extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode ModifierList}
    * @see {@linkcode ParameterList}
    * @see {@linkcode TypeAnnotation}
    * @see {@linkcode TypeParameterList}
    */
   children:
     | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      typeParams: TypeParameterList,
-      ...comments: InternalComments,
-      params: ParameterList,
-      ...comments: InternalComments,
-      returnType: TypeAnnotation
-    ]
-    | [
       typeParams: TypeParameterList,
       ...comments: Comments,
       params: ParameterList
@@ -78,7 +53,6 @@ interface CallSignature extends Parent {
       ...comments: InternalComments,
       returnType: TypeAnnotation
     ]
-    | [modifiers: ModifierList, ...comments: Comments, params: ParameterList]
     | [params: ParameterList, ...comments: Comments, returnType: TypeAnnotation]
     | [params: ParameterList]
 
