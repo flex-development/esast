@@ -26,9 +26,11 @@ describe('unit-d:nodes/MethodSignature', () => {
   })
 
   it('should match [kind: MethodKind]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('kind')
-      .toEqualTypeOf<MethodKind>()
+    expectTypeOf<Subject>().toHaveProperty('kind').toEqualTypeOf<MethodKind>()
+  })
+
+  it('should match [static: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('static').toEqualTypeOf<boolean>()
   })
 
   it('should match [type: "methodSignature"]', () => {

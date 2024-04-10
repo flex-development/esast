@@ -76,6 +76,11 @@ interface MethodSignature extends Parent {
   kind: MethodKind
 
   /**
+   * Boolean indicating if method signature is a static class method signature.
+   */
+  static: boolean
+
+  /**
    * Node type.
    */
   type: 'methodSignature'
