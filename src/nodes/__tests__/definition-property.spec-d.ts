@@ -25,6 +25,10 @@ describe('unit-d:nodes/PropertyDefinition', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
+  it('should match [static: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('static').toEqualTypeOf<boolean>()
+  })
+
   it('should match [type: "propertyDefinition"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')

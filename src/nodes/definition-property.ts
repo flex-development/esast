@@ -80,6 +80,11 @@ interface PropertyDefinition extends Parent {
   data?: Optional<PropertyDefinitionData>
 
   /**
+   * Boolean indicating if property is a static class field.
+   */
+  static: boolean
+
+  /**
    * Node type.
    */
   type: 'propertyDefinition'
