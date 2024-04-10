@@ -6,6 +6,7 @@
 import type {
   ArrayType,
   ConditionalType,
+  ConstructorType,
   FunctionType,
   GenericType,
   Identifier,
@@ -52,6 +53,7 @@ type TypeExpression = TypeExpressionMap[keyof TypeExpressionMap]
 interface TypeExpressionMap extends PrimitiveMap {
   arrayType: ArrayType
   conditionalType: ConditionalType
+  constructorType: ConstructorType
   functionType: FunctionType
   genericType: GenericType
   identifier: Identifier

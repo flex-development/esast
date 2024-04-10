@@ -405,6 +405,10 @@ export type {
   default as ConditionalType,
   ConditionalTypeData
 } from './type-conditional'
+export type {
+  default as ConstructorType,
+  ConstructorTypeData
+} from './type-constructor'
 export type { default as FunctionType, FunctionTypeData } from './type-function'
 export type { default as GenericType, GenericTypeData } from './type-generic'
 export type {

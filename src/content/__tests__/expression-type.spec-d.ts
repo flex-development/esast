@@ -7,6 +7,7 @@ import type { NodeObject } from '#tests/types'
 import type {
   ArrayType,
   ConditionalType,
+  ConstructorType,
   FunctionType,
   GenericType,
   Identifier,
@@ -53,6 +54,11 @@ describe('unit-d:content/typeExpression', () => {
     it('should match NodeObject<ConditionalType>', () => {
       expectTypeOf<TestSubject.TypeExpressionMap>()
         .toMatchTypeOf<NodeObject<ConditionalType>>()
+    })
+
+    it('should match NodeObject<ConstructorType>', () => {
+      expectTypeOf<TestSubject.TypeExpressionMap>()
+        .toMatchTypeOf<NodeObject<ConstructorType>>()
     })
 
     it('should match NodeObject<FunctionType>', () => {
