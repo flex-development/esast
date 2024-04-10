@@ -54,13 +54,6 @@ interface MethodDefinition extends Parent {
       ...comments: InternalComments,
       value: FunctionExpression
     ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      name: Expression,
-      ...comments: InternalComments,
-      value: FunctionExpression
-    ]
     | [name: Expression, ...comments: Comments, value: FunctionExpression]
 
   /**
