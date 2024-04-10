@@ -4,7 +4,7 @@
  */
 
 import type { Data, Parent, PropertyKind } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../property'
 
 describe('unit-d:nodes/Property', () => {
@@ -44,12 +44,6 @@ describe('unit-d:nodes/Property', () => {
   describe('PropertyData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
-    })
-
-    it('should match [assignment?: Nilable<boolean>]', () => {
-      expectTypeOf<SubjectData>()
-        .toHaveProperty('assignment')
-        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })

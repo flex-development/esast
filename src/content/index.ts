@@ -5,9 +5,9 @@
 
 export type { default as Content } from './content'
 export type * from './declaration'
-export type * from './declaration-export'
+export type * from './declaration-type'
 export type * from './expression'
-export type * from './heritage'
+export type * from './expression-type'
 export type * from './literal'
 export type * from './module-reference'
 export type * from './node'

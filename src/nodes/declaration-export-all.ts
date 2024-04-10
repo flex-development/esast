@@ -6,57 +6,56 @@
 import type { InternalComments } from '#internal'
 import type {
   Comments,
-  Data,
+  ExportDeclaration,
+  ExportSpecifiers,
   Identifier,
-  Parent,
+  ImportAssertion,
+  ImportAttributeClause,
+  ImportExportKind,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
-
-/**
- * Info associated with aggregate `export` declarations.
- *
- * @see {@linkcode Data}
- *
- * @extends {Data}
- */
-interface ExportAllDeclarationData extends Data {}
 
 /**
  * An aggregate `export` declaration.
  *
- * @see {@linkcode Parent}
+ * @see {@linkcode ExportDeclaration}
  *
- * @extends {Parent}
+ * @extends {ExportDeclaration}
  */
-interface ExportAllDeclaration extends Parent {
+interface ExportAllDeclaration extends ExportDeclaration {
   /**
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode Identifier}
+   * @see {@linkcode ImportAssertion}
+   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode StringLiteral}
    */
   children:
     | [
       ...comments: Comments,
-      exported: Identifier | StringLiteral,
+      specifiers: ExportSpecifiers,
       ...comments: InternalComments,
-      source: StringLiteral
+      source: Identifier | StringLiteral
     ]
-    | [...comments: Comments, source: StringLiteral]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers,
+      ...comments: InternalComments,
+      source: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      attributes: ImportAssertion | ImportAttributeClause
+    ]
+    | [...comments: Comments, source: Identifier | StringLiteral]
 
   /**
-   * Info from the ecosystem.
+   * Export declaration kind.
    *
-   * @see {@linkcode ExportAllDeclarationData}
+   * @see {@linkcode ImportExportKind}
    */
-  data?: Optional<ExportAllDeclarationData>
-
-  /**
-   * Node type.
-   */
-  type: 'exportAllDeclaration'
+  kind: Extract<ImportExportKind, 'namespace'>
 }
 
-export type { ExportAllDeclarationData, ExportAllDeclaration as default }
+export type { ExportAllDeclaration as default }

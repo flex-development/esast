@@ -7,13 +7,14 @@ import type {
   Declaration,
   ExportDeclaration,
   Expression,
-  Heritage,
   LiteralValue,
   ModuleReference,
   Pattern,
   Primitive,
   RootChild,
-  Statement
+  Statement,
+  TypeDeclaration,
+  TypeExpression
 } from '@flex-development/esast'
 import type TestSubject from '../content'
 
@@ -28,10 +29,6 @@ describe('unit-d:content/Content', () => {
 
   it('should extract Expression', () => {
     expectTypeOf<TestSubject>().extract<Expression>().not.toBeNever()
-  })
-
-  it('should extract Heritage', () => {
-    expectTypeOf<TestSubject>().extract<Heritage>().not.toBeNever()
   })
 
   it('should extract LiteralValue', () => {
@@ -56,5 +53,13 @@ describe('unit-d:content/Content', () => {
 
   it('should extract Statement', () => {
     expectTypeOf<TestSubject>().extract<Statement>().not.toBeNever()
+  })
+
+  it('should extract TypeDeclaration', () => {
+    expectTypeOf<TestSubject>().extract<TypeDeclaration>().not.toBeNever()
+  })
+
+  it('should extract TypeExpression', () => {
+    expectTypeOf<TestSubject>().extract<TypeExpression>().not.toBeNever()
   })
 })

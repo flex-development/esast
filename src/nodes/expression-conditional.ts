@@ -5,7 +5,6 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
@@ -33,7 +32,7 @@ interface ConditionalExpression extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
   children: [

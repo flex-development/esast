@@ -22,13 +22,18 @@ import type {
   LiteralMap,
   LogicalExpression,
   MemberExpression,
+  ModuleExpression,
+  NewExpression,
+  NonNullAssertion,
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
+  SatisfiesAssertion,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
   This,
+  TypeAssertion,
   UnaryExpression,
   UpdateExpression,
   YieldExpression
@@ -131,6 +136,21 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<MemberExpression>>()
     })
 
+    it('should match NodeObject<ModuleExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<ModuleExpression>>()
+    })
+
+    it('should match NodeObject<NewExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<NewExpression>>()
+    })
+
+    it('should match NodeObject<NonNullAssertion>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<NonNullAssertion>>()
+    })
+
     it('should match NodeObject<ObjectExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ObjectExpression>>()
@@ -144,6 +164,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<RelationalExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<RelationalExpression>>()
+    })
+
+    it('should match NodeObject<SatisfiesAssertion>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<SatisfiesAssertion>>()
     })
 
     it('should match NodeObject<SequenceExpression>', () => {
@@ -164,6 +189,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<This>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<This>>()
+    })
+
+    it('should match NodeObject<TypeAssertion>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<TypeAssertion>>()
     })
 
     it('should match NodeObject<UnaryExpression>', () => {

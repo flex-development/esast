@@ -3,33 +3,22 @@
  * @module esast/nodes/tests/unit-d/ExportNamedDeclaration
  */
 
-import type { Data, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type {
+  ExportDeclaration,
+  ImportExportKind
+} from '@flex-development/esast'
 import type * as TestSubject from '../declaration-export-named'
 
 describe('unit-d:nodes/ExportNamedDeclaration', () => {
   type Subject = TestSubject.default
-  type SubjectData = TestSubject.ExportNamedDeclarationData
 
-  it('should extend Parent', () => {
-    expectTypeOf<Subject>().toMatchTypeOf<Parent>()
+  it('should extend ExportDeclaration', () => {
+    expectTypeOf<Subject>().toMatchTypeOf<ExportDeclaration>()
   })
 
-  it('should match [data?: Optional<ExportNamedDeclarationData>]', () => {
+  it('should match [kind: Extract<ImportExportKind, "named">]', () => {
     expectTypeOf<Subject>()
-      .toHaveProperty('data')
-      .toEqualTypeOf<Optional<SubjectData>>()
-  })
-
-  it('should match [type: "exportNamedDeclaration"]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('type')
-      .toEqualTypeOf<'exportNamedDeclaration'>()
-  })
-
-  describe('ExportNamedDeclarationData', () => {
-    it('should extend Data', () => {
-      expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
-    })
+      .toHaveProperty('kind')
+      .toEqualTypeOf<Extract<ImportExportKind, 'named'>>()
   })
 })

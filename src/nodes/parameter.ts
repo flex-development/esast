@@ -3,11 +3,22 @@
  * @module esast/nodes/Parameter
  */
 
-import type { Data, Parent, Pattern } from '@flex-development/esast'
+import type { InternalComments } from '#internal'
+import type {
+  Comment,
+  Comments,
+  Data,
+  Decorator,
+  ModifierList,
+  Parent,
+  Pattern,
+  This,
+  TypeAnnotation
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
- * Info associated with function parameters.
+ * Info associated with parameters.
  *
  * @see {@linkcode Data}
  *
@@ -16,7 +27,7 @@ import type { Optional } from '@flex-development/tutils'
 interface ParameterData extends Data {}
 
 /**
- * A function parameter.
+ * A function or method parameter.
  *
  * @see {@linkcode Parent}
  *
@@ -26,9 +37,47 @@ interface Parameter extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Pattern}
+   * @see {@linkcode This}
+   * @see {@linkcode TypeAnnotation}
    */
-  children: [parameter: Pattern]
+  children:
+    | [
+      ...([Decorator, ...(Comment | Decorator)[]]),
+      modifiers: ModifierList,
+      ...comments: InternalComments,
+      parameter: Pattern | This
+    ]
+    | [
+      ...([Decorator, ...(Comment | Decorator)[]]),
+      modifiers: ModifierList,
+      ...comments: InternalComments,
+      parameter: Pattern | This,
+      ...comments: InternalComments,
+      type: TypeAnnotation
+    ]
+    | [
+      ...([Decorator, ...(Comment | Decorator)[]]),
+      parameter: Pattern | This,
+      ...comments: InternalComments,
+      type: TypeAnnotation
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      parameter: Pattern | This
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      parameter: Pattern | This,
+      ...comments: InternalComments,
+      type: TypeAnnotation
+    ]
+    | [...([Decorator, ...(Comment | Decorator)[]]), parameter: Pattern | This]
+    | [parameter: Pattern | This, ...comments: Comments, type: TypeAnnotation]
+    | [parameter: Pattern | This]
 
   /**
    * Info from the ecosystem.

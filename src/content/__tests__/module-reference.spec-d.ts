@@ -5,7 +5,7 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
-  ExportDeclarationMap,
+  ExportDeclaration,
   ImportDeclaration
 } from '@flex-development/esast'
 import type * as TestSubject from '../module-reference'
@@ -23,9 +23,9 @@ describe('unit-d:content/moduleReference', () => {
   })
 
   describe('ModuleReferenceMap', () => {
-    it('should extend ExportDeclarationMap', () => {
+    it('should match NodeObject<ExportDeclaration>', () => {
       expectTypeOf<TestSubject.ModuleReferenceMap>()
-        .toMatchTypeOf<ExportDeclarationMap>()
+        .toMatchTypeOf<NodeObject<ExportDeclaration>>()
     })
 
     it('should match NodeObject<ImportDeclaration>', () => {

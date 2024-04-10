@@ -5,6 +5,18 @@
  */
 
 export type { default as ArgumentList, ArgumentListData } from './argument-list'
+export type {
+  default as NonNullAssertion,
+  NonNullAssertionData
+} from './assertion-non-null'
+export type {
+  default as SatisfiesAssertion,
+  SatisfiesAssertionData
+} from './assertion-satisfies'
+export type {
+  default as TypeAssertion,
+  TypeAssertionData
+} from './assertion-type'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
 export type {
@@ -23,6 +35,10 @@ export type {
 } from './comment-hashbang'
 export type { default as LineComment, LineCommentData } from './comment-line'
 export type {
+  default as AmbientDeclaration,
+  AmbientDeclarationData
+} from './declaration-ambient'
+export type {
   default as ClassDeclaration,
   ClassDeclarationData
 } from './declaration-class'
@@ -31,16 +47,15 @@ export type {
   EnumDeclarationData
 } from './declaration-enum'
 export type {
-  default as ExportAllDeclaration,
-  ExportAllDeclarationData
-} from './declaration-export-all'
+  default as ExportDeclaration,
+  ExportDeclarationData
+} from './declaration-export'
+export type { default as ExportAllDeclaration } from './declaration-export-all'
 export type {
-  default as ExportDefaultDeclaration,
-  ExportDefaultDeclarationData
+  default as ExportDefaultDeclaration
 } from './declaration-export-default'
 export type {
-  default as ExportNamedDeclaration,
-  ExportNamedDeclarationData
+  default as ExportNamedDeclaration
 } from './declaration-export-named'
 export type {
   default as FunctionDeclaration,
@@ -50,6 +65,22 @@ export type {
   default as ImportDeclaration,
   ImportDeclarationData
 } from './declaration-import'
+export type {
+  default as InterfaceDeclaration,
+  InterfaceDeclarationData
+} from './declaration-interface'
+export type {
+  default as ModuleDeclaration,
+  ModuleDeclarationData
+} from './declaration-module'
+export type {
+  default as NamespaceDeclaration,
+  NamespaceDeclarationData
+} from './declaration-namespace'
+export type {
+  default as TypeAliasDeclaration,
+  TypeAliasDeclarationData
+} from './declaration-type-alias'
 export type {
   default as VariableDeclaration,
   VariableDeclarationData
@@ -75,6 +106,7 @@ export type {
 } from './element-template'
 export type { default as EnumBody, EnumBodyData } from './enum-body'
 export type { default as EnumMember, EnumMemberData } from './enum-member'
+export type { default as ExportAssignment } from './export-assignment'
 export type {
   default as ArithmeticExpression,
   ArithmeticExpressionData
@@ -136,6 +168,14 @@ export type {
   MemberExpressionData
 } from './expression-member'
 export type {
+  default as ModuleExpression,
+  ModuleExpressionData
+} from './expression-module'
+export type {
+  default as NewExpression,
+  NewExpressionData
+} from './expression-new'
+export type {
   default as ObjectExpression,
   ObjectExpressionData
 } from './expression-object'
@@ -160,6 +200,10 @@ export type {
   UnaryExpressionData
 } from './expression-unary'
 export type {
+  default as UnaryTypeExpression,
+  UnaryTypeExpressionData
+} from './expression-unary-type'
+export type {
   default as UpdateExpression,
   UpdateExpressionData
 } from './expression-update'
@@ -167,13 +211,37 @@ export type {
   default as YieldExpression,
   YieldExpressionData
 } from './expression-yield'
+export type {
+  default as ExtendsClause,
+  ExtendsClauseData
+} from './extends-clause'
 export type { default as FinallyBlock, FinallyBlockData } from './finally-block'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
 export type { default as MetaIdentifier } from './identifier-meta'
 export type { default as RequireIdentifier } from './identifier-require'
+export type {
+  default as ImplementsClause,
+  ImplementsClauseData
+} from './implements-clause'
+export type {
+  default as ImportAssertion,
+  ImportAssertionData
+} from './import-assertion'
+export type {
+  default as ImportAttribute,
+  ImportAttributeData
+} from './import-attribute'
+export type {
+  default as ImportAttributeClause,
+  ImportAttributeClauseData
+} from './import-attribute-clause'
 export type { default as ImportMeta, ImportMetaData } from './import-meta'
+export type {
+  default as InterfaceBody,
+  InterfaceBodyData
+} from './interface-body'
 export type { default as Literal } from './literal'
 export type { default as BigIntLiteral } from './literal-bigint'
 export type { default as BooleanLiteral } from './literal-boolean'
@@ -182,6 +250,12 @@ export type { default as NumberLiteral } from './literal-number'
 export type { default as RegExpLiteral } from './literal-regexp'
 export type { default as StringLiteral } from './literal-string'
 export type { default as UndefinedLiteral } from './literal-undefined'
+export type { default as Modifier } from './modifier'
+export type {
+  default as ModifierList,
+  ModifierListData
+} from './modifier-list'
+export type { default as ModuleBody, ModuleBodyData } from './module-body'
 export type { default as Node } from './node'
 export type { default as Nothing } from './nothing'
 export type { default as Parameter, ParameterData } from './parameter'
@@ -201,6 +275,34 @@ export type {
 } from './pattern-object'
 export type { default as Property, PropertyData } from './property'
 export type { default as Root, RootData } from './root'
+export type {
+  default as CallSignature,
+  CallSignatureData
+} from './signature-call'
+export type {
+  default as ConstructSignature,
+  ConstructSignatureData
+} from './signature-construct'
+export type {
+  default as FunctionSignature,
+  FunctionSignatureData
+} from './signature-function'
+export type {
+  default as IndexSignature,
+  IndexSignatureData
+} from './signature-index'
+export type {
+  default as MappedSignature,
+  MappedSignatureData
+} from './signature-mapped'
+export type {
+  default as MethodSignature,
+  MethodSignatureData
+} from './signature-method'
+export type {
+  default as PropertySignature,
+  PropertySignatureData
+} from './signature-property'
 export type {
   default as ExportSpecifier,
   ExportSpecifierData
@@ -289,6 +391,55 @@ export type {
   TemplateLiteralData
 } from './template-literal'
 export type { default as This, ThisData } from './this'
+export type { default as TupleElement, TupleElementData } from './tuple-element'
+export type {
+  default as TypeAnnotation,
+  TypeAnnotationData
+} from './type-annotation'
+export type {
+  default as TypeArgumentList,
+  TypeArgumentListData
+} from './type-argument-list'
+export type { default as ArrayType, ArrayTypeData } from './type-array'
+export type {
+  default as ConditionalType,
+  ConditionalTypeData
+} from './type-conditional'
+export type { default as FunctionType, FunctionTypeData } from './type-function'
+export type { default as GenericType, GenericTypeData } from './type-generic'
+export type {
+  default as IndexedAccessType,
+  IndexedAccessTypeData
+} from './type-indexed-access'
+export type {
+  default as IntersectionType,
+  IntersectionTypeData
+} from './type-intersection'
+export type { default as TypeKeyword } from './type-keyword'
+export type { default as MappedType, MappedTypeData } from './type-mapped'
+export type {
+  default as ObjectLiteralType,
+  ObjectLiteralTypeData
+} from './type-object-literal'
+export type {
+  default as TypeParameter,
+  TypeParameterData
+} from './type-parameter'
+export type {
+  default as TypeParameterList,
+  TypeParameterListData
+} from './type-parameter-list'
+export type {
+  default as ParenthesizedType,
+  ParenthesizedTypeData
+} from './type-parenthesized'
+export type {
+  default as TypePredicate,
+  TypePredicateData
+} from './type-predicate'
+export type { default as RestType, RestTypeData } from './type-rest'
+export type { default as TupleType, TupleTypeData } from './type-tuple'
+export type { default as UnionType, UnionTypeData } from './type-union'
 export type {
   default as VariableDeclarator,
   VariableDeclaratorData

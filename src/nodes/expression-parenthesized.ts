@@ -22,7 +22,7 @@ import type { Optional } from '@flex-development/tutils'
 interface ParenthesizedExpressionData extends Data {}
 
 /**
- * An expression wrapped in parantheses.
+ * An expression wrapped in parentheses.
  *
  * @see {@linkcode Parent}
  *

@@ -9,7 +9,7 @@ import type {
   ClassHeritage,
   ExportSpecifier,
   ExportSpecifiers,
-  HeritageMap,
+  ExpressionMap,
   ImportSpecifier,
   ImportSpecifiers,
   MethodDefinition,
@@ -39,8 +39,8 @@ describe('unit-d:content/node', () => {
   })
 
   describe('NodeMap', () => {
-    it('should extend HeritageMap', () => {
-      expectTypeOf<TestSubject.NodeMap>().toMatchTypeOf<HeritageMap>()
+    it('should extend ExpressionMap', () => {
+      expectTypeOf<TestSubject.NodeMap>().toMatchTypeOf<ExpressionMap>()
     })
 
     it('should extend PatternMap', () => {

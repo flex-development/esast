@@ -3,12 +3,11 @@
  * @module esast/nodes/MemberExpression
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
-  Identifier,
   Parent,
   Super
 } from '@flex-development/esast'
@@ -34,16 +33,22 @@ interface MemberExpression extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode Identifier}
    * @see {@linkcode Super}
    */
-  children: [
-    object: Expression | Super,
-    ...comments: Comments,
-    property: Expression | Identifier
-  ]
+  children:
+    | [
+      object: Expression | Super,
+      ...comments: Comments,
+      property: Expression
+    ]
+    | [
+      object: Expression | Super,
+      ...comments: Comments,
+      property: Expression,
+      ...comments: InternalComments
+    ]
 
   /**
    * Boolean indicating if member expression property is computed.

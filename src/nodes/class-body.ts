@@ -7,6 +7,8 @@ import type {
   Comment,
   Data,
   Decorator,
+  FunctionSignature,
+  IndexSignature,
   MethodDefinition,
   Parent,
   PropertyDefinition,
@@ -36,6 +38,8 @@ interface ClassBody extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode Decorator}
+   * @see {@linkcode FunctionSignature}
+   * @see {@linkcode IndexSignature}
    * @see {@linkcode MethodDefinition}
    * @see {@linkcode PropertyDefinition}
    * @see {@linkcode StaticBlock}
@@ -43,6 +47,8 @@ interface ClassBody extends Parent {
   children: (
     | Comment
     | Decorator
+    | FunctionSignature
+    | IndexSignature
     | MethodDefinition
     | PropertyDefinition
     | StaticBlock

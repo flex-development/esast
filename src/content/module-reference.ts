@@ -4,7 +4,7 @@
  */
 
 import type {
-  ExportDeclarationMap,
+  ExportDeclaration,
   ImportDeclaration
 } from '@flex-development/esast'
 
@@ -30,7 +30,8 @@ type ModuleReference = ModuleReferenceMap[keyof ModuleReferenceMap]
  *    }
  *  }
  */
-interface ModuleReferenceMap extends ExportDeclarationMap {
+interface ModuleReferenceMap {
+  exportDeclaration: ExportDeclaration
   importDeclaration: ImportDeclaration
 }
 

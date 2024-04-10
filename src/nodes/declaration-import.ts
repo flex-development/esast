@@ -5,14 +5,18 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
+  CallExpression,
   Comments,
   Data,
+  Identifier,
+  ImportAssertion,
+  ImportAttributeClause,
+  ImportExportKind,
   ImportSpecifiers,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `import` declarations.
@@ -21,7 +25,14 @@ import type { Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface ImportDeclarationData extends Data {}
+interface ImportDeclarationData extends Data {
+  /**
+   * Type-only import?
+   *
+   * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
+   */
+  typeOnly?: Nilable<boolean>
+}
 
 /**
  * An `import` declaration.
@@ -34,16 +45,35 @@ interface ImportDeclaration extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode CallExpression}
+   * @see {@linkcode Comments}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode ImportAssertion}
+   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode ImportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
-  children: [
-    ...comments: Comments,
-    specifiers: ImportSpecifiers,
-    ...comments: InternalComments,
-    source: StringLiteral
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      left: ImportSpecifiers,
+      ...comments: InternalComments,
+      right: CallExpression
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ImportSpecifiers,
+      ...comments: InternalComments,
+      source: Identifier | StringLiteral
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ImportSpecifiers,
+      ...comments: InternalComments,
+      source: StringLiteral,
+      ...comments: InternalComments,
+      attributes: ImportAssertion | ImportAttributeClause
+    ]
 
   /**
    * Info from the ecosystem.
@@ -51,6 +81,13 @@ interface ImportDeclaration extends Parent {
    * @see {@linkcode ImportDeclarationData}
    */
   data?: Optional<ImportDeclarationData>
+
+  /**
+   * Import declaration kind.
+   *
+   * @see {@linkcode ImportExportKind}
+   */
+  kind: ImportExportKind
 
   /**
    * Node type.

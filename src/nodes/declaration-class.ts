@@ -10,7 +10,9 @@ import type {
   Comments,
   Data,
   Identifier,
-  Parent
+  ModifierList,
+  Parent,
+  TypeParameterList
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -36,16 +38,79 @@ interface ClassDeclaration extends Parent {
    *
    * @see {@linkcode ClassBody}
    * @see {@linkcode ClassHeritage}
+   * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
+   * @see {@linkcode TypeParameterList}
    */
-  children: [
-    ...comments: Comments,
-    id: Identifier,
-    ...comments: InternalComments,
-    heritage: ClassHeritage,
-    ...comments: InternalComments,
-    body: ClassBody
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
 
   /**
    * Info from the ecosystem.

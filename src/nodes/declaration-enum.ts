@@ -3,6 +3,7 @@
  * @module esast/nodes/EnumDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
@@ -39,9 +40,16 @@ interface EnumDeclaration extends Parent {
   children: [
     ...comments: Comments,
     id: Identifier,
-    ...comments: Comments,
+    ...comments: InternalComments,
     body: EnumBody
   ]
+
+  /**
+   * Const enum declaration?
+   *
+   * @see https://www.typescriptlang.org/docs/handbook/enums.html#const-enums
+   */
+  const: boolean
 
   /**
    * Info from the ecosystem.

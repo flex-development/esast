@@ -5,17 +5,18 @@
 
 import type {
   ClassDeclaration,
-  EnumDeclaration,
   FunctionDeclaration,
+  ModuleDeclaration,
+  TypeDeclarationMap,
   VariableDeclaration
 } from '@flex-development/esast'
 
 /**
- * Union of registered esast nodes that can occur where a non-module declaration
- * is expected.
+ * Union of registered esast nodes that can occur where a concrete (non-ambient)
+ * declaration is expected.
  *
- * To register custom esast nodes, augment {@linkcode DeclarationMap}.
- * They will be added to this union automatically.
+ * To register custom esast nodes, augment {@linkcode DeclarationMap}. They will
+ * be added to this union automatically.
  */
 type Declaration = DeclarationMap[keyof DeclarationMap]
 
@@ -30,11 +31,13 @@ type Declaration = DeclarationMap[keyof DeclarationMap]
  *      customDeclaration: CustomDeclaration
  *    }
  *  }
+ *
+ * @extends {TypeDeclarationMap}
  */
-interface DeclarationMap {
+interface DeclarationMap extends TypeDeclarationMap {
   classDeclaration: ClassDeclaration
-  enumDeclaration: EnumDeclaration
   functionDeclaration: FunctionDeclaration
+  moduleDeclaration: ModuleDeclaration
   variableDeclaration: VariableDeclaration
 }
 

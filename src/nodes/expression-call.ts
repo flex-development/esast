@@ -3,13 +3,15 @@
  * @module esast/nodes/CallExpression
  */
 
+import type { InternalComments } from '#internal'
 import type {
   ArgumentList,
   Comments,
   Data,
   Expression,
   Parent,
-  Super
+  Super,
+  TypeArgumentList
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -37,17 +39,21 @@ interface CallExpression extends Parent {
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    * @see {@linkcode Super}
+   * @see {@linkcode TypeArgumentList}
    */
-  children: [
-    callee: Expression | Super,
-    ...comments: Comments,
-    arguments: ArgumentList
-  ]
-
-  /**
-   * Boolean indicating if call expression creates an instance object.
-   */
-  new: boolean
+  children:
+    | [
+      callee: Expression | Super,
+      ...comments: Comments,
+      arguments: ArgumentList
+    ]
+    | [
+      callee: Expression | Super,
+      ...comments: Comments,
+      typeArguments: TypeArgumentList,
+      ...comments: InternalComments,
+      arguments: ArgumentList
+    ]
 
   /**
    * Info from the ecosystem.

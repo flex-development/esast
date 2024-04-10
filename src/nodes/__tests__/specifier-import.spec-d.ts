@@ -3,8 +3,8 @@
  * @module esast/nodes/tests/unit-d/ImportSpecifier
  */
 
-import type { Data, ImportSpecifierKind, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Data, Parent } from '@flex-development/esast'
+import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../specifier-import'
 
 describe('unit-d:nodes/ImportSpecifier', () => {
@@ -21,12 +21,6 @@ describe('unit-d:nodes/ImportSpecifier', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [kind: ImportSpecifierKind]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('kind')
-      .toEqualTypeOf<ImportSpecifierKind>()
-  })
-
   it('should match [type: "importSpecifier"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')
@@ -36,6 +30,12 @@ describe('unit-d:nodes/ImportSpecifier', () => {
   describe('ImportSpecifierData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
+    })
+
+    it('should match [typeOnly?: Nilable<boolean>]', () => {
+      expectTypeOf<SubjectData>()
+        .toHaveProperty('typeOnly')
+        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })

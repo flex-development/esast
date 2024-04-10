@@ -21,10 +21,6 @@ describe('unit-d:nodes/CallExpression', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [new: boolean]', () => {
-    expectTypeOf<Subject>().toHaveProperty('new').toEqualTypeOf<boolean>()
-  })
-
   it('should match [optional: boolean]', () => {
     expectTypeOf<Subject>().toHaveProperty('optional').toEqualTypeOf<boolean>()
   })

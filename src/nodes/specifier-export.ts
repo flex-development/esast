@@ -11,7 +11,7 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `export` specifiers.
@@ -20,7 +20,14 @@ import type { Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface ExportSpecifierData extends Data {}
+interface ExportSpecifierData extends Data {
+  /**
+   * Type-only export?
+   *
+   * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
+   */
+  typeOnly?: Nilable<boolean>
+}
 
 /**
  * An `export` specifier.

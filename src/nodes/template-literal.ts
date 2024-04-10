@@ -8,7 +8,8 @@ import type {
   Data,
   Expression,
   Parent,
-  TemplateElement
+  TemplateElement,
+  TypeExpression
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -35,8 +36,11 @@ interface TemplateLiteral extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode TemplateElement}
+   * @see {@linkcode TypeExpression}
    */
-  children: (Comment | Expression | TemplateElement)[]
+  children:
+    | (Comment | Expression | TemplateElement)[]
+    | (Comment | TemplateElement | TypeExpression)[]
 
   /**
    * Info from the ecosystem.
@@ -49,6 +53,11 @@ interface TemplateLiteral extends Parent {
    * Node type.
    */
   type: 'templateLiteral'
+
+  /**
+   * Boolean indicating template literal is a {@linkcode TypeExpression}.
+   */
+  typeExpression: boolean
 }
 
 export type { TemplateLiteralData, TemplateLiteral as default }

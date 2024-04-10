@@ -6,7 +6,6 @@
 import type {
   Comment,
   Data,
-  Decorator,
   Parameter,
   Parent
 } from '@flex-development/esast'
@@ -33,10 +32,9 @@ interface ParameterList extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Decorator}
    * @see {@linkcode Parameter}
    */
-  children: (Comment | Decorator | Parameter)[]
+  children: (Comment | Parameter)[]
 
   /**
    * Info from the ecosystem.

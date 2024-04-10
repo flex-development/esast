@@ -21,13 +21,18 @@ import type {
   LiteralMap,
   LogicalExpression,
   MemberExpression,
+  ModuleExpression,
+  NewExpression,
+  NonNullAssertion,
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
+  SatisfiesAssertion,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
   This,
+  TypeAssertion,
   UnaryExpression,
   UpdateExpression,
   YieldExpression
@@ -73,13 +78,18 @@ interface ExpressionMap extends LiteralMap {
   importMeta: ImportMeta
   logicalExpression: LogicalExpression
   memberExpression: MemberExpression
+  moduleExpression: ModuleExpression
+  newExpression: NewExpression
+  nonNullAssertion: NonNullAssertion
   objectExpression: ObjectExpression
   parenthesizedExpression: ParenthesizedExpression
   relationalExpression: RelationalExpression
+  satisfiesAssertion: SatisfiesAssertion
   sequenceExpression: SequenceExpression
   taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral
   this: This
+  typeAssertion: TypeAssertion
   unaryExpression: UnaryExpression
   updateExpression: UpdateExpression
   yieldExpression: YieldExpression

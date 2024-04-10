@@ -8,32 +8,25 @@ import type {
   ClassDeclaration,
   Comment,
   Comments,
-  Data,
   Declaration,
   Decorator,
+  ExportDeclaration,
   ExportSpecifiers,
-  Parent,
+  Identifier,
+  ImportAssertion,
+  ImportAttributeClause,
+  ImportExportKind,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
-
-/**
- * Info associated with named `export` declarations.
- *
- * @see {@linkcode Data}
- *
- * @extends {Data}
- */
-interface ExportNamedDeclarationData extends Data {}
 
 /**
  * A named `export` declaration.
  *
- * @see {@linkcode Parent}
+ * @see {@linkcode ExportDeclaration}
  *
- * @extends {Parent}
+ * @extends {ExportDeclaration}
  */
-interface ExportNamedDeclaration extends Parent {
+interface ExportNamedDeclaration extends ExportDeclaration {
   /**
    * List of children.
    *
@@ -43,6 +36,9 @@ interface ExportNamedDeclaration extends Parent {
    * @see {@linkcode Declaration}
    * @see {@linkcode Decorator}
    * @see {@linkcode ExportSpecifiers}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode ImportAssertion}
+   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode StringLiteral}
    */
   children:
@@ -50,23 +46,26 @@ interface ExportNamedDeclaration extends Parent {
       ...comments: Comments,
       specifiers: ExportSpecifiers,
       ...comments: InternalComments,
-      source: StringLiteral
+      source: Identifier | StringLiteral
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers,
+      ...comments: InternalComments,
+      source: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      attributes: ImportAssertion | ImportAttributeClause
     ]
     | [...(Comment | Decorator)[], declaration: ClassDeclaration]
     | [...comments: Comments, declaration: Declaration]
     | [...comments: Comments, specifiers: ExportSpecifiers]
 
   /**
-   * Info from the ecosystem.
+   * Export declaration kind.
    *
-   * @see {@linkcode ExportNamedDeclarationData}
+   * @see {@linkcode ImportExportKind}
    */
-  data?: Optional<ExportNamedDeclarationData>
-
-  /**
-   * Node type.
-   */
-  type: 'exportNamedDeclaration'
+  kind: Extract<ImportExportKind, 'named'>
 }
 
-export type { ExportNamedDeclarationData, ExportNamedDeclaration as default }
+export type { ExportNamedDeclaration as default }

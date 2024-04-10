@@ -4,7 +4,7 @@
  */
 
 import type { Data, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../specifier-export'
 
 describe('unit-d:nodes/ExportSpecifier', () => {
@@ -30,6 +30,12 @@ describe('unit-d:nodes/ExportSpecifier', () => {
   describe('ExportSpecifierData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
+    })
+
+    it('should match [typeOnly?: Nilable<boolean>]', () => {
+      expectTypeOf<SubjectData>()
+        .toHaveProperty('typeOnly')
+        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })

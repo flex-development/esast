@@ -7,31 +7,22 @@ import type {
   ClassDeclaration,
   Comment,
   Comments,
-  Data,
   Decorator,
+  ExportDeclaration,
   Expression,
   FunctionDeclaration,
-  Parent
+  ImportExportKind,
+  ModuleDeclaration
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
-
-/**
- * Info associated with default `export` declarations.
- *
- * @see {@linkcode Data}
- *
- * @extends {Data}
- */
-interface ExportDefaultDeclarationData extends Data {}
 
 /**
  * A default `export` declaration.
  *
- * @see {@linkcode Parent}
+ * @see {@linkcode ExportDeclaration}
  *
- * @extends {Parent}
+ * @extends {ExportDeclaration}
  */
-interface ExportDefaultDeclaration extends Parent {
+interface ExportDefaultDeclaration extends ExportDeclaration {
   /**
    * List of children.
    *
@@ -41,28 +32,25 @@ interface ExportDefaultDeclaration extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionDeclaration}
+   * @see {@linkcode ModuleDeclaration}
    */
   children:
     | [
       ...comments: Comments,
-      declaration: ClassDeclaration | Expression | FunctionDeclaration
+      declaration:
+        | ClassDeclaration
+        | Expression
+        | FunctionDeclaration
+        | ModuleDeclaration
     ]
     | [...(Comment | Decorator)[], declaration: ClassDeclaration]
 
   /**
-   * Info from the ecosystem.
+   * Export declaration kind.
    *
-   * @see {@linkcode ExportDefaultDeclarationData}
+   * @see {@linkcode ImportExportKind}
    */
-  data?: Optional<ExportDefaultDeclarationData>
-
-  /**
-   * Node type.
-   */
-  type: 'exportDefaultDeclaration'
+  kind: Extract<ImportExportKind, 'default'>
 }
 
-export type {
-  ExportDefaultDeclarationData,
-  ExportDefaultDeclaration as default
-}
+export type { ExportDefaultDeclaration as default }

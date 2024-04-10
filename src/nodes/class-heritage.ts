@@ -3,7 +3,13 @@
  * @module esast/nodes/ClassHeritage
  */
 
-import type { Comment, Data, Heritage, Parent } from '@flex-development/esast'
+import type {
+  Comments,
+  Data,
+  ExtendsClause,
+  ImplementsClause,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
@@ -26,10 +32,23 @@ interface ClassHeritage extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
-   * @see {@linkcode Heritage}
+   * @see {@linkcode Comments}
+   * @see {@linkcode ExtendsClause}
+   * @see {@linkcode ImplementsClause}
    */
-  children: (Comment | Heritage)[]
+  children:
+    | [
+      extend: ExtendsClause,
+      ...comments: Comments,
+      implement: ImplementsClause
+    ]
+    | [
+      implement: ImplementsClause,
+      ...comments: Comments,
+      extend: ExtendsClause
+    ]
+    | [extend: ExtendsClause]
+    | [implement: ImplementsClause]
 
   /**
    * Info from the ecosystem.

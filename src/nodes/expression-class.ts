@@ -11,8 +11,8 @@ import type {
   Comments,
   Data,
   Identifier,
-  Nothing,
-  Parent
+  Parent,
+  TypeParameterList
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -39,16 +39,70 @@ interface ClassExpression extends Parent {
    * @see {@linkcode ClassBody}
    * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
-   * @see {@linkcode Nothing}
+   * @see {@linkcode TypeParameterList}
    */
-  children: [
-    ...comments: Comments,
-    id: Identifier | Nothing,
-    ...comments: InternalComments,
-    heritage: ClassHeritage,
-    ...comments: InternalComments,
-    body: ClassBody
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      heritage: ClassHeritage,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [...comments: Comments, body: ClassBody]
 
   /**
    * Info from the ecosystem.

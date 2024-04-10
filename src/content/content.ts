@@ -3,11 +3,11 @@
  * @module esast/content/Content
  */
 
-import type { Heritage, Pattern, RootChild } from '@flex-development/esast'
+import type { Expression, Pattern, RootChild } from '@flex-development/esast'
 
 /**
  * Union of registered content model nodes.
  */
-type Content = Heritage | Pattern | RootChild
+type Content = Expression | Pattern | RootChild
 
 export type { Content as default }

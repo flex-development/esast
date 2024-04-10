@@ -5,12 +5,12 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
-  Identifier,
-  Parent
+  ModifierList,
+  Parent,
+  TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -32,27 +32,40 @@ interface PropertyDefinitionData extends Data {}
  */
 interface PropertyDefinition extends Parent {
   /**
-   * Boolean indicating if property is a [class auto accessor][1].
-   *
-   * [1]: https://github.com/tc39/proposal-decorators#introduction
-   */
-  accessor: boolean
-
-  /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode ModifierList}
+   * @see {@linkcode TypeAnnotation}
    */
   children:
     | [
+      modifiers: ModifierList,
       ...comments: Comments,
-      key: Expression | Identifier,
+      name: Expression,
+      ...comments: InternalComments,
+      type: TypeAnnotation
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      type: TypeAnnotation,
       ...comments: InternalComments,
       value: Expression
     ]
-    | [...comments: Comments, key: Expression | Identifier]
+    | [
+      name: Expression,
+      ...comments: Comments,
+      type: TypeAnnotation,
+      ...comments: InternalComments,
+      value: Expression
+    ]
+    | [modifiers: ModifierList, ...comments: Comments, name: Expression]
+    | [name: Expression, ...comments: Comments, type: TypeAnnotation]
+    | [name: Expression]
 
   /**
    * Boolean indicating if property name is computed.
@@ -65,11 +78,6 @@ interface PropertyDefinition extends Parent {
    * @see {@linkcode PropertyDefinitionData}
    */
   data?: Optional<PropertyDefinitionData>
-
-  /**
-   * Boolean indicating if property is static.
-   */
-  static: boolean
 
   /**
    * Node type.

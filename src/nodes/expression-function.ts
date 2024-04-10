@@ -10,7 +10,9 @@ import type {
   Data,
   Identifier,
   ParameterList,
-  Parent
+  Parent,
+  TypeAnnotation,
+  TypeParameterList
 } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 
@@ -52,6 +54,8 @@ interface FunctionExpression extends Parent {
    * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    * @see {@linkcode ParameterList}
+   * @see {@linkcode TypeAnnotation}
+   * @see {@linkcode TypeParameterList}
    */
   children:
     | [
@@ -64,7 +68,65 @@ interface FunctionExpression extends Parent {
     ]
     | [
       ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
       params: ParameterList,
+      ...comments: InternalComments,
+      returnType: TypeAnnotation,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      returnType: TypeAnnotation,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      returnType: TypeAnnotation,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      params: ParameterList,
+      ...comments: InternalComments,
+      returnType: TypeAnnotation,
       ...comments: InternalComments,
       body: BlockStatement
     ]

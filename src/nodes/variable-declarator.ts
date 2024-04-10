@@ -3,13 +3,14 @@
  * @module esast/nodes/VariableDeclarator
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
   Parent,
-  Pattern
+  Pattern,
+  TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -33,12 +34,21 @@ interface VariableDeclarator extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
+   * @see {@linkcode TypeAnnotation}
    */
   children:
+    | [
+      id: Pattern,
+      ...comments: Comments,
+      type: TypeAnnotation,
+      ...comments: InternalComments,
+      init: Expression
+    ]
     | [id: Pattern, ...comments: Comments, init: Expression]
+    | [id: Pattern, ...comments: Comments, type: TypeAnnotation]
     | [id: Pattern]
 
   /**

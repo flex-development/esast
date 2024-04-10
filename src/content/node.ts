@@ -4,27 +4,56 @@
  */
 
 import type {
+  ArgumentList,
+  CallSignature,
   CatchClause,
   ClassBody,
   ClassHeritage,
+  ConstructSignature,
+  EnumBody,
+  EnumMember,
   ExportSpecifier,
   ExportSpecifiers,
-  HeritageMap,
+  ExpressionMap,
+  ExtendsClause,
+  FinallyBlock,
+  ImplementsClause,
+  ImportAssertion,
+  ImportAttribute,
+  ImportAttributeClause,
   ImportSpecifier,
   ImportSpecifiers,
+  IndexSignature,
+  InterfaceBody,
+  MappedSignature,
   MethodDefinition,
+  MethodSignature,
+  Modifier,
+  ModifierList,
+  ModuleBody,
   Nothing,
+  Parameter,
   ParameterList,
   PatternMap,
   Property,
   PropertyDefinition,
+  PropertySignature,
+  RestElement,
+  RestType,
   Root,
   RootMap,
   SpreadElement,
   StatementMap,
+  StaticBlock,
   Super,
   SwitchCase,
   TemplateElement,
+  TupleElement,
+  TypeAnnotation,
+  TypeArgumentList,
+  TypeExpressionMap,
+  TypeParameter,
+  TypeParameterList,
   VariableDeclarator
 } from '@flex-development/esast'
 
@@ -33,10 +62,12 @@ import type {
  *
  * To register custom esast nodes, augment one of the following maps:
  *
- * - {@linkcode HeritageMap}
+ * - {@linkcode ExpressionMap}
  * - {@linkcode NodeMap}
  * - {@linkcode PatternMap}
+ * - {@linkcode RootMap}
  * - {@linkcode StatementMap}
+ * - {@linkcode TypeExpressionMap}
  *
  * They will be added to this union automatically.
  */
@@ -54,29 +85,59 @@ type EsastNode = NodeMap[keyof NodeMap]
  *    }
  *  }
  *
- * @extends {HeritageMap}
+ * @extends {ExpressionMap}
  * @extends {PatternMap}
  * @extends {RootMap}
  * @extends {StatementMap}
+ * @extends {TypeExpressionMap}
  */
-interface NodeMap extends HeritageMap, PatternMap, RootMap, StatementMap {
+interface NodeMap
+  extends ExpressionMap, PatternMap, RootMap, StatementMap, TypeExpressionMap {
+  argumentList: ArgumentList
+  callSignature: CallSignature
   catchClause: CatchClause
   classBody: ClassBody
   classHeritage: ClassHeritage
+  constructSignature: ConstructSignature
+  enumBody: EnumBody
+  enumMember: EnumMember
   exportSpecifier: ExportSpecifier
   exportSpecifiers: ExportSpecifiers
+  extendsClause: ExtendsClause
+  finallyBlock: FinallyBlock
+  implementsClause: ImplementsClause
+  importAssertion: ImportAssertion
+  importAttribute: ImportAttribute
+  importAttributeClause: ImportAttributeClause
   importSpecifier: ImportSpecifier
   importSpecifiers: ImportSpecifiers
+  indexSignature: IndexSignature
+  interfaceBody: InterfaceBody
+  mappedSignature: MappedSignature
   methodDefinition: MethodDefinition
+  methodSignature: MethodSignature
+  modifier: Modifier
+  modifierList: ModifierList
+  moduleBody: ModuleBody
   nothing: Nothing
+  parameter: Parameter
   parameterList: ParameterList
   property: Property
   propertyDefinition: PropertyDefinition
+  propertySignature: PropertySignature
+  restElement: RestElement
+  restType: RestType
   root: Root
   spreadElement: SpreadElement
+  staticBlock: StaticBlock
   super: Super
   switchCase: SwitchCase
   templateElement: TemplateElement
+  tupleElement: TupleElement
+  typeAnnotation: TypeAnnotation
+  typeArgumentList: TypeArgumentList
+  typeParameter: TypeParameter
+  typeParameterList: TypeParameterList
   variableDeclarator: VariableDeclarator
 }
 

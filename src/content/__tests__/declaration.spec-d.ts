@@ -6,8 +6,9 @@
 import type { NodeObject } from '#tests/types'
 import type {
   ClassDeclaration,
-  EnumDeclaration,
   FunctionDeclaration,
+  ModuleDeclaration,
+  TypeDeclarationMap,
   VariableDeclaration
 } from '@flex-development/esast'
 import type * as TestSubject from '../declaration'
@@ -25,19 +26,24 @@ describe('unit-d:content/declaration', () => {
   })
 
   describe('DeclarationMap', () => {
+    it('should extend TypeDeclarationMap', () => {
+      expectTypeOf<TestSubject.DeclarationMap>()
+        .toMatchTypeOf<TypeDeclarationMap>()
+    })
+
     it('should match NodeObject<ClassDeclaration>', () => {
       expectTypeOf<TestSubject.DeclarationMap>()
         .toMatchTypeOf<NodeObject<ClassDeclaration>>()
     })
 
-    it('should match NodeObject<EnumDeclaration>', () => {
-      expectTypeOf<TestSubject.DeclarationMap>()
-        .toMatchTypeOf<NodeObject<EnumDeclaration>>()
-    })
-
     it('should match NodeObject<FunctionDeclaration>', () => {
       expectTypeOf<TestSubject.DeclarationMap>()
         .toMatchTypeOf<NodeObject<FunctionDeclaration>>()
+    })
+
+    it('should match NodeObject<ModuleDeclaration>', () => {
+      expectTypeOf<TestSubject.DeclarationMap>()
+        .toMatchTypeOf<NodeObject<ModuleDeclaration>>()
     })
 
     it('should match NodeObject<VariableDeclaration>', () => {

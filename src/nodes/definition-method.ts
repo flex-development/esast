@@ -5,13 +5,12 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
   FunctionExpression,
-  Identifier,
   MethodKind,
+  ModifierList,
   Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -36,20 +35,36 @@ interface MethodDefinition extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionExpression}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode ModifierList}
    */
-  children: [
-    ...comments: Comments,
-    key: Expression | Identifier,
-    ...comments: InternalComments,
-    value: FunctionExpression
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [name: Expression, ...comments: Comments, value: FunctionExpression]
 
   /**
-   * Boolean indicating if method is a computed property.
+   * Boolean indicating if method name is computed.
    */
   computed: boolean
 

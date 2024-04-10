@@ -3,17 +3,18 @@
  * @module esast/nodes/Property
  */
 
+import type { InternalComments } from '#internal'
 import type {
   Comment,
   Comments,
   Data,
   Expression,
-  Identifier,
+  ModifierList,
   Parent,
   Pattern,
   PropertyKind
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with properties.
@@ -22,12 +23,7 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface PropertyData extends Data {
-  /**
-   * Assignment property?
-   */
-  assignment?: Nilable<boolean>
-}
+interface PropertyData extends Data {}
 
 /**
  * A property.
@@ -42,14 +38,22 @@ interface Property extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode ModifierList}
    * @see {@linkcode Pattern}
    */
-  children: [
-    key: Expression | Identifier,
-    ...comments: Comments,
-    value: Expression | Pattern
-  ]
+  children:
+    | [
+      key: Expression,
+      ...comments: Comments,
+      value: Expression | Pattern
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      key: Expression,
+      ...comments: InternalComments,
+      value: Expression | Pattern
+    ]
 
   /**
    * Boolean indicating if property is computed.
