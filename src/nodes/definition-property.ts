@@ -41,6 +41,33 @@ interface PropertyDefinition extends Parent {
    */
   children:
     | [
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      init: Expression
+    ]
+    | [
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      type: TypeAnnotation
+    ]
+    | [
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      type: TypeAnnotation,
+      ...comments: InternalComments,
+      init: Expression
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      name: Expression,
+      ...comments: InternalComments,
+      init: Expression
+    ]
+    | [
       modifiers: ModifierList,
       ...comments: Comments,
       name: Expression,
@@ -54,16 +81,18 @@ interface PropertyDefinition extends Parent {
       ...comments: InternalComments,
       type: TypeAnnotation,
       ...comments: InternalComments,
-      value: Expression
+      init: Expression
     ]
     | [
       name: Expression,
       ...comments: Comments,
       type: TypeAnnotation,
       ...comments: InternalComments,
-      value: Expression
+      init: Expression
     ]
+    | [...comments: Comments, name: Expression]
     | [modifiers: ModifierList, ...comments: Comments, name: Expression]
+    | [name: Expression, ...comments: Comments, init: Expression]
     | [name: Expression, ...comments: Comments, type: TypeAnnotation]
     | [name: Expression]
 
