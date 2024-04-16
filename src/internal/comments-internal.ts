@@ -22,8 +22,14 @@ import type { EmptyArray } from '@flex-development/tutils'
  * > by allowing more non-comment nodes than originally specified. The spreads
  * > work as expected when the **length of each spread array is a literal**
  * > (i.e. `0`, `1`, `2`, `3`). {@linkcode Comments} can also be used exactly
- * > once in these instances. See [`microsoft/TypeScript#57182`][3] for more
- * > details.
+ * > once in these instances.
+ * >
+ * > For performance reasons, the only type constituents of this union are an
+ * > empty array, and a tuple of length one (`1`). A utility function or type
+ * > assertion may be needed when constructing *children* of a node that uses
+ * > this type.
+ * >
+ * > See [`microsoft/TypeScript#57182`][3] for more details.
  *
  * [1]: https://github.com/syntax-tree/unist#child
  * [2]: https://github.com/syntax-tree/unist#parent-1
@@ -33,10 +39,6 @@ import type { EmptyArray } from '@flex-development/tutils'
  *
  * @see https://github.com/microsoft/TypeScript/issues/57182
  */
-type InternalComments =
-  | EmptyArray
-  | [Comment, Comment, Comment]
-  | [Comment, Comment]
-  | [Comment]
+type InternalComments = EmptyArray | [Comment]
 
 export type { InternalComments as default }
