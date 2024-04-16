@@ -42,7 +42,8 @@ interface ImportAttribute extends Parent {
     ...comments: Comments,
     key: Identifier | StringLiteral,
     ...comments: InternalComments,
-    value: StringLiteral
+    value: StringLiteral,
+    ...comments: InternalComments
   ]
 
   /**
