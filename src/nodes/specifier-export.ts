@@ -3,8 +3,8 @@
  * @module esast/nodes/ExportSpecifier
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Identifier,
@@ -40,17 +40,18 @@ interface ExportSpecifier extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    * @see {@linkcode StringLiteral}
    */
   children:
     | [
-      local: Identifier | StringLiteral,
       ...comments: Comments,
+      local: Identifier | StringLiteral,
+      ...comments: InternalComments,
       exported: Identifier | StringLiteral
     ]
-    | [exported: Identifier | StringLiteral]
+    | [...comments: Comments, exported: Identifier | StringLiteral]
 
   /**
    * Info from the ecosystem.
