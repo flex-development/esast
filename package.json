@@ -75,7 +75,7 @@
     "@commitlint/types": "19.0.3",
     "@flex-development/commitlint-config": "1.0.1",
     "@flex-development/decorator-regex": "2.0.0",
-    "@flex-development/docast": "1.0.0-alpha.14",
+    "@flex-development/docast": "1.0.0-alpha.15",
     "@flex-development/esm-types": "2.0.0",
     "@flex-development/grease": "3.0.0-alpha.9",
     "@flex-development/mkbuild": "1.0.0-alpha.23",
@@ -134,7 +134,7 @@
     "yaml-eslint-parser": "1.2.2"
   },
   "peerDependencies": {
-    "@flex-development/docast": ">=1.0.0-alpha.14",
+    "@flex-development/docast": ">=1.0.0-alpha.15",
     "@flex-development/unist-util-types": ">=1.1.0",
     "@types/mdast": ">=4.0.3",
     "@types/unist": ">=3.0.2"

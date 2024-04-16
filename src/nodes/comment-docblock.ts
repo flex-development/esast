@@ -31,9 +31,9 @@ interface DocblockComment extends Comment, Omit<docast.Comment, 'position'> {
   /**
    * List of children.
    *
-   * @see {@linkcode docast.FlowContent}
+   * @see {@linkcode docast.Comment.children}
    */
-  children: docast.FlowContent[]
+  children: docast.Comment['children']
 
   /**
    * Info from the ecosystem.
