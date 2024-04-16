@@ -6,10 +6,6 @@
 
 export type { default as ArgumentList, ArgumentListData } from './argument-list'
 export type {
-  default as NonNullAssertion,
-  NonNullAssertionData
-} from './assertion-non-null'
-export type {
   default as SatisfiesAssertion,
   SatisfiesAssertionData
 } from './assertion-satisfies'
@@ -175,6 +171,10 @@ export type {
   default as NewExpression,
   NewExpressionData
 } from './expression-new'
+export type {
+  default as NonNullExpression,
+  NonNullExpressionData
+} from './expression-non-null'
 export type {
   default as ObjectExpression,
   ObjectExpressionData

@@ -1,6 +1,6 @@
 /**
- * @file Nodes - NonNullAssertion
- * @module esast/nodes/NonNullAssertion
+ * @file Nodes - NonNullExpression
+ * @module esast/nodes/NonNullExpression
  */
 
 import type {
@@ -12,23 +12,23 @@ import type {
 import type { Optional } from '@flex-development/tutils'
 
 /**
- * Info associated with non-null assertions.
+ * Info associated with non-null expressions.
  *
  * @see {@linkcode Data}
  *
  * @extends {Data}
  */
-interface NonNullAssertionData extends Data {}
+interface NonNullExpressionData extends Data {}
 
 /**
- * A non-null assertion.
+ * A non-null assertion expression.
  *
  * @see {@linkcode Parent}
  * @see https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-
  *
  * @extends {Parent}
  */
-interface NonNullAssertion extends Parent {
+interface NonNullExpression extends Parent {
   /**
    * List of children.
    *
@@ -40,14 +40,14 @@ interface NonNullAssertion extends Parent {
   /**
    * Info from the ecosystem.
    *
-   * @see {@linkcode NonNullAssertionData}
+   * @see {@linkcode NonNullExpressionData}
    */
-  data?: Optional<NonNullAssertionData>
+  data?: Optional<NonNullExpressionData>
 
   /**
    * Node type.
    */
-  type: 'nonNullAssertion'
+  type: 'nonNullExpression'
 }
 
-export type { NonNullAssertionData, NonNullAssertion as default }
+export type { NonNullExpressionData, NonNullExpression as default }

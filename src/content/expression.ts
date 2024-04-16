@@ -23,7 +23,7 @@ import type {
   MemberExpression,
   ModuleExpression,
   NewExpression,
-  NonNullAssertion,
+  NonNullExpression,
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
@@ -80,7 +80,7 @@ interface ExpressionMap extends LiteralMap {
   memberExpression: MemberExpression
   moduleExpression: ModuleExpression
   newExpression: NewExpression
-  nonNullAssertion: NonNullAssertion
+  nonNullExpression: NonNullExpression
   objectExpression: ObjectExpression
   parenthesizedExpression: ParenthesizedExpression
   relationalExpression: RelationalExpression

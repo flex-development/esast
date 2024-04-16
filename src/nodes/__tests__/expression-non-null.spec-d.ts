@@ -1,33 +1,33 @@
 /**
- * @file Type Tests - NonNullAssertion
- * @module esast/nodes/tests/unit-d/NonNullAssertion
+ * @file Type Tests - NonNullExpression
+ * @module esast/nodes/tests/unit-d/NonNullExpression
  */
 
 import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../assertion-non-null'
+import type * as TestSubject from '../expression-non-null'
 
-describe('unit-d:nodes/NonNullAssertion', () => {
+describe('unit-d:nodes/NonNullExpression', () => {
   type Subject = TestSubject.default
-  type SubjectData = TestSubject.NonNullAssertionData
+  type SubjectData = TestSubject.NonNullExpressionData
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<NonNullAssertionData>]', () => {
+  it('should match [data?: Optional<NonNullExpressionData>]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [type: "nonNullAssertion"]', () => {
+  it('should match [type: "nonNullExpression"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')
-      .toEqualTypeOf<'nonNullAssertion'>()
+      .toEqualTypeOf<'nonNullExpression'>()
   })
 
-  describe('NonNullAssertionData', () => {
+  describe('NonNullExpressionData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })

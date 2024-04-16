@@ -24,7 +24,7 @@ import type {
   MemberExpression,
   ModuleExpression,
   NewExpression,
-  NonNullAssertion,
+  NonNullExpression,
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
@@ -146,9 +146,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<NewExpression>>()
     })
 
-    it('should match NodeObject<NonNullAssertion>', () => {
+    it('should match NodeObject<NonNullExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<NonNullAssertion>>()
+        .toMatchTypeOf<NodeObject<NonNullExpression>>()
     })
 
     it('should match NodeObject<ObjectExpression>', () => {
