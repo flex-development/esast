@@ -43,13 +43,13 @@ import type {
   Root,
   RootMap,
   SpreadElement,
-  StatementMap,
   StaticBlock,
   Super,
   SwitchCase,
   TemplateElement,
   TupleElement,
   TypeAnnotation,
+  TypeArgument,
   TypeArgumentList,
   TypeExpressionMap,
   TypeParameter,
@@ -66,7 +66,6 @@ import type {
  * - {@linkcode NodeMap}
  * - {@linkcode PatternMap}
  * - {@linkcode RootMap}
- * - {@linkcode StatementMap}
  * - {@linkcode TypeExpressionMap}
  *
  * They will be added to this union automatically.
@@ -88,11 +87,10 @@ type EsastNode = NodeMap[keyof NodeMap]
  * @extends {ExpressionMap}
  * @extends {PatternMap}
  * @extends {RootMap}
- * @extends {StatementMap}
  * @extends {TypeExpressionMap}
  */
 interface NodeMap
-  extends ExpressionMap, PatternMap, RootMap, StatementMap, TypeExpressionMap {
+  extends ExpressionMap, PatternMap, RootMap, TypeExpressionMap {
   argumentList: ArgumentList
   callSignature: CallSignature
   catchClause: CatchClause
@@ -135,6 +133,7 @@ interface NodeMap
   templateElement: TemplateElement
   tupleElement: TupleElement
   typeAnnotation: TypeAnnotation
+  typeArgument: TypeArgument
   typeArgumentList: TypeArgumentList
   typeParameter: TypeParameter
   typeParameterList: TypeParameterList
