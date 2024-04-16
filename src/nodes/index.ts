@@ -415,6 +415,7 @@ export type {
   default as IndexedAccessType,
   IndexedAccessTypeData
 } from './type-indexed-access'
+export type { default as InferType, InferTypeData } from './type-infer'
 export type {
   default as IntersectionType,
   IntersectionTypeData

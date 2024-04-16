@@ -10,10 +10,6 @@ describe('unit-d:types/UnaryTypeOperator', () => {
     expectTypeOf<TestSubject>().extract<'asserts'>().not.toBeNever()
   })
 
-  it('should extract "infer"', () => {
-    expectTypeOf<TestSubject>().extract<'infer'>().not.toBeNever()
-  })
-
   it('should extract "keyof"', () => {
     expectTypeOf<TestSubject>().extract<'keyof'>().not.toBeNever()
   })

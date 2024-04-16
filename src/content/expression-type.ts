@@ -11,6 +11,7 @@ import type {
   GenericType,
   Identifier,
   IndexedAccessType,
+  InferType,
   IntersectionType,
   MappedType,
   ObjectLiteralType,
@@ -58,6 +59,7 @@ interface TypeExpressionMap extends PrimitiveMap {
   genericType: GenericType
   identifier: Identifier
   indexedAccessType: IndexedAccessType
+  inferType: InferType
   intersectionType: IntersectionType
   mappedType: MappedType
   objectLiteralType: ObjectLiteralType

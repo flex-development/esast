@@ -12,6 +12,7 @@ import type {
   GenericType,
   Identifier,
   IndexedAccessType,
+  InferType,
   IntersectionType,
   MappedType,
   ObjectLiteralType,
@@ -79,6 +80,11 @@ describe('unit-d:content/typeExpression', () => {
     it('should match NodeObject<IndexedAccessType>', () => {
       expectTypeOf<TestSubject.TypeExpressionMap>()
         .toMatchTypeOf<NodeObject<IndexedAccessType>>()
+    })
+
+    it('should match NodeObject<InferType>', () => {
+      expectTypeOf<TestSubject.TypeExpressionMap>()
+        .toMatchTypeOf<NodeObject<InferType>>()
     })
 
     it('should match NodeObject<IntersectionType>', () => {

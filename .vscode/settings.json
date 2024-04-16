@@ -80,9 +80,9 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
+    "source.fixAll.eslint": "explicit",
     "source.fixAll.sortJSON": "never",
-    "source.organizeImports": "always"
+    "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "dprint.dprint",
   "editor.detectIndentation": false,
@@ -137,6 +137,7 @@
     "overrideConfigFile": ".eslintrc.cjs"
   },
   "eslint.runtime": "node",
+  "eslint.trace.server": "messages",
   "eslint.validate": [
     "css",
     "github-actions-workflow",
@@ -308,6 +309,11 @@
       "extensions": ["internal"],
       "format": "svg",
       "icon": "private"
+    },
+    {
+      "extensions": ["namespaces"],
+      "format": "svg",
+      "icon": "module"
     },
     {
       "extensions": ["patches"],

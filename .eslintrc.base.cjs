@@ -34,7 +34,7 @@ const config = {
       parser: '@typescript-eslint/parser',
       parserOptions: {
         extraFileExtensions: [],
-        project: ['**/tsconfig.json', '**/tsconfig.*.json'],
+        project: ['./tsconfig.json', './tsconfig.typecheck.json'],
         tsconfigRootDir: process.cwd(),
         warnOnUnsupportedTypeScriptVersion: true
       },
