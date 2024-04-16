@@ -5,6 +5,7 @@
 
 import type {
   Comment,
+  Comments,
   Data,
   Parent,
   TypeExpression
@@ -31,10 +32,13 @@ interface ImplementsClause extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Comment}
    * @see {@linkcode TypeExpression}
    */
-  children: [...(Comment | TypeExpression)[], TypeExpression]
+  children:
+    | [...(Comment | TypeExpression)[], type: TypeExpression]
+    | [...comments: Comments, type: TypeExpression]
 
   /**
    * Info from the ecosystem.
