@@ -9,6 +9,7 @@ import type {
   Data,
   EnumBody,
   Identifier,
+  ModifierList,
   Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -36,13 +37,22 @@ interface EnumDeclaration extends Parent {
    * @see {@linkcode Comments}
    * @see {@linkcode EnumBody}
    * @see {@linkcode Identifier}
+   * @see {@linkcode ModifierList}
    */
-  children: [
-    ...comments: Comments,
-    id: Identifier,
-    ...comments: InternalComments,
-    body: EnumBody
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      body: EnumBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      body: EnumBody
+    ]
 
   /**
    * Const enum declaration?
