@@ -61,6 +61,13 @@ export type {
   default as ImportDeclaration,
   ImportDeclarationData
 } from './declaration-import'
+export type { default as ImportAllDeclaration } from './declaration-import-all'
+export type {
+  default as ImportDefaultDeclaration
+} from './declaration-import-default'
+export type {
+  default as ImportNamedDeclaration
+} from './declaration-import-named'
 export type {
   default as InterfaceDeclaration,
   InterfaceDeclarationData
@@ -229,6 +236,7 @@ export type {
   default as ImportAssertion,
   ImportAssertionData
 } from './import-assertion'
+export type { default as ImportAssignment } from './import-assignment'
 export type {
   default as ImportAttribute,
   ImportAttributeData
