@@ -3,13 +3,15 @@
  * @module esast/nodes/AssignmentPattern
  */
 
+import type { InternalComments } from '#internal'
 import type {
   Comment,
   Comments,
   Data,
   Expression,
   Parent,
-  Pattern
+  Pattern,
+  TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -36,8 +38,17 @@ interface AssignmentPattern extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode Pattern}
+   * @see {@linkcode TypeAnnotation}
    */
-  children: [left: Pattern, ...comments: Comments, right: Expression]
+  children:
+    | [
+      left: Pattern,
+      ...comments: Comments,
+      typeAnnotation: TypeAnnotation,
+      ...comments: InternalComments,
+      right: Expression
+    ]
+    | [left: Pattern, ...comments: Comments, right: Expression]
 
   /**
    * Info from the ecosystem.
