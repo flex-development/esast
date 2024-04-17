@@ -15,10 +15,6 @@ export type {
 } from './assertion-type'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
-export type {
-  default as ClassHeritage,
-  ClassHeritageData
-} from './class-heritage'
 export type { default as Comment, CommentData } from './comment'
 export type { default as BlockComment, BlockCommentData } from './comment-block'
 export type {

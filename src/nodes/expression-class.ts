@@ -6,11 +6,12 @@
 import type { InternalComments } from '#internal'
 import type {
   ClassBody,
-  ClassHeritage,
   Comment,
   Comments,
   Data,
+  ExtendsClause,
   Identifier,
+  ImplementsClause,
   Parent,
   TypeParameterList
 } from '@flex-development/esast'
@@ -39,12 +40,21 @@ interface ClassExpression extends Parent {
    * @see {@linkcode ClassBody}
    * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
+   * @see {@linkcode ImplementsClause}
    * @see {@linkcode TypeParameterList}
    */
   children:
     | [
       ...comments: Comments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -58,7 +68,7 @@ interface ClassExpression extends Parent {
       ...comments: Comments,
       id: Identifier,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -66,7 +76,27 @@ interface ClassExpression extends Parent {
       ...comments: Comments,
       id: Identifier,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -84,7 +114,55 @@ interface ClassExpression extends Parent {
       ...comments: InternalComments,
       typeParams: TypeParameterList,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -98,7 +176,35 @@ interface ClassExpression extends Parent {
       ...comments: Comments,
       typeParams: TypeParameterList,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]

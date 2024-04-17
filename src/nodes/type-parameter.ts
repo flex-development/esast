@@ -36,6 +36,7 @@ interface TypeParameter extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode ExtendsClause}
    * @see {@linkcode Identifier}
    * @see {@linkcode ModifierList}
    * @see {@linkcode TypeExpression}

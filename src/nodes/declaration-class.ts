@@ -6,10 +6,11 @@
 import type { InternalComments } from '#internal'
 import type {
   ClassBody,
-  ClassHeritage,
   Comments,
   Data,
+  ExtendsClause,
   Identifier,
+  ImplementsClause,
   ModifierList,
   Parent,
   TypeParameterList
@@ -37,9 +38,10 @@ interface ClassDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode ClassBody}
-   * @see {@linkcode ClassHeritage}
    * @see {@linkcode Comments}
+   * @see {@linkcode ExtendsClause}
    * @see {@linkcode Identifier}
+   * @see {@linkcode ImplementsClause}
    * @see {@linkcode TypeParameterList}
    */
   children:
@@ -53,7 +55,35 @@ interface ClassDeclaration extends Parent {
       ...comments: Comments,
       id: Identifier,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -71,7 +101,41 @@ interface ClassDeclaration extends Parent {
       ...comments: InternalComments,
       typeParams: TypeParameterList,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -87,7 +151,38 @@ interface ClassDeclaration extends Parent {
       ...comments: Comments,
       id: Identifier,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]
@@ -107,7 +202,44 @@ interface ClassDeclaration extends Parent {
       ...comments: InternalComments,
       typeParams: TypeParameterList,
       ...comments: InternalComments,
-      heritage: ClassHeritage,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      body: ClassBody
+    ]
+    | [
+      modifiers: ModifierList,
+      ...comments: Comments,
+      id: Identifier,
+      ...comments: InternalComments,
+      typeParams: TypeParameterList,
+      ...comments: InternalComments,
+      implement: ImplementsClause,
+      ...comments: InternalComments,
+      extend: ExtendsClause,
       ...comments: InternalComments,
       body: ClassBody
     ]

@@ -8,7 +8,6 @@ import type {
   CallSignature,
   CatchClause,
   ClassBody,
-  ClassHeritage,
   ConstructSignature,
   EnumBody,
   EnumMember,
@@ -95,7 +94,6 @@ interface NodeMap
   callSignature: CallSignature
   catchClause: CatchClause
   classBody: ClassBody
-  classHeritage: ClassHeritage
   constructSignature: ConstructSignature
   enumBody: EnumBody
   enumMember: EnumMember
