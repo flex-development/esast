@@ -4,7 +4,6 @@
  */
 
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
@@ -32,10 +31,13 @@ interface YieldExpression extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: EmptyArray | [...comments: Comments, argument: Expression]
+  children:
+    | Comments
+    | EmptyArray
+    | [...comments: Comments, argument: Expression]
 
   /**
    * Info from the ecosystem.
