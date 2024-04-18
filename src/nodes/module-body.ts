@@ -6,7 +6,6 @@
 import type {
   Comment,
   Data,
-  Declaration,
   Directive,
   ModuleReference,
   Parent,
@@ -35,7 +34,7 @@ interface ModuleBody extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Declaration}
+   * @see {@linkcode Directive}
    * @see {@linkcode ModuleReference}
    * @see {@linkcode Statement}
    */
