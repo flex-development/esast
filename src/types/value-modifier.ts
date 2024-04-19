@@ -11,6 +11,7 @@ type ModifierValue =
   | '+'
   | 'abstract'
   | 'accessor'
+  | 'async'
   | 'const'
   | 'declare'
   | 'get'

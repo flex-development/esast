@@ -22,6 +22,10 @@ describe('unit-d:types/ModifierValue', () => {
     expectTypeOf<TestSubject>().extract<'accessor'>().not.toBeNever()
   })
 
+  it('should extract "async"', () => {
+    expectTypeOf<TestSubject>().extract<'async'>().not.toBeNever()
+  })
+
   it('should extract "const"', () => {
     expectTypeOf<TestSubject>().extract<'const'>().not.toBeNever()
   })
