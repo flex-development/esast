@@ -14,10 +14,10 @@ import type {
   IndexedAccessType,
   InferType,
   IntersectionType,
+  LiteralMap,
   MappedType,
   ObjectLiteralType,
   ParenthesizedType,
-  PrimitiveMap,
   Super,
   TemplateLiteral,
   This,
@@ -42,9 +42,9 @@ describe('unit-d:content/typeExpression', () => {
   })
 
   describe('TypeExpressionMap', () => {
-    it('should extend PrimitiveMap', () => {
+    it('should extend LiteralMap', () => {
       expectTypeOf<TestSubject.TypeExpressionMap>()
-        .toMatchTypeOf<PrimitiveMap>()
+        .toMatchTypeOf<LiteralMap>()
     })
 
     it('should match NodeObject<ArrayType>', () => {

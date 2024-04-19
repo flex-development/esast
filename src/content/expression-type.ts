@@ -13,10 +13,10 @@ import type {
   IndexedAccessType,
   InferType,
   IntersectionType,
+  LiteralMap,
   MappedType,
   ObjectLiteralType,
   ParenthesizedType,
-  PrimitiveMap,
   Super,
   TemplateLiteral,
   This,
@@ -49,9 +49,9 @@ type TypeExpression = TypeExpressionMap[keyof TypeExpressionMap]
  *    }
  *  }
  *
- * @extends {PrimitiveMap}
+ * @extends {LiteralMap}
  */
-interface TypeExpressionMap extends PrimitiveMap {
+interface TypeExpressionMap extends LiteralMap {
   arrayType: ArrayType
   conditionalType: ConditionalType
   constructorType: ConstructorType
