@@ -34,6 +34,7 @@ describe('unit-d:esast', () => {
         | mdast.Nodes
         | TestSubject.Comment
         | TestSubject.ExpressionStatement
+        | TestSubject.ShorthandProperty
       >
 
       // Expect
@@ -47,6 +48,12 @@ describe('unit-d:esast', () => {
     it('should not include ExpressionStatement', () => {
       expectTypeOf<Subject>()
         .extract<TestSubject.ExpressionStatement>()
+        .toBeNever()
+    })
+
+    it('should not include ShorthandProperty', () => {
+      expectTypeOf<Subject>()
+        .extract<TestSubject.ShorthandProperty>()
         .toBeNever()
     })
   })

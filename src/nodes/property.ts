@@ -5,19 +5,22 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
+  ArrayPattern,
+  AssignmentPattern,
   Comments,
   Data,
   Expression,
+  FunctionExpression,
+  Identifier,
   ModifierList,
+  ObjectPattern,
   Parent,
-  Pattern,
   PropertyKind
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
- * Info associated with properties.
+ * Info associated with object properties.
  *
  * @see {@linkcode Data}
  *
@@ -26,7 +29,7 @@ import type { Optional } from '@flex-development/tutils'
 interface PropertyData extends Data {}
 
 /**
- * A property.
+ * An object property.
  *
  * @see {@linkcode Parent}
  *
@@ -34,26 +37,43 @@ interface PropertyData extends Data {}
  */
 interface Property extends Parent {
   /**
+   * Boolean indicating if property is an assignment property.
+   */
+  assignment: boolean
+
+  /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode ArrayPattern}
+   * @see {@linkcode AssignmentPattern}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
+   * @see {@linkcode FunctionExpression}
+   * @see {@linkcode Identifier}
    * @see {@linkcode ModifierList}
-   * @see {@linkcode Pattern}
+   * @see {@linkcode ObjectPattern}
    */
   children:
     | [
+      ...comments: Comments,
+      key: Expression,
+      ...comments: InternalComments,
+      value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
+    ]
+    | [
       key: Expression,
       ...comments: Comments,
-      value: Expression | Pattern
+      value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
     ]
     | [
       modifiers: ModifierList,
       ...comments: Comments,
       key: Expression,
       ...comments: InternalComments,
-      value: Expression | Pattern
+      value: FunctionExpression
     ]
+    | [assignment: AssignmentPattern]
+    | [key: Identifier]
 
   /**
    * Boolean indicating if property is computed.

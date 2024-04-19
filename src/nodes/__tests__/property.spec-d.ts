@@ -15,6 +15,12 @@ describe('unit-d:nodes/Property', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
+  it('should match [assignment: boolean]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('assignment')
+      .toEqualTypeOf<boolean>()
+  })
+
   it('should match [computed: boolean]', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })

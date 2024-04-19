@@ -4,11 +4,13 @@
  */
 
 import type {
+  AssignmentProperty,
   Comment,
   Data,
   Parent,
-  Property,
-  RestElement
+  RenamedProperty,
+  RestElement,
+  ShorthandProperty
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -32,11 +34,19 @@ interface ObjectPattern extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode AssignmentProperty}
    * @see {@linkcode Comment}
-   * @see {@linkcode Property}
+   * @see {@linkcode RenamedProperty}
    * @see {@linkcode RestElement}
+   * @see {@linkcode ShorthandProperty}
    */
-  children: (Comment | Property | RestElement)[]
+  children: (
+    | AssignmentProperty
+    | Comment
+    | RenamedProperty
+    | RestElement
+    | ShorthandProperty
+  )[]
 
   /**
    * Info from the ecosystem.

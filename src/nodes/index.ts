@@ -278,6 +278,11 @@ export type {
   ObjectPatternData
 } from './pattern-object'
 export type { default as Property, PropertyData } from './property'
+export type { default as AssignmentProperty } from './property-assignment'
+export type { default as MethodProperty } from './property-method'
+export type { default as RenamedProperty } from './property-renamed'
+export type { default as ShorthandProperty } from './property-shorthand'
+export type { default as SimpleProperty } from './property-simple'
 export type { default as Root, RootData } from './root'
 export type {
   default as CallSignature,

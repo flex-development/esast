@@ -6,8 +6,10 @@
 import type {
   Comment,
   Data,
+  MethodProperty,
   Parent,
-  Property,
+  ShorthandProperty,
+  SimpleProperty,
   SpreadElement
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -33,10 +35,18 @@ interface ObjectExpression extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Property}
+   * @see {@linkcode MethodProperty}
+   * @see {@linkcode ShorthandProperty}
+   * @see {@linkcode SimpleProperty}
    * @see {@linkcode SpreadElement}
    */
-  children: (Comment | Property | SpreadElement)[]
+  children: (
+    | Comment
+    | MethodProperty
+    | ShorthandProperty
+    | SimpleProperty
+    | SpreadElement
+  )[]
 
   /**
    * Info from the ecosystem.
