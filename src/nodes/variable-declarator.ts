@@ -5,11 +5,13 @@
 
 import type { InternalComments } from '#internal'
 import type {
+  ArrayPattern,
   Comments,
   Data,
   Expression,
+  Identifier,
+  ObjectPattern,
   Parent,
-  Pattern,
   TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -34,22 +36,32 @@ interface VariableDeclarator extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode ArrayPattern}
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode Pattern}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode ObjectPattern}
    * @see {@linkcode TypeAnnotation}
    */
   children:
     | [
-      id: Pattern,
+      id: ArrayPattern | Identifier | ObjectPattern,
+      ...comments: Comments,
+      init: Expression
+    ]
+    | [
+      id: ArrayPattern | Identifier | ObjectPattern,
+      ...comments: Comments,
+      type: TypeAnnotation
+    ]
+    | [
+      id: ArrayPattern | Identifier | ObjectPattern,
       ...comments: Comments,
       type: TypeAnnotation,
       ...comments: InternalComments,
       init: Expression
     ]
-    | [id: Pattern, ...comments: Comments, init: Expression]
-    | [id: Pattern, ...comments: Comments, type: TypeAnnotation]
-    | [id: Pattern]
+    | [id: ArrayPattern | Identifier | ObjectPattern]
 
   /**
    * Info from the ecosystem.
