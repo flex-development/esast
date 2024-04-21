@@ -5,12 +5,13 @@
 
 import type { InternalComments } from '#internal'
 import type {
+  ArrayPattern,
   BlockStatement,
   Comments,
   Data,
-  Nothing,
-  Parent,
-  Pattern
+  Identifier,
+  ObjectPattern,
+  Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -34,15 +35,16 @@ interface CatchClause extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode ArrayPattern}
    * @see {@linkcode BlockStatement}
    * @see {@linkcode Comments}
-   * @see {@linkcode Nothing}
-   * @see {@linkcode Pattern}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode ObjectPattern}
    */
   children:
     | [
       ...comments: Comments,
-      param: Pattern,
+      param: ArrayPattern | Identifier | ObjectPattern,
       ...comments: InternalComments,
       body: BlockStatement
     ]
