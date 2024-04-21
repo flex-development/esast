@@ -11,7 +11,8 @@ import type {
   Data,
   Identifier,
   ObjectPattern,
-  Parent
+  Parent,
+  TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -40,11 +41,20 @@ interface CatchClause extends Parent {
    * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    * @see {@linkcode ObjectPattern}
+   * @see {@linkcode TypeAnnotation}
    */
   children:
     | [
       ...comments: Comments,
       param: ArrayPattern | Identifier | ObjectPattern,
+      ...comments: InternalComments,
+      body: BlockStatement
+    ]
+    | [
+      ...comments: Comments,
+      param: ArrayPattern | Identifier | ObjectPattern,
+      ...comments: InternalComments,
+      typeAnnotation: TypeAnnotation,
       ...comments: InternalComments,
       body: BlockStatement
     ]
