@@ -26,10 +26,6 @@ describe('unit-d:nodes/Root', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [mode: SourceMode]', () => {
-    expectTypeOf<Subject>().toHaveProperty('mode').toEqualTypeOf<SourceMode>()
-  })
-
   it('should match [type: "root"]', () => {
     expectTypeOf<Subject>().toHaveProperty('type').toEqualTypeOf<'root'>()
   })
@@ -43,6 +39,12 @@ describe('unit-d:nodes/Root', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('ecmaVersion')
         .toEqualTypeOf<Nilable<EcmaVersion>>()
+    })
+
+    it('should match [mode?: Nilable<SourceMode>]', () => {
+      expectTypeOf<SubjectData>()
+        .toHaveProperty('mode')
+        .toEqualTypeOf<Nilable<SourceMode>>()
     })
   })
 })

@@ -26,6 +26,13 @@ interface RootData extends Data {
    * @see {@linkcode EcmaVersion}
    */
   ecmaVersion?: Nilable<EcmaVersion>
+
+  /**
+   * Source document validation mode.
+   *
+   * @see {@linkcode SourceMode}
+   */
+  mode?: Nilable<SourceMode>
 }
 
 /**
@@ -51,13 +58,6 @@ interface Root extends Parent {
    * @see {@linkcode RootData}
    */
   data?: Optional<RootData>
-
-  /**
-   * Mode source document was parsed in.
-   *
-   * @see {@linkcode SourceMode}
-   */
-  mode: SourceMode
 
   /**
    * Node type.
