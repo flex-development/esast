@@ -36,7 +36,9 @@ interface UpdateExpression extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: [...comments: Comments, argument: Expression]
+  children:
+    | [...comments: Comments, argument: Expression]
+    | [argument: Expression, ...comments: Comments]
 
   /**
    * Info from the ecosystem.
@@ -54,7 +56,7 @@ interface UpdateExpression extends Parent {
 
   /**
    * Boolean indicating if {@linkcode operator} should precede the expression
-   * argument. If `false`, the argument should precede the `operator`.
+   * argument. If `false`, the argument should precede `operator`.
    */
   prefix: boolean
 
