@@ -68,7 +68,11 @@
     "typecheck:watch": "vitest --mode=typecheck --typecheck"
   },
   "dependencies": {
-    "@flex-development/tutils": "6.0.0-alpha.25"
+    "@flex-development/docast": "1.0.0-alpha.15",
+    "@flex-development/tutils": "6.0.0-alpha.25",
+    "@flex-development/unist-util-types": "1.2.0",
+    "@types/mdast": "4.0.3",
+    "@types/unist": "3.0.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.3",
@@ -76,21 +80,17 @@
     "@commitlint/types": "19.0.3",
     "@flex-development/commitlint-config": "1.0.1",
     "@flex-development/decorator-regex": "2.0.0",
-    "@flex-development/docast": "1.0.0-alpha.15",
     "@flex-development/esm-types": "2.0.0",
     "@flex-development/grease": "3.0.0-alpha.9",
     "@flex-development/mkbuild": "1.0.0-alpha.23",
     "@flex-development/mlly": "1.0.0-alpha.18",
     "@flex-development/pathe": "2.0.0",
-    "@flex-development/unist-util-types": "1.2.0",
     "@types/eslint": "8.56.5",
     "@types/estree": "1.0.5",
     "@types/estree-jsx": "1.0.5",
     "@types/is-ci": "3.0.4",
-    "@types/mdast": "4.0.3",
     "@types/node": "20.11.25",
     "@types/node-notifier": "8.0.5",
-    "@types/unist": "3.0.2",
     "@typescript-eslint/eslint-plugin": "7.7.0",
     "@typescript-eslint/parser": "7.7.0",
     "@vates/toggle-scripts": "1.0.0",
@@ -133,12 +133,6 @@
     "typescript": "5.4.5",
     "vitest": "1.5.0",
     "yaml-eslint-parser": "1.2.2"
-  },
-  "peerDependencies": {
-    "@flex-development/docast": ">=1.0.0-alpha.15",
-    "@flex-development/unist-util-types": ">=1.1.0",
-    "@types/mdast": ">=4.0.3",
-    "@types/unist": ">=3.0.2"
   },
   "resolutions": {
     "@types/mdast": "4.0.3",
