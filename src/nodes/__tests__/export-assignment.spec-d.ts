@@ -5,7 +5,7 @@
 
 import type {
   ExportDeclaration,
-  ImportExportKind
+  ExportKind
 } from '@flex-development/esast'
 import type * as TestSubject from '../export-assignment'
 
@@ -16,9 +16,9 @@ describe('unit-d:nodes/ExportAssignment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<ExportDeclaration>()
   })
 
-  it('should match [kind: Extract<ImportExportKind, "assignment">]', () => {
+  it('should match [kind: Extract<ExportKind, "assignment">]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('kind')
-      .toEqualTypeOf<Extract<ImportExportKind, 'assignment'>>()
+      .toEqualTypeOf<Extract<ExportKind, 'assignment'>>()
   })
 })

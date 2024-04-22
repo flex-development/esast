@@ -1,6 +1,6 @@
 /**
- * @file Nodes - ImportDefaultDeclaration
- * @module esast/nodes/ImportDefaultDeclaration
+ * @file Nodes - ImportEffectDeclaration
+ * @module esast/nodes/ImportEffectDeclaration
  */
 
 import type { InternalComments } from '#internal'
@@ -11,18 +11,17 @@ import type {
   ImportAttributeClause,
   ImportDeclaration,
   ImportKind,
-  ImportSpecifiers,
   StringLiteral
 } from '@flex-development/esast'
 
 /**
- * A default `import` declaration.
+ * A side-effect `import` declaration.
  *
  * @see {@linkcode ImportDeclaration}
  *
  * @extends {ImportDeclaration}
  */
-interface ImportDefaultDeclaration extends ImportDeclaration {
+interface ImportEffectDeclaration extends ImportDeclaration {
   /**
    * List of children.
    *
@@ -30,31 +29,23 @@ interface ImportDefaultDeclaration extends ImportDeclaration {
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
    * @see {@linkcode ImportAttributeClause}
-   * @see {@linkcode ImportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
   children:
     | [
       ...comments: Comments,
-      specifiers: ImportSpecifiers,
-      ...comments: InternalComments,
-      source: Identifier | StringLiteral
-    ]
-    | [
-      ...comments: Comments,
-      specifiers: ImportSpecifiers,
-      ...comments: InternalComments,
-      source: StringLiteral,
+      source: Identifier | StringLiteral,
       ...comments: InternalComments,
       attributes: ImportAssertion | ImportAttributeClause
     ]
+    | [...comments: Comments, source: Identifier | StringLiteral]
 
   /**
    * Import declaration kind.
    *
    * @see {@linkcode ImportKind}
    */
-  kind: Extract<ImportKind, 'default'>
+  kind: Extract<ImportKind, 'effect'>
 }
 
-export type { ImportDefaultDeclaration as default }
+export type { ImportEffectDeclaration as default }

@@ -11,7 +11,7 @@ import type {
   Identifier,
   ImportAssertion,
   ImportAttributeClause,
-  ImportExportKind,
+  ImportKind,
   ImportSpecifiers,
   Parent,
   StringLiteral
@@ -62,6 +62,12 @@ interface ImportDeclaration extends Parent {
     ]
     | [
       ...comments: Comments,
+      source: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      attributes: ImportAssertion | ImportAttributeClause
+    ]
+    | [
+      ...comments: Comments,
       specifiers: ImportSpecifiers,
       ...comments: InternalComments,
       source: Identifier | StringLiteral
@@ -74,6 +80,7 @@ interface ImportDeclaration extends Parent {
       ...comments: InternalComments,
       attributes: ImportAssertion | ImportAttributeClause
     ]
+    | [...comments: Comments, source: Identifier | StringLiteral]
 
   /**
    * Info from the ecosystem.
@@ -85,9 +92,9 @@ interface ImportDeclaration extends Parent {
   /**
    * Import declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ImportKind}
    */
-  kind: ImportExportKind
+  kind: ImportKind
 
   /**
    * Node type.

@@ -1,11 +1,11 @@
 /**
- * @file Type Tests - ImportExportKind
- * @module esast/types/tests/unit-d/ImportExportKind
+ * @file Type Tests - ExportKind
+ * @module esast/types/tests/unit-d/ExportKind
  */
 
-import type TestSubject from '../kind-import-export'
+import type TestSubject from '../kind-export'
 
-describe('unit-d:types/ImportExportKind', () => {
+describe('unit-d:types/ExportKind', () => {
   it('should extract "assignment"', () => {
     expectTypeOf<TestSubject>().extract<'assignment'>().not.toBeNever()
   })

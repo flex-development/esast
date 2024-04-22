@@ -62,6 +62,9 @@ export type {
   default as ImportDefaultDeclaration
 } from './declaration-import-default'
 export type {
+  default as ImportEffectDeclaration
+} from './declaration-import-effect'
+export type {
   default as ImportNamedDeclaration
 } from './declaration-import-named'
 export type {

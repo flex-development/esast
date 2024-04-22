@@ -11,11 +11,11 @@ import type {
   Declaration,
   Decorator,
   ExportDeclaration,
+  ExportKind,
   ExportSpecifiers,
   Identifier,
   ImportAssertion,
   ImportAttributeClause,
-  ImportExportKind,
   StringLiteral
 } from '@flex-development/esast'
 
@@ -63,9 +63,9 @@ interface ExportNamedDeclaration extends ExportDeclaration {
   /**
    * Export declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ExportKind}
    */
-  kind: Extract<ImportExportKind, 'named'>
+  kind: Extract<ExportKind, 'named'>
 }
 
 export type { ExportNamedDeclaration as default }

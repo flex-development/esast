@@ -6,8 +6,8 @@
 import type {
   Comments,
   ExportDeclaration,
-  Expression,
-  ImportExportKind
+  ExportKind,
+  Expression
 } from '@flex-development/esast'
 
 /**
@@ -29,9 +29,9 @@ interface ExportAssignment extends ExportDeclaration {
   /**
    * Export declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ExportKind}
    */
-  kind: Extract<ImportExportKind, 'assignment'>
+  kind: Extract<ExportKind, 'assignment'>
 }
 
 export type { ExportAssignment as default }

@@ -10,7 +10,7 @@ import type {
   ImportAssertion,
   ImportAttributeClause,
   ImportDeclaration,
-  ImportExportKind,
+  ImportKind,
   ImportSpecifiers,
   StringLiteral
 } from '@flex-development/esast'
@@ -52,9 +52,9 @@ interface ImportAllDeclaration extends ImportDeclaration {
   /**
    * Import declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ImportKind}
    */
-  kind: Extract<ImportExportKind, 'namespace'>
+  kind: Extract<ImportKind, 'namespace'>
 }
 
 export type { ImportAllDeclaration as default }

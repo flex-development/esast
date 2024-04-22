@@ -7,11 +7,11 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   ExportDeclaration,
+  ExportKind,
   ExportSpecifiers,
   Identifier,
   ImportAssertion,
   ImportAttributeClause,
-  ImportExportKind,
   StringLiteral
 } from '@flex-development/esast'
 
@@ -53,9 +53,9 @@ interface ExportAllDeclaration extends ExportDeclaration {
   /**
    * Export declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ExportKind}
    */
-  kind: Extract<ImportExportKind, 'namespace'>
+  kind: Extract<ExportKind, 'namespace'>
 }
 
 export type { ExportAllDeclaration as default }

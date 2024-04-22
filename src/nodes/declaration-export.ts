@@ -11,13 +11,13 @@ import type {
   Data,
   Declaration,
   Decorator,
+  ExportKind,
   ExportSpecifiers,
   Expression,
   FunctionDeclaration,
   Identifier,
   ImportAssertion,
   ImportAttributeClause,
-  ImportExportKind,
   ModuleDeclaration,
   Parent,
   StringLiteral
@@ -104,9 +104,9 @@ interface ExportDeclaration extends Parent {
   /**
    * Export declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ExportKind}
    */
-  kind: ImportExportKind
+  kind: ExportKind
 
   /**
    * Node type.

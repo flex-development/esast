@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/ExportDeclaration
  */
 
-import type { Data, ImportExportKind, Parent } from '@flex-development/esast'
+import type { Data, ExportKind, Parent } from '@flex-development/esast'
 import type { Nilable, Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../declaration-export'
 
@@ -21,10 +21,8 @@ describe('unit-d:nodes/ExportDeclaration', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [kind: ImportExportKind]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('kind')
-      .toEqualTypeOf<ImportExportKind>()
+  it('should match [kind: ExportKind]', () => {
+    expectTypeOf<Subject>().toHaveProperty('kind').toEqualTypeOf<ExportKind>()
   })
 
   it('should match [type: "exportDeclaration"]', () => {

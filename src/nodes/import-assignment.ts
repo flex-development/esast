@@ -8,7 +8,7 @@ import type {
   CallExpression,
   Comments,
   ImportDeclaration,
-  ImportExportKind,
+  ImportKind,
   ImportSpecifiers
 } from '@flex-development/esast'
 
@@ -37,9 +37,9 @@ interface ImportAssignment extends ImportDeclaration {
   /**
    * Import declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ImportKind}
    */
-  kind: Extract<ImportExportKind, 'assignment'>
+  kind: Extract<ImportKind, 'assignment'>
 }
 
 export type { ImportAssignment as default }

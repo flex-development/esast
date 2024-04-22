@@ -9,9 +9,9 @@ import type {
   Comments,
   Decorator,
   ExportDeclaration,
+  ExportKind,
   Expression,
   FunctionDeclaration,
-  ImportExportKind,
   ModuleDeclaration
 } from '@flex-development/esast'
 
@@ -48,9 +48,9 @@ interface ExportDefaultDeclaration extends ExportDeclaration {
   /**
    * Export declaration kind.
    *
-   * @see {@linkcode ImportExportKind}
+   * @see {@linkcode ExportKind}
    */
-  kind: Extract<ImportExportKind, 'default'>
+  kind: Extract<ExportKind, 'default'>
 }
 
 export type { ExportDefaultDeclaration as default }
