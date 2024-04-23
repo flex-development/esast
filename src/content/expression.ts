@@ -7,6 +7,7 @@ import type {
   ArithmeticExpression,
   ArrayExpression,
   ArrowFunctionExpression,
+  AsExpression,
   AssignmentExpression,
   AwaitExpression,
   BitwiseExpression,
@@ -32,7 +33,7 @@ import type {
   TaggedTemplateExpression,
   TemplateLiteral,
   This,
-  TypeAssertion,
+  TypeAssertionExpression,
   UnaryExpression,
   UpdateExpression,
   YieldExpression
@@ -65,6 +66,7 @@ interface ExpressionMap extends LiteralMap {
   arithmeticExpression: ArithmeticExpression
   arrayExpression: ArrayExpression
   arrowFunctionExpression: ArrowFunctionExpression
+  asExpression: AsExpression
   assignmentExpression: AssignmentExpression
   awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression
@@ -89,7 +91,7 @@ interface ExpressionMap extends LiteralMap {
   taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral
   this: This
-  typeAssertion: TypeAssertion
+  typeAssertionExpression: TypeAssertionExpression
   unaryExpression: UnaryExpression
   updateExpression: UpdateExpression
   yieldExpression: YieldExpression

@@ -7,7 +7,6 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
-  Expression,
   Parent,
   TypeExpression
 } from '@flex-development/esast'
@@ -32,28 +31,16 @@ interface TypeAssertionData extends Data {}
  */
 interface TypeAssertion extends Parent {
   /**
-   * Boolean indicating if type assertion uses angle bracket (`<...>`) notation.
-   */
-  angle: boolean
-
-  /**
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
    * @see {@linkcode TypeExpression}
    */
-  children:
-    | [
-      ...comments: Comments,
-      type: TypeExpression,
-      ...comments: InternalComments
-    ]
-    | [
-      expression: Expression,
-      ...comments: Comments,
-      type: TypeExpression
-    ]
+  children: [
+    ...comments: Comments,
+    type: TypeExpression,
+    ...comments: InternalComments
+  ]
 
   /**
    * Info from the ecosystem.

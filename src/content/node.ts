@@ -5,6 +5,7 @@
 
 import type {
   ArgumentList,
+  AsClause,
   CallSignature,
   CatchClause,
   ClassBody,
@@ -51,6 +52,7 @@ import type {
   TypeAnnotation,
   TypeArgument,
   TypeArgumentList,
+  TypeAssertion,
   TypeExpressionMap,
   TypeParameter,
   TypeParameterList,
@@ -92,6 +94,7 @@ type EsastNode = NodeMap[keyof NodeMap]
 interface NodeMap
   extends ExpressionMap, PatternMap, RootMap, TypeExpressionMap {
   argumentList: ArgumentList
+  asClause: AsClause
   callSignature: CallSignature
   catchClause: CatchClause
   classBody: ClassBody
@@ -135,6 +138,7 @@ interface NodeMap
   typeAnnotation: TypeAnnotation
   typeArgument: TypeArgument
   typeArgumentList: TypeArgumentList
+  typeAssertion: TypeAssertion
   typeParameter: TypeParameter
   typeParameterList: TypeParameterList
   variableDeclarator: VariableDeclarator

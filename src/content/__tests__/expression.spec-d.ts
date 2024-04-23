@@ -8,6 +8,7 @@ import type {
   ArithmeticExpression,
   ArrayExpression,
   ArrowFunctionExpression,
+  AsExpression,
   AssignmentExpression,
   AwaitExpression,
   BitwiseExpression,
@@ -33,7 +34,7 @@ import type {
   TaggedTemplateExpression,
   TemplateLiteral,
   This,
-  TypeAssertion,
+  TypeAssertionExpression,
   UnaryExpression,
   UpdateExpression,
   YieldExpression
@@ -69,6 +70,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ArrowFunctionExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ArrowFunctionExpression>>()
+    })
+
+    it('should match NodeObject<AsExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<AsExpression>>()
     })
 
     it('should match NodeObject<AssignmentExpression>', () => {
@@ -191,9 +197,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<This>>()
     })
 
-    it('should match NodeObject<TypeAssertion>', () => {
+    it('should match NodeObject<TypeAssertionExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<TypeAssertion>>()
+        .toMatchTypeOf<NodeObject<TypeAssertionExpression>>()
     })
 
     it('should match NodeObject<UnaryExpression>', () => {

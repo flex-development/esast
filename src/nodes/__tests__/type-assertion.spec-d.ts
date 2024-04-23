@@ -5,15 +5,11 @@
 
 import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../assertion-type'
+import type * as TestSubject from '../type-assertion'
 
 describe('unit-d:nodes/TypeAssertion', () => {
   type Subject = TestSubject.default
   type SubjectData = TestSubject.TypeAssertionData
-
-  it('should match [angle: boolean]', () => {
-    expectTypeOf<Subject>().toHaveProperty('angle').toEqualTypeOf<boolean>()
-  })
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()

@@ -5,10 +5,7 @@
  */
 
 export type { default as ArgumentList, ArgumentListData } from './argument-list'
-export type {
-  default as TypeAssertion,
-  TypeAssertionData
-} from './assertion-type'
+export type { default as AsClause, AsClauseData } from './as-clause'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
 export type { default as Comment, CommentData } from './comment'
@@ -113,6 +110,7 @@ export type {
   default as ArrayExpression,
   ArrayExpressionData
 } from './expression-array'
+export type { default as AsExpression, AsExpressionData } from './expression-as'
 export type {
   default as AssignmentExpression,
   AssignmentExpressionData
@@ -201,6 +199,10 @@ export type {
   default as TaggedTemplateExpression,
   TaggedTemplateExpressionData
 } from './expression-tagged-template'
+export type {
+  default as TypeAssertionExpression,
+  TypeAssertionExpressionData
+} from './expression-type-assertion'
 export type {
   default as UnaryExpression,
   UnaryExpressionData
@@ -421,6 +423,10 @@ export type {
   TypeArgumentListData
 } from './type-argument-list'
 export type { default as ArrayType, ArrayTypeData } from './type-array'
+export type {
+  default as TypeAssertion,
+  TypeAssertionData
+} from './type-assertion'
 export type {
   default as ConditionalType,
   ConditionalTypeData
