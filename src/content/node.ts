@@ -41,6 +41,7 @@ import type {
   RestType,
   Root,
   RootMap,
+  SatisfiesClause,
   SpreadElement,
   StaticBlock,
   Super,
@@ -124,6 +125,7 @@ interface NodeMap
   restElement: RestElement
   restType: RestType
   root: Root
+  satisfiesClause: SatisfiesClause
   spreadElement: SpreadElement
   staticBlock: StaticBlock
   super: Super

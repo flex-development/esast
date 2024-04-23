@@ -28,7 +28,7 @@ import type {
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
-  SatisfiesAssertion,
+  SatisfiesExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -166,9 +166,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<RelationalExpression>>()
     })
 
-    it('should match NodeObject<SatisfiesAssertion>', () => {
+    it('should match NodeObject<SatisfiesExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<SatisfiesAssertion>>()
+        .toMatchTypeOf<NodeObject<SatisfiesExpression>>()
     })
 
     it('should match NodeObject<SequenceExpression>', () => {

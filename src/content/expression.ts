@@ -27,7 +27,7 @@ import type {
   ObjectExpression,
   ParenthesizedExpression,
   RelationalExpression,
-  SatisfiesAssertion,
+  SatisfiesExpression,
   SequenceExpression,
   TaggedTemplateExpression,
   TemplateLiteral,
@@ -84,7 +84,7 @@ interface ExpressionMap extends LiteralMap {
   objectExpression: ObjectExpression
   parenthesizedExpression: ParenthesizedExpression
   relationalExpression: RelationalExpression
-  satisfiesAssertion: SatisfiesAssertion
+  satisfiesExpression: SatisfiesExpression
   sequenceExpression: SequenceExpression
   taggedTemplateExpression: TaggedTemplateExpression
   templateLiteral: TemplateLiteral

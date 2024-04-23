@@ -6,10 +6,6 @@
 
 export type { default as ArgumentList, ArgumentListData } from './argument-list'
 export type {
-  default as SatisfiesAssertion,
-  SatisfiesAssertionData
-} from './assertion-satisfies'
-export type {
   default as TypeAssertion,
   TypeAssertionData
 } from './assertion-type'
@@ -194,6 +190,10 @@ export type {
   RelationalExpressionData
 } from './expression-relational'
 export type {
+  default as SatisfiesExpression,
+  SatisfiesExpressionData
+} from './expression-satisfies'
+export type {
   default as SequenceExpression,
   SequenceExpressionData
 } from './expression-sequence'
@@ -287,6 +287,10 @@ export type { default as RenamedProperty } from './property-renamed'
 export type { default as ShorthandProperty } from './property-shorthand'
 export type { default as SimpleProperty } from './property-simple'
 export type { default as Root, RootData } from './root'
+export type {
+  default as SatisfiesClause,
+  SatisfiesClauseData
+} from './satisfies-clause'
 export type {
   default as CallSignature,
   CallSignatureData

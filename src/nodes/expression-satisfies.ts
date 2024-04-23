@@ -1,6 +1,6 @@
 /**
- * @file Nodes - SatisfiesAssertion
- * @module esast/nodes/SatisfiesAssertion
+ * @file Nodes - SatisfiesExpression
+ * @module esast/nodes/SatisfiesExpression
  */
 
 import type {
@@ -8,52 +8,52 @@ import type {
   Data,
   Expression,
   Parent,
-  TypeExpression
+  SatisfiesClause
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
 /**
- * Info associated with `satisfies` assertions.
+ * Info associated with `satisfies` expressions.
  *
  * @see {@linkcode Data}
  *
  * @extends {Data}
  */
-interface SatisfiesAssertionData extends Data {}
+interface SatisfiesExpressionData extends Data {}
 
 /**
- * A `satisfies` assertion.
+ * A `satisfies` expression.
  *
  * @see {@linkcode Parent}
  * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator
  *
  * @extends {Parent}
  */
-interface SatisfiesAssertion extends Parent {
+interface SatisfiesExpression extends Parent {
   /**
    * List of children.
    *
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode TypeExpression}
+   * @see {@linkcode SatisfiesClause}
    */
   children: [
     expression: Expression,
     ...comments: Comments,
-    satisfies: TypeExpression
+    satisfies: SatisfiesClause
   ]
 
   /**
    * Info from the ecosystem.
    *
-   * @see {@linkcode SatisfiesAssertionData}
+   * @see {@linkcode SatisfiesExpressionData}
    */
-  data?: Optional<SatisfiesAssertionData>
+  data?: Optional<SatisfiesExpressionData>
 
   /**
    * Node type.
    */
-  type: 'satisfiesAssertion'
+  type: 'satisfiesExpression'
 }
 
-export type { SatisfiesAssertionData, SatisfiesAssertion as default }
+export type { SatisfiesExpressionData, SatisfiesExpression as default }
