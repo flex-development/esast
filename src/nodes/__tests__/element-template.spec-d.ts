@@ -21,10 +21,6 @@ describe('unit-d:nodes/TemplateElement', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
-  it('should match [tail: boolean]', () => {
-    expectTypeOf<Subject>().toHaveProperty('tail').toEqualTypeOf<boolean>()
-  })
-
   it('should match [type: "templateElement"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')

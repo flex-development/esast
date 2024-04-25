@@ -4,12 +4,10 @@
  */
 
 import type {
-  Comment,
   Data,
-  Expression,
   Parent,
   TemplateElement,
-  TypeExpression
+  TemplatePlaceholder
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -26,6 +24,7 @@ interface TemplateLiteralData extends Data {}
  * A template literal.
  *
  * @see {@linkcode Parent}
+ * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals
  *
  * @extends {Parent}
  */
@@ -33,14 +32,10 @@ interface TemplateLiteral extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
    * @see {@linkcode TemplateElement}
-   * @see {@linkcode TypeExpression}
+   * @see {@linkcode TemplatePlaceholder}
    */
-  children:
-    | (Comment | Expression | TemplateElement)[]
-    | (Comment | TemplateElement | TypeExpression)[]
+  children: (TemplateElement | TemplatePlaceholder)[]
 
   /**
    * Info from the ecosystem.
@@ -53,11 +48,6 @@ interface TemplateLiteral extends Parent {
    * Node type.
    */
   type: 'templateLiteral'
-
-  /**
-   * Boolean indicating template literal is a {@linkcode TypeExpression}.
-   */
-  typeExpression: boolean
 }
 
 export type { TemplateLiteralData, TemplateLiteral as default }

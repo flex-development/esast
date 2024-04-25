@@ -39,11 +39,6 @@ interface TemplateElement extends Literal {
   data?: Optional<TemplateElementData>
 
   /**
-   * Boolean indicating last template element in template literal.
-   */
-  tail: boolean
-
-  /**
    * Node type.
    */
   type: 'templateElement'

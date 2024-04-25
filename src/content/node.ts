@@ -48,6 +48,7 @@ import type {
   Super,
   SwitchCase,
   TemplateElement,
+  TemplatePlaceholder,
   TupleElement,
   TypeAnnotation,
   TypeArgument,
@@ -134,6 +135,7 @@ interface NodeMap
   super: Super
   switchCase: SwitchCase
   templateElement: TemplateElement
+  templatePlaceholder: TemplatePlaceholder
   tupleElement: TupleElement
   typeAnnotation: TypeAnnotation
   typeArgument: TypeArgument

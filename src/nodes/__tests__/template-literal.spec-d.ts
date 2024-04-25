@@ -27,12 +27,6 @@ describe('unit-d:nodes/TemplateLiteral', () => {
       .toEqualTypeOf<'templateLiteral'>()
   })
 
-  it('should match [typeExpression: boolean]', () => {
-    expectTypeOf<Subject>()
-      .toHaveProperty('typeExpression')
-      .toEqualTypeOf<boolean>()
-  })
-
   describe('TemplateLiteralData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()

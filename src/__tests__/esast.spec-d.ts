@@ -35,6 +35,7 @@ describe('unit-d:esast', () => {
         | TestSubject.Comment
         | TestSubject.ExpressionStatement
         | TestSubject.ShorthandProperty
+        | TestSubject.TemplateLiteral
       >
 
       // Expect
@@ -54,6 +55,12 @@ describe('unit-d:esast', () => {
     it('should not include ShorthandProperty', () => {
       expectTypeOf<Subject>()
         .extract<TestSubject.ShorthandProperty>()
+        .toBeNever()
+    })
+
+    it('should not include TemplateLiteral', () => {
+      expectTypeOf<Subject>()
+        .extract<TestSubject.TemplateLiteral>()
         .toBeNever()
     })
   })

@@ -408,6 +408,10 @@ export type {
   default as TemplateLiteral,
   TemplateLiteralData
 } from './template-literal'
+export type {
+  default as TemplatePlaceholder,
+  TemplatePlaceholderData
+} from './template-placeholder'
 export type { default as This, ThisData } from './this'
 export type { default as TupleElement, TupleElementData } from './tuple-element'
 export type {
