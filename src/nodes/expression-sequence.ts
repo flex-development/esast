@@ -29,7 +29,11 @@ interface SequenceExpression extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: (Comment | Expression)[]
+  children: [
+    Exclude<Expression, Pick<SequenceExpression, 'type'>>,
+    ...(Comment | Exclude<Expression, Pick<SequenceExpression, 'type'>>)[],
+    Exclude<Expression, Pick<SequenceExpression, 'type'>>
+  ]
 
   /**
    * Info from the ecosystem.
