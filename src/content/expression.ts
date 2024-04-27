@@ -5,38 +5,15 @@
 
 import type {
   ArithmeticExpression,
-  ArrayExpression,
-  ArrowFunctionExpression,
-  AsExpression,
   AssignmentExpression,
-  AwaitExpression,
+  AtomicExpressionMap,
   BitwiseExpression,
-  CallExpression,
-  ClassExpression,
   ConditionalExpression,
   EqualityExpression,
-  FunctionExpression,
-  Identifier,
-  ImportExpression,
-  ImportMeta,
-  LiteralMap,
   LogicalExpression,
-  MemberExpression,
-  ModuleExpression,
-  NewExpression,
-  NonNullExpression,
-  ObjectExpression,
-  ParenthesizedExpression,
   RelationalExpression,
-  SatisfiesExpression,
   SequenceExpression,
-  TaggedTemplateExpression,
-  TemplateLiteral,
-  This,
-  TypeAssertionExpression,
-  UnaryExpression,
-  UpdateExpression,
-  YieldExpression
+  SubscriptExpressionMap
 } from '@flex-development/esast'
 
 /**
@@ -60,41 +37,18 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  *    }
  *  }
  *
- * @extends {LiteralMap}
+ * @extends {AtomicExpressionMap}
+ * @extends {SubscriptExpressionMap}
  */
-interface ExpressionMap extends LiteralMap {
+interface ExpressionMap extends AtomicExpressionMap, SubscriptExpressionMap {
   arithmeticExpression: ArithmeticExpression
-  arrayExpression: ArrayExpression
-  arrowFunctionExpression: ArrowFunctionExpression
-  asExpression: AsExpression
   assignmentExpression: AssignmentExpression
-  awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression
-  callExpression: CallExpression
-  classExpression: ClassExpression
   conditionalExpression: ConditionalExpression
   equalityExpression: EqualityExpression
-  functionExpression: FunctionExpression
-  identifier: Identifier
-  importExpression: ImportExpression
-  importMeta: ImportMeta
   logicalExpression: LogicalExpression
-  memberExpression: MemberExpression
-  moduleExpression: ModuleExpression
-  newExpression: NewExpression
-  nonNullExpression: NonNullExpression
-  objectExpression: ObjectExpression
-  parenthesizedExpression: ParenthesizedExpression
   relationalExpression: RelationalExpression
-  satisfiesExpression: SatisfiesExpression
   sequenceExpression: SequenceExpression
-  taggedTemplateExpression: TaggedTemplateExpression
-  templateLiteral: TemplateLiteral
-  this: This
-  typeAssertionExpression: TypeAssertionExpression
-  unaryExpression: UnaryExpression
-  updateExpression: UpdateExpression
-  yieldExpression: YieldExpression
 }
 
 export type { Expression, ExpressionMap }

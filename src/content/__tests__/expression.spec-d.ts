@@ -6,38 +6,15 @@
 import type { NodeObject } from '#tests/types'
 import type {
   ArithmeticExpression,
-  ArrayExpression,
-  ArrowFunctionExpression,
-  AsExpression,
   AssignmentExpression,
-  AwaitExpression,
+  AtomicExpressionMap,
   BitwiseExpression,
-  CallExpression,
-  ClassExpression,
   ConditionalExpression,
   EqualityExpression,
-  FunctionExpression,
-  Identifier,
-  ImportExpression,
-  ImportMeta,
-  LiteralMap,
   LogicalExpression,
-  MemberExpression,
-  ModuleExpression,
-  NewExpression,
-  NonNullExpression,
-  ObjectExpression,
-  ParenthesizedExpression,
   RelationalExpression,
-  SatisfiesExpression,
   SequenceExpression,
-  TaggedTemplateExpression,
-  TemplateLiteral,
-  This,
-  TypeAssertionExpression,
-  UnaryExpression,
-  UpdateExpression,
-  YieldExpression
+  SubscriptExpressionMap
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression'
 
@@ -53,8 +30,14 @@ describe('unit-d:content/expression', () => {
   })
 
   describe('ExpressionMap', () => {
-    it('should extend LiteralMap', () => {
-      expectTypeOf<TestSubject.ExpressionMap>().toMatchTypeOf<LiteralMap>()
+    it('should extend AtomicExpressionMap', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<AtomicExpressionMap>()
+    })
+
+    it('should extend SubscriptExpressionMap', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<SubscriptExpressionMap>()
     })
 
     it('should match NodeObject<ArithmeticExpression>', () => {
@@ -62,44 +45,14 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<ArithmeticExpression>>()
     })
 
-    it('should match NodeObject<ArrayExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ArrayExpression>>()
-    })
-
-    it('should match NodeObject<ArrowFunctionExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ArrowFunctionExpression>>()
-    })
-
-    it('should match NodeObject<AsExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<AsExpression>>()
-    })
-
     it('should match NodeObject<AssignmentExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<AssignmentExpression>>()
     })
 
-    it('should match NodeObject<AwaitExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<AwaitExpression>>()
-    })
-
     it('should match NodeObject<BitwiseExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<BitwiseExpression>>()
-    })
-
-    it('should match NodeObject<CallExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<CallExpression>>()
-    })
-
-    it('should match NodeObject<ClassExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ClassExpression>>()
     })
 
     it('should match NodeObject<ConditionalExpression>', () => {
@@ -112,59 +65,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<EqualityExpression>>()
     })
 
-    it('should match NodeObject<FunctionExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<FunctionExpression>>()
-    })
-
-    it('should match NodeObject<Identifier>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<Identifier>>()
-    })
-
-    it('should match NodeObject<ImportExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ImportExpression>>()
-    })
-
-    it('should match NodeObject<ImportMeta>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ImportMeta>>()
-    })
-
     it('should match NodeObject<LogicalExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<LogicalExpression>>()
-    })
-
-    it('should match NodeObject<MemberExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<MemberExpression>>()
-    })
-
-    it('should match NodeObject<ModuleExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ModuleExpression>>()
-    })
-
-    it('should match NodeObject<NewExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<NewExpression>>()
-    })
-
-    it('should match NodeObject<NonNullExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<NonNullExpression>>()
-    })
-
-    it('should match NodeObject<ObjectExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ObjectExpression>>()
-    })
-
-    it('should match NodeObject<ParenthesizedExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<ParenthesizedExpression>>()
     })
 
     it('should match NodeObject<RelationalExpression>', () => {
@@ -172,49 +75,9 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<RelationalExpression>>()
     })
 
-    it('should match NodeObject<SatisfiesExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<SatisfiesExpression>>()
-    })
-
     it('should match NodeObject<SequenceExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<SequenceExpression>>()
-    })
-
-    it('should match NodeObject<TaggedTemplateExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<TaggedTemplateExpression>>()
-    })
-
-    it('should match NodeObject<TemplateLiteral>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<TemplateLiteral>>()
-    })
-
-    it('should match NodeObject<This>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<This>>()
-    })
-
-    it('should match NodeObject<TypeAssertionExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<TypeAssertionExpression>>()
-    })
-
-    it('should match NodeObject<UnaryExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<UnaryExpression>>()
-    })
-
-    it('should match NodeObject<UpdateExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<UpdateExpression>>()
-    })
-
-    it('should match NodeObject<YieldExpression>', () => {
-      expectTypeOf<TestSubject.ExpressionMap>()
-        .toMatchTypeOf<NodeObject<YieldExpression>>()
     })
   })
 })
