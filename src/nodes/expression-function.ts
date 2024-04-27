@@ -14,7 +14,7 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with function expressions.
@@ -23,21 +23,7 @@ import type { Nilable, Optional } from '@flex-development/tutils'
  *
  * @extends {Data}
  */
-interface FunctionExpressionData extends Data {
-  /**
-   * Asynchronous function?
-   *
-   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
-   */
-  async?: Nilable<boolean>
-
-  /**
-   * Generator function?
-   *
-   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/function*
-   */
-  generator?: Nilable<boolean>
-}
+interface FunctionExpressionData extends Data {}
 
 /**
  * A `function` expression.
@@ -47,6 +33,13 @@ interface FunctionExpressionData extends Data {
  * @extends {Parent}
  */
 interface FunctionExpression extends Parent {
+  /**
+   * Asynchronous function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
+   */
+  async: boolean
+
   /**
    * List of children.
    *
@@ -137,6 +130,13 @@ interface FunctionExpression extends Parent {
    * @see {@linkcode FunctionExpressionData}
    */
   data?: Optional<FunctionExpressionData>
+
+  /**
+   * Generator function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/function*
+   */
+  generator: boolean
 
   /**
    * Node type.
