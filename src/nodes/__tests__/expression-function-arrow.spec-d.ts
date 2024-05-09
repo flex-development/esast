@@ -4,7 +4,7 @@
  */
 
 import type { Data, Parent } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-function-arrow'
 
 describe('unit-d:nodes/ArrowFunctionExpression', () => {
@@ -13,6 +13,10 @@ describe('unit-d:nodes/ArrowFunctionExpression', () => {
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
+  })
+
+  it('should match [async: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('async').toEqualTypeOf<boolean>()
   })
 
   it('should match [data?: ArrowFunctionExpressionData | undefined]', () => {
@@ -30,12 +34,6 @@ describe('unit-d:nodes/ArrowFunctionExpression', () => {
   describe('ArrowFunctionExpressionData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
-    })
-
-    it('should match [async?: boolean | null | undefined]', () => {
-      expectTypeOf<SubjectData>()
-        .toHaveProperty('async')
-        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })

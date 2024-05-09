@@ -22,14 +22,7 @@ import type {
  *
  * @extends {Data}
  */
-interface ArrowFunctionExpressionData extends Data {
-  /**
-   * Asynchronous arrow function?
-   *
-   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
-   */
-  async?: boolean | null | undefined
-}
+interface ArrowFunctionExpressionData extends Data {}
 
 /**
  * An arrow function expression.
@@ -39,6 +32,13 @@ interface ArrowFunctionExpressionData extends Data {
  * @extends {Parent}
  */
 interface ArrowFunctionExpression extends Parent {
+  /**
+   * Asynchronous arrow function?
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
+   */
+  async: boolean
+
   /**
    * List of children.
    *
