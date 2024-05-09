@@ -21,4 +21,8 @@ describe('unit-d:types/UnaryTypeOperator', () => {
   it('should extract "typeof"', () => {
     expectTypeOf<TestSubject>().extract<'typeof'>().not.toBeNever()
   })
+
+  it('should extract "unique"', () => {
+    expectTypeOf<TestSubject>().extract<'unique'>().not.toBeNever()
+  })
 })
