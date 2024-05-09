@@ -12,14 +12,7 @@ import type { Data, Node } from '@flex-development/esast'
  *
  * @extends {Data}
  */
-interface IdentifierData extends Data {
-  /**
-   * Private field?
-   *
-   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties
-   */
-  private?: boolean | null | undefined
-}
+interface IdentifierData extends Data {}
 
 /**
  * An identifier.
@@ -40,6 +33,13 @@ interface Identifier extends Node {
    * Identifier name.
    */
   name: string
+
+  /**
+   * Boolean indicating private identifier.
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties
+   */
+  private: boolean
 
   /**
    * Node type.

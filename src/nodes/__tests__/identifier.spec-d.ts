@@ -4,7 +4,7 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
+import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../identifier'
 
 describe('unit-d:nodes/Identifier', () => {
@@ -25,6 +25,12 @@ describe('unit-d:nodes/Identifier', () => {
     expectTypeOf<Subject>().toHaveProperty('name').toEqualTypeOf<string>()
   })
 
+  it('should match [private: boolean]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('private')
+      .toEqualTypeOf<boolean>()
+  })
+
   it('should match [type: "identifier"]', () => {
     expectTypeOf<Subject>().toHaveProperty('type').toEqualTypeOf<'identifier'>()
   })
@@ -32,12 +38,6 @@ describe('unit-d:nodes/Identifier', () => {
   describe('IdentifierData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
-    })
-
-    it('should match [private?: boolean | null | undefined]', () => {
-      expectTypeOf<SubjectData>()
-        .toHaveProperty('private')
-        .toEqualTypeOf<Nilable<boolean>>()
     })
   })
 })
