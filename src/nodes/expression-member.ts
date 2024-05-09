@@ -8,8 +8,7 @@ import type {
   Comments,
   Data,
   Expression,
-  Parent,
-  Super
+  Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 
@@ -35,16 +34,15 @@ interface MemberExpression extends Parent {
    *
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode Super}
    */
   children:
     | [
-      object: Expression | Super,
+      object: Expression,
       ...comments: Comments,
       property: Expression
     ]
     | [
-      object: Expression | Super,
+      object: Expression,
       ...comments: Comments,
       property: Expression,
       ...comments: InternalComments
