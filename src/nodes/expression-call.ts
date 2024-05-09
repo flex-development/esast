@@ -10,7 +10,6 @@ import type {
   Data,
   Expression,
   Parent,
-  Super,
   TypeArgumentList
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -38,17 +37,16 @@ interface CallExpression extends Parent {
    * @see {@linkcode ArgumentList}
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode Super}
    * @see {@linkcode TypeArgumentList}
    */
   children:
     | [
-      callee: Expression | Super,
+      callee: Expression,
       ...comments: Comments,
       arguments: ArgumentList
     ]
     | [
-      callee: Expression | Super,
+      callee: Expression,
       ...comments: Comments,
       typeArguments: TypeArgumentList,
       ...comments: InternalComments,
