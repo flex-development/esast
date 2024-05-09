@@ -10,9 +10,8 @@
  *
  * @see https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
  * @see https://www.typescriptlang.org/docs/handbook/2/typeof-types.html
- * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions
  * @see https://www.typescriptlang.org/docs/handbook/symbols.html#unique-symbol
  */
-type UnaryTypeOperator = 'asserts' | 'keyof' | 'readonly' | 'typeof' | 'unique'
+type UnaryTypeOperator = 'keyof' | 'readonly' | 'typeof' | 'unique'
 
 export type { UnaryTypeOperator as default }

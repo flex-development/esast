@@ -5,6 +5,7 @@
 
 import type {
   ArrayType,
+  AssertionPredicate,
   ConditionalType,
   ConstructorType,
   FunctionType,
@@ -53,6 +54,7 @@ type TypeExpression = TypeExpressionMap[keyof TypeExpressionMap]
  */
 interface TypeExpressionMap extends LiteralMap {
   arrayType: ArrayType
+  assertionPredicate: AssertionPredicate
   conditionalType: ConditionalType
   constructorType: ConstructorType
   functionType: FunctionType

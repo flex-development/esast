@@ -6,6 +6,10 @@
 
 export type { default as ArgumentList, ArgumentListData } from './argument-list'
 export type { default as AsClause, AsClauseData } from './as-clause'
+export type {
+  default as AssertionPredicate,
+  AssertionPredicateData
+} from './assertion-predicate'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
 export type { default as Comment, CommentData } from './comment'

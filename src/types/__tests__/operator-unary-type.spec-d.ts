@@ -6,10 +6,6 @@
 import type TestSubject from '../operator-unary-type'
 
 describe('unit-d:types/UnaryTypeOperator', () => {
-  it('should extract "asserts"', () => {
-    expectTypeOf<TestSubject>().extract<'asserts'>().not.toBeNever()
-  })
-
   it('should extract "keyof"', () => {
     expectTypeOf<TestSubject>().extract<'keyof'>().not.toBeNever()
   })
