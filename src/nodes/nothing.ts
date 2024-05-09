@@ -4,7 +4,6 @@
  */
 
 import type { Literal } from '@flex-development/esast'
-import type { NIL } from '@flex-development/tutils'
 
 /**
  * Nothing.
@@ -25,7 +24,7 @@ interface Nothing extends Literal {
   /**
    * Plain value.
    */
-  value: NIL
+  value: null | undefined
 }
 
 export type { Nothing as default }
