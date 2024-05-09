@@ -15,7 +15,6 @@ import type {
   Parent,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `class` declarations.
@@ -249,7 +248,7 @@ interface ClassDeclaration extends Parent {
    *
    * @see {@linkcode ClassDeclarationData}
    */
-  data?: Optional<ClassDeclarationData>
+  data?: ClassDeclarationData | undefined
 
   /**
    * Node type.

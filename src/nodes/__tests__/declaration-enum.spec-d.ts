@@ -19,7 +19,7 @@ describe('unit-d:nodes/EnumDeclaration', () => {
     expectTypeOf<Subject>().toHaveProperty('const').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<EnumDeclarationData>]', () => {
+  it('should match [data?: EnumDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

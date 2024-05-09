@@ -15,7 +15,7 @@ describe('unit-d:nodes/TypeAnnotation', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TypeAnnotationData>]', () => {
+  it('should match [data?: TypeAnnotationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

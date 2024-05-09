@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeParameter
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type parameter lists.
@@ -41,7 +40,7 @@ interface TypeParameterList extends Parent {
    *
    * @see {@linkcode TypeParameterListData}
    */
-  data?: Optional<TypeParameterListData>
+  data?: TypeParameterListData | undefined
 
   /**
    * Node type.

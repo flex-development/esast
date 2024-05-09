@@ -11,7 +11,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `switch` cases.
@@ -45,7 +44,7 @@ interface SwitchCase extends Parent {
    *
    * @see {@linkcode SwitchCaseData}
    */
-  data?: Optional<SwitchCaseData>
+  data?: SwitchCaseData | undefined
 
   /**
    * Node type.

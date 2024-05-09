@@ -7,10 +7,10 @@ import type {
   Comment,
   Comments,
   Data,
+  EmptyChildren,
   Identifier,
   Parent
 } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `continue` statements.
@@ -35,14 +35,14 @@ interface ContinueStatement extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Identifier}
    */
-  children: EmptyArray | [...comments: Comments, label: Identifier]
+  children: EmptyChildren | [...comments: Comments, label: Identifier]
 
   /**
    * Info from the ecosystem.
    *
    * @see {@linkcode ContinueStatementData}
    */
-  data?: Optional<ContinueStatementData>
+  data?: ContinueStatementData | undefined
 
   /**
    * Node type.

@@ -15,7 +15,7 @@ describe('unit-d:nodes/VariableDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<VariableDeclarationData>]', () => {
+  it('should match [data?: VariableDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `implements` clauses.
@@ -45,7 +44,7 @@ interface ImplementsClause extends Parent {
    *
    * @see {@linkcode ImplementsClauseData}
    */
-  data?: Optional<ImplementsClauseData>
+  data?: ImplementsClauseData | undefined
 
   /**
    * Node type.

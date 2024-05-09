@@ -15,7 +15,7 @@ describe('unit-d:nodes/ArgumentList', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ArgumentListData>]', () => {
+  it('should match [data?: ArgumentListData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

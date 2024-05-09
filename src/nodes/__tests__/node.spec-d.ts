@@ -13,7 +13,7 @@ describe('unit-d:nodes/Node', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<unist.Node>()
   })
 
-  it('should match [data?: Optional<Data>]', () => {
+  it('should match [data?: Data | undefined]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<Data>>()

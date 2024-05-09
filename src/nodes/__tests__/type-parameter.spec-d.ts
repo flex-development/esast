@@ -15,7 +15,7 @@ describe('unit-d:nodes/TypeParameter', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TypeParameterData>]', () => {
+  it('should match [data?: TypeParameterData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

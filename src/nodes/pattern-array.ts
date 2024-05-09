@@ -3,9 +3,13 @@
  * @module esast/nodes/ArrayPattern
  */
 
-import type { Comment, Data, Nothing, Parent,
-  Pattern } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type {
+  Comment,
+  Data,
+  Nothing,
+  Parent,
+  Pattern
+} from '@flex-development/esast'
 
 /**
  * Info associated with array patterns.
@@ -38,7 +42,7 @@ interface ArrayPattern extends Parent {
    *
    * @see {@linkcode ArrayPatternData}
    */
-  data?: Optional<ArrayPatternData>
+  data?: ArrayPatternData | undefined
 
   /**
    * Node type.

@@ -19,7 +19,7 @@ describe('unit-d:nodes/ArithmeticExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<BinaryExpression>()
   })
 
-  it('should match [data?: Optional<ArithmeticExpressionData>]', () => {
+  it('should match [data?: ArithmeticExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

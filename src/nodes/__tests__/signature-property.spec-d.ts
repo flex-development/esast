@@ -19,7 +19,7 @@ describe('unit-d:nodes/PropertySignature', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<PropertySignatureData>]', () => {
+  it('should match [data?: PropertySignatureData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

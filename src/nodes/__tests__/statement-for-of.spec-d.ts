@@ -19,7 +19,7 @@ describe('unit-d:nodes/ForOfStatement', () => {
     expectTypeOf<Subject>().toHaveProperty('await').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<ForOfStatementData>]', () => {
+  it('should match [data?: ForOfStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

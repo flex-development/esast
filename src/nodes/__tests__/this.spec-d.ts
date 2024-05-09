@@ -15,7 +15,7 @@ describe('unit-d:nodes/This', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [data?: Optional<ThisData>]', () => {
+  it('should match [data?: ThisData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -9,7 +9,6 @@ import type {
   EnumMember,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `enum` declaration bodies.
@@ -41,7 +40,7 @@ interface EnumBody extends Parent {
    *
    * @see {@linkcode EnumBodyData}
    */
-  data?: Optional<EnumBodyData>
+  data?: EnumBodyData | undefined
 
   /**
    * Node type.

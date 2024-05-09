@@ -6,10 +6,10 @@
 import type {
   Comment,
   Data,
+  EmptyChildren,
   Parent,
   TupleElement
 } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with tuple types.
@@ -35,14 +35,14 @@ interface TupleType extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode TupleElement}
    */
-  children: (Comment | TupleElement)[] | EmptyArray
+  children: (Comment | TupleElement)[] | EmptyChildren
 
   /**
    * Info from the ecosystem.
    *
    * @see {@linkcode TupleTypeData}
    */
-  data?: Optional<TupleTypeData>
+  data?: TupleTypeData | undefined
 
   /**
    * Node type.

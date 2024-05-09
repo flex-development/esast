@@ -11,7 +11,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `extends` clauses.
@@ -50,7 +49,7 @@ interface ExtendsClause extends Parent {
    *
    * @see {@linkcode ExtendsClauseData}
    */
-  data?: Optional<ExtendsClauseData>
+  data?: ExtendsClauseData | undefined
 
   /**
    * Node type.

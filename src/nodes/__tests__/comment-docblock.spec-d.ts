@@ -20,7 +20,7 @@ describe('unit-d:nodes/DocblockComment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Omit<docast.Comment, 'position'>>()
   })
 
-  it('should match [data?: Optional<DocblockCommentData>]', () => {
+  it('should match [data?: DocblockCommentData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

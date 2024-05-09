@@ -4,7 +4,6 @@
  */
 
 import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with static initialization blocks.
@@ -38,7 +37,7 @@ interface StaticBlock extends Parent {
    *
    * @see {@linkcode StaticBlockData}
    */
-  data?: Optional<StaticBlockData>
+  data?: StaticBlockData | undefined
 
   /**
    * Node type.

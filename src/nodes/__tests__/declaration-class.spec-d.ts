@@ -15,7 +15,7 @@ describe('unit-d:nodes/ClassDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ClassDeclarationData>]', () => {
+  it('should match [data?: ClassDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

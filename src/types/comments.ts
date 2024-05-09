@@ -3,14 +3,13 @@
  * @module esast/types/Comments
  */
 
-import type { Comment } from '@flex-development/esast'
-import type { EmptyArray } from '@flex-development/tutils'
+import type { Comment, EmptyChildren } from '@flex-development/esast'
 
 /**
- * An array containing comments, or an empty comment array.
+ * An array containing comment nodes, or an empty comment node array.
  *
  * @see {@linkcode Comment}
  */
-type Comments = EmptyArray | [Comment, ...Comment[]]
+type Comments = EmptyChildren | [Comment, ...Comment[]]
 
 export type { Comments as default }

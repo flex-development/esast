@@ -3,14 +3,13 @@
  * @module esast/types/Decorators
  */
 
-import type { Decorator } from '@flex-development/esast'
-import type { EmptyArray } from '@flex-development/tutils'
+import type { Decorator, EmptyChildren } from '@flex-development/esast'
 
 /**
- * An array containing decorators, or an empty decorator array.
+ * An array containing decorator nodes, or an empty decorator node array.
  *
  * @see {@linkcode Decorator}
  */
-type Decorators = EmptyArray | [Decorator, ...Decorator[]]
+type Decorators = EmptyChildren | [Decorator, ...Decorator[]]
 
 export type { Decorators as default }

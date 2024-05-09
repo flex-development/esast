@@ -12,7 +12,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `while` statements.
@@ -50,7 +49,7 @@ interface WhileStatement extends Parent {
    *
    * @see {@linkcode WhileStatementData}
    */
-  data?: Optional<WhileStatementData>
+  data?: WhileStatementData | undefined
 
   /**
    * Node type.

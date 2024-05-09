@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with conditional expressions.
@@ -48,7 +47,7 @@ interface ConditionalExpression extends Parent {
    *
    * @see {@linkcode ConditionalExpressionData}
    */
-  data?: Optional<ConditionalExpressionData>
+  data?: ConditionalExpressionData | undefined
 
   /**
    * Node type.

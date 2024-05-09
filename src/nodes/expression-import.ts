@@ -10,7 +10,6 @@ import type {
   ImportIdentifier,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `import` expressions.
@@ -47,7 +46,7 @@ interface ImportExpression extends Parent {
    *
    * @see {@linkcode ImportExpressionData}
    */
-  data?: Optional<ImportExpressionData>
+  data?: ImportExpressionData | undefined
 
   /**
    * Node type.

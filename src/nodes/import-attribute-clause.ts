@@ -9,7 +9,6 @@ import type {
   ImportAttribute,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with import attribute clauses.
@@ -42,7 +41,7 @@ interface ImportAttributeClause extends Parent {
    *
    * @see {@linkcode ImportAttributeClauseData}
    */
-  data?: Optional<ImportAttributeClauseData>
+  data?: ImportAttributeClauseData | undefined
 
   /**
    * Node type.

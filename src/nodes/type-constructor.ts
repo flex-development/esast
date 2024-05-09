@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with constructor types.
@@ -48,7 +47,7 @@ interface ConstructorType extends Parent {
    *
    * @see {@linkcode ConstructorTypeData}
    */
-  data?: Optional<ConstructorTypeData>
+  data?: ConstructorTypeData | undefined
 
   /**
    * Node type.

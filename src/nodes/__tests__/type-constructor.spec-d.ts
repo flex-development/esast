@@ -15,7 +15,7 @@ describe('unit-d:nodes/ConstructorType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ConstructorTypeData>]', () => {
+  it('should match [data?: ConstructorTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

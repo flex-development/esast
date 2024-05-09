@@ -11,7 +11,6 @@ import type {
   This,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type predicates.
@@ -50,7 +49,7 @@ interface TypePredicate extends Parent {
    *
    * @see {@linkcode TypePredicateData}
    */
-  data?: Optional<TypePredicateData>
+  data?: TypePredicateData | undefined
 
   /**
    * Node type.

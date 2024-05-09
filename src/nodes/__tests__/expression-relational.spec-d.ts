@@ -19,7 +19,7 @@ describe('unit-d:nodes/RelationalExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<BinaryExpression>()
   })
 
-  it('should match [data?: Optional<RelationalExpressionData>]', () => {
+  it('should match [data?: RelationalExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

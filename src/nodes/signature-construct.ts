@@ -9,7 +9,6 @@ import type {
   Data,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with construct signatures.
@@ -42,7 +41,7 @@ interface ConstructSignature extends Parent {
    *
    * @see {@linkcode ConstructSignatureData}
    */
-  data?: Optional<ConstructSignatureData>
+  data?: ConstructSignatureData | undefined
 
   /**
    * Node type.

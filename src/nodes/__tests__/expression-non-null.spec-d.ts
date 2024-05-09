@@ -15,7 +15,7 @@ describe('unit-d:nodes/NonNullExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<NonNullExpressionData>]', () => {
+  it('should match [data?: NonNullExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

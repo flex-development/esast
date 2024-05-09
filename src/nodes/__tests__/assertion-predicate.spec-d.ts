@@ -15,7 +15,7 @@ describe('unit-d:nodes/AssertionPredicate', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AssertionPredicateData>]', () => {
+  it('should match [data?: AssertionPredicateData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

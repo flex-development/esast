@@ -5,7 +5,6 @@
 
 import * as docast from '@flex-development/docast'
 import type { Comment, CommentData, CommentKind } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with docblock comments.
@@ -40,7 +39,7 @@ interface DocblockComment extends Comment, Omit<docast.Comment, 'position'> {
    *
    * @see {@linkcode DocblockCommentData}
    */
-  data?: Optional<DocblockCommentData>
+  data?: DocblockCommentData | undefined
 
   /**
    * Comment kind.

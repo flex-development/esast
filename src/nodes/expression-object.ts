@@ -12,7 +12,6 @@ import type {
   SimpleProperty,
   SpreadElement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with object expressions.
@@ -53,7 +52,7 @@ interface ObjectExpression extends Parent {
    *
    * @see {@linkcode ObjectExpressionData}
    */
-  data?: Optional<ObjectExpressionData>
+  data?: ObjectExpressionData | undefined
 
   /**
    * Node type.

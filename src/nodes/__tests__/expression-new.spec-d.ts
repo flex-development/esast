@@ -15,7 +15,7 @@ describe('unit-d:nodes/NewExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<NewExpressionData>]', () => {
+  it('should match [data?: NewExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

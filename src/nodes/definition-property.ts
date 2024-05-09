@@ -12,7 +12,6 @@ import type {
   Parent,
   TypeAnnotation
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with property definitions.
@@ -106,7 +105,7 @@ interface PropertyDefinition extends Parent {
    *
    * @see {@linkcode PropertyDefinitionData}
    */
-  data?: Optional<PropertyDefinitionData>
+  data?: PropertyDefinitionData | undefined
 
   /**
    * Boolean indicating if property is a static class field.

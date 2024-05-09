@@ -9,7 +9,6 @@ import type {
   Declaration,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `declare` declarations.
@@ -42,7 +41,7 @@ interface AmbientDeclaration extends Parent {
    *
    * @see {@linkcode AmbientDeclarationData}
    */
-  data?: Optional<AmbientDeclarationData>
+  data?: AmbientDeclarationData | undefined
 
   /**
    * Node type.

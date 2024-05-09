@@ -15,7 +15,7 @@ describe('unit-d:nodes/TemplatePlaceholder', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TemplatePlaceholderData>]', () => {
+  it('should match [data?: TemplatePlaceholderData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

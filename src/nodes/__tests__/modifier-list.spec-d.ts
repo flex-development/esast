@@ -15,7 +15,7 @@ describe('unit-d:nodes/ModifierList', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ModifierListData>]', () => {
+  it('should match [data?: ModifierListData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

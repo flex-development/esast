@@ -15,7 +15,7 @@ describe('unit-d:nodes/ModuleExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ModuleExpressionData>]', () => {
+  it('should match [data?: ModuleExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

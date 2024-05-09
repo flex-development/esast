@@ -15,7 +15,7 @@ describe('unit-d:nodes/BreakStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<BreakStatementData>]', () => {
+  it('should match [data?: BreakStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

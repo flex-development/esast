@@ -11,7 +11,6 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `enum` members.
@@ -51,7 +50,7 @@ interface EnumMember extends Parent {
    *
    * @see {@linkcode EnumMemberData}
    */
-  data?: Optional<EnumMemberData>
+  data?: EnumMemberData | undefined
 
   /**
    * Node type.

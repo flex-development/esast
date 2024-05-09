@@ -15,7 +15,7 @@ describe('unit-d:nodes/IndexedAccessType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<IndexedAccessTypeData>]', () => {
+  it('should match [data?: IndexedAccessTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

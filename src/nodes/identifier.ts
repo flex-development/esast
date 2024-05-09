@@ -4,7 +4,6 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with identifiers.
@@ -19,7 +18,7 @@ interface IdentifierData extends Data {
    *
    * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties
    */
-  private?: Nilable<boolean>
+  private?: boolean | null | undefined
 }
 
 /**
@@ -35,7 +34,7 @@ interface Identifier extends Node {
    *
    * @see {@linkcode IdentifierData}
    */
-  data?: Optional<IdentifierData>
+  data?: IdentifierData | undefined
 
   /**
    * Identifier name.

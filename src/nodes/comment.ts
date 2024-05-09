@@ -5,7 +5,6 @@
 
 import * as docast from '@flex-development/docast'
 import type { CommentKind, Data, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with comments.
@@ -37,7 +36,7 @@ interface Comment extends Parent {
    *
    * @see {@linkcode CommentData}
    */
-  data?: Optional<CommentData>
+  data?: CommentData | undefined
 
   /**
    * Comment kind.

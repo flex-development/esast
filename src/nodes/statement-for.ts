@@ -14,7 +14,6 @@ import type {
   Statement,
   VariableDeclaration
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `for` statements.
@@ -58,7 +57,7 @@ interface ForStatement extends Parent {
    *
    * @see {@linkcode ForStatementData}
    */
-  data?: Optional<ForStatementData>
+  data?: ForStatementData | undefined
 
   /**
    * Node type.

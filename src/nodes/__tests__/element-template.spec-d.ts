@@ -15,7 +15,7 @@ describe('unit-d:nodes/TemplateElement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Literal>()
   })
 
-  it('should match [data?: Optional<TemplateElementData>]', () => {
+  it('should match [data?: TemplateElementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -36,7 +36,7 @@ describe('unit-d:nodes/TemplateElement', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
 
-    it('should match [cooked: Nilable<string>]', () => {
+    it('should match [cooked?: string | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('cooked')
         .toEqualTypeOf<Nilable<string>>()

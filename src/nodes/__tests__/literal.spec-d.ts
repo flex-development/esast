@@ -12,7 +12,7 @@ describe('unit-d:nodes/Literal', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [value: Optional<JsonPrimitive | RegExp | bigint>]', () => {
+  it('should match [value: RegExp | bigint | boolean | number | string | null | undefined]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('value')
       .toEqualTypeOf<Optional<JsonPrimitive | RegExp | bigint>>()

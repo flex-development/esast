@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImportSpecifier', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImportSpecifierData>]', () => {
+  it('should match [data?: ImportSpecifierData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -32,7 +32,7 @@ describe('unit-d:nodes/ImportSpecifier', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
 
-    it('should match [typeOnly?: Nilable<boolean>]', () => {
+    it('should match [typeOnly?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('typeOnly')
         .toEqualTypeOf<Nilable<boolean>>()

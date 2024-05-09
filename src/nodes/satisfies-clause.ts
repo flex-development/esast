@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `satisfies` clauses.
@@ -42,7 +41,7 @@ interface SatisfiesClause extends Parent {
    *
    * @see {@linkcode SatisfiesClauseData}
    */
-  data?: Optional<SatisfiesClauseData>
+  data?: SatisfiesClauseData | undefined
 
   /**
    * Node type.

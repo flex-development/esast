@@ -14,7 +14,6 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with function expressions.
@@ -129,7 +128,7 @@ interface FunctionExpression extends Parent {
    *
    * @see {@linkcode FunctionExpressionData}
    */
-  data?: Optional<FunctionExpressionData>
+  data?: FunctionExpressionData | undefined
 
   /**
    * Generator function?

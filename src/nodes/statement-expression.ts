@@ -4,7 +4,6 @@
  */
 
 import type { Data, Expression, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with expression statements.
@@ -35,7 +34,7 @@ interface ExpressionStatement extends Parent {
    *
    * @see {@linkcode ExpressionStatementData}
    */
-  data?: Optional<ExpressionStatementData>
+  data?: ExpressionStatementData | undefined
 
   /**
    * Node type.

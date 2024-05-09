@@ -5,7 +5,6 @@
 
 import * as docast from '@flex-development/docast'
 import type { Comment, CommentData, CommentKind } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with line comments.
@@ -21,7 +20,7 @@ interface LineCommentData extends CommentData {
    * Trailing comments start and end on the same `end` line as the node they
    * succeed.
    */
-  trailing?: Nilable<boolean>
+  trailing?: boolean | null | undefined
 }
 
 /**
@@ -44,7 +43,7 @@ interface LineComment extends Comment {
    *
    * @see {@linkcode LineCommentData}
    */
-  data?: Optional<LineCommentData>
+  data?: LineCommentData | undefined
 
   /**
    * Comment kind.

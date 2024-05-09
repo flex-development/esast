@@ -15,7 +15,7 @@ describe('unit-d:nodes/DoWhileStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<DoWhileStatementData>]', () => {
+  it('should match [data?: DoWhileStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

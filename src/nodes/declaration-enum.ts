@@ -12,7 +12,6 @@ import type {
   ModifierList,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `enum` declarations.
@@ -66,7 +65,7 @@ interface EnumDeclaration extends Parent {
    *
    * @see {@linkcode EnumDeclarationData}
    */
-  data?: Optional<EnumDeclarationData>
+  data?: EnumDeclarationData | undefined
 
   /**
    * Node type.

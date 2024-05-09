@@ -13,7 +13,6 @@ import type {
   Pattern,
   TypeAnnotation
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with assignment patterns.
@@ -55,7 +54,7 @@ interface AssignmentPattern extends Parent {
    *
    * @see {@linkcode AssignmentPatternData}
    */
-  data?: Optional<AssignmentPatternData>
+  data?: AssignmentPatternData | undefined
 
   /**
    * Node type.

@@ -11,7 +11,6 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with import attributes.
@@ -51,7 +50,7 @@ interface ImportAttribute extends Parent {
    *
    * @see {@linkcode ImportAttributeData}
    */
-  data?: Optional<ImportAttributeData>
+  data?: ImportAttributeData | undefined
 
   /**
    * Node type.

@@ -12,7 +12,6 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `module` declarations.
@@ -52,7 +51,7 @@ interface ModuleDeclaration extends Parent {
    *
    * @see {@linkcode ModuleDeclarationData}
    */
-  data?: Optional<ModuleDeclarationData>
+  data?: ModuleDeclarationData | undefined
 
   /**
    * Node type.

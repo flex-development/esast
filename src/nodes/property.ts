@@ -17,7 +17,6 @@ import type {
   Parent,
   PropertyKind
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with object properties.
@@ -85,7 +84,7 @@ interface Property extends Parent {
    *
    * @see {@linkcode PropertyData}
    */
-  data?: Optional<PropertyData>
+  data?: PropertyData | undefined
 
   /**
    * Property kind.

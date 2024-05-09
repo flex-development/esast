@@ -11,7 +11,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with template literal placeholders.
@@ -49,7 +48,7 @@ interface TemplatePlaceholder extends Parent {
    *
    * @see {@linkcode TemplatePlaceholderData}
    */
-  data?: Optional<TemplatePlaceholderData>
+  data?: TemplatePlaceholderData | undefined
 
   /**
    * Node type.

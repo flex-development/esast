@@ -14,7 +14,6 @@ import type {
   Parent,
   PropertySignature
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `interface` declaration bodies.
@@ -59,7 +58,7 @@ interface InterfaceBody extends Parent {
    *
    * @see {@linkcode InterfaceBodyData}
    */
-  data?: Optional<InterfaceBodyData>
+  data?: InterfaceBodyData | undefined
 
   /**
    * Node type.

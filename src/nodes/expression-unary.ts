@@ -11,7 +11,6 @@ import type {
   Parent,
   UnaryOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with unary expressions.
@@ -43,7 +42,7 @@ interface UnaryExpression extends Parent {
    *
    * @see {@linkcode UnaryExpressionData}
    */
-  data?: Optional<UnaryExpressionData>
+  data?: UnaryExpressionData | undefined
 
   /**
    * Unary operator.

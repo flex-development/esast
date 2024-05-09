@@ -15,7 +15,7 @@ describe('unit-d:nodes/ParenthesizedExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ParenthesizedExpressionData>]', () => {
+  it('should match [data?: ParenthesizedExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

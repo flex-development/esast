@@ -15,7 +15,7 @@ describe('unit-d:nodes/SequenceExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<SequenceExpressionData>]', () => {
+  it('should match [data?: SequenceExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

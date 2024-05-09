@@ -15,7 +15,7 @@ describe('unit-d:nodes/GenericType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<GenericTypeData>]', () => {
+  it('should match [data?: GenericTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

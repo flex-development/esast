@@ -11,7 +11,6 @@ import type {
   Parent,
   UpdateOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with update expressions.
@@ -45,7 +44,7 @@ interface UpdateExpression extends Parent {
    *
    * @see {@linkcode UpdateExpressionData}
    */
-  data?: Optional<UpdateExpressionData>
+  data?: UpdateExpressionData | undefined
 
   /**
    * Update operator.

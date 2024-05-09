@@ -15,7 +15,7 @@ describe('unit-d:nodes/ThrowStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ThrowStatementData>]', () => {
+  it('should match [data?: ThrowStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

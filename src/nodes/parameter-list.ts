@@ -9,7 +9,6 @@ import type {
   Parameter,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with parameter lists.
@@ -41,7 +40,7 @@ interface ParameterList extends Parent {
    *
    * @see {@linkcode ParameterListData}
    */
-  data?: Optional<ParameterListData>
+  data?: ParameterListData | undefined
 
   /**
    * Node type.

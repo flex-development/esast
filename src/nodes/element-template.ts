@@ -4,7 +4,6 @@
  */
 
 import type { Data, Literal } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with template literal elements.
@@ -20,7 +19,7 @@ interface TemplateElementData extends Data {
    * This should be `null` or `undefined` when a template literal is tagged and
    * contains an invalid escape sequence.
    */
-  cooked?: Nilable<string>
+  cooked?: string | null | undefined
 }
 
 /**
@@ -36,7 +35,7 @@ interface TemplateElement extends Literal {
    *
    * @see {@linkcode TemplateElementData}
    */
-  data?: Optional<TemplateElementData>
+  data?: TemplateElementData | undefined
 
   /**
    * Node type.

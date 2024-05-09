@@ -4,7 +4,6 @@
  */
 
 import type { Data } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 import type unist from 'unist'
 
 /**
@@ -20,7 +19,7 @@ interface Node extends unist.Node {
    *
    * @see {@linkcode Data}
    */
-  data?: Optional<Data>
+  data?: Data | undefined
 }
 
 export type { Node as default }

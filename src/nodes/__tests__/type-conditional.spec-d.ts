@@ -15,7 +15,7 @@ describe('unit-d:nodes/ConditionalType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ConditionalTypeData>]', () => {
+  it('should match [data?: ConditionalTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -19,7 +19,7 @@ describe('unit-d:nodes/BitwiseExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<BinaryExpression>()
   })
 
-  it('should match [data?: Optional<BitwiseExpressionData>]', () => {
+  it('should match [data?: BitwiseExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

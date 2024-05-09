@@ -15,7 +15,7 @@ describe('unit-d:nodes/ForInStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<ForXStatement>()
   })
 
-  it('should match [data?: Optional<ForInStatementData>]', () => {
+  it('should match [data?: ForInStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

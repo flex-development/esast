@@ -14,7 +14,6 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with arrow function expressions.
@@ -29,7 +28,7 @@ interface ArrowFunctionExpressionData extends Data {
    *
    * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/async_function
    */
-  async?: Nilable<boolean>
+  async?: boolean | null | undefined
 }
 
 /**
@@ -89,7 +88,7 @@ interface ArrowFunctionExpression extends Parent {
    *
    * @see {@linkcode ArrowFunctionExpressionData}
    */
-  data?: Optional<ArrowFunctionExpressionData>
+  data?: ArrowFunctionExpressionData | undefined
 
   /**
    * Node type.

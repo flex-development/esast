@@ -7,10 +7,10 @@ import type {
   Comment,
   Comments,
   Data,
+  EmptyChildren,
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `return` statements.
@@ -35,14 +35,14 @@ interface ReturnStatement extends Parent {
    * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    */
-  children: EmptyArray | [...comments: Comments, argument: Expression]
+  children: EmptyChildren | [...comments: Comments, argument: Expression]
 
   /**
    * Info from the ecosystem.
    *
    * @see {@linkcode ReturnStatementData}
    */
-  data?: Optional<ReturnStatementData>
+  data?: ReturnStatementData | undefined
 
   /**
    * Node type.

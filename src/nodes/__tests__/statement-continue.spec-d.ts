@@ -15,7 +15,7 @@ describe('unit-d:nodes/ContinueStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ContinueStatementData>]', () => {
+  it('should match [data?: ContinueStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

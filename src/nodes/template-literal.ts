@@ -9,7 +9,6 @@ import type {
   TemplateElement,
   TemplatePlaceholder
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with template literals.
@@ -42,7 +41,7 @@ interface TemplateLiteral extends Parent {
    *
    * @see {@linkcode TemplateLiteralData}
    */
-  data?: Optional<TemplateLiteralData>
+  data?: TemplateLiteralData | undefined
 
   /**
    * Node type.

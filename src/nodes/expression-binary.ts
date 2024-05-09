@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with binary expressions.
@@ -42,7 +41,7 @@ interface BinaryExpression extends Parent {
    *
    * @see {@linkcode BinaryExpressionData}
    */
-  data?: Optional<BinaryExpressionData>
+  data?: BinaryExpressionData | undefined
 
   /**
    * Binary operator.

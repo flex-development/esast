@@ -4,7 +4,6 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `super` keywords.
@@ -28,7 +27,7 @@ interface Super extends Node {
    *
    * @see {@linkcode SuperData}
    */
-  data?: Optional<SuperData>
+  data?: SuperData | undefined
 
   /**
    * Node type.

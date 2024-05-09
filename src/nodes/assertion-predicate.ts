@@ -11,7 +11,6 @@ import type {
   This,
   TypePredicate
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with assertion predicates.
@@ -46,7 +45,7 @@ interface AssertionPredicate extends Parent {
    *
    * @see {@linkcode AssertionPredicateData}
    */
-  data?: Optional<AssertionPredicateData>
+  data?: AssertionPredicateData | undefined
 
   /**
    * Node type.

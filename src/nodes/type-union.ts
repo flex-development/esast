@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with union types.
@@ -42,7 +41,7 @@ interface UnionType extends Parent {
    *
    * @see {@linkcode UnionTypeData}
    */
-  data?: Optional<UnionTypeData>
+  data?: UnionTypeData | undefined
 
   /**
    * Node type.

@@ -4,7 +4,6 @@
  */
 
 import type { Data, Literal } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with directives.
@@ -28,7 +27,7 @@ interface Directive extends Literal {
    *
    * @see {@linkcode DirectiveData}
    */
-  data?: Optional<DirectiveData>
+  data?: DirectiveData | undefined
 
   /**
    * Node type.

@@ -15,7 +15,7 @@ describe('unit-d:nodes/NamespaceDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<NamespaceDeclarationData>]', () => {
+  it('should match [data?: NamespaceDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

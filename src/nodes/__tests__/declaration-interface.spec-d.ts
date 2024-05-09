@@ -15,7 +15,7 @@ describe('unit-d:nodes/InterfaceDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<InterfaceDeclarationData>]', () => {
+  it('should match [data?: InterfaceDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

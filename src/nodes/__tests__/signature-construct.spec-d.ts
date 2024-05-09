@@ -15,7 +15,7 @@ describe('unit-d:nodes/ConstructSignature', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ConstructSignatureData>]', () => {
+  it('should match [data?: ConstructSignatureData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

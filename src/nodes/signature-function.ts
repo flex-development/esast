@@ -13,7 +13,6 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `function` overload signatures.
@@ -81,7 +80,7 @@ interface FunctionSignature extends Parent {
    *
    * @see {@linkcode FunctionSignatureData}
    */
-  data?: Optional<FunctionSignatureData>
+  data?: FunctionSignatureData | undefined
 
   /**
    * Node type.

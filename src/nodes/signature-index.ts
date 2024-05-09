@@ -13,7 +13,6 @@ import type {
   TypeAnnotation,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with index signatures.
@@ -65,7 +64,7 @@ interface IndexSignature extends Parent {
    *
    * @see {@linkcode IndexSignatureData}
    */
-  data?: Optional<IndexSignatureData>
+  data?: IndexSignatureData | undefined
 
   /**
    * Node type.

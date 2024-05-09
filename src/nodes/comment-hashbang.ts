@@ -4,7 +4,6 @@
  */
 
 import type { Comment, CommentData, CommentKind } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 import type * as mdast from 'mdast'
 
 /**
@@ -36,7 +35,7 @@ interface HashbangComment extends Comment {
    *
    * @see {@linkcode HashbangCommentData}
    */
-  data?: Optional<HashbangCommentData>
+  data?: HashbangCommentData | undefined
 
   /**
    * Comment kind.

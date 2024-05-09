@@ -15,7 +15,6 @@ import type {
   Parent,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `class` expressions.
@@ -215,7 +214,7 @@ interface ClassExpression extends Parent {
    *
    * @see {@linkcode ClassExpressionData}
    */
-  data?: Optional<ClassExpressionData>
+  data?: ClassExpressionData | undefined
 
   /**
    * Node type.

@@ -9,7 +9,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `await` expressions.
@@ -41,7 +40,7 @@ interface AwaitExpression extends Parent {
    *
    * @see {@linkcode AwaitExpressionData}
    */
-  data?: Optional<AwaitExpressionData>
+  data?: AwaitExpressionData | undefined
 
   /**
    * Node type.

@@ -14,7 +14,6 @@ import type {
   Parent,
   PropertySignature
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with mapped types.
@@ -62,7 +61,7 @@ interface MappedType extends Parent {
    *
    * @see {@linkcode MappedTypeData}
    */
-  data?: Optional<MappedTypeData>
+  data?: MappedTypeData | undefined
 
   /**
    * Node type.

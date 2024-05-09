@@ -9,7 +9,6 @@ import type {
   ExportSpecifier,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with export specifiers.
@@ -41,7 +40,7 @@ interface ExportSpecifiers extends Parent {
    *
    * @see {@linkcode ExportSpecifiersData}
    */
-  data?: Optional<ExportSpecifiersData>
+  data?: ExportSpecifiersData | undefined
 
   /**
    * Node type.

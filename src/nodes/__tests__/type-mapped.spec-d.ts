@@ -15,7 +15,7 @@ describe('unit-d:nodes/MappedType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<MappedTypeData>]', () => {
+  it('should match [data?: MappedTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

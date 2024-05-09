@@ -11,7 +11,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with module declaration bodies.
@@ -45,7 +44,7 @@ interface ModuleBody extends Parent {
    *
    * @see {@linkcode ModuleBodyData}
    */
-  data?: Optional<ModuleBodyData>
+  data?: ModuleBodyData | undefined
 
   /**
    * Node type.

@@ -15,7 +15,7 @@ describe('unit-d:nodes/UnaryExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<UnaryExpressionData>]', () => {
+  it('should match [data?: UnaryExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

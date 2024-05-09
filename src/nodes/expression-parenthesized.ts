@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with parenthesized expressions.
@@ -46,7 +45,7 @@ interface ParenthesizedExpression extends Parent {
    *
    * @see {@linkcode ParenthesizedExpressionData}
    */
-  data?: Optional<ParenthesizedExpressionData>
+  data?: ParenthesizedExpressionData | undefined
 
   /**
    * Node type.

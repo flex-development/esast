@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with parenthesized types.
@@ -46,7 +45,7 @@ interface ParenthesizedType extends Parent {
    *
    * @see {@linkcode ParenthesizedTypeData}
    */
-  data?: Optional<ParenthesizedTypeData>
+  data?: ParenthesizedTypeData | undefined
 
   /**
    * Node type.

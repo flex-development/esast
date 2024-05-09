@@ -15,7 +15,7 @@ describe('unit-d:nodes/ArrowFunctionExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ArrowFunctionExpressionData>]', () => {
+  it('should match [data?: ArrowFunctionExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -32,7 +32,7 @@ describe('unit-d:nodes/ArrowFunctionExpression', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
 
-    it('should match [async?: Nilable<boolean>]', () => {
+    it('should match [async?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('async')
         .toEqualTypeOf<Nilable<boolean>>()

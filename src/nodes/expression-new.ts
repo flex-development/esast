@@ -9,7 +9,6 @@ import type {
   Data,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `new` expressions.
@@ -41,7 +40,7 @@ interface NewExpression extends Parent {
    *
    * @see {@linkcode NewExpressionData}
    */
-  data?: Optional<NewExpressionData>
+  data?: NewExpressionData | undefined
 
   /**
    * Node type.

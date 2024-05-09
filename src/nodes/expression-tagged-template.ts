@@ -11,7 +11,6 @@ import type {
   Parent,
   TemplateLiteral
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with tagged template expressions.
@@ -44,7 +43,7 @@ interface TaggedTemplateExpression extends Parent {
    *
    * @see {@linkcode TaggedTemplateExpressionData}
    */
-  data?: Optional<TaggedTemplateExpressionData>
+  data?: TaggedTemplateExpressionData | undefined
 
   /**
    * Node type.

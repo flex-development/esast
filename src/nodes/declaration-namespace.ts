@@ -11,7 +11,6 @@ import type {
   ModuleBody,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `namespace` declarations.
@@ -49,7 +48,7 @@ interface NamespaceDeclaration extends Parent {
    *
    * @see {@linkcode NamespaceDeclarationData}
    */
-  data?: Optional<NamespaceDeclarationData>
+  data?: NamespaceDeclarationData | undefined
 
   /**
    * Node type.

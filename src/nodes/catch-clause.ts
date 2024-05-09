@@ -14,7 +14,6 @@ import type {
   Parent,
   TypeAnnotation
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `catch` clauses.
@@ -65,7 +64,7 @@ interface CatchClause extends Parent {
    *
    * @see {@linkcode CatchClauseData}
    */
-  data?: Optional<CatchClauseData>
+  data?: CatchClauseData | undefined
 
   /**
    * Node type.

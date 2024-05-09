@@ -12,7 +12,6 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with call signatures.
@@ -61,7 +60,7 @@ interface CallSignature extends Parent {
    *
    * @see {@linkcode CallSignatureData}
    */
-  data?: Optional<CallSignatureData>
+  data?: CallSignatureData | undefined
 
   /**
    * Node type.

@@ -13,7 +13,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type parameters.
@@ -82,7 +81,7 @@ interface TypeParameter extends Parent {
    *
    * @see {@linkcode TypeParameterData}
    */
-  data?: Optional<TypeParameterData>
+  data?: TypeParameterData | undefined
 
   /**
    * Node type.

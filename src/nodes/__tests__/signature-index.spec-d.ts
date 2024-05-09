@@ -15,7 +15,7 @@ describe('unit-d:nodes/IndexSignature', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<IndexSignatureData>]', () => {
+  it('should match [data?: IndexSignatureData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

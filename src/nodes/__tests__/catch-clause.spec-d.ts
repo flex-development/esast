@@ -15,7 +15,7 @@ describe('unit-d:nodes/CatchClause', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<CatchClauseData>]', () => {
+  it('should match [data?: CatchClauseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

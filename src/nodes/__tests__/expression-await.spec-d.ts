@@ -15,7 +15,7 @@ describe('unit-d:nodes/AwaitExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AwaitExpressionData>]', () => {
+  it('should match [data?: AwaitExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

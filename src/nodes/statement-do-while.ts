@@ -12,7 +12,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `do while` statements.
@@ -50,7 +49,7 @@ interface DoWhileStatement extends Parent {
    *
    * @see {@linkcode DoWhileStatementData}
    */
-  data?: Optional<DoWhileStatementData>
+  data?: DoWhileStatementData | undefined
 
   /**
    * Node type.

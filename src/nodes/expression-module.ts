@@ -9,7 +9,6 @@ import type {
   ModuleBody,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with module expressions.
@@ -42,7 +41,7 @@ interface ModuleExpression extends Parent {
    *
    * @see {@linkcode ModuleExpressionData}
    */
-  data?: Optional<ModuleExpressionData>
+  data?: ModuleExpressionData | undefined
 
   /**
    * Node type.

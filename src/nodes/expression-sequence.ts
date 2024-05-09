@@ -4,7 +4,6 @@
  */
 
 import type { Comment, Data, Expression, Parent } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with sequence expressions.
@@ -40,7 +39,7 @@ interface SequenceExpression extends Parent {
    *
    * @see {@linkcode SequenceExpressionData}
    */
-  data?: Optional<SequenceExpressionData>
+  data?: SequenceExpressionData | undefined
 
   /**
    * Node type.

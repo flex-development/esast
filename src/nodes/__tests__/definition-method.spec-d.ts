@@ -19,7 +19,7 @@ describe('unit-d:nodes/MethodDefinition', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<MethodDefinitionData>]', () => {
+  it('should match [data?: MethodDefinitionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -12,7 +12,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with mapped type signatures.
@@ -62,7 +61,7 @@ interface MappedSignature extends Parent {
    *
    * @see {@linkcode MappedSignatureData}
    */
-  data?: Optional<MappedSignatureData>
+  data?: MappedSignatureData | undefined
 
   /**
    * Boolean indicating if property is marked as optional.

@@ -15,7 +15,7 @@ describe('unit-d:nodes/DebuggerStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [data?: Optional<DebuggerStatementData>]', () => {
+  it('should match [data?: DebuggerStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

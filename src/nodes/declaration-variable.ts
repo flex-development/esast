@@ -10,7 +10,6 @@ import type {
   VariableDeclarator,
   VariableKind
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with variable declarations.
@@ -42,7 +41,7 @@ interface VariableDeclaration extends Parent {
    *
    * @see {@linkcode VariableDeclarationData}
    */
-  data?: Optional<VariableDeclarationData>
+  data?: VariableDeclarationData | undefined
 
   /**
    * Variable declaration kind.

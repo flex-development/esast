@@ -13,7 +13,6 @@ import type {
   ModifierList,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with method definitions.
@@ -66,7 +65,7 @@ interface MethodDefinition extends Parent {
    *
    * @see {@linkcode MethodDefinitionData}
    */
-  data?: Optional<MethodDefinitionData>
+  data?: MethodDefinitionData | undefined
 
   /**
    * Method kind.

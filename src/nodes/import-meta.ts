@@ -11,7 +11,6 @@ import type {
   MetaIdentifier,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `import.meta` meta-properties.
@@ -48,7 +47,7 @@ interface ImportMeta extends Parent {
    *
    * @see {@linkcode ImportMetaData}
    */
-  data?: Optional<ImportMetaData>
+  data?: ImportMetaData | undefined
 
   /**
    * Node type.

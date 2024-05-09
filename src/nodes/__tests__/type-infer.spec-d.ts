@@ -15,7 +15,7 @@ describe('unit-d:nodes/InferType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<InferTypeData>]', () => {
+  it('should match [data?: InferTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

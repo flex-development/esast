@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImportMeta', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImportMetaData>]', () => {
+  it('should match [data?: ImportMetaData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

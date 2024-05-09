@@ -15,7 +15,7 @@ describe('unit-d:nodes/HashbangComment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Comment>()
   })
 
-  it('should match [data?: Optional<HashbangCommentData>]', () => {
+  it('should match [data?: HashbangCommentData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

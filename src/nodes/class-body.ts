@@ -14,7 +14,6 @@ import type {
   PropertyDefinition,
   StaticBlock
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `class` bodies.
@@ -59,7 +58,7 @@ interface ClassBody extends Parent {
    *
    * @see {@linkcode ClassBodyData}
    */
-  data?: Optional<ClassBodyData>
+  data?: ClassBodyData | undefined
 
   /**
    * Node type.

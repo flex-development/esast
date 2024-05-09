@@ -15,7 +15,7 @@ describe('unit-d:nodes/ObjectPattern', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ObjectPatternData>]', () => {
+  it('should match [data?: ObjectPatternData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -4,7 +4,6 @@
  */
 
 import type { Data, ForXStatement } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `for...in` statements.
@@ -28,7 +27,7 @@ interface ForInStatement extends ForXStatement {
    *
    * @see {@linkcode ForInStatementData}
    */
-  data?: Optional<ForInStatementData>
+  data?: ForInStatementData | undefined
 
   /**
    * Node type.

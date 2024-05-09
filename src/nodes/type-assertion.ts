@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type assertions.
@@ -47,7 +46,7 @@ interface TypeAssertion extends Parent {
    *
    * @see {@linkcode TypeAssertionData}
    */
-  data?: Optional<TypeAssertionData>
+  data?: TypeAssertionData | undefined
 
   /**
    * Node type.

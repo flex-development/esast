@@ -15,7 +15,7 @@ describe('unit-d:nodes/Super', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [data?: Optional<SuperData>]', () => {
+  it('should match [data?: SuperData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

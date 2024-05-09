@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with member expressions.
@@ -58,7 +57,7 @@ interface MemberExpression extends Parent {
    *
    * @see {@linkcode MemberExpressionData}
    */
-  data?: Optional<MemberExpressionData>
+  data?: MemberExpressionData | undefined
 
   /**
    * Boolean indicating if member expression is part of an optional chain.

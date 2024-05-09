@@ -3,9 +3,12 @@
  * @module esast/nodes/ArrayType
  */
 
-import type { Comments, Data, Parent,
-  TypeExpression } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
+import type {
+  Comments,
+  Data,
+  Parent,
+  TypeExpression
+} from '@flex-development/esast'
 
 /**
  * Info associated with array types.
@@ -37,7 +40,7 @@ interface ArrayType extends Parent {
    *
    * @see {@linkcode ArrayTypeData}
    */
-  data?: Optional<ArrayTypeData>
+  data?: ArrayTypeData | undefined
 
   /**
    * Node type.

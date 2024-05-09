@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImplementsClause', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImplementsClauseData>]', () => {
+  it('should match [data?: ImplementsClauseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

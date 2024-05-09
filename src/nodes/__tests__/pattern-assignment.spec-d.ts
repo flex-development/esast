@@ -15,7 +15,7 @@ describe('unit-d:nodes/AssignmentPattern', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AssignmentPatternData>]', () => {
+  it('should match [data?: AssignmentPatternData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

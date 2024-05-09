@@ -9,7 +9,6 @@ import type {
   Modifier,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with modifier lists.
@@ -43,7 +42,7 @@ interface ModifierList extends Parent {
    *
    * @see {@linkcode ModifierListData}
    */
-  data?: Optional<ModifierListData>
+  data?: ModifierListData | undefined
 
   /**
    * Node type.

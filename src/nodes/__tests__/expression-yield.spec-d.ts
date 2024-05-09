@@ -15,7 +15,7 @@ describe('unit-d:nodes/YieldExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<YieldExpressionData>]', () => {
+  it('should match [data?: YieldExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

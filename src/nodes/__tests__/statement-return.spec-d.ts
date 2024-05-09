@@ -15,7 +15,7 @@ describe('unit-d:nodes/ReturnStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ReturnStatementData>]', () => {
+  it('should match [data?: ReturnStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

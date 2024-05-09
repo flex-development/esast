@@ -12,7 +12,6 @@ import type {
   RestElement,
   ShorthandProperty
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with object patterns.
@@ -53,7 +52,7 @@ interface ObjectPattern extends Parent {
    *
    * @see {@linkcode ObjectPatternData}
    */
-  data?: Optional<ObjectPatternData>
+  data?: ObjectPatternData | undefined
 
   /**
    * Node type.

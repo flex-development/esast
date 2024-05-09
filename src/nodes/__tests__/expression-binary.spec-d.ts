@@ -15,7 +15,7 @@ describe('unit-d:nodes/BinaryExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<BinaryExpressionData>]', () => {
+  it('should match [data?: BinaryExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with intersection types.
@@ -42,7 +41,7 @@ interface IntersectionType extends Parent {
    *
    * @see {@linkcode IntersectionTypeData}
    */
-  data?: Optional<IntersectionTypeData>
+  data?: IntersectionTypeData | undefined
 
   /**
    * Node type.

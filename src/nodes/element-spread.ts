@@ -9,7 +9,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with spreads.
@@ -42,7 +41,7 @@ interface SpreadElement extends Parent {
    *
    * @see {@linkcode SpreadElementData}
    */
-  data?: Optional<SpreadElementData>
+  data?: SpreadElementData | undefined
 
   /**
    * Node type.

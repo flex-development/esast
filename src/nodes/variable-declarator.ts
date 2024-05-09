@@ -14,7 +14,6 @@ import type {
   Parent,
   TypeAnnotation
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with variable declarators.
@@ -68,7 +67,7 @@ interface VariableDeclarator extends Parent {
    *
    * @see {@linkcode VariableDeclaratorData}
    */
-  data?: Optional<VariableDeclaratorData>
+  data?: VariableDeclaratorData | undefined
 
   /**
    * Node type.

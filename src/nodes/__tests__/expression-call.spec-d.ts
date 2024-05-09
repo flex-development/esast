@@ -15,7 +15,7 @@ describe('unit-d:nodes/CallExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<CallExpressionData>]', () => {
+  it('should match [data?: CallExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

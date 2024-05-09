@@ -15,7 +15,7 @@ describe('unit-d:nodes/EmptyStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [data?: Optional<EmptyStatementData>]', () => {
+  it('should match [data?: EmptyStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

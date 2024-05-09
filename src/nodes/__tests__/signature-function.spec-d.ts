@@ -15,7 +15,7 @@ describe('unit-d:nodes/FunctionSignature', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<FunctionSignatureData>]', () => {
+  it('should match [data?: FunctionSignatureData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

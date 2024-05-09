@@ -14,7 +14,6 @@ import type {
   TypeExpression,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with function type expressions.
@@ -55,7 +54,7 @@ interface FunctionType extends Parent {
    *
    * @see {@linkcode FunctionTypeData}
    */
-  data?: Optional<FunctionTypeData>
+  data?: FunctionTypeData | undefined
 
   /**
    * Node type.

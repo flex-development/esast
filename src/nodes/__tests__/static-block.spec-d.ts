@@ -15,7 +15,7 @@ describe('unit-d:nodes/StaticBlock', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<StaticBlockData>]', () => {
+  it('should match [data?: StaticBlockData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -10,7 +10,6 @@ import type {
   Parent,
   SwitchCase
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `switch` statements.
@@ -43,7 +42,7 @@ interface SwitchStatement extends Parent {
    *
    * @see {@linkcode SwitchStatementData}
    */
-  data?: Optional<SwitchStatementData>
+  data?: SwitchStatementData | undefined
 
   /**
    * Node type.

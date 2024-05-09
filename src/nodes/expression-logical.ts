@@ -8,7 +8,6 @@ import type {
   BinaryExpressionData,
   LogicalOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with logical expressions.
@@ -32,7 +31,7 @@ interface LogicalExpression extends BinaryExpression {
    *
    * @see {@linkcode LogicalExpressionData}
    */
-  data?: Optional<LogicalExpressionData>
+  data?: LogicalExpressionData | undefined
 
   /**
    * Logical operator.

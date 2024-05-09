@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeArgument
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type argument lists.
@@ -41,7 +40,7 @@ interface TypeArgumentList extends Parent {
    *
    * @see {@linkcode TypeArgumentListData}
    */
-  data?: Optional<TypeArgumentListData>
+  data?: TypeArgumentListData | undefined
 
   /**
    * Node type.

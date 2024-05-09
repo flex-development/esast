@@ -10,7 +10,6 @@ import type {
   Parent,
   SpreadElement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with argument lists.
@@ -43,7 +42,7 @@ interface ArgumentList extends Parent {
    *
    * @see {@linkcode ArgumentListData}
    */
-  data?: Optional<ArgumentListData>
+  data?: ArgumentListData | undefined
 
   /**
    * Node type.

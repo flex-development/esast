@@ -11,7 +11,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with labeled statements.
@@ -44,7 +43,7 @@ interface LabeledStatement extends Parent {
    *
    * @see {@linkcode LabeledStatementData}
    */
-  data?: Optional<LabeledStatementData>
+  data?: LabeledStatementData | undefined
 
   /**
    * Node type.

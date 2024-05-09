@@ -8,7 +8,6 @@ import type {
   BinaryExpression,
   BinaryExpressionData
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with arithmetic expressions.
@@ -32,7 +31,7 @@ interface ArithmeticExpression extends BinaryExpression {
    *
    * @see {@linkcode ArithmeticExpressionData}
    */
-  data?: Optional<ArithmeticExpressionData>
+  data?: ArithmeticExpressionData | undefined
 
   /**
    * Arithmetic operator.

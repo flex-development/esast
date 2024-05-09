@@ -15,7 +15,7 @@ describe('unit-d:nodes/TaggedTemplateExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TaggedTemplateExpressionData>]', () => {
+  it('should match [data?: TaggedTemplateExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

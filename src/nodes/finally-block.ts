@@ -9,7 +9,6 @@ import type {
   Data,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `finally` blocks.
@@ -41,7 +40,7 @@ interface FinallyBlock extends Parent {
    *
    * @see {@linkcode FinallyBlockData}
    */
-  data?: Optional<FinallyBlockData>
+  data?: FinallyBlockData | undefined
 
   /**
    * Node type.

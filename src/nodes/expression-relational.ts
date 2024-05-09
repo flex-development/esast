@@ -8,7 +8,6 @@ import type {
   BinaryExpressionData,
   RelationalOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with relational expressions.
@@ -32,7 +31,7 @@ interface RelationalExpression extends BinaryExpression {
    *
    * @see {@linkcode RelationalExpressionData}
    */
-  data?: Optional<RelationalExpressionData>
+  data?: RelationalExpressionData | undefined
 
   /**
    * Relational operator.

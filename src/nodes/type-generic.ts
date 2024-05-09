@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeArgumentList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with generic types.
@@ -47,7 +46,7 @@ interface GenericType extends Parent {
    *
    * @see {@linkcode GenericTypeData}
    */
-  data?: Optional<GenericTypeData>
+  data?: GenericTypeData | undefined
 
   /**
    * Node type.

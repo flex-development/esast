@@ -6,10 +6,10 @@
 import type {
   Comments,
   Data,
+  EmptyChildren,
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { EmptyArray, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `yield` expressions.
@@ -36,7 +36,7 @@ interface YieldExpression extends Parent {
    */
   children:
     | Comments
-    | EmptyArray
+    | EmptyChildren
     | [...comments: Comments, argument: Expression]
 
   /**
@@ -44,7 +44,7 @@ interface YieldExpression extends Parent {
    *
    * @see {@linkcode YieldExpressionData}
    */
-  data?: Optional<YieldExpressionData>
+  data?: YieldExpressionData | undefined
 
   /**
    * Boolean indicating if iteration of the current generator is delegated to

@@ -12,7 +12,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `with` statements.
@@ -50,7 +49,7 @@ interface WithStatement extends Parent {
    *
    * @see {@linkcode WithStatementData}
    */
-  data?: Optional<WithStatementData>
+  data?: WithStatementData | undefined
 
   /**
    * Node type.

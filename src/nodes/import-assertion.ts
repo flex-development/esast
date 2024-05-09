@@ -9,7 +9,6 @@ import type {
   ImportAttribute,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with import assertion.
@@ -42,7 +41,7 @@ interface ImportAssertion extends Parent {
    *
    * @see {@linkcode ImportAssertionData}
    */
-  data?: Optional<ImportAssertionData>
+  data?: ImportAssertionData | undefined
 
   /**
    * Node type.

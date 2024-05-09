@@ -15,7 +15,7 @@ describe('unit-d:nodes/UnionType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<UnionTypeData>]', () => {
+  it('should match [data?: UnionTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

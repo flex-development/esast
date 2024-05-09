@@ -14,7 +14,6 @@ import type {
   Pattern,
   TypeAnnotation
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with parameters.
@@ -82,7 +81,7 @@ interface Parameter extends Parent {
    *
    * @see {@linkcode ParameterData}
    */
-  data?: Optional<ParameterData>
+  data?: ParameterData | undefined
 
   /**
    * Node type.

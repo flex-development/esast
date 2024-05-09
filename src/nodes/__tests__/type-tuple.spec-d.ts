@@ -15,7 +15,7 @@ describe('unit-d:nodes/TupleType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TupleTypeData>]', () => {
+  it('should match [data?: TupleTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -15,7 +15,7 @@ describe('unit-d:nodes/TryStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TryStatementData>]', () => {
+  it('should match [data?: TryStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with indexed access types.
@@ -48,7 +47,7 @@ interface IndexedAccessType extends Parent {
    *
    * @see {@linkcode IndexedAccessTypeData}
    */
-  data?: Optional<IndexedAccessTypeData>
+  data?: IndexedAccessTypeData | undefined
 
   /**
    * Node type.

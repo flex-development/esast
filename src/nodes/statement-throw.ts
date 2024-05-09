@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `throw` statements.
@@ -42,7 +41,7 @@ interface ThrowStatement extends Parent {
    *
    * @see {@linkcode ThrowStatementData}
    */
-  data?: Optional<ThrowStatementData>
+  data?: ThrowStatementData | undefined
 
   /**
    * Node type.

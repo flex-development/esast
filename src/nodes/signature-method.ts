@@ -13,7 +13,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with method signatures.
@@ -66,7 +65,7 @@ interface MethodSignature extends Parent {
    *
    * @see {@linkcode MethodSignatureData}
    */
-  data?: Optional<MethodSignatureData>
+  data?: MethodSignatureData | undefined
 
   /**
    * Method signature kind.

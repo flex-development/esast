@@ -10,7 +10,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type arguments.
@@ -45,7 +44,7 @@ interface TypeArgument extends Parent {
    *
    * @see {@linkcode TypeArgumentData}
    */
-  data?: Optional<TypeArgumentData>
+  data?: TypeArgumentData | undefined
 
   /**
    * Node type.

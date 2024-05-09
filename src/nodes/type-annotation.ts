@@ -11,7 +11,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with type annotations.
@@ -51,7 +50,7 @@ interface TypeAnnotation extends Parent {
    *
    * @see {@linkcode TypeAnnotationData}
    */
-  data?: Optional<TypeAnnotationData>
+  data?: TypeAnnotationData | undefined
 
   /**
    * Boolean indicating if the *definite assignment assertion operator* (`!`)

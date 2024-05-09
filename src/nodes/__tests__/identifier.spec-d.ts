@@ -15,7 +15,7 @@ describe('unit-d:nodes/Identifier', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Node>()
   })
 
-  it('should match [data?: Optional<IdentifierData>]', () => {
+  it('should match [data?: IdentifierData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -34,7 +34,7 @@ describe('unit-d:nodes/Identifier', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
 
-    it('should match [private?: Nilable<boolean>]', () => {
+    it('should match [private?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('private')
         .toEqualTypeOf<Nilable<boolean>>()

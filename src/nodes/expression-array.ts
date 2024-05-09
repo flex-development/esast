@@ -11,7 +11,6 @@ import type {
   Parent,
   SpreadElement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with array expressions.
@@ -45,7 +44,7 @@ interface ArrayExpression extends Parent {
    *
    * @see {@linkcode ArrayExpressionData}
    */
-  data?: Optional<ArrayExpressionData>
+  data?: ArrayExpressionData | undefined
 
   /**
    * Node type.

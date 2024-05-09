@@ -15,7 +15,7 @@ describe('unit-d:nodes/IfStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<IfStatementData>]', () => {
+  it('should match [data?: IfStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

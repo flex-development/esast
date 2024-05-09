@@ -4,7 +4,6 @@
  */
 
 import type { Comments, Data, Parent, Pattern } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with rest parameters and properties.
@@ -37,7 +36,7 @@ interface RestElement extends Parent {
    *
    * @see {@linkcode RestElementData}
    */
-  data?: Optional<RestElementData>
+  data?: RestElementData | undefined
 
   /**
    * Node type.

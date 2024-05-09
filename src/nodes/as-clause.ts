@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `as` clauses.
@@ -42,7 +41,7 @@ interface AsClause extends Parent {
    *
    * @see {@linkcode AsClauseData}
    */
-  data?: Optional<AsClauseData>
+  data?: AsClauseData | undefined
 
   /**
    * Node type.

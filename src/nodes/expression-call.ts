@@ -12,7 +12,6 @@ import type {
   Parent,
   TypeArgumentList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with call expressions.
@@ -58,7 +57,7 @@ interface CallExpression extends Parent {
    *
    * @see {@linkcode CallExpressionData}
    */
-  data?: Optional<CallExpressionData>
+  data?: CallExpressionData | undefined
 
   /**
    * Boolean indicating if call expression is part of an optional chain.

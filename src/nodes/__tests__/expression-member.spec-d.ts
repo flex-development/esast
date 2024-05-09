@@ -19,7 +19,7 @@ describe('unit-d:nodes/MemberExpression', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<MemberExpressionData>]', () => {
+  it('should match [data?: MemberExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

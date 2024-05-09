@@ -9,7 +9,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with non-null expressions.
@@ -42,7 +41,7 @@ interface NonNullExpression extends Parent {
    *
    * @see {@linkcode NonNullExpressionData}
    */
-  data?: Optional<NonNullExpressionData>
+  data?: NonNullExpressionData | undefined
 
   /**
    * Node type.

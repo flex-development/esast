@@ -4,7 +4,6 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `this` keywords.
@@ -28,7 +27,7 @@ interface This extends Node {
    *
    * @see {@linkcode ThisData}
    */
-  data?: Optional<ThisData>
+  data?: ThisData | undefined
 
   /**
    * Node type.

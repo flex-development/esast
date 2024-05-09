@@ -11,7 +11,6 @@ import type {
   RestType,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with tuple elements.
@@ -51,7 +50,7 @@ interface TupleElement extends Parent {
    *
    * @see {@linkcode TupleElementData}
    */
-  data?: Optional<TupleElementData>
+  data?: TupleElementData | undefined
 
   /**
    * Optional tuple element?

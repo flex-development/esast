@@ -10,7 +10,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `as` expressions.
@@ -44,7 +43,7 @@ interface AsExpression extends Parent {
    *
    * @see {@linkcode AsExpressionData}
    */
-  data?: Optional<AsExpressionData>
+  data?: AsExpressionData | undefined
 
   /**
    * Node type.

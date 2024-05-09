@@ -4,7 +4,6 @@
  */
 
 import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with block statements.
@@ -40,7 +39,7 @@ interface BlockStatement extends Parent {
    *
    * @see {@linkcode BlockStatementData}
    */
-  data?: Optional<BlockStatementData>
+  data?: BlockStatementData | undefined
 
   /**
    * Node type.

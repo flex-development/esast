@@ -15,7 +15,7 @@ describe('unit-d:nodes/AsExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AsExpressionData>]', () => {
+  it('should match [data?: AsExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

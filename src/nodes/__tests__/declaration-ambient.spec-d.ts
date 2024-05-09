@@ -15,7 +15,7 @@ describe('unit-d:nodes/AmbientDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AmbientDeclarationData>]', () => {
+  it('should match [data?: AmbientDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

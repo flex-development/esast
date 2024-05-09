@@ -15,7 +15,7 @@ describe('unit-d:nodes/Directive', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Literal>()
   })
 
-  it('should match [data?: Optional<DirectiveData>]', () => {
+  it('should match [data?: DirectiveData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

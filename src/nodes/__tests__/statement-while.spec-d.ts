@@ -15,7 +15,7 @@ describe('unit-d:nodes/WhileStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<WhileStatementData>]', () => {
+  it('should match [data?: WhileStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -8,7 +8,6 @@ import type {
   BinaryExpressionData,
   BitwiseOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with bitwise expressions.
@@ -32,7 +31,7 @@ interface BitwiseExpression extends BinaryExpression {
    *
    * @see {@linkcode BitwiseExpressionData}
    */
-  data?: Optional<BitwiseExpressionData>
+  data?: BitwiseExpressionData | undefined
 
   /**
    * Bitwise operator.

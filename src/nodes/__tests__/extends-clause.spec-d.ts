@@ -15,7 +15,7 @@ describe('unit-d:nodes/ExtendsClause', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ExtendsClauseData>]', () => {
+  it('should match [data?: ExtendsClauseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

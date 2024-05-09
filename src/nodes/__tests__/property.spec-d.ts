@@ -25,7 +25,7 @@ describe('unit-d:nodes/Property', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<PropertyData>]', () => {
+  it('should match [data?: PropertyData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

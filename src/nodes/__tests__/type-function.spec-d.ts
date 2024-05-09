@@ -15,7 +15,7 @@ describe('unit-d:nodes/FunctionType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<FunctionTypeData>]', () => {
+  it('should match [data?: FunctionTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

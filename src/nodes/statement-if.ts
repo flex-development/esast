@@ -12,7 +12,6 @@ import type {
   Parent,
   Statement
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `if` statements.
@@ -59,7 +58,7 @@ interface IfStatement extends Parent {
    *
    * @see {@linkcode IfStatementData}
    */
-  data?: Optional<IfStatementData>
+  data?: IfStatementData | undefined
 
   /**
    * Node type.

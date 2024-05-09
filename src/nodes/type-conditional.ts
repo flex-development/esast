@@ -11,7 +11,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with conditional types.
@@ -52,7 +51,7 @@ interface ConditionalType extends Parent {
    *
    * @see {@linkcode ConditionalTypeData}
    */
-  data?: Optional<ConditionalTypeData>
+  data?: ConditionalTypeData | undefined
 
   /**
    * Node type.

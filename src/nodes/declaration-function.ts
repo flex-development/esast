@@ -14,7 +14,6 @@ import type {
   TypeAnnotation,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with function declarations.
@@ -97,7 +96,7 @@ interface FunctionDeclaration extends Parent {
    *
    * @see {@linkcode FunctionDeclarationData}
    */
-  data?: Optional<FunctionDeclarationData>
+  data?: FunctionDeclarationData | undefined
 
   /**
    * Generator function?

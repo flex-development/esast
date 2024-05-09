@@ -15,7 +15,7 @@ describe('unit-d:nodes/ObjectLiteralType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ObjectLiteralTypeData>]', () => {
+  it('should match [data?: ObjectLiteralTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

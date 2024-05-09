@@ -9,7 +9,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with rest types.
@@ -41,7 +40,7 @@ interface RestType extends Parent {
    *
    * @see {@linkcode RestTypeData}
    */
-  data?: Optional<RestTypeData>
+  data?: RestTypeData | undefined
 
   /**
    * Node type.

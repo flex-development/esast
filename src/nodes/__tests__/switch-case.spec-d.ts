@@ -15,7 +15,7 @@ describe('unit-d:nodes/SwitchCase', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<SwitchCaseData>]', () => {
+  it('should match [data?: SwitchCaseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -13,7 +13,6 @@ import type {
   Parent,
   PropertySignature
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with object literal types.
@@ -57,7 +56,7 @@ interface ObjectLiteralType extends Parent {
    *
    * @see {@linkcode ObjectLiteralTypeData}
    */
-  data?: Optional<ObjectLiteralTypeData>
+  data?: ObjectLiteralTypeData | undefined
 
   /**
    * Node type.

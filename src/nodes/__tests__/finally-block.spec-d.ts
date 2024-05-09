@@ -15,7 +15,7 @@ describe('unit-d:nodes/FinallyBlock', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<FinallyBlockData>]', () => {
+  it('should match [data?: FinallyBlockData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

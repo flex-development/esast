@@ -10,7 +10,6 @@ import type {
   RootChild,
   SourceMode
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with documents.
@@ -25,14 +24,14 @@ interface RootData extends Data {
    *
    * @see {@linkcode EcmaVersion}
    */
-  ecmaVersion?: Nilable<EcmaVersion>
+  ecmaVersion?: EcmaVersion | null | undefined
 
   /**
    * Source document validation mode.
    *
    * @see {@linkcode SourceMode}
    */
-  mode?: Nilable<SourceMode>
+  mode?: SourceMode | null | undefined
 }
 
 /**
@@ -57,7 +56,7 @@ interface Root extends Parent {
    *
    * @see {@linkcode RootData}
    */
-  data?: Optional<RootData>
+  data?: RootData | undefined
 
   /**
    * Node type.

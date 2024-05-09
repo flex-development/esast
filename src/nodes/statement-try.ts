@@ -12,7 +12,6 @@ import type {
   Nothing,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 import type FinallyBlock from './finally-block'
 
 /**
@@ -68,7 +67,7 @@ interface TryStatement extends Parent {
    *
    * @see {@linkcode TryStatementData}
    */
-  data?: Optional<TryStatementData>
+  data?: TryStatementData | undefined
 
   /**
    * Node type.

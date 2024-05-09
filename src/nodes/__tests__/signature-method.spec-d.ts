@@ -19,7 +19,7 @@ describe('unit-d:nodes/MethodSignature', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<MethodSignatureData>]', () => {
+  it('should match [data?: MethodSignatureData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

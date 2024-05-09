@@ -15,7 +15,7 @@ describe('unit-d:nodes/AsClause', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<AsClauseData>]', () => {
+  it('should match [data?: AsClauseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

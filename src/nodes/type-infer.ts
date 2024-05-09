@@ -11,7 +11,6 @@ import type {
   Identifier,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `infer` types.
@@ -52,7 +51,7 @@ interface InferType extends Parent {
    *
    * @see {@linkcode InferTypeData}
    */
-  data?: Optional<InferTypeData>
+  data?: InferTypeData | undefined
 
   /**
    * Node type.

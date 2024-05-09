@@ -4,7 +4,6 @@
  */
 
 import type { Comment, Comments } from '@flex-development/esast'
-import type { EmptyArray } from '@flex-development/tutils'
 
 /**
  * Create a {@linkcode Comment} tuple union.
@@ -39,6 +38,6 @@ import type { EmptyArray } from '@flex-development/tutils'
  *
  * @see https://github.com/microsoft/TypeScript/issues/57182
  */
-type InternalComments = EmptyArray | [Comment]
+type InternalComments = [] | [Comment]
 
 export type { InternalComments as default }

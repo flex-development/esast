@@ -4,7 +4,6 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with debugger statements.
@@ -28,7 +27,7 @@ interface DebuggerStatement extends Node {
    *
    * @see {@linkcode DebuggerStatementData}
    */
-  data?: Optional<DebuggerStatementData>
+  data?: DebuggerStatementData | undefined
 
   /**
    * Node type.

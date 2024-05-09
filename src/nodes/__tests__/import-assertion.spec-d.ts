@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImportAssertion', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImportAssertionData>]', () => {
+  it('should match [data?: ImportAssertionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

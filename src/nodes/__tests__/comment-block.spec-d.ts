@@ -15,7 +15,7 @@ describe('unit-d:nodes/BlockComment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Comment>()
   })
 
-  it('should match [data?: Optional<BlockCommentData>]', () => {
+  it('should match [data?: BlockCommentData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -30,13 +30,13 @@ describe('unit-d:nodes/BlockComment', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<CommentData>()
     })
 
-    it('should match [leading?: Nilable<boolean>]', () => {
+    it('should match [leading?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('leading')
         .toEqualTypeOf<Nilable<boolean>>()
     })
 
-    it('should match [trailing?: Nilable<boolean>]', () => {
+    it('should match [trailing?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('trailing')
         .toEqualTypeOf<Nilable<boolean>>()

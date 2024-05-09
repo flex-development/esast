@@ -15,7 +15,7 @@ describe('unit-d:nodes/TypePredicate', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TypePredicateData>]', () => {
+  it('should match [data?: TypePredicateData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

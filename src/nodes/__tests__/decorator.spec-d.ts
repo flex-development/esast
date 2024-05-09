@@ -15,7 +15,7 @@ describe('unit-d:nodes/Decorator', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<DecoratorData>]', () => {
+  it('should match [data?: DecoratorData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

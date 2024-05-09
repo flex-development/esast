@@ -4,7 +4,6 @@
  */
 
 import type { Data, Node } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with empty statements.
@@ -28,7 +27,7 @@ interface EmptyStatement extends Node {
    *
    * @see {@linkcode EmptyStatementData}
    */
-  data?: Optional<EmptyStatementData>
+  data?: EmptyStatementData | undefined
 
   /**
    * Node type.

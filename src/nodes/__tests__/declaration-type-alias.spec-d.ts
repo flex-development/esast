@@ -15,7 +15,7 @@ describe('unit-d:nodes/TypeAliasDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TypeAliasDeclarationData>]', () => {
+  it('should match [data?: TypeAliasDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

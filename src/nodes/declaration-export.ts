@@ -22,7 +22,6 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with export declarations.
@@ -37,7 +36,7 @@ interface ExportDeclarationData extends Data {
    *
    * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
    */
-  typeOnly?: Nilable<boolean>
+  typeOnly?: boolean | null | undefined
 }
 
 /**
@@ -99,7 +98,7 @@ interface ExportDeclaration extends Parent {
    *
    * @see {@linkcode ExportDeclarationData}
    */
-  data?: Optional<ExportDeclarationData>
+  data?: ExportDeclarationData | undefined
 
   /**
    * Export declaration kind.

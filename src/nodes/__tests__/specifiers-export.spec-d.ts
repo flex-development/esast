@@ -15,7 +15,7 @@ describe('unit-d:nodes/ExportSpecifiers', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ExportSpecifiersData>]', () => {
+  it('should match [data?: ExportSpecifiersData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

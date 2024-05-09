@@ -11,7 +11,6 @@ import type {
   Parent,
   StringLiteral
 } from '@flex-development/esast'
-import type { Nilable, Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with import specifiers.
@@ -26,7 +25,7 @@ interface ImportSpecifierData extends Data {
    *
    * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
    */
-  typeOnly?: Nilable<boolean>
+  typeOnly?: boolean | null | undefined
 }
 
 /**
@@ -58,7 +57,7 @@ interface ImportSpecifier extends Parent {
    *
    * @see {@linkcode ImportSpecifierData}
    */
-  data?: Optional<ImportSpecifierData>
+  data?: ImportSpecifierData | undefined
 
   /**
    * Node type.

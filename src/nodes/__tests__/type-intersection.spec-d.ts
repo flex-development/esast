@@ -15,7 +15,7 @@ describe('unit-d:nodes/IntersectionType', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<IntersectionTypeData>]', () => {
+  it('should match [data?: IntersectionTypeData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

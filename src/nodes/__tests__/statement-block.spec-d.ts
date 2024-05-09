@@ -15,7 +15,7 @@ describe('unit-d:nodes/BlockStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<BlockStatementData>]', () => {
+  it('should match [data?: BlockStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

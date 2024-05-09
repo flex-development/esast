@@ -11,7 +11,6 @@ import type {
   Parent,
   TypeExpression
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with property signatures.
@@ -63,7 +62,7 @@ interface PropertySignature extends Parent {
    *
    * @see {@linkcode PropertySignatureData}
    */
-  data?: Optional<PropertySignatureData>
+  data?: PropertySignatureData | undefined
 
   /**
    * Boolean indicating if property is marked as optional.

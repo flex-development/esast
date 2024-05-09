@@ -11,7 +11,6 @@ import type {
   Parent,
   Pattern
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with assignment expressions.
@@ -44,7 +43,7 @@ interface AssignmentExpression extends Parent {
    *
    * @see {@linkcode AssignmentExpressionData}
    */
-  data?: Optional<AssignmentExpressionData>
+  data?: AssignmentExpressionData | undefined
 
   /**
    * Assignment operator.

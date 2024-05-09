@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImportAttributeClause', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImportAttributeClauseData>]', () => {
+  it('should match [data?: ImportAttributeClauseData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

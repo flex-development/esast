@@ -15,7 +15,7 @@ describe('unit-d:nodes/SpreadElement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<SpreadElementData>]', () => {
+  it('should match [data?: SpreadElementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

@@ -19,7 +19,7 @@ describe('unit-d:nodes/FunctionExpression', () => {
     expectTypeOf<Subject>().toHaveProperty('async').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: Optional<FunctionExpressionData>]', () => {
+  it('should match [data?: FunctionExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

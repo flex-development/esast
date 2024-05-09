@@ -19,7 +19,7 @@ describe('unit-d:nodes/LogicalExpression', () => {
     expectTypeOf<Subject>().toMatchTypeOf<BinaryExpression>()
   })
 
-  it('should match [data?: Optional<LogicalExpressionData>]', () => {
+  it('should match [data?: LogicalExpressionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

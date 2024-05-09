@@ -8,7 +8,6 @@ import type {
   BinaryExpressionData,
   EqualityOperator
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with equality expressions.
@@ -32,7 +31,7 @@ interface EqualityExpression extends BinaryExpression {
    *
    * @see {@linkcode EqualityExpressionData}
    */
-  data?: Optional<EqualityExpressionData>
+  data?: EqualityExpressionData | undefined
 
   /**
    * Equality operator.

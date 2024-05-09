@@ -15,7 +15,7 @@ describe('unit-d:nodes/ImportDeclaration', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<ImportDeclarationData>]', () => {
+  it('should match [data?: ImportDeclarationData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -36,7 +36,7 @@ describe('unit-d:nodes/ImportDeclaration', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })
 
-    it('should match [typeOnly?: Nilable<boolean>]', () => {
+    it('should match [typeOnly?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('typeOnly')
         .toEqualTypeOf<Nilable<boolean>>()

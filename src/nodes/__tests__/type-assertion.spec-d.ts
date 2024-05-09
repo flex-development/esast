@@ -15,7 +15,7 @@ describe('unit-d:nodes/TypeAssertion', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<TypeAssertionData>]', () => {
+  it('should match [data?: TypeAssertionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

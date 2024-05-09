@@ -15,7 +15,7 @@ describe('unit-d:nodes/RestElement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<RestElementData>]', () => {
+  it('should match [data?: RestElementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

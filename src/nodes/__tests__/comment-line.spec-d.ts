@@ -15,7 +15,7 @@ describe('unit-d:nodes/LineComment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Comment>()
   })
 
-  it('should match [data?: Optional<LineCommentData>]', () => {
+  it('should match [data?: LineCommentData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -30,7 +30,7 @@ describe('unit-d:nodes/LineComment', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<CommentData>()
     })
 
-    it('should match [trailing?: Nilable<boolean>]', () => {
+    it('should match [trailing?: boolean | null | undefined]', () => {
       expectTypeOf<SubjectData>()
         .toHaveProperty('trailing')
         .toEqualTypeOf<Nilable<boolean>>()

@@ -9,7 +9,6 @@ import type {
   Expression,
   Parent
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with decorators.
@@ -41,7 +40,7 @@ interface Decorator extends Parent {
    *
    * @see {@linkcode DecoratorData}
    */
-  data?: Optional<DecoratorData>
+  data?: DecoratorData | undefined
 
   /**
    * Node type.

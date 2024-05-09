@@ -15,7 +15,7 @@ describe('unit-d:nodes/EnumBody', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<EnumBodyData>]', () => {
+  it('should match [data?: EnumBodyData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

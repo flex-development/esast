@@ -12,7 +12,6 @@ import type {
   TypeExpression,
   TypeParameterList
 } from '@flex-development/esast'
-import type { Optional } from '@flex-development/tutils'
 
 /**
  * Info associated with `type` alias declarations.
@@ -61,7 +60,7 @@ interface TypeAliasDeclaration extends Parent {
    *
    * @see {@linkcode TypeAliasDeclarationData}
    */
-  data?: Optional<TypeAliasDeclarationData>
+  data?: TypeAliasDeclarationData | undefined
 
   /**
    * Node type.

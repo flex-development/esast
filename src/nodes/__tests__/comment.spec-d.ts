@@ -15,7 +15,7 @@ describe('unit-d:nodes/Comment', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<CommentData>]', () => {
+  it('should match [data?: CommentData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()

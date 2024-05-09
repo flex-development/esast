@@ -15,7 +15,7 @@ describe('unit-d:nodes/LabeledStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [data?: Optional<LabeledStatementData>]', () => {
+  it('should match [data?: LabeledStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
