@@ -9,7 +9,8 @@ import type {
   Identifier,
   MemberExpression,
   ObjectPattern,
-  RestElement
+  RestElement,
+  This
 } from '@flex-development/esast'
 
 /**
@@ -39,6 +40,7 @@ interface PatternMap {
   memberExpression: MemberExpression
   objectPattern: ObjectPattern
   restElement: RestElement
+  this: This
 }
 
 export type { Pattern, PatternMap }

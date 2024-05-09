@@ -12,7 +12,6 @@ import type {
   ModifierList,
   Parent,
   Pattern,
-  This,
   TypeAnnotation
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -39,7 +38,6 @@ interface Parameter extends Parent {
    *
    * @see {@linkcode Comments}
    * @see {@linkcode Pattern}
-   * @see {@linkcode This}
    * @see {@linkcode TypeAnnotation}
    */
   children:
@@ -47,37 +45,37 @@ interface Parameter extends Parent {
       ...([Decorator, ...(Comment | Decorator)[]]),
       modifiers: ModifierList,
       ...comments: InternalComments,
-      parameter: Pattern | This
+      parameter: Pattern
     ]
     | [
       ...([Decorator, ...(Comment | Decorator)[]]),
       modifiers: ModifierList,
       ...comments: InternalComments,
-      parameter: Pattern | This,
+      parameter: Pattern,
       ...comments: InternalComments,
       type: TypeAnnotation
     ]
     | [
       ...([Decorator, ...(Comment | Decorator)[]]),
-      parameter: Pattern | This,
+      parameter: Pattern,
       ...comments: InternalComments,
       type: TypeAnnotation
     ]
     | [
       modifiers: ModifierList,
       ...comments: Comments,
-      parameter: Pattern | This
+      parameter: Pattern
     ]
     | [
       modifiers: ModifierList,
       ...comments: Comments,
-      parameter: Pattern | This,
+      parameter: Pattern,
       ...comments: InternalComments,
       type: TypeAnnotation
     ]
-    | [...([Decorator, ...(Comment | Decorator)[]]), parameter: Pattern | This]
-    | [parameter: Pattern | This, ...comments: Comments, type: TypeAnnotation]
-    | [parameter: Pattern | This]
+    | [...([Decorator, ...(Comment | Decorator)[]]), parameter: Pattern]
+    | [parameter: Pattern, ...comments: Comments, type: TypeAnnotation]
+    | [parameter: Pattern]
 
   /**
    * Info from the ecosystem.
