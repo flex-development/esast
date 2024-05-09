@@ -7,7 +7,7 @@ import type {
   ArgumentList,
   Comments,
   Data,
-  Expression,
+  ImportIdentifier,
   Parent
 } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
@@ -34,9 +34,13 @@ interface ImportExpression extends Parent {
    *
    * @see {@linkcode ArgumentList}
    * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ImportIdentifier}
    */
-  children: [...comments: Comments, arguments: ArgumentList]
+  children: [
+    callee: ImportIdentifier,
+    ...comments: Comments,
+    arguments: ArgumentList
+  ]
 
   /**
    * Info from the ecosystem.
