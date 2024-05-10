@@ -5,8 +5,10 @@
 
 import type {
   Comment,
+  Comments,
   Data,
   EmptyChildren,
+  Nothing,
   Parent,
   TupleElement
 } from '@flex-development/esast'
@@ -32,10 +34,12 @@ interface TupleType extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Comment}
+   * @see {@linkcode Nothing}
    * @see {@linkcode TupleElement}
    */
-  children: (Comment | TupleElement)[] | EmptyChildren
+  children: (Comment | Nothing | TupleElement)[] | Comments | EmptyChildren
 
   /**
    * Info from the ecosystem.

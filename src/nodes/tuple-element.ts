@@ -53,7 +53,7 @@ interface TupleElement extends Parent {
   data?: TupleElementData | undefined
 
   /**
-   * Optional tuple element?
+   * Boolean indicating tuple element is optional.
    */
   optional: boolean
 
