@@ -5,6 +5,7 @@
 
 import type { InternalComments } from '#internal'
 import type {
+  AmbientDeclaration,
   ClassDeclaration,
   Comment,
   Comments,
@@ -50,6 +51,7 @@ interface ExportDeclaration extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode AmbientDeclaration}
    * @see {@linkcode ClassDeclaration}
    * @see {@linkcode Comments}
    * @see {@linkcode Comment}
@@ -88,7 +90,7 @@ interface ExportDeclaration extends Parent {
       attributes: ImportAssertion | ImportAttributeClause
     ]
     | [...(Comment | Decorator)[], declaration: ClassDeclaration]
-    | [...comments: Comments, declaration: Declaration]
+    | [...comments: Comments, declaration: AmbientDeclaration | Declaration]
     | [...comments: Comments, right: Expression]
     | [...comments: Comments, source: Identifier | StringLiteral]
     | [...comments: Comments, specifiers: ExportSpecifiers]
