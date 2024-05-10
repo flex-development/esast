@@ -51,7 +51,6 @@ import type {
   TemplatePlaceholder,
   TupleElement,
   TypeAnnotation,
-  TypeArgument,
   TypeArgumentList,
   TypeAssertion,
   TypeExpressionMap,
@@ -138,7 +137,6 @@ interface NodeMap
   templatePlaceholder: TemplatePlaceholder
   tupleElement: TupleElement
   typeAnnotation: TypeAnnotation
-  typeArgument: TypeArgument
   typeArgumentList: TypeArgumentList
   typeAssertion: TypeAssertion
   typeParameter: TypeParameter

@@ -423,10 +423,6 @@ export type {
   TypeAnnotationData
 } from './type-annotation'
 export type {
-  default as TypeArgument,
-  TypeArgumentData
-} from './type-argument'
-export type {
   default as TypeArgumentList,
   TypeArgumentListData
 } from './type-argument-list'

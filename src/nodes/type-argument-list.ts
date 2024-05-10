@@ -6,8 +6,9 @@
 import type {
   Comment,
   Data,
+  Nothing,
   Parent,
-  TypeArgument
+  TypeExpression
 } from '@flex-development/esast'
 
 /**
@@ -31,9 +32,10 @@ interface TypeArgumentList extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode TypeArgument}
+   * @see {@linkcode Nothing}
+   * @see {@linkcode TypeExpression}
    */
-  children: (Comment | TypeArgument)[]
+  children: (Comment | Nothing | TypeExpression)[]
 
   /**
    * Info from the ecosystem.
