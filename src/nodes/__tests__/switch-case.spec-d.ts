@@ -21,6 +21,10 @@ describe('unit-d:nodes/SwitchCase', () => {
       .toEqualTypeOf<Optional<SubjectData>>()
   })
 
+  it('should match [default: boolean]', () => {
+    expectTypeOf<Subject>().toHaveProperty('default').toEqualTypeOf<boolean>()
+  })
+
   it('should match [type: "switchCase"]', () => {
     expectTypeOf<Subject>().toHaveProperty('type').toEqualTypeOf<'switchCase'>()
   })

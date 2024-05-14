@@ -47,6 +47,11 @@ interface SwitchCase extends Parent {
   data?: SwitchCaseData | undefined
 
   /**
+   * Boolean indicating `default` switch case.
+   */
+  default: boolean
+
+  /**
    * Node type.
    */
   type: 'switchCase'
