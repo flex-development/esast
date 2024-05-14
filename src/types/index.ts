@@ -5,6 +5,7 @@
 
 export type { default as AnyBinaryExpression } from './any-binary-expression'
 export type { default as AnyClass } from './any-class'
+export type { default as AnyForStatement } from './any-for-statement'
 export type { default as AnyFunction } from './any-function'
 export type { default as AnyNode } from './any-node'
 export type { default as AnyParent } from './any-parent'

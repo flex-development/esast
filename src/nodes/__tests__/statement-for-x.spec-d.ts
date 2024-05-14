@@ -11,9 +11,9 @@ describe('unit-d:nodes/ForXStatement', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<Parent>()
   })
 
-  it('should match [type: `for${Uppercase<string>}${string}`]', () => {
+  it('should match [type: `for${\'In\' | \'Of\'}Statement`]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('type')
-      .toEqualTypeOf<`for${Uppercase<string>}${string}`>()
+      .toEqualTypeOf<`for${'In' | 'Of'}Statement`>()
   })
 })

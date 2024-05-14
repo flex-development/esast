@@ -43,7 +43,7 @@ interface ForXStatement extends Parent {
   /**
    * Node type.
    */
-  type: `for${Uppercase<string>}${string}`
+  type: `for${'In' | 'Of'}Statement`
 }
 
 export type { ForXStatement as default }
