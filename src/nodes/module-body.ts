@@ -7,7 +7,6 @@ import type {
   Comment,
   Data,
   Directive,
-  ModuleReference,
   Parent,
   Statement
 } from '@flex-development/esast'
@@ -34,10 +33,9 @@ interface ModuleBody extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode Directive}
-   * @see {@linkcode ModuleReference}
    * @see {@linkcode Statement}
    */
-  children: (Comment | Directive | ModuleReference | Statement)[]
+  children: (Comment | Directive | Statement)[]
 
   /**
    * Info from the ecosystem.

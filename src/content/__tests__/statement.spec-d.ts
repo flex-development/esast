@@ -18,6 +18,7 @@ import type {
   ForStatement,
   IfStatement,
   LabeledStatement,
+  ModuleStatementMap,
   ReturnStatement,
   StaticBlock,
   SwitchStatement,
@@ -39,6 +40,11 @@ describe('unit-d:content/statement', () => {
   describe('StatementMap', () => {
     it('should extend DeclarationMap', () => {
       expectTypeOf<TestSubject.StatementMap>().toMatchTypeOf<DeclarationMap>()
+    })
+
+    it('should extend ModuleStatementMap', () => {
+      expectTypeOf<TestSubject.StatementMap>()
+        .toMatchTypeOf<ModuleStatementMap>()
     })
 
     it('should match NodeObject<BlockStatement>', () => {

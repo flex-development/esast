@@ -7,7 +7,6 @@ import type {
   Comment,
   Decorator,
   Directive,
-  ModuleReferenceMap,
   StatementMap
 } from '@flex-development/esast'
 
@@ -32,10 +31,9 @@ type RootChild = RootMap[keyof RootMap]
  *    }
  *  }
  *
- * @extends {ModuleReferenceMap}
  * @extends {StatementMap}
  */
-interface RootMap extends ModuleReferenceMap, StatementMap {
+interface RootMap extends StatementMap {
   comment: Comment
   decorator: Decorator
   directive: Directive

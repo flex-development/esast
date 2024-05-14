@@ -17,6 +17,7 @@ import type {
   ForStatement,
   IfStatement,
   LabeledStatement,
+  ModuleStatementMap,
   ReturnStatement,
   StaticBlock,
   SwitchStatement,
@@ -47,8 +48,9 @@ type Statement = StatementMap[keyof StatementMap]
  *  }
  *
  * @extends {DeclarationMap}
+ * @extends {ModuleStatementMap}
  */
-interface StatementMap extends DeclarationMap {
+interface StatementMap extends DeclarationMap, ModuleStatementMap {
   blockStatement: BlockStatement
   breakStatement: BreakStatement
   continueStatement: ContinueStatement
