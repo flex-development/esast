@@ -8,7 +8,6 @@ import type {
   Comments,
   Identifier,
   ImportAssertion,
-  ImportAttributeClause,
   ImportDeclaration,
   ImportKind,
   ImportSpecifiers,
@@ -29,7 +28,6 @@ interface ImportNamedDeclaration extends ImportDeclaration {
    * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode ImportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
@@ -46,7 +44,7 @@ interface ImportNamedDeclaration extends ImportDeclaration {
       ...comments: InternalComments,
       source: StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion | ImportAttributeClause
+      attributes: ImportAssertion
     ]
 
   /**

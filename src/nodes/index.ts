@@ -246,10 +246,6 @@ export type {
   default as ImportAttribute,
   ImportAttributeData
 } from './import-attribute'
-export type {
-  default as ImportAttributeClause,
-  ImportAttributeClauseData
-} from './import-attribute-clause'
 export type { default as ImportMeta, ImportMetaData } from './import-meta'
 export type {
   default as InterfaceBody,

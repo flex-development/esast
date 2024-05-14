@@ -11,7 +11,6 @@ import type {
   ExportSpecifiers,
   Identifier,
   ImportAssertion,
-  ImportAttributeClause,
   StringLiteral
 } from '@flex-development/esast'
 
@@ -30,7 +29,6 @@ interface ExportAllDeclaration extends ExportDeclaration {
    * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode StringLiteral}
    */
   children:
@@ -46,7 +44,7 @@ interface ExportAllDeclaration extends ExportDeclaration {
       ...comments: InternalComments,
       source: Identifier | StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion | ImportAttributeClause
+      attributes: ImportAssertion
     ]
     | [...comments: Comments, source: Identifier | StringLiteral]
 

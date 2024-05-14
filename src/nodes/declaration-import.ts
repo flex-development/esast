@@ -10,7 +10,6 @@ import type {
   Data,
   Identifier,
   ImportAssertion,
-  ImportAttributeClause,
   ImportKind,
   ImportSpecifiers,
   Parent,
@@ -48,7 +47,6 @@ interface ImportDeclaration extends Parent {
    * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode ImportSpecifiers}
    * @see {@linkcode StringLiteral}
    */
@@ -63,7 +61,7 @@ interface ImportDeclaration extends Parent {
       ...comments: Comments,
       source: Identifier | StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion | ImportAttributeClause
+      attributes: ImportAssertion
     ]
     | [
       ...comments: Comments,
@@ -77,7 +75,7 @@ interface ImportDeclaration extends Parent {
       ...comments: InternalComments,
       source: StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion | ImportAttributeClause
+      attributes: ImportAssertion
     ]
     | [...comments: Comments, source: Identifier | StringLiteral]
 

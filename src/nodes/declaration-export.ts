@@ -18,7 +18,6 @@ import type {
   FunctionDeclaration,
   Identifier,
   ImportAssertion,
-  ImportAttributeClause,
   ModuleDeclaration,
   Parent,
   StringLiteral
@@ -63,7 +62,6 @@ interface ExportDeclaration extends Parent {
    * @see {@linkcode Expression}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportAttributeClause}
    * @see {@linkcode StringLiteral}
    */
   children:
@@ -87,7 +85,7 @@ interface ExportDeclaration extends Parent {
       ...comments: InternalComments,
       source: Identifier | StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion | ImportAttributeClause
+      attributes: ImportAssertion
     ]
     | [...(Comment | Decorator)[], declaration: ClassDeclaration]
     | [...comments: Comments, declaration: AmbientDeclaration | Declaration]

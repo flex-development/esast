@@ -6,6 +6,7 @@
 import type {
   Comments,
   Data,
+  ImportAssertionOperator,
   ImportAttribute,
   Parent
 } from '@flex-development/esast'
@@ -20,9 +21,10 @@ import type {
 interface ImportAssertionData extends Data {}
 
 /**
- * An import assertion (`assert { type: "json" }`).
+ * An import assertion (`assert { type: "json" }` or `with { type: "json" }`).
  *
  * @see {@linkcode Parent}
+ * @see https://github.com/tc39/proposal-import-attributes
  * @see https://github.com/tc39/proposal-import-attributes/tree/f5ad402cd3d3f82f28b1d1be2bfd567cd26336af
  *
  * @extends {Parent}
@@ -42,6 +44,13 @@ interface ImportAssertion extends Parent {
    * @see {@linkcode ImportAssertionData}
    */
   data?: ImportAssertionData | undefined
+
+  /**
+   * Import assertion operator.
+   *
+   * @see {@linkcode ImportAssertionOperator}
+   */
+  operator: ImportAssertionOperator
 
   /**
    * Node type.

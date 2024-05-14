@@ -3,7 +3,11 @@
  * @module esast/nodes/tests/unit-d/ImportAssertion
  */
 
-import type { Data, Parent } from '@flex-development/esast'
+import type {
+  Data,
+  ImportAssertionOperator,
+  Parent
+} from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../import-assertion'
 
@@ -19,6 +23,12 @@ describe('unit-d:nodes/ImportAssertion', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
+  })
+
+  it('should match [operator: ImportAssertionOperator]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('operator')
+      .toEqualTypeOf<ImportAssertionOperator>()
   })
 
   it('should match [type: "importAssertion"]', () => {

@@ -20,7 +20,6 @@ import type {
   ImplementsClause,
   ImportAssertion,
   ImportAttribute,
-  ImportAttributeClause,
   ImportSpecifier,
   ImportSpecifiers,
   IndexSignature,
@@ -108,7 +107,6 @@ interface NodeMap
   implementsClause: ImplementsClause
   importAssertion: ImportAssertion
   importAttribute: ImportAttribute
-  importAttributeClause: ImportAttributeClause
   importSpecifier: ImportSpecifier
   importSpecifiers: ImportSpecifiers
   indexSignature: IndexSignature
