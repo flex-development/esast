@@ -4,11 +4,9 @@
  */
 
 import type {
-  AmbientDeclaration,
   Comment,
   Decorator,
   Directive,
-  ModuleDeclaration,
   ModuleReferenceMap,
   StatementMap
 } from '@flex-development/esast'
@@ -38,11 +36,9 @@ type RootChild = RootMap[keyof RootMap]
  * @extends {StatementMap}
  */
 interface RootMap extends ModuleReferenceMap, StatementMap {
-  ambientDeclaration: AmbientDeclaration
   comment: Comment
   decorator: Decorator
   directive: Directive
-  moduleDeclaration: ModuleDeclaration
 }
 
 export type { RootChild, RootMap }

@@ -5,6 +5,7 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
+  AmbientDeclaration,
   EnumDeclaration,
   FunctionSignature,
   InterfaceDeclaration,
@@ -27,6 +28,11 @@ describe('unit-d:content/typeDeclaration', () => {
   })
 
   describe('TypeDeclarationMap', () => {
+    it('should match NodeObject<AmbientDeclaration>', () => {
+      expectTypeOf<TestSubject.TypeDeclarationMap>()
+        .toMatchTypeOf<NodeObject<AmbientDeclaration>>()
+    })
+
     it('should match NodeObject<EnumDeclaration>', () => {
       expectTypeOf<TestSubject.TypeDeclarationMap>()
         .toMatchTypeOf<NodeObject<EnumDeclaration>>()

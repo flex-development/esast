@@ -4,6 +4,7 @@
  */
 
 import type {
+  AmbientDeclaration,
   EnumDeclaration,
   FunctionSignature,
   InterfaceDeclaration,
@@ -35,6 +36,7 @@ type TypeDeclaration = TypeDeclarationMap[keyof TypeDeclarationMap]
  *  }
  */
 interface TypeDeclarationMap {
+  ambientDeclaration: AmbientDeclaration
   enumDeclaration: EnumDeclaration
   functionSignature: FunctionSignature
   interfaceDeclaration: InterfaceDeclaration
