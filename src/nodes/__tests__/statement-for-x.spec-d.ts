@@ -11,6 +11,12 @@ describe('unit-d:nodes/ForXStatement', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<Parent>()
   })
 
+  it('should match [await: boolean | null | undefined]', () => {
+    expectTypeOf<TestSubject>()
+      .toHaveProperty('await')
+      .toEqualTypeOf<boolean | null | undefined>()
+  })
+
   it('should match [type: `for${\'In\' | \'Of\'}Statement`]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('type')

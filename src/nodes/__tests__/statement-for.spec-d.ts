@@ -15,6 +15,12 @@ describe('unit-d:nodes/ForStatement', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
+  it('should match [await: boolean | null | undefined]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('await')
+      .toEqualTypeOf<boolean | null | undefined>()
+  })
+
   it('should match [data?: ForStatementData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')

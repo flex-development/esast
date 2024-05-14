@@ -33,6 +33,13 @@ interface ForStatementData extends Data {}
  */
 interface ForStatement extends Parent {
   /**
+   * Boolean indicating `await` keyword was used, possibly erroneously.
+   *
+   * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols
+   */
+  await?: boolean | null | undefined
+
+  /**
    * List of children.
    *
    * @see {@linkcode Comment}
