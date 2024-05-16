@@ -4,9 +4,9 @@
  */
 
 import type {
-  Identifier,
   Property,
-  PropertyKind
+  PropertyKind,
+  PropertyName
 } from '@flex-development/esast'
 
 /**
@@ -25,14 +25,9 @@ interface ShorthandProperty extends Property {
   /**
    * List of children.
    *
-   * @see {@linkcode Identifier}
+   * @see {@linkcode PropertyName}
    */
-  children: [key: Identifier]
-
-  /**
-   * Boolean indicating if property is computed.
-   */
-  computed: false
+  children: [key: PropertyName]
 
   /**
    * Property kind.

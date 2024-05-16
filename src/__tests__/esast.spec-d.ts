@@ -34,6 +34,7 @@ describe('unit-d:esast', () => {
         | mdast.Nodes
         | TestSubject.Comment
         | TestSubject.ExpressionStatement
+        | TestSubject.MethodProperty
         | TestSubject.ShorthandProperty
         | TestSubject.TemplateLiteral
       >

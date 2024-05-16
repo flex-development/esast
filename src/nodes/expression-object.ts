@@ -6,10 +6,8 @@
 import type {
   Comment,
   Data,
-  MethodProperty,
   Parent,
-  ShorthandProperty,
-  SimpleProperty,
+  Property,
   SpreadElement
 } from '@flex-development/esast'
 
@@ -34,18 +32,10 @@ interface ObjectExpression extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode MethodProperty}
-   * @see {@linkcode ShorthandProperty}
-   * @see {@linkcode SimpleProperty}
+   * @see {@linkcode Property}
    * @see {@linkcode SpreadElement}
    */
-  children: (
-    | Comment
-    | MethodProperty
-    | ShorthandProperty
-    | SimpleProperty
-    | SpreadElement
-  )[]
+  children: (Comment | Property | SpreadElement)[]
 
   /**
    * Info from the ecosystem.
@@ -60,4 +50,4 @@ interface ObjectExpression extends Parent {
   type: 'objectExpression'
 }
 
-export type { ObjectExpressionData, ObjectExpression as default }
+export type { ObjectExpression as default, ObjectExpressionData }

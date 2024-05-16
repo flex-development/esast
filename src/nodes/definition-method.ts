@@ -11,7 +11,8 @@ import type {
   FunctionExpression,
   MethodKind,
   ModifierList,
-  Parent
+  Parent,
+  PropertyName
 } from '@flex-development/esast'
 
 /**
@@ -38,6 +39,7 @@ interface MethodDefinition extends Parent {
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionExpression}
    * @see {@linkcode ModifierList}
+   * @see {@linkcode PropertyName}
    */
   children:
     | [
@@ -53,7 +55,7 @@ interface MethodDefinition extends Parent {
       ...comments: InternalComments,
       value: FunctionExpression
     ]
-    | [name: Expression, ...comments: Comments, value: FunctionExpression]
+    | [name: PropertyName, ...comments: Comments, value: FunctionExpression]
 
   /**
    * Boolean indicating if method name is computed.
@@ -85,4 +87,4 @@ interface MethodDefinition extends Parent {
   type: 'methodDefinition'
 }
 
-export type { MethodDefinitionData, MethodDefinition as default }
+export type { MethodDefinition as default, MethodDefinitionData }

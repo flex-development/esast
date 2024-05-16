@@ -7,7 +7,6 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   Expression,
-  FunctionExpression,
   Property,
   PropertyKind,
   PropertyName
@@ -38,13 +37,9 @@ interface SimpleProperty extends Property {
       ...comments: Comments,
       key: Expression,
       ...comments: InternalComments,
-      value: Exclude<Expression, FunctionExpression>
+      value: Expression
     ]
-    | [
-      key: PropertyName,
-      ...comments: Comments,
-      value: Exclude<Expression, FunctionExpression>
-    ]
+    | [key: PropertyName, ...comments: Comments, value: Expression]
 
   /**
    * Property kind.
