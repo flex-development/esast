@@ -3,7 +3,12 @@
  * @module esast/nodes/ExpressionStatement
  */
 
-import type { Data, Expression, Parent } from '@flex-development/esast'
+import type {
+  Data,
+  Expression,
+  Parent,
+  SpreadElement
+} from '@flex-development/esast'
 
 /**
  * Info associated with expression statements.
@@ -26,8 +31,9 @@ interface ExpressionStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Expression}
+   * @see {@linkcode SpreadElement}
    */
-  children: [expression: Expression]
+  children: [expression: Expression | SpreadElement]
 
   /**
    * Info from the ecosystem.
@@ -42,4 +48,4 @@ interface ExpressionStatement extends Parent {
   type: 'expressionStatement'
 }
 
-export type { ExpressionStatementData, ExpressionStatement as default }
+export type { ExpressionStatement as default, ExpressionStatementData }
