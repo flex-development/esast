@@ -6,16 +6,16 @@
 import type { InternalComments } from '#internal'
 import type {
   ArrayPattern,
+  AssignmentExpression,
   AssignmentPattern,
   Comments,
   Data,
   Expression,
-  FunctionExpression,
-  Identifier,
-  ModifierList,
+  MethodDefinition,
   ObjectPattern,
   Parent,
-  PropertyKind
+  PropertyKind,
+  PropertyName
 } from '@flex-development/esast'
 
 /**
@@ -44,13 +44,13 @@ interface Property extends Parent {
    * List of children.
    *
    * @see {@linkcode ArrayPattern}
+   * @see {@linkcode AssignmentExpression}
    * @see {@linkcode AssignmentPattern}
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
-   * @see {@linkcode FunctionExpression}
-   * @see {@linkcode Identifier}
-   * @see {@linkcode ModifierList}
+   * @see {@linkcode MethodDefinition}
    * @see {@linkcode ObjectPattern}
+   * @see {@linkcode PropertyName}
    */
   children:
     | [
@@ -60,19 +60,18 @@ interface Property extends Parent {
       value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
     ]
     | [
-      key: Expression,
+      ...comments: Comments,
+      shorthand: Expression,
+      ...comments: InternalComments
+    ]
+    | [
+      key: PropertyName,
       ...comments: Comments,
       value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
     ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: FunctionExpression
-    ]
-    | [assignment: AssignmentPattern]
-    | [key: Identifier]
+    | [assignment: AssignmentExpression | AssignmentPattern]
+    | [method: MethodDefinition]
+    | [shorthand: PropertyName]
 
   /**
    * Boolean indicating if property is computed.
@@ -109,4 +108,4 @@ interface Property extends Parent {
   type: 'property'
 }
 
-export type { PropertyData, Property as default }
+export type { Property as default, PropertyData }

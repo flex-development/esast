@@ -6,9 +6,11 @@
 import type { InternalComments } from '#internal'
 import type {
   ArrayPattern,
+  AssignmentExpression,
   AssignmentPattern,
   Comments,
   Expression,
+  Identifier,
   ObjectPattern,
   Property,
   PropertyKind,
@@ -32,9 +34,11 @@ interface AssignmentProperty extends Property {
    * List of children.
    *
    * @see {@linkcode ArrayPattern}
+   * @see {@linkcode AssignmentExpression}
    * @see {@linkcode AssignmentPattern}
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
+   * @see {@linkcode Identifier}
    * @see {@linkcode ObjectPattern}
    * @see {@linkcode PropertyName}
    */
@@ -43,14 +47,14 @@ interface AssignmentProperty extends Property {
       ...comments: Comments,
       key: Expression,
       ...comments: InternalComments,
-      value: ArrayPattern | AssignmentPattern | ObjectPattern
+      value: ArrayPattern | AssignmentPattern | Identifier | ObjectPattern
     ]
     | [
       key: PropertyName,
       ...comments: Comments,
-      value: ArrayPattern | AssignmentPattern | ObjectPattern
+      value: ArrayPattern | AssignmentPattern | Identifier | ObjectPattern
     ]
-    | [assignment: AssignmentPattern]
+    | [assignment: AssignmentExpression | AssignmentPattern]
 
   /**
    * Property kind.

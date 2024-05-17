@@ -4,13 +4,11 @@
  */
 
 import type {
-  AssignmentProperty,
   Comment,
   Data,
   Parent,
-  RenamedProperty,
-  RestElement,
-  ShorthandProperty
+  Property,
+  RestElement
 } from '@flex-development/esast'
 
 /**
@@ -33,19 +31,11 @@ interface ObjectPattern extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode AssignmentProperty}
    * @see {@linkcode Comment}
-   * @see {@linkcode RenamedProperty}
+   * @see {@linkcode Property}
    * @see {@linkcode RestElement}
-   * @see {@linkcode ShorthandProperty}
    */
-  children: (
-    | AssignmentProperty
-    | Comment
-    | RenamedProperty
-    | RestElement
-    | ShorthandProperty
-  )[]
+  children: (Comment | Property | RestElement)[]
 
   /**
    * Info from the ecosystem.
@@ -60,4 +50,4 @@ interface ObjectPattern extends Parent {
   type: 'objectPattern'
 }
 
-export type { ObjectPatternData, ObjectPattern as default }
+export type { ObjectPattern as default, ObjectPatternData }

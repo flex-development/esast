@@ -6,6 +6,7 @@
 import type {
   Comment,
   Data,
+  Expression,
   Nothing,
   Parent,
   Pattern
@@ -32,10 +33,11 @@ interface ArrayPattern extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Expression}
    * @see {@linkcode Nothing}
    * @see {@linkcode Pattern}
    */
-  children: (Comment | Nothing | Pattern)[]
+  children: (Comment | Expression | Nothing | Pattern)[]
 
   /**
    * Info from the ecosystem.

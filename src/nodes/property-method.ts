@@ -3,15 +3,7 @@
  * @module esast/nodes/MethodProperty
  */
 
-import type { InternalComments } from '#internal'
-import type {
-  Comments,
-  Expression,
-  FunctionExpression,
-  ModifierList,
-  Property,
-  PropertyName
-} from '@flex-development/esast'
+import type { MethodDefinition, Property } from '@flex-development/esast'
 
 /**
  * A method property.
@@ -29,27 +21,9 @@ interface MethodProperty extends Property {
   /**
    * List of children.
    *
-   * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
-   * @see {@linkcode FunctionExpression}
-   * @see {@linkcode PropertyName}
-   * @see {@linkcode ModifierList}
+   * @see {@linkcode MethodDefinition}
    */
-  children:
-    | [
-      ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: FunctionExpression
-    ]
-    | [
-      modifiers: ModifierList,
-      ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: FunctionExpression
-    ]
-    | [key: PropertyName, ...comments: Comments, value: FunctionExpression]
+  children: [MethodDefinition]
 
   /**
    * Boolean indicating if property value is a method.

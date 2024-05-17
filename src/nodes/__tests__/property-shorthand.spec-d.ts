@@ -17,10 +17,6 @@ describe('unit-d:nodes/ShorthandProperty', () => {
     expectTypeOf<Subject>().toHaveProperty('assignment').toEqualTypeOf<false>()
   })
 
-  it('should match [computed: false]', () => {
-    expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<false>()
-  })
-
   it('should match [kind: Extract<PropertyKind, "init">]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('kind')

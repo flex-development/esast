@@ -3,10 +3,13 @@
  * @module esast/nodes/ShorthandProperty
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Identifier,
+  Comments,
+  Expression,
   Property,
-  PropertyKind
+  PropertyKind,
+  PropertyName
 } from '@flex-development/esast'
 
 /**
@@ -25,14 +28,17 @@ interface ShorthandProperty extends Property {
   /**
    * List of children.
    *
-   * @see {@linkcode Identifier}
+   * @see {@linkcode Comments}
+   * @see {@linkcode Expression}
+   * @see {@linkcode PropertyName}
    */
-  children: [key: Identifier]
-
-  /**
-   * Boolean indicating if property is computed.
-   */
-  computed: false
+  children:
+    | [
+      ...comments: Comments,
+      key: Expression,
+      ...comments: InternalComments
+    ]
+    | [key: PropertyName]
 
   /**
    * Property kind.
