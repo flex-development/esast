@@ -7,8 +7,10 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
+  EmptyChildren,
   Expression,
-  Parent
+  Parent,
+  SpreadElement
 } from '@flex-development/esast'
 
 /**
@@ -33,12 +35,16 @@ interface ParenthesizedExpression extends Parent {
    *
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
+   * @see {@linkcode SpreadElement}
    */
-  children: [
-    ...comments: Comments,
-    expression: Expression,
-    ...comments: InternalComments
-  ]
+  children:
+    | Comments
+    | EmptyChildren
+    | [
+      ...comments: Comments,
+      expression: Expression | SpreadElement,
+      ...comments: InternalComments
+    ]
 
   /**
    * Info from the ecosystem.
@@ -53,4 +59,4 @@ interface ParenthesizedExpression extends Parent {
   type: 'parenthesizedExpression'
 }
 
-export type { ParenthesizedExpressionData, ParenthesizedExpression as default }
+export type { ParenthesizedExpression as default, ParenthesizedExpressionData }
