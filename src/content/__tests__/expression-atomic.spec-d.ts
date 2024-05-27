@@ -7,7 +7,6 @@ import type { NodeObject } from '#tests/types'
 import type {
   ArrayExpression,
   ArrowFunctionExpression,
-  AwaitExpression,
   ClassExpression,
   FunctionExpression,
   Identifier,
@@ -21,9 +20,7 @@ import type {
   Super,
   TemplateLiteral,
   This,
-  TypeAssertionExpression,
-  UnaryExpression,
-  YieldExpression
+  TypeAssertionExpression
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression-atomic'
 
@@ -53,11 +50,6 @@ describe('unit-d:content/atomicExpression', () => {
     it('should match NodeObject<ArrowFunctionExpression>', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
         .toMatchTypeOf<NodeObject<ArrowFunctionExpression>>()
-    })
-
-    it('should match NodeObject<AwaitExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<AwaitExpression>>()
     })
 
     it('should match NodeObject<ClassExpression>', () => {
@@ -123,16 +115,6 @@ describe('unit-d:content/atomicExpression', () => {
     it('should match NodeObject<TypeAssertionExpression>', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
         .toMatchTypeOf<NodeObject<TypeAssertionExpression>>()
-    })
-
-    it('should match NodeObject<UnaryExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<UnaryExpression>>()
-    })
-
-    it('should match NodeObject<YieldExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<YieldExpression>>()
     })
   })
 })

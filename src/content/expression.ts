@@ -7,13 +7,16 @@ import type {
   ArithmeticExpression,
   AssignmentExpression,
   AtomicExpressionMap,
+  AwaitExpression,
   BitwiseExpression,
   ConditionalExpression,
   EqualityExpression,
   LogicalExpression,
   RelationalExpression,
   SequenceExpression,
-  SubscriptExpressionMap
+  SubscriptExpressionMap,
+  UnaryExpression,
+  YieldExpression
 } from '@flex-development/esast'
 
 /**
@@ -43,12 +46,15 @@ type Expression = ExpressionMap[keyof ExpressionMap]
 interface ExpressionMap extends AtomicExpressionMap, SubscriptExpressionMap {
   arithmeticExpression: ArithmeticExpression
   assignmentExpression: AssignmentExpression
+  awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression
   conditionalExpression: ConditionalExpression
   equalityExpression: EqualityExpression
   logicalExpression: LogicalExpression
   relationalExpression: RelationalExpression
   sequenceExpression: SequenceExpression
+  unaryExpression: UnaryExpression
+  yieldExpression: YieldExpression
 }
 
 export type { Expression, ExpressionMap }

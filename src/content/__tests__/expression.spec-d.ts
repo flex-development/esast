@@ -8,13 +8,16 @@ import type {
   ArithmeticExpression,
   AssignmentExpression,
   AtomicExpressionMap,
+  AwaitExpression,
   BitwiseExpression,
   ConditionalExpression,
   EqualityExpression,
   LogicalExpression,
   RelationalExpression,
   SequenceExpression,
-  SubscriptExpressionMap
+  SubscriptExpressionMap,
+  UnaryExpression,
+  YieldExpression
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression'
 
@@ -50,6 +53,11 @@ describe('unit-d:content/expression', () => {
         .toMatchTypeOf<NodeObject<AssignmentExpression>>()
     })
 
+    it('should match NodeObject<AwaitExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<AwaitExpression>>()
+    })
+
     it('should match NodeObject<BitwiseExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<BitwiseExpression>>()
@@ -78,6 +86,16 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<SequenceExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<SequenceExpression>>()
+    })
+
+    it('should match NodeObject<UnaryExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<UnaryExpression>>()
+    })
+
+    it('should match NodeObject<YieldExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<YieldExpression>>()
     })
   })
 })

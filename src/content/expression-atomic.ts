@@ -6,7 +6,6 @@
 import type {
   ArrayExpression,
   ArrowFunctionExpression,
-  AwaitExpression,
   ClassExpression,
   FunctionExpression,
   Identifier,
@@ -20,9 +19,7 @@ import type {
   Super,
   TemplateLiteral,
   This,
-  TypeAssertionExpression,
-  UnaryExpression,
-  YieldExpression
+  TypeAssertionExpression
 } from '@flex-development/esast'
 
 /**
@@ -52,7 +49,6 @@ type AtomicExpression = AtomicExpressionMap[keyof AtomicExpressionMap]
 interface AtomicExpressionMap extends LiteralMap {
   arrayExpression: ArrayExpression
   arrowFunctionExpression: ArrowFunctionExpression
-  awaitExpression: AwaitExpression
   classExpression: ClassExpression
   functionExpression: FunctionExpression
   identifier: Identifier
@@ -66,8 +62,6 @@ interface AtomicExpressionMap extends LiteralMap {
   templateLiteral: TemplateLiteral
   this: This
   typeAssertionExpression: TypeAssertionExpression
-  unaryExpression: UnaryExpression
-  yieldExpression: YieldExpression
 }
 
 export type { AtomicExpression, AtomicExpressionMap }
