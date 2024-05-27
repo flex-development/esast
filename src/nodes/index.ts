@@ -402,6 +402,7 @@ export type {
 } from './statement-with'
 export type { default as StaticBlock, StaticBlockData } from './static-block'
 export type { default as Super, SuperData } from './super'
+export type { default as SwitchBody, SwitchBodyData } from './switch-body'
 export type { default as SwitchCase, SwitchCaseData } from './switch-case'
 export type {
   default as TemplateLiteral,

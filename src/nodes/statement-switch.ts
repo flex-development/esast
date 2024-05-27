@@ -3,11 +3,13 @@
  * @module esast/nodes/SwitchStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
+  Comments,
   Data,
   Expression,
   Parent,
+  SwitchBody,
   SwitchCase
 } from '@flex-development/esast'
 
@@ -31,11 +33,17 @@ interface SwitchStatement extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
+   * @see {@linkcode SwitchBody}
    * @see {@linkcode SwitchCase}
    */
-  children: [discriminant: Expression, ...cases: (Comment | SwitchCase)[]]
+  children: [
+    ...comments: Comments,
+    discriminant: Expression,
+    ...comments: InternalComments,
+    body: SwitchBody
+  ]
 
   /**
    * Info from the ecosystem.
@@ -50,4 +58,4 @@ interface SwitchStatement extends Parent {
   type: 'switchStatement'
 }
 
-export type { SwitchStatementData, SwitchStatement as default }
+export type { SwitchStatement as default, SwitchStatementData }

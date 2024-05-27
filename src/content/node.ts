@@ -45,6 +45,7 @@ import type {
   SpreadElement,
   StaticBlock,
   Super,
+  SwitchBody,
   SwitchCase,
   TemplateElement,
   TemplatePlaceholder,
@@ -130,6 +131,7 @@ interface NodeMap
   spreadElement: SpreadElement
   staticBlock: StaticBlock
   super: Super
+  switchBody: SwitchBody
   switchCase: SwitchCase
   templateElement: TemplateElement
   templatePlaceholder: TemplatePlaceholder
