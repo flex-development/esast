@@ -3,7 +3,7 @@
  * @module esast/nodes/LineComment
  */
 
-import * as docast from '@flex-development/docast'
+import type * as docast from '@flex-development/docast'
 import type { Comment, CommentData, CommentKind } from '@flex-development/esast'
 
 /**
@@ -36,7 +36,7 @@ interface LineComment extends Comment {
    *
    * @see {@linkcode docast.PhrasingContent}
    */
-  children: Exclude<docast.PhrasingContent, docast.InlineTag>[]
+  children: docast.PhrasingContent[]
 
   /**
    * Info from the ecosystem.
