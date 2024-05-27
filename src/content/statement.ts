@@ -5,25 +5,20 @@
 
 import type {
   BlockStatement,
+  BreakableStatementMap,
   BreakStatement,
   ContinueStatement,
   DebuggerStatement,
   DeclarationMap,
-  DoWhileStatement,
   EmptyStatement,
   ExpressionStatement,
-  ForInStatement,
-  ForOfStatement,
-  ForStatement,
   IfStatement,
   LabeledStatement,
   ModuleStatementMap,
   ReturnStatement,
   StaticBlock,
-  SwitchStatement,
   ThrowStatement,
   TryStatement,
-  WhileStatement,
   WithStatement
 } from '@flex-development/esast'
 
@@ -47,28 +42,24 @@ type Statement = StatementMap[keyof StatementMap]
  *    }
  *  }
  *
+ * @extends {BreakableStatementMap}
  * @extends {DeclarationMap}
  * @extends {ModuleStatementMap}
  */
-interface StatementMap extends DeclarationMap, ModuleStatementMap {
+interface StatementMap
+  extends BreakableStatementMap, DeclarationMap, ModuleStatementMap {
   blockStatement: BlockStatement
   breakStatement: BreakStatement
   continueStatement: ContinueStatement
   debuggerStatement: DebuggerStatement
-  doWhileStatement: DoWhileStatement
   emptyStatement: EmptyStatement
   expressionStatement: ExpressionStatement
-  forInStatement: ForInStatement
-  forOfStatement: ForOfStatement
-  forStatement: ForStatement
   ifStatement: IfStatement
   labeledStatement: LabeledStatement
   returnStatement: ReturnStatement
   staticBlock: StaticBlock
-  switchStatement: SwitchStatement
   throwStatement: ThrowStatement
   tryStatement: TryStatement
-  whileStatement: WhileStatement
   withStatement: WithStatement
 }
 
