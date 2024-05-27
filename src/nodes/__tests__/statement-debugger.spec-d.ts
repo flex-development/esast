@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/DebuggerStatement
  */
 
-import type { Data, Node } from '@flex-development/esast'
+import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../statement-debugger'
 
@@ -11,8 +11,8 @@ describe('unit-d:nodes/DebuggerStatement', () => {
   type Subject = TestSubject.default
   type SubjectData = TestSubject.DebuggerStatementData
 
-  it('should extend Node', () => {
-    expectTypeOf<Subject>().toMatchTypeOf<Node>()
+  it('should extend Parent', () => {
+    expectTypeOf<Subject>().toMatchTypeOf<Parent>()
   })
 
   it('should match [data?: DebuggerStatementData | undefined]', () => {

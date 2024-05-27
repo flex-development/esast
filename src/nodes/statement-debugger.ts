@@ -3,7 +3,12 @@
  * @module esast/nodes/DebuggerStatement
  */
 
-import type { Data, Node } from '@flex-development/esast'
+import type {
+  Comments,
+  Data,
+  EmptyChildren,
+  Parent
+} from '@flex-development/esast'
 
 /**
  * Info associated with debugger statements.
@@ -17,11 +22,19 @@ interface DebuggerStatementData extends Data {}
 /**
  * A `debugger` statement.
  *
- * @see {@linkcode Node}
+ * @see {@linkcode Parent}
  *
- * @extends {Node}
+ * @extends {Parent}
  */
-interface DebuggerStatement extends Node {
+interface DebuggerStatement extends Parent {
+  /**
+   * List of children.
+   *
+   * @see {@linkcode Comments}
+   * @see {@linkcode EmptyChildren}
+   */
+  children: Comments | EmptyChildren
+
   /**
    * Info from the ecosystem.
    *
