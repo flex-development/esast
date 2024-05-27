@@ -25,10 +25,10 @@ describe('unit-d:nodes/Identifier', () => {
     expectTypeOf<Subject>().toHaveProperty('name').toEqualTypeOf<string>()
   })
 
-  it('should match [private: boolean]', () => {
+  it('should match [private?: boolean | null | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('private')
-      .toEqualTypeOf<boolean>()
+      .toEqualTypeOf<boolean | null | undefined>()
   })
 
   it('should match [type: "identifier"]', () => {

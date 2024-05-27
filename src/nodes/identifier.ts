@@ -39,7 +39,7 @@ interface Identifier extends Node {
    *
    * @see https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties
    */
-  private: boolean
+  private?: boolean | null | undefined
 
   /**
    * Node type.
