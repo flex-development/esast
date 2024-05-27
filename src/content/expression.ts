@@ -5,6 +5,7 @@
 
 import type {
   ArithmeticExpression,
+  AsExpression,
   AssignmentExpression,
   AtomicExpressionMap,
   AwaitExpression,
@@ -13,6 +14,7 @@ import type {
   EqualityExpression,
   LogicalExpression,
   RelationalExpression,
+  SatisfiesExpression,
   SequenceExpression,
   SubscriptExpressionMap,
   UnaryExpression,
@@ -45,6 +47,7 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  */
 interface ExpressionMap extends AtomicExpressionMap, SubscriptExpressionMap {
   arithmeticExpression: ArithmeticExpression
+  asExpression: AsExpression
   assignmentExpression: AssignmentExpression
   awaitExpression: AwaitExpression
   bitwiseExpression: BitwiseExpression
@@ -52,6 +55,7 @@ interface ExpressionMap extends AtomicExpressionMap, SubscriptExpressionMap {
   equalityExpression: EqualityExpression
   logicalExpression: LogicalExpression
   relationalExpression: RelationalExpression
+  satisfiesExpression: SatisfiesExpression
   sequenceExpression: SequenceExpression
   unaryExpression: UnaryExpression
   yieldExpression: YieldExpression

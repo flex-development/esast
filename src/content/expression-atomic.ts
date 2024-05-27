@@ -9,8 +9,6 @@ import type {
   ClassExpression,
   FunctionExpression,
   Identifier,
-  ImportExpression,
-  ImportMeta,
   LiteralMap,
   ModuleExpression,
   NewExpression,
@@ -52,8 +50,6 @@ interface AtomicExpressionMap extends LiteralMap {
   classExpression: ClassExpression
   functionExpression: FunctionExpression
   identifier: Identifier
-  importExpression: ImportExpression
-  importMeta: ImportMeta
   moduleExpression: ModuleExpression
   newExpression: NewExpression
   objectExpression: ObjectExpression

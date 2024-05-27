@@ -10,8 +10,6 @@ import type {
   ClassExpression,
   FunctionExpression,
   Identifier,
-  ImportExpression,
-  ImportMeta,
   LiteralMap,
   ModuleExpression,
   NewExpression,
@@ -65,16 +63,6 @@ describe('unit-d:content/atomicExpression', () => {
     it('should match NodeObject<Identifier>', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
         .toMatchTypeOf<NodeObject<Identifier>>()
-    })
-
-    it('should match NodeObject<ImportExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ImportExpression>>()
-    })
-
-    it('should match NodeObject<ImportMeta>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ImportMeta>>()
     })
 
     it('should match NodeObject<ModuleExpression>', () => {

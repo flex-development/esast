@@ -6,6 +6,7 @@
 import type { NodeObject } from '#tests/types'
 import type {
   ArithmeticExpression,
+  AsExpression,
   AssignmentExpression,
   AtomicExpressionMap,
   AwaitExpression,
@@ -14,6 +15,7 @@ import type {
   EqualityExpression,
   LogicalExpression,
   RelationalExpression,
+  SatisfiesExpression,
   SequenceExpression,
   SubscriptExpressionMap,
   UnaryExpression,
@@ -46,6 +48,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<ArithmeticExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<ArithmeticExpression>>()
+    })
+
+    it('should match NodeObject<AsExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<AsExpression>>()
     })
 
     it('should match NodeObject<AssignmentExpression>', () => {
@@ -81,6 +88,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<RelationalExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<RelationalExpression>>()
+    })
+
+    it('should match NodeObject<SatisfiesExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<SatisfiesExpression>>()
     })
 
     it('should match NodeObject<SequenceExpression>', () => {

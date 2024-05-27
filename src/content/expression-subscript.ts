@@ -4,11 +4,11 @@
  */
 
 import type {
-  AsExpression,
   CallExpression,
+  ImportExpression,
+  ImportMeta,
   MemberExpression,
   NonNullExpression,
-  SatisfiesExpression,
   TaggedTemplateExpression,
   UpdateExpression
 } from '@flex-development/esast'
@@ -36,11 +36,11 @@ type SubscriptExpression = SubscriptExpressionMap[keyof SubscriptExpressionMap]
  *  }
  */
 interface SubscriptExpressionMap {
-  asExpression: AsExpression
   callExpression: CallExpression
+  importExpression: ImportExpression
+  importMeta: ImportMeta
   memberExpression: MemberExpression
   nonNullExpression: NonNullExpression
-  satisfiesExpression: SatisfiesExpression
   taggedTemplateExpression: TaggedTemplateExpression
   updateExpression: UpdateExpression
 }

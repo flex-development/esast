@@ -5,11 +5,11 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
-  AsExpression,
   CallExpression,
+  ImportExpression,
+  ImportMeta,
   MemberExpression,
   NonNullExpression,
-  SatisfiesExpression,
   TaggedTemplateExpression,
   UpdateExpression
 } from '@flex-development/esast'
@@ -28,14 +28,19 @@ describe('unit-d:content/subscriptExpression', () => {
   })
 
   describe('SubscriptExpressionMap', () => {
-    it('should match NodeObject<AsExpression>', () => {
-      expectTypeOf<TestSubject.SubscriptExpressionMap>()
-        .toMatchTypeOf<NodeObject<AsExpression>>()
-    })
-
     it('should match NodeObject<CallExpression>', () => {
       expectTypeOf<TestSubject.SubscriptExpressionMap>()
         .toMatchTypeOf<NodeObject<CallExpression>>()
+    })
+
+    it('should match NodeObject<ImportExpression>', () => {
+      expectTypeOf<TestSubject.SubscriptExpressionMap>()
+        .toMatchTypeOf<NodeObject<ImportExpression>>()
+    })
+
+    it('should match NodeObject<ImportMeta>', () => {
+      expectTypeOf<TestSubject.SubscriptExpressionMap>()
+        .toMatchTypeOf<NodeObject<ImportMeta>>()
     })
 
     it('should match NodeObject<MemberExpression>', () => {
@@ -46,11 +51,6 @@ describe('unit-d:content/subscriptExpression', () => {
     it('should match NodeObject<NonNullExpression>', () => {
       expectTypeOf<TestSubject.SubscriptExpressionMap>()
         .toMatchTypeOf<NodeObject<NonNullExpression>>()
-    })
-
-    it('should match NodeObject<SatisfiesExpression>', () => {
-      expectTypeOf<TestSubject.SubscriptExpressionMap>()
-        .toMatchTypeOf<NodeObject<SatisfiesExpression>>()
     })
 
     it('should match NodeObject<TaggedTemplateExpression>', () => {
