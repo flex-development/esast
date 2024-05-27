@@ -33,7 +33,6 @@ describe('unit-d:esast', () => {
         | docast.DocastNode
         | mdast.Nodes
         | TestSubject.Comment
-        | TestSubject.ExpressionStatement
         | TestSubject.MethodProperty
         | TestSubject.TemplateLiteral
       >
@@ -44,12 +43,6 @@ describe('unit-d:esast', () => {
 
     it('should not include Comment', () => {
       expectTypeOf<Subject>().extract<TestSubject.Comment>().toBeNever()
-    })
-
-    it('should not include ExpressionStatement', () => {
-      expectTypeOf<Subject>()
-        .extract<TestSubject.ExpressionStatement>()
-        .toBeNever()
     })
 
     it('should not include MethodProperty', () => {

@@ -4,6 +4,7 @@
  */
 
 import type {
+  Comments,
   Data,
   Expression,
   Parent,
@@ -30,10 +31,11 @@ interface ExpressionStatement extends Parent {
   /**
    * List of children.
    *
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    * @see {@linkcode SpreadElement}
    */
-  children: [expression: Expression | SpreadElement]
+  children: [expression: Expression | SpreadElement, ...comments: Comments]
 
   /**
    * Info from the ecosystem.
