@@ -19,6 +19,8 @@ interface HashbangCommentData extends CommentData {}
  * A hashbang comment.
  *
  * @see {@linkcode Comment}
+ * @see https://github.com/tc39/proposal-hashbang
+ * @see https://tc39.es/proposal-hashbang/out.html
  *
  * @extends {Comment}
  */
@@ -45,4 +47,4 @@ interface HashbangComment extends Comment {
   kind: Extract<CommentKind, 'hashbang'>
 }
 
-export type { HashbangCommentData, HashbangComment as default }
+export type { HashbangComment as default, HashbangCommentData }
