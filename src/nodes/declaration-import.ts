@@ -8,10 +8,12 @@ import type {
   CallExpression,
   Comments,
   Data,
+  FromClause,
   Identifier,
   ImportAssertion,
   ImportKind,
   ImportSpecifiers,
+  NamespaceImport,
   Parent,
   StringLiteral
 } from '@flex-development/esast'
@@ -45,39 +47,82 @@ interface ImportDeclaration extends Parent {
    *
    * @see {@linkcode CallExpression}
    * @see {@linkcode Comments}
+   * @see {@linkcode FromClause}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
    * @see {@linkcode ImportSpecifiers}
+   * @see {@linkcode NamespaceImport}
    * @see {@linkcode StringLiteral}
    */
   children:
+    // default + named/namespace
     | [
       ...comments: Comments,
-      left: ImportSpecifiers,
+      import: Identifier,
       ...comments: InternalComments,
-      right: CallExpression
+      imports: ImportSpecifiers | NamespaceImport,
+      ...comments: InternalComments,
+      from: FromClause,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      import: Identifier,
+      ...comments: InternalComments,
+      imports: ImportSpecifiers | NamespaceImport,
+      ...comments: InternalComments,
+      from: FromClause,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
+    ]
+    // default/named/namespace
+    | [
+      ...comments: Comments,
+      imports: Identifier | ImportSpecifiers | NamespaceImport,
+      ...comments: InternalComments,
+      from: FromClause,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      imports: Identifier | ImportSpecifiers | NamespaceImport,
+      ...comments: InternalComments,
+      from: FromClause,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
+    ]
+    // assignment
+    | [
+      ...comments: Comments,
+      left: Identifier,
+      ...comments: InternalComments,
+      right: CallExpression,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      left: Identifier,
+      ...comments: InternalComments,
+      right: CallExpression,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
+    ]
+    // effect
+    | [
+      ...comments: Comments,
+      source: Identifier | StringLiteral,
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
       source: Identifier | StringLiteral,
       ...comments: InternalComments,
-      attributes: ImportAssertion
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
-    | [
-      ...comments: Comments,
-      specifiers: ImportSpecifiers,
-      ...comments: InternalComments,
-      source: Identifier | StringLiteral
-    ]
-    | [
-      ...comments: Comments,
-      specifiers: ImportSpecifiers,
-      ...comments: InternalComments,
-      source: StringLiteral,
-      ...comments: InternalComments,
-      attributes: ImportAssertion
-    ]
-    | [...comments: Comments, source: Identifier | StringLiteral]
 
   /**
    * Info from the ecosystem.
@@ -99,4 +144,4 @@ interface ImportDeclaration extends Parent {
   type: 'importDeclaration'
 }
 
-export type { ImportDeclarationData, ImportDeclaration as default }
+export type { ImportDeclaration as default, ImportDeclarationData }

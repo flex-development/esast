@@ -3,7 +3,7 @@
  * @module esast/nodes/tests/unit-d/ClassExpression
  */
 
-import type { Data, Parent } from '@flex-development/esast'
+import type { ClassLike, Data } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
 import type * as TestSubject from '../expression-class'
 
@@ -11,8 +11,8 @@ describe('unit-d:nodes/ClassExpression', () => {
   type Subject = TestSubject.default
   type SubjectData = TestSubject.ClassExpressionData
 
-  it('should extend Parent', () => {
-    expectTypeOf<Subject>().toMatchTypeOf<Parent>()
+  it('should extend ClassLike', () => {
+    expectTypeOf<Subject>().toMatchTypeOf<ClassLike>()
   })
 
   it('should match [data?: ClassExpressionData | undefined]', () => {

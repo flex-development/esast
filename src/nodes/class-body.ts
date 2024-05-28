@@ -7,11 +7,11 @@ import type {
   Comment,
   Data,
   Decorator,
+  FieldDefinition,
   IndexSignature,
   MethodDefinition,
   MethodSignature,
   Parent,
-  PropertyDefinition,
   StaticBlock
 } from '@flex-development/esast'
 
@@ -37,19 +37,19 @@ interface ClassBody extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode Decorator}
+   * @see {@linkcode FieldDefinition}
    * @see {@linkcode IndexSignature}
    * @see {@linkcode MethodDefinition}
    * @see {@linkcode MethodSignature}
-   * @see {@linkcode PropertyDefinition}
    * @see {@linkcode StaticBlock}
    */
   children: (
     | Comment
     | Decorator
+    | FieldDefinition
     | IndexSignature
     | MethodDefinition
     | MethodSignature
-    | PropertyDefinition
     | StaticBlock
   )[]
 

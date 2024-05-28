@@ -5,13 +5,16 @@
 
 import type {
   Comment,
+  Comments,
   Data,
+  EmptyChildren,
   ExportSpecifier,
+  Nothing,
   Parent
 } from '@flex-development/esast'
 
 /**
- * Info associated with export specifiers.
+ * Info associated with named exports.
  *
  * @see {@linkcode Data}
  *
@@ -20,7 +23,7 @@ import type {
 interface ExportSpecifiersData extends Data {}
 
 /**
- * A collection of export specifiers.
+ * A named export specifier list.
  *
  * @see {@linkcode Parent}
  *
@@ -32,8 +35,9 @@ interface ExportSpecifiers extends Parent {
    *
    * @see {@linkcode Comment}
    * @see {@linkcode ExportSpecifier}
+   * @see {@linkcode Nothing}
    */
-  children: (Comment | ExportSpecifier)[]
+  children: (Comment | ExportSpecifier | Nothing)[] | Comments | EmptyChildren
 
   /**
    * Info from the ecosystem.
@@ -48,4 +52,4 @@ interface ExportSpecifiers extends Parent {
   type: 'exportSpecifiers'
 }
 
-export type { ExportSpecifiersData, ExportSpecifiers as default }
+export type { ExportSpecifiers as default, ExportSpecifiersData }

@@ -3,7 +3,12 @@
  * @module esast/nodes/StaticBlock
  */
 
-import type { Comment, Data, Parent, Statement } from '@flex-development/esast'
+import type {
+  Comments,
+  Data,
+  Parent,
+  StaticBlockBody
+} from '@flex-development/esast'
 
 /**
  * Info associated with static initialization blocks.
@@ -27,10 +32,10 @@ interface StaticBlock extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
-   * @see {@linkcode Statement}
+   * @see {@linkcode Comments}
+   * @see {@linkcode StaticBlockBody}
    */
-  children: (Comment | Statement)[]
+  children: [...comments: Comments, body: StaticBlockBody]
 
   /**
    * Info from the ecosystem.
@@ -45,4 +50,4 @@ interface StaticBlock extends Parent {
   type: 'staticBlock'
 }
 
-export type { StaticBlockData, StaticBlock as default }
+export type { StaticBlock as default, StaticBlockData }

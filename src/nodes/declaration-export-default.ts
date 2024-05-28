@@ -3,15 +3,15 @@
  * @module esast/nodes/ExportDefaultDeclaration
  */
 
+import type { InternalComments } from '#internal'
 import type {
   ClassDeclaration,
-  Comment,
   Comments,
-  Decorator,
   ExportDeclaration,
   ExportKind,
   Expression,
   FunctionDeclaration,
+  FunctionSignature,
   ModuleDeclaration
 } from '@flex-development/esast'
 
@@ -27,11 +27,10 @@ interface ExportDefaultDeclaration extends ExportDeclaration {
    * List of children.
    *
    * @see {@linkcode ClassDeclaration}
-   * @see {@linkcode Decorator}
    * @see {@linkcode Comments}
-   * @see {@linkcode Comment}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionDeclaration}
+   * @see {@linkcode FunctionSignature}
    * @see {@linkcode ModuleDeclaration}
    */
   children:
@@ -39,11 +38,15 @@ interface ExportDefaultDeclaration extends ExportDeclaration {
       ...comments: Comments,
       declaration:
         | ClassDeclaration
-        | Expression
         | FunctionDeclaration
+        | FunctionSignature
         | ModuleDeclaration
     ]
-    | [...(Comment | Decorator)[], declaration: ClassDeclaration]
+    | [
+      ...comments: Comments,
+      declaration: Expression,
+      ...comments: InternalComments
+    ]
 
   /**
    * Export declaration kind.

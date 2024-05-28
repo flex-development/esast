@@ -3,8 +3,8 @@
  * @module esast/nodes/ContinueStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   EmptyChildren,
@@ -32,10 +32,13 @@ interface ContinueStatement extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Identifier}
    */
-  children: EmptyChildren | [...comments: Comments, label: Identifier]
+  children:
+    | Comments
+    | EmptyChildren
+    | [...comments: Comments, label: Identifier, ...comments: InternalComments]
 
   /**
    * Info from the ecosystem.

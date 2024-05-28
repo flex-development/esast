@@ -3,6 +3,7 @@
  * @module esast/nodes/ExportAssignment
  */
 
+import type { InternalComments } from '#internal'
 import type {
   Comments,
   ExportDeclaration,
@@ -24,7 +25,11 @@ interface ExportAssignment extends ExportDeclaration {
    * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: [...comments: Comments, right: Expression]
+  children: [
+    ...comments: Comments,
+    right: Expression,
+    ...comments: InternalComments
+  ]
 
   /**
    * Export declaration kind.

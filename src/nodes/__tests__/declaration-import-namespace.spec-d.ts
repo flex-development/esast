@@ -1,15 +1,12 @@
 /**
- * @file Type Tests - ImportAllDeclaration
- * @module esast/nodes/tests/unit-d/ImportAllDeclaration
+ * @file Type Tests - ImportNamespaceDeclaration
+ * @module esast/nodes/tests/unit-d/ImportNamespaceDeclaration
  */
 
-import type {
-  ImportDeclaration,
-  ImportKind
-} from '@flex-development/esast'
-import type * as TestSubject from '../declaration-import-all'
+import type { ImportDeclaration, ImportKind } from '@flex-development/esast'
+import type * as TestSubject from '../declaration-import-namespace'
 
-describe('unit-d:nodes/ImportAllDeclaration', () => {
+describe('unit-d:nodes/ImportNamespaceDeclaration', () => {
   type Subject = TestSubject.default
 
   it('should extend ImportDeclaration', () => {

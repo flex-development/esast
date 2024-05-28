@@ -6,8 +6,9 @@
 import type { InternalComments } from '#internal'
 import type {
   Comments,
+  ComputedExpression,
   Data,
-  Expression,
+  DecoratorList,
   FunctionExpression,
   MethodKind,
   ModifierList,
@@ -36,7 +37,8 @@ interface MethodDefinition extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ComputedExpression}
+   * @see {@linkcode DecoratorList}
    * @see {@linkcode FunctionExpression}
    * @see {@linkcode ModifierList}
    * @see {@linkcode PropertyName}
@@ -44,18 +46,45 @@ interface MethodDefinition extends Parent {
   children:
     | [
       ...comments: Comments,
-      name: Expression,
+      name: ComputedExpression | PropertyName,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [
+      decorators: DecoratorList,
+      ...comments: Comments,
+      modifiers: ModifierList,
+      ...comments: InternalComments,
+      name: ComputedExpression | PropertyName,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [
+      decorators: DecoratorList,
+      ...comments: Comments,
+      name: ComputedExpression | PropertyName,
+      ...comments: InternalComments,
+      value: FunctionExpression
+    ]
+    | [
+      decorators: DecoratorList,
+      ...comments: Comments,
+      name: ComputedExpression | PropertyName,
       ...comments: InternalComments,
       value: FunctionExpression
     ]
     | [
       modifiers: ModifierList,
       ...comments: Comments,
-      name: Expression,
+      name: ComputedExpression | PropertyName,
       ...comments: InternalComments,
       value: FunctionExpression
     ]
-    | [name: PropertyName, ...comments: Comments, value: FunctionExpression]
+    | [
+      name: ComputedExpression | PropertyName,
+      ...comments: Comments,
+      value: FunctionExpression
+    ]
 
   /**
    * Boolean indicating if method name is computed.

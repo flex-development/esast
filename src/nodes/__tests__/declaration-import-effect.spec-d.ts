@@ -3,10 +3,7 @@
  * @module esast/nodes/tests/unit-d/ImportEffectDeclaration
  */
 
-import type {
-  ImportDeclaration,
-  ImportKind
-} from '@flex-development/esast'
+import type { ImportDeclaration, ImportKind } from '@flex-development/esast'
 import type * as TestSubject from '../declaration-import-effect'
 
 describe('unit-d:nodes/ImportEffectDeclaration', () => {

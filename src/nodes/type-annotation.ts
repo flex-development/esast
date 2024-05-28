@@ -3,11 +3,9 @@
  * @module esast/nodes/TypeAnnotation
  */
 
-import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
-  ModifierList,
   Parent,
   TypeExpression
 } from '@flex-development/esast'
@@ -33,17 +31,9 @@ interface TypeAnnotation extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode ModifierList}
    * @see {@linkcode TypeExpression}
    */
-  children:
-    | [
-      ...comments: Comments,
-      modifiers: ModifierList,
-      ...comments: InternalComments,
-      type: TypeExpression
-    ]
-    | [...comments: Comments, type: TypeExpression]
+  children: [...comments: Comments, type: TypeExpression]
 
   /**
    * Info from the ecosystem.
@@ -69,4 +59,4 @@ interface TypeAnnotation extends Parent {
   type: 'typeAnnotation'
 }
 
-export type { TypeAnnotationData, TypeAnnotation as default }
+export type { TypeAnnotation as default, TypeAnnotationData }

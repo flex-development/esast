@@ -1,6 +1,6 @@
 /**
- * @file Nodes - ExportAllDeclaration
- * @module esast/nodes/ExportAllDeclaration
+ * @file Nodes - ExportNamespaceDeclaration
+ * @module esast/nodes/ExportNamespaceDeclaration
  */
 
 import type { InternalComments } from '#internal'
@@ -8,45 +8,45 @@ import type {
   Comments,
   ExportDeclaration,
   ExportKind,
-  ExportSpecifiers,
-  Identifier,
+  FromClause,
   ImportAssertion,
-  StringLiteral
+  NamespaceExport
 } from '@flex-development/esast'
 
 /**
- * An aggregate `export` declaration.
+ * A namespace `export` declaration.
  *
  * @see {@linkcode ExportDeclaration}
  *
  * @extends {ExportDeclaration}
  */
-interface ExportAllDeclaration extends ExportDeclaration {
+interface ExportNamespaceDeclaration extends ExportDeclaration {
   /**
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode ExportSpecifiers}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode FromClause}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode StringLiteral}
+   * @see {@linkcode NamespaceExport}
+   * @see {@linkcode FromClause}
    */
   children:
     | [
       ...comments: Comments,
-      specifiers: ExportSpecifiers,
+      specifiers: NamespaceExport,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral
+      from: FromClause,
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
-      specifiers: ExportSpecifiers,
+      specifiers: NamespaceExport,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral,
+      from: FromClause,
       ...comments: InternalComments,
-      attributes: ImportAssertion
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
-    | [...comments: Comments, source: Identifier | StringLiteral]
 
   /**
    * Export declaration kind.
@@ -56,4 +56,4 @@ interface ExportAllDeclaration extends ExportDeclaration {
   kind: Extract<ExportKind, 'namespace'>
 }
 
-export type { ExportAllDeclaration as default }
+export type { ExportNamespaceDeclaration as default }

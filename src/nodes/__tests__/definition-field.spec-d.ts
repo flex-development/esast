@@ -1,15 +1,15 @@
 /**
- * @file Type Tests - PropertyDefinition
- * @module esast/nodes/tests/unit-d/PropertyDefinition
+ * @file Type Tests - FieldDefinition
+ * @module esast/nodes/tests/unit-d/FieldDefinition
  */
 
 import type { Data, Parent } from '@flex-development/esast'
 import type { Optional } from '@flex-development/tutils'
-import type * as TestSubject from '../definition-property'
+import type * as TestSubject from '../definition-field'
 
-describe('unit-d:nodes/PropertyDefinition', () => {
+describe('unit-d:nodes/FieldDefinition', () => {
   type Subject = TestSubject.default
-  type SubjectData = TestSubject.PropertyDefinitionData
+  type SubjectData = TestSubject.FieldDefinitionData
 
   it('should extend Parent', () => {
     expectTypeOf<Subject>().toMatchTypeOf<Parent>()
@@ -19,7 +19,7 @@ describe('unit-d:nodes/PropertyDefinition', () => {
     expectTypeOf<Subject>().toHaveProperty('computed').toEqualTypeOf<boolean>()
   })
 
-  it('should match [data?: PropertyDefinitionData | undefined]', () => {
+  it('should match [data?: FieldDefinitionData | undefined]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('data')
       .toEqualTypeOf<Optional<SubjectData>>()
@@ -29,13 +29,13 @@ describe('unit-d:nodes/PropertyDefinition', () => {
     expectTypeOf<Subject>().toHaveProperty('static').toEqualTypeOf<boolean>()
   })
 
-  it('should match [type: "propertyDefinition"]', () => {
+  it('should match [type: "fieldDefinition"]', () => {
     expectTypeOf<Subject>()
       .toHaveProperty('type')
-      .toEqualTypeOf<'propertyDefinition'>()
+      .toEqualTypeOf<'fieldDefinition'>()
   })
 
-  describe('PropertyDefinitionData', () => {
+  describe('FieldDefinitionData', () => {
     it('should extend Data', () => {
       expectTypeOf<SubjectData>().toMatchTypeOf<Data>()
     })

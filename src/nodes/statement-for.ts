@@ -72,4 +72,4 @@ interface ForStatement extends Parent {
   type: 'forStatement'
 }
 
-export type { ForStatementData, ForStatement as default }
+export type { ForStatement as default, ForStatementData }

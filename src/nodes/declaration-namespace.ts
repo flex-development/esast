@@ -9,7 +9,8 @@ import type {
   Data,
   Identifier,
   ModuleBody,
-  Parent
+  Parent,
+  StringLiteral
 } from '@flex-development/esast'
 
 /**
@@ -34,11 +35,13 @@ interface NamespaceDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode Identifier}
    * @see {@linkcode ModuleBody}
+   * @see {@linkcode StringLiteral}
    */
   children: [
     ...comments: Comments,
-    id: Identifier,
+    id: Identifier | StringLiteral,
     ...comments: InternalComments,
     body: ModuleBody
   ]

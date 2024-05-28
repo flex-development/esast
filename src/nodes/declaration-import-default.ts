@@ -6,12 +6,11 @@
 import type { InternalComments } from '#internal'
 import type {
   Comments,
+  FromClause,
   Identifier,
   ImportAssertion,
   ImportDeclaration,
-  ImportKind,
-  ImportSpecifiers,
-  StringLiteral
+  ImportKind
 } from '@flex-development/esast'
 
 /**
@@ -26,25 +25,26 @@ interface ImportDefaultDeclaration extends ImportDeclaration {
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode FromClause}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportSpecifiers}
-   * @see {@linkcode StringLiteral}
    */
   children:
     | [
       ...comments: Comments,
-      specifiers: ImportSpecifiers,
+      imports: Identifier,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral
+      from: FromClause,
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
-      specifiers: ImportSpecifiers,
+      imports: Identifier,
       ...comments: InternalComments,
-      source: StringLiteral,
+      from: FromClause,
       ...comments: InternalComments,
-      attributes: ImportAssertion
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
 
   /**

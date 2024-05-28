@@ -12,6 +12,11 @@ export type {
 } from './assertion-predicate'
 export type { default as CatchClause, CatchClauseData } from './catch-clause'
 export type { default as ClassBody, ClassBodyData } from './class-body'
+export type {
+  default as ClassHeritage,
+  ClassHeritageData
+} from './class-heritage'
+export type { default as ClassLike } from './class-like'
 export type { default as Comment, CommentData } from './comment'
 export type { default as BlockComment, BlockCommentData } from './comment-block'
 export type {
@@ -39,13 +44,15 @@ export type {
   default as ExportDeclaration,
   ExportDeclarationData
 } from './declaration-export'
-export type { default as ExportAllDeclaration } from './declaration-export-all'
 export type {
   default as ExportDefaultDeclaration
 } from './declaration-export-default'
 export type {
   default as ExportNamedDeclaration
 } from './declaration-export-named'
+export type {
+  default as ExportNamespaceDeclaration
+} from './declaration-export-namespace'
 export type {
   default as FunctionDeclaration,
   FunctionDeclarationData
@@ -54,7 +61,6 @@ export type {
   default as ImportDeclaration,
   ImportDeclarationData
 } from './declaration-import'
-export type { default as ImportAllDeclaration } from './declaration-import-all'
 export type {
   default as ImportDefaultDeclaration
 } from './declaration-import-default'
@@ -62,8 +68,14 @@ export type {
   default as ImportEffectDeclaration
 } from './declaration-import-effect'
 export type {
+  default as MixedImportDeclaration
+} from './declaration-import-mixed'
+export type {
   default as ImportNamedDeclaration
 } from './declaration-import-named'
+export type {
+  default as ImportNamespaceDeclaration
+} from './declaration-import-namespace'
 export type {
   default as InterfaceDeclaration,
   InterfaceDeclarationData
@@ -86,13 +98,17 @@ export type {
 } from './declaration-variable'
 export type { default as Decorator, DecoratorData } from './decorator'
 export type {
+  default as DecoratorList,
+  DecoratorListData
+} from './decorator-list'
+export type {
+  default as FieldDefinition,
+  FieldDefinitionData
+} from './definition-field'
+export type {
   default as MethodDefinition,
   MethodDefinitionData
 } from './definition-method'
-export type {
-  default as PropertyDefinition,
-  PropertyDefinitionData
-} from './definition-property'
 export type { default as Directive, DirectiveData } from './directive'
 export type { default as RestElement, RestElementData } from './element-rest'
 export type {
@@ -139,6 +155,10 @@ export type {
   default as ClassExpression,
   ClassExpressionData
 } from './expression-class'
+export type {
+  default as ComputedExpression,
+  ComputedExpressionData
+} from './expression-computed'
 export type {
   default as ConditionalExpression,
   ConditionalExpressionData
@@ -228,6 +248,8 @@ export type {
   ExtendsClauseData
 } from './extends-clause'
 export type { default as FinallyBlock, FinallyBlockData } from './finally-block'
+export type { default as FromClause, FromClauseData } from './from-clause'
+export type { default as FunctionLike } from './function-like'
 export type { default as Identifier, IdentifierData } from './identifier'
 export type { default as DefaultIdentifier } from './identifier-default'
 export type { default as ImportIdentifier } from './identifier-import'
@@ -260,11 +282,16 @@ export type { default as RegExpLiteral } from './literal-regexp'
 export type { default as StringLiteral } from './literal-string'
 export type { default as UndefinedLiteral } from './literal-undefined'
 export type { default as Modifier } from './modifier'
-export type {
-  default as ModifierList,
-  ModifierListData
-} from './modifier-list'
+export type { default as ModifierList, ModifierListData } from './modifier-list'
 export type { default as ModuleBody, ModuleBodyData } from './module-body'
+export type {
+  default as NamespaceExport,
+  NamespaceExportData
+} from './namespace-export'
+export type {
+  default as NamespaceImport,
+  NamespaceImportData
+} from './namespace-import'
 export type { default as Node } from './node'
 export type { default as Nothing } from './nothing'
 export type { default as Parameter, ParameterData } from './parameter'
@@ -357,6 +384,10 @@ export type {
   DoWhileStatementData
 } from './statement-do-while'
 export type {
+  default as ElseStatement,
+  ElseStatementData
+} from './statement-else'
+export type {
   default as EmptyStatement,
   EmptyStatementData
 } from './statement-empty'
@@ -401,6 +432,10 @@ export type {
   WithStatementData
 } from './statement-with'
 export type { default as StaticBlock, StaticBlockData } from './static-block'
+export type {
+  default as StaticBlockBody,
+  StaticBlockBodyData
+} from './static-block-body'
 export type { default as Super, SuperData } from './super'
 export type { default as SwitchBody, SwitchBodyData } from './switch-body'
 export type { default as SwitchCase, SwitchCaseData } from './switch-case'

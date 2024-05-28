@@ -8,8 +8,8 @@ import type {
   Comment,
   Comments,
   Data,
-  Expression,
   Parent,
+  ParenthesizedExpression,
   Statement
 } from '@flex-development/esast'
 
@@ -34,14 +34,15 @@ interface DoWhileStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ParenthesizedExpression}
    * @see {@linkcode Statement}
    */
   children: [
     ...comments: Comments,
     body: Statement,
     ...comments: InternalComments,
-    test: Expression
+    test: ParenthesizedExpression,
+    ...comments: InternalComments
   ]
 
   /**
@@ -57,4 +58,4 @@ interface DoWhileStatement extends Parent {
   type: 'doWhileStatement'
 }
 
-export type { DoWhileStatementData, DoWhileStatement as default }
+export type { DoWhileStatement as default, DoWhileStatementData }

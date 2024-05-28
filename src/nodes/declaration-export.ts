@@ -5,22 +5,20 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  AmbientDeclaration,
   ClassDeclaration,
-  Comment,
   Comments,
   Data,
   Declaration,
-  Decorator,
   ExportKind,
   ExportSpecifiers,
   Expression,
+  FromClause,
   FunctionDeclaration,
-  Identifier,
+  FunctionSignature,
   ImportAssertion,
   ModuleDeclaration,
-  Parent,
-  StringLiteral
+  NamespaceExport,
+  Parent
 } from '@flex-development/esast'
 
 /**
@@ -50,48 +48,52 @@ interface ExportDeclaration extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode AmbientDeclaration}
-   * @see {@linkcode ClassDeclaration}
    * @see {@linkcode Comments}
-   * @see {@linkcode Comment}
    * @see {@linkcode Declaration}
-   * @see {@linkcode Decorator}
    * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode Expression}
    * @see {@linkcode FunctionDeclaration}
-   * @see {@linkcode Expression}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode FunctionSignature}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode StringLiteral}
+   * @see {@linkcode ModuleDeclaration}
+   * @see {@linkcode NamespaceExport}
    */
   children:
     | [
       ...comments: Comments,
       declaration:
         | ClassDeclaration
-        | Expression
         | FunctionDeclaration
+        | FunctionSignature
         | ModuleDeclaration
     ]
     | [
       ...comments: Comments,
-      specifiers: ExportSpecifiers,
+      expression: Expression,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers | NamespaceExport,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral
+      from: FromClause,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers | NamespaceExport,
+      ...comments: InternalComments,
+      from: FromClause,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
       specifiers: ExportSpecifiers,
-      ...comments: InternalComments,
-      source: Identifier | StringLiteral,
-      ...comments: InternalComments,
-      attributes: ImportAssertion
+      ...comments: InternalComments
     ]
-    | [...(Comment | Decorator)[], declaration: ClassDeclaration]
-    | [...comments: Comments, declaration: AmbientDeclaration | Declaration]
-    | [...comments: Comments, right: Expression]
-    | [...comments: Comments, source: Identifier | StringLiteral]
-    | [...comments: Comments, specifiers: ExportSpecifiers]
+    | [...comments: Comments, declaration: Declaration]
 
   /**
    * Info from the ecosystem.
@@ -113,4 +115,4 @@ interface ExportDeclaration extends Parent {
   type: 'exportDeclaration'
 }
 
-export type { ExportDeclarationData, ExportDeclaration as default }
+export type { ExportDeclaration as default, ExportDeclarationData }

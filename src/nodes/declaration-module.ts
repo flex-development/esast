@@ -36,6 +36,7 @@ interface ModuleDeclaration extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode Identifier}
    * @see {@linkcode ModuleBody}
    * @see {@linkcode StringLiteral}
    */

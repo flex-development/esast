@@ -7,9 +7,10 @@ import type { InternalComments } from '#internal'
 import type {
   CallExpression,
   Comments,
+  Identifier,
+  ImportAssertion,
   ImportDeclaration,
-  ImportKind,
-  ImportSpecifiers
+  ImportKind
 } from '@flex-development/esast'
 
 /**
@@ -25,14 +26,26 @@ interface ImportAssignment extends ImportDeclaration {
    *
    * @see {@linkcode CallExpression}
    * @see {@linkcode Comments}
-   * @see {@linkcode ImportSpecifiers}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode ImportAssertion}
    */
-  children: [
-    ...comments: Comments,
-    left: ImportSpecifiers,
-    ...comments: InternalComments,
-    right: CallExpression
-  ]
+  children:
+    | [
+      ...comments: Comments,
+      left: Identifier,
+      ...comments: InternalComments,
+      right: CallExpression,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      left: Identifier,
+      ...comments: InternalComments,
+      right: CallExpression,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
+    ]
 
   /**
    * Import declaration kind.

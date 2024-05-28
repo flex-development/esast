@@ -9,6 +9,8 @@
 type ImportKind =
   | 'assignment'
   | 'default'
+  | 'default+named'
+  | 'default+namespace'
   | 'effect'
   | 'named'
   | 'namespace'

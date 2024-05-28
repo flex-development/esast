@@ -8,8 +8,8 @@ import type {
   Comment,
   Comments,
   Data,
-  Expression,
   Parent,
+  ParenthesizedExpression,
   Statement
 } from '@flex-development/esast'
 
@@ -34,12 +34,12 @@ interface WhileStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ParenthesizedExpression}
    * @see {@linkcode Statement}
    */
   children: [
     ...comments: Comments,
-    test: Expression,
+    test: ParenthesizedExpression,
     ...comments: InternalComments,
     body: Statement
   ]
@@ -57,4 +57,4 @@ interface WhileStatement extends Parent {
   type: 'whileStatement'
 }
 
-export type { WhileStatementData, WhileStatement as default }
+export type { WhileStatement as default, WhileStatementData }

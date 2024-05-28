@@ -1,50 +1,50 @@
 /**
- * @file Nodes - ImportAllDeclaration
- * @module esast/nodes/ImportAllDeclaration
+ * @file Nodes - ImportNamespaceDeclaration
+ * @module esast/nodes/ImportNamespaceDeclaration
  */
 
 import type { InternalComments } from '#internal'
 import type {
   Comments,
-  Identifier,
+  FromClause,
   ImportAssertion,
   ImportDeclaration,
   ImportKind,
-  ImportSpecifiers,
-  StringLiteral
+  NamespaceImport
 } from '@flex-development/esast'
 
 /**
- * An aggregate `import` declaration.
+ * A namespace `import` declaration.
  *
  * @see {@linkcode ImportDeclaration}
  *
  * @extends {ImportDeclaration}
  */
-interface ImportAllDeclaration extends ImportDeclaration {
+interface ImportNamespaceDeclaration extends ImportDeclaration {
   /**
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode Identifier}
+   * @see {@linkcode FromClause}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode ImportSpecifiers}
-   * @see {@linkcode StringLiteral}
+   * @see {@linkcode NamespaceImport}
    */
   children:
     | [
       ...comments: Comments,
-      specifiers: ImportSpecifiers,
+      imports: NamespaceImport,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral
+      from: FromClause,
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
-      specifiers: ImportSpecifiers,
+      imports: NamespaceImport,
       ...comments: InternalComments,
-      source: StringLiteral,
+      from: FromClause,
       ...comments: InternalComments,
-      attributes: ImportAssertion
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
 
   /**
@@ -55,4 +55,4 @@ interface ImportAllDeclaration extends ImportDeclaration {
   kind: Extract<ImportKind, 'namespace'>
 }
 
-export type { ImportAllDeclaration as default }
+export type { ImportNamespaceDeclaration as default }

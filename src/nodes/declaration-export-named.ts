@@ -5,17 +5,14 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  ClassDeclaration,
-  Comment,
   Comments,
   Declaration,
-  Decorator,
   ExportDeclaration,
   ExportKind,
   ExportSpecifiers,
+  FromClause,
   Identifier,
-  ImportAssertion,
-  StringLiteral
+  ImportAssertion
 } from '@flex-development/esast'
 
 /**
@@ -29,33 +26,36 @@ interface ExportNamedDeclaration extends ExportDeclaration {
   /**
    * List of children.
    *
-   * @see {@linkcode ClassDeclaration}
    * @see {@linkcode Comments}
-   * @see {@linkcode Comment}
    * @see {@linkcode Declaration}
-   * @see {@linkcode Decorator}
    * @see {@linkcode ExportSpecifiers}
    * @see {@linkcode Identifier}
    * @see {@linkcode ImportAssertion}
-   * @see {@linkcode StringLiteral}
+   * @see {@linkcode FromClause}
    */
   children:
     | [
       ...comments: Comments,
       specifiers: ExportSpecifiers,
-      ...comments: InternalComments,
-      source: Identifier | StringLiteral
+      ...comments: InternalComments
     ]
     | [
       ...comments: Comments,
       specifiers: ExportSpecifiers,
       ...comments: InternalComments,
-      source: Identifier | StringLiteral,
+      from: FromClause,
+      ...comments: InternalComments
+    ]
+    | [
+      ...comments: Comments,
+      specifiers: ExportSpecifiers,
       ...comments: InternalComments,
-      attributes: ImportAssertion
+      from: FromClause,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
     ]
     | [...comments: Comments, declaration: Declaration]
-    | [...comments: Comments, specifiers: ExportSpecifiers]
 
   /**
    * Export declaration kind.

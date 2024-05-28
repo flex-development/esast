@@ -8,8 +8,8 @@ import type {
   Comment,
   Comments,
   Data,
-  Expression,
   Parent,
+  ParenthesizedExpression,
   Statement
 } from '@flex-development/esast'
 
@@ -34,12 +34,12 @@ interface WithStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ParenthesizedExpression}
    * @see {@linkcode Statement}
    */
   children: [
     ...comments: Comments,
-    object: Expression,
+    object: ParenthesizedExpression,
     ...comments: InternalComments,
     body: Statement
   ]
@@ -57,4 +57,4 @@ interface WithStatement extends Parent {
   type: 'withStatement'
 }
 
-export type { WithStatementData, WithStatement as default }
+export type { WithStatement as default, WithStatementData }

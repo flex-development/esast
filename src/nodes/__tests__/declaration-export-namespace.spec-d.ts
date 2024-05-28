@@ -1,15 +1,15 @@
 /**
- * @file Type Tests - ExportAllDeclaration
- * @module esast/nodes/tests/unit-d/ExportAllDeclaration
+ * @file Type Tests - ExportNamespaceDeclaration
+ * @module esast/nodes/tests/unit-d/ExportNamespaceDeclaration
  */
 
 import type {
   ExportDeclaration,
   ExportKind
 } from '@flex-development/esast'
-import type * as TestSubject from '../declaration-export-all'
+import type * as TestSubject from '../declaration-export-namespace'
 
-describe('unit-d:nodes/ExportAllDeclaration', () => {
+describe('unit-d:nodes/ExportNamespaceDeclaration', () => {
   type Subject = TestSubject.default
 
   it('should extend ExportDeclaration', () => {

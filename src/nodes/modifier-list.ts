@@ -34,8 +34,8 @@ interface ModifierList extends Parent {
    * @see {@linkcode Modifier}
    */
   children:
-    | [first: Modifier, ...(Comment | Modifier)[], last: Modifier]
-    | [Modifier]
+    | [first: Modifier, ...middle: (Comment | Modifier)[], last: Modifier]
+    | [first: Modifier]
 
   /**
    * Info from the ecosystem.
@@ -50,4 +50,4 @@ interface ModifierList extends Parent {
   type: 'modifierList'
 }
 
-export type { ModifierListData, ModifierList as default }
+export type { ModifierList as default, ModifierListData }

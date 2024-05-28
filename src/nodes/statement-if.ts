@@ -5,11 +5,11 @@
 
 import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
-  Expression,
+  ElseStatement,
   Parent,
+  ParenthesizedExpression,
   Statement
 } from '@flex-development/esast'
 
@@ -33,24 +33,24 @@ interface IfStatement extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
-   * @see {@linkcode Expression}
+   * @see {@linkcode Comments}
+   * @see {@linkcode ParenthesizedExpression}
    * @see {@linkcode Statement}
    */
   children:
     | [
       ...comments: Comments,
-      test: Expression,
+      test: ParenthesizedExpression,
       ...comments: InternalComments,
       consequent: Statement
     ]
     | [
       ...comments: Comments,
-      test: Expression,
+      test: ParenthesizedExpression,
       ...comments: InternalComments,
       consequent: Statement,
       ...comments: InternalComments,
-      alternate: Statement
+      alternate: ElseStatement
     ]
 
   /**
@@ -66,4 +66,4 @@ interface IfStatement extends Parent {
   type: 'ifStatement'
 }
 
-export type { IfStatementData, IfStatement as default }
+export type { IfStatement as default, IfStatementData }

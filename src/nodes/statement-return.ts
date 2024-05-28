@@ -3,8 +3,8 @@
  * @module esast/nodes/ReturnStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   EmptyChildren,
@@ -32,10 +32,17 @@ interface ReturnStatement extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: EmptyChildren | [...comments: Comments, argument: Expression]
+  children:
+    | Comments
+    | EmptyChildren
+    | [
+      ...comments: Comments,
+      argument: Expression,
+      ...comments: InternalComments
+    ]
 
   /**
    * Info from the ecosystem.
@@ -50,4 +57,4 @@ interface ReturnStatement extends Parent {
   type: 'returnStatement'
 }
 
-export type { ReturnStatementData, ReturnStatement as default }
+export type { ReturnStatement as default, ReturnStatementData }

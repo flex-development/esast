@@ -33,10 +33,15 @@ interface ImportEffectDeclaration extends ImportDeclaration {
     | [
       ...comments: Comments,
       source: Identifier | StringLiteral,
-      ...comments: InternalComments,
-      attributes: ImportAssertion
+      ...comments: InternalComments
     ]
-    | [...comments: Comments, source: Identifier | StringLiteral]
+    | [
+      ...comments: Comments,
+      source: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      attributes: ImportAssertion,
+      ...comments: InternalComments
+    ]
 
   /**
    * Import declaration kind.

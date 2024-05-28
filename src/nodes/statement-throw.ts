@@ -3,8 +3,8 @@
  * @module esast/nodes/ThrowStatement
  */
 
+import type { InternalComments } from '#internal'
 import type {
-  Comment,
   Comments,
   Data,
   Expression,
@@ -31,10 +31,14 @@ interface ThrowStatement extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode Comment}
+   * @see {@linkcode Comments}
    * @see {@linkcode Expression}
    */
-  children: [...comments: Comments, argument: Expression]
+  children: [
+    ...comments: Comments,
+    argument: Expression,
+    ...comments: InternalComments
+  ]
 
   /**
    * Info from the ecosystem.
@@ -49,4 +53,4 @@ interface ThrowStatement extends Parent {
   type: 'throwStatement'
 }
 
-export type { ThrowStatementData, ThrowStatement as default }
+export type { ThrowStatement as default, ThrowStatementData }

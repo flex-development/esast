@@ -7,8 +7,8 @@ import type { InternalComments } from '#internal'
 import type {
   Comments,
   Data,
-  Expression,
   Parent,
+  ParenthesizedExpression,
   SwitchBody,
   SwitchCase
 } from '@flex-development/esast'
@@ -34,13 +34,13 @@ interface SwitchStatement extends Parent {
    * List of children.
    *
    * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ParenthesizedExpression}
    * @see {@linkcode SwitchBody}
    * @see {@linkcode SwitchCase}
    */
   children: [
     ...comments: Comments,
-    discriminant: Expression,
+    discriminant: ParenthesizedExpression,
     ...comments: InternalComments,
     body: SwitchBody
   ]

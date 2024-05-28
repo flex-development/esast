@@ -14,6 +14,14 @@ describe('unit-d:types/ImportKind', () => {
     expectTypeOf<TestSubject>().extract<'default'>().not.toBeNever()
   })
 
+  it('should extract "default+named"', () => {
+    expectTypeOf<TestSubject>().extract<'default+named'>().not.toBeNever()
+  })
+
+  it('should extract "default+namespace"', () => {
+    expectTypeOf<TestSubject>().extract<'default+namespace'>().not.toBeNever()
+  })
+
   it('should extract "effect"', () => {
     expectTypeOf<TestSubject>().extract<'effect'>().not.toBeNever()
   })

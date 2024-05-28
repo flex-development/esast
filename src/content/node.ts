@@ -9,14 +9,20 @@ import type {
   CallSignature,
   CatchClause,
   ClassBody,
+  ClassHeritage,
+  ComputedExpression,
   ConstructSignature,
+  DecoratorList,
+  ElseStatement,
   EnumBody,
   EnumMember,
   ExportSpecifier,
   ExportSpecifiers,
   ExpressionMap,
   ExtendsClause,
+  FieldDefinition,
   FinallyBlock,
+  FromClause,
   ImplementsClause,
   ImportAssertion,
   ImportAttribute,
@@ -30,12 +36,13 @@ import type {
   Modifier,
   ModifierList,
   ModuleBody,
+  NamespaceExport,
+  NamespaceImport,
   Nothing,
   Parameter,
   ParameterList,
   PatternMap,
   Property,
-  PropertyDefinition,
   PropertySignature,
   RestElement,
   RestType,
@@ -43,7 +50,7 @@ import type {
   RootMap,
   SatisfiesClause,
   SpreadElement,
-  StaticBlock,
+  StaticBlockBody,
   Super,
   SwitchBody,
   SwitchCase,
@@ -98,13 +105,19 @@ interface NodeMap
   callSignature: CallSignature
   catchClause: CatchClause
   classBody: ClassBody
+  classHeritage: ClassHeritage
+  computedExpression: ComputedExpression
   constructSignature: ConstructSignature
+  decoratorList: DecoratorList
+  elseStatement: ElseStatement
   enumBody: EnumBody
   enumMember: EnumMember
   exportSpecifier: ExportSpecifier
   exportSpecifiers: ExportSpecifiers
   extendsClause: ExtendsClause
+  fieldDefinition: FieldDefinition
   finallyBlock: FinallyBlock
+  fromClause: FromClause
   implementsClause: ImplementsClause
   importAssertion: ImportAssertion
   importAttribute: ImportAttribute
@@ -118,18 +131,19 @@ interface NodeMap
   modifier: Modifier
   modifierList: ModifierList
   moduleBody: ModuleBody
+  namespaceExport: NamespaceExport
+  namespaceImport: NamespaceImport
   nothing: Nothing
   parameter: Parameter
   parameterList: ParameterList
   property: Property
-  propertyDefinition: PropertyDefinition
   propertySignature: PropertySignature
   restElement: RestElement
   restType: RestType
   root: Root
   satisfiesClause: SatisfiesClause
   spreadElement: SpreadElement
-  staticBlock: StaticBlock
+  staticBlockBody: StaticBlockBody
   super: Super
   switchBody: SwitchBody
   switchCase: SwitchCase
