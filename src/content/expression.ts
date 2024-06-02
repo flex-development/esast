@@ -17,6 +17,7 @@ import type {
   SatisfiesExpression,
   SequenceExpression,
   SubscriptExpressionMap,
+  TypeAssertionExpression,
   UnaryExpression,
   YieldExpression
 } from '@flex-development/esast'
@@ -42,6 +43,9 @@ type Expression = ExpressionMap[keyof ExpressionMap]
  *    }
  *  }
  *
+ * @see {@linkcode AtomicExpressionMap}
+ * @see {@linkcode SubscriptExpressionMap}
+ *
  * @extends {AtomicExpressionMap}
  * @extends {SubscriptExpressionMap}
  */
@@ -57,6 +61,7 @@ interface ExpressionMap extends AtomicExpressionMap, SubscriptExpressionMap {
   relationalExpression: RelationalExpression
   satisfiesExpression: SatisfiesExpression
   sequenceExpression: SequenceExpression
+  typeAssertionExpression: TypeAssertionExpression
   unaryExpression: UnaryExpression
   yieldExpression: YieldExpression
 }

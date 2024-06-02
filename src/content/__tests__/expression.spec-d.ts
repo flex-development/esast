@@ -18,6 +18,7 @@ import type {
   SatisfiesExpression,
   SequenceExpression,
   SubscriptExpressionMap,
+  TypeAssertionExpression,
   UnaryExpression,
   YieldExpression
 } from '@flex-development/esast'
@@ -98,6 +99,11 @@ describe('unit-d:content/expression', () => {
     it('should match NodeObject<SequenceExpression>', () => {
       expectTypeOf<TestSubject.ExpressionMap>()
         .toMatchTypeOf<NodeObject<SequenceExpression>>()
+    })
+
+    it('should match NodeObject<TypeAssertionExpression>', () => {
+      expectTypeOf<TestSubject.ExpressionMap>()
+        .toMatchTypeOf<NodeObject<TypeAssertionExpression>>()
     })
 
     it('should match NodeObject<UnaryExpression>', () => {

@@ -51,7 +51,6 @@ import type {
   SatisfiesClause,
   SpreadElement,
   StaticBlockBody,
-  Super,
   SwitchBody,
   SwitchCase,
   TemplateElement,
@@ -92,6 +91,11 @@ type EsastNode = NodeMap[keyof NodeMap]
  *      customNode: CustomNode
  *    }
  *  }
+ *
+ * @see {@linkcode ExpressionMap}
+ * @see {@linkcode PatternMap}
+ * @see {@linkcode RootMap}
+ * @see {@linkcode TypeExpressionMap}
  *
  * @extends {ExpressionMap}
  * @extends {PatternMap}
@@ -144,7 +148,6 @@ interface NodeMap
   satisfiesClause: SatisfiesClause
   spreadElement: SpreadElement
   staticBlockBody: StaticBlockBody
-  super: Super
   switchBody: SwitchBody
   switchCase: SwitchCase
   templateElement: TemplateElement

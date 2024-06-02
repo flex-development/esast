@@ -16,6 +16,7 @@ const config = {
       files: [
         'src/content/declaration.ts',
         'src/content/expression-atomic.ts',
+        'src/content/expression-primary.ts',
         'src/content/node.ts'
       ],
       rules: {

@@ -4,20 +4,11 @@
  */
 
 import type {
-  ArrayExpression,
   ArrowFunctionExpression,
-  ClassExpression,
-  FunctionExpression,
-  Identifier,
-  LiteralMap,
   ModuleExpression,
   NewExpression,
-  ObjectExpression,
-  ParenthesizedExpression,
-  Super,
-  TemplateLiteral,
-  This,
-  TypeAssertionExpression
+  PrimaryExpressionMap,
+  Super
 } from '@flex-development/esast'
 
 /**
@@ -42,22 +33,15 @@ type AtomicExpression = AtomicExpressionMap[keyof AtomicExpressionMap]
  *    }
  *  }
  *
- * @extends {LiteralMap}
+ * @see {@linkcode PrimaryExpressionMap}
+ *
+ * @extends {PrimaryExpressionMap}
  */
-interface AtomicExpressionMap extends LiteralMap {
-  arrayExpression: ArrayExpression
+interface AtomicExpressionMap extends PrimaryExpressionMap {
   arrowFunctionExpression: ArrowFunctionExpression
-  classExpression: ClassExpression
-  functionExpression: FunctionExpression
-  identifier: Identifier
   moduleExpression: ModuleExpression
   newExpression: NewExpression
-  objectExpression: ObjectExpression
-  parenthesizedExpression: ParenthesizedExpression
   super: Super
-  templateLiteral: TemplateLiteral
-  this: This
-  typeAssertionExpression: TypeAssertionExpression
 }
 
 export type { AtomicExpression, AtomicExpressionMap }

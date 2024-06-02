@@ -5,20 +5,11 @@
 
 import type { NodeObject } from '#tests/types'
 import type {
-  ArrayExpression,
   ArrowFunctionExpression,
-  ClassExpression,
-  FunctionExpression,
-  Identifier,
-  LiteralMap,
   ModuleExpression,
   NewExpression,
-  ObjectExpression,
-  ParenthesizedExpression,
-  Super,
-  TemplateLiteral,
-  This,
-  TypeAssertionExpression
+  PrimaryExpressionMap,
+  Super
 } from '@flex-development/esast'
 import type * as TestSubject from '../expression-atomic'
 
@@ -34,35 +25,15 @@ describe('unit-d:content/atomicExpression', () => {
     })
   })
 
-  describe('AtomicExpressionMap', () => {
+  describe('PrimaryExpressionMap', () => {
     it('should extend LiteralMap', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<LiteralMap>()
-    })
-
-    it('should match NodeObject<ArrayExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ArrayExpression>>()
+        .toMatchTypeOf<PrimaryExpressionMap>()
     })
 
     it('should match NodeObject<ArrowFunctionExpression>', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
         .toMatchTypeOf<NodeObject<ArrowFunctionExpression>>()
-    })
-
-    it('should match NodeObject<ClassExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ClassExpression>>()
-    })
-
-    it('should match NodeObject<FunctionExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<FunctionExpression>>()
-    })
-
-    it('should match NodeObject<Identifier>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<Identifier>>()
     })
 
     it('should match NodeObject<ModuleExpression>', () => {
@@ -75,34 +46,9 @@ describe('unit-d:content/atomicExpression', () => {
         .toMatchTypeOf<NodeObject<NewExpression>>()
     })
 
-    it('should match NodeObject<ObjectExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ObjectExpression>>()
-    })
-
-    it('should match NodeObject<ParenthesizedExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<ParenthesizedExpression>>()
-    })
-
     it('should match NodeObject<Super>', () => {
       expectTypeOf<TestSubject.AtomicExpressionMap>()
         .toMatchTypeOf<NodeObject<Super>>()
-    })
-
-    it('should match NodeObject<TemplateLiteral>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<TemplateLiteral>>()
-    })
-
-    it('should match NodeObject<This>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<This>>()
-    })
-
-    it('should match NodeObject<TypeAssertionExpression>', () => {
-      expectTypeOf<TestSubject.AtomicExpressionMap>()
-        .toMatchTypeOf<NodeObject<TypeAssertionExpression>>()
     })
   })
 })
