@@ -6,6 +6,7 @@
 import type {
   Comment,
   Data,
+  Nothing,
   Parent,
   Property,
   SpreadElement
@@ -32,10 +33,11 @@ interface ObjectExpression extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Property}
    * @see {@linkcode SpreadElement}
    */
-  children: (Comment | Property | SpreadElement)[]
+  children: (Comment | Nothing | Property | SpreadElement)[]
 
   /**
    * Info from the ecosystem.

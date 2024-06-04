@@ -6,6 +6,7 @@
 import type {
   Comment,
   Data,
+  Nothing,
   Parent,
   Property,
   RestElement
@@ -32,10 +33,11 @@ interface ObjectPattern extends Parent {
    * List of children.
    *
    * @see {@linkcode Comment}
+   * @see {@linkcode Nothing}
    * @see {@linkcode Property}
    * @see {@linkcode RestElement}
    */
-  children: (Comment | Property | RestElement)[]
+  children: (Comment | Nothing | Property | RestElement)[]
 
   /**
    * Info from the ecosystem.
