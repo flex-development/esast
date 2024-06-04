@@ -1,12 +1,12 @@
 /**
- * @file Type Tests - IdentifierMeta
- * @module esast/nodes/tests/unit-d/IdentifierMeta
+ * @file Type Tests - MetaIdentifier
+ * @module esast/nodes/tests/unit-d/MetaIdentifier
  */
 
 import type { Identifier } from '@flex-development/esast'
 import type TestSubject from '../identifier-meta'
 
-describe('unit-d:nodes/IdentifierMeta', () => {
+describe('unit-d:nodes/MetaIdentifier', () => {
   it('should extend Identifier', () => {
     expectTypeOf<TestSubject>().toMatchTypeOf<Identifier>()
   })
