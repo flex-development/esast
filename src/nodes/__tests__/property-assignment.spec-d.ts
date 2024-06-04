@@ -26,8 +26,4 @@ describe('unit-d:nodes/AssignmentProperty', () => {
   it('should match [method: false]', () => {
     expectTypeOf<Subject>().toHaveProperty('method').toEqualTypeOf<false>()
   })
-
-  it('should match [shorthand: false]', () => {
-    expectTypeOf<Subject>().toHaveProperty('shorthand').toEqualTypeOf<false>()
-  })
 })

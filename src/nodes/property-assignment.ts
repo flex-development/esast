@@ -3,15 +3,13 @@
  * @module esast/nodes/AssignmentProperty
  */
 
-import type { InternalComments } from '#internal'
 import type {
-  ArrayPattern,
   AssignmentExpression,
   AssignmentPattern,
   Comments,
+  ComputedExpression,
   Expression,
-  Identifier,
-  ObjectPattern,
+  Pattern,
   Property,
   PropertyKind,
   PropertyName
@@ -33,28 +31,21 @@ interface AssignmentProperty extends Property {
   /**
    * List of children.
    *
-   * @see {@linkcode ArrayPattern}
    * @see {@linkcode AssignmentExpression}
    * @see {@linkcode AssignmentPattern}
    * @see {@linkcode Comments}
+   * @see {@linkcode ComputedExpression}
    * @see {@linkcode Expression}
-   * @see {@linkcode Identifier}
-   * @see {@linkcode ObjectPattern}
+   * @see {@linkcode Pattern}
    * @see {@linkcode PropertyName}
    */
   children:
     | [
+      key: ComputedExpression | PropertyName,
       ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: ArrayPattern | AssignmentPattern | Identifier | ObjectPattern
+      value: Pattern
     ]
-    | [
-      key: PropertyName,
-      ...comments: Comments,
-      value: ArrayPattern | AssignmentPattern | Identifier | ObjectPattern
-    ]
-    | [assignment: AssignmentExpression | AssignmentPattern]
+    | [shorthand: AssignmentExpression | AssignmentPattern]
 
   /**
    * Property kind.
@@ -67,11 +58,6 @@ interface AssignmentProperty extends Property {
    * Boolean indicating if property value is a method.
    */
   method: false
-
-  /**
-   * Boolean indicating if property was defined using shorthand syntax.
-   */
-  shorthand: false
 }
 
 export type { AssignmentProperty as default }

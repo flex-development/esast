@@ -34,6 +34,7 @@ describe('unit-d:esast', () => {
         | mdast.Nodes
         | TestSubject.Comment
         | TestSubject.MethodProperty
+        | TestSubject.ShorthandProperty
         | TestSubject.TemplateLiteral
       >
 
@@ -48,6 +49,12 @@ describe('unit-d:esast', () => {
     it('should not include MethodProperty', () => {
       expectTypeOf<Subject>()
         .extract<TestSubject.MethodProperty>()
+        .toBeNever()
+    })
+
+    it('should not include ShorthandProperty', () => {
+      expectTypeOf<Subject>()
+        .extract<TestSubject.ShorthandProperty>()
         .toBeNever()
     })
 

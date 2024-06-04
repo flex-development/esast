@@ -3,10 +3,8 @@
  * @module esast/nodes/ShorthandProperty
  */
 
-import type { InternalComments } from '#internal'
 import type {
-  Comments,
-  Expression,
+  ComputedExpression,
   Property,
   PropertyKind,
   PropertyName
@@ -28,17 +26,10 @@ interface ShorthandProperty extends Property {
   /**
    * List of children.
    *
-   * @see {@linkcode Comments}
-   * @see {@linkcode Expression}
+   * @see {@linkcode ComputedExpression}
    * @see {@linkcode PropertyName}
    */
-  children:
-    | [
-      ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments
-    ]
-    | [key: PropertyName]
+  children: [shorthand: ComputedExpression | PropertyName]
 
   /**
    * Property kind.

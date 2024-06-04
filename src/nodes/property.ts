@@ -3,19 +3,19 @@
  * @module esast/nodes/Property
  */
 
-import type { InternalComments } from '#internal'
 import type {
-  ArrayPattern,
   AssignmentExpression,
   AssignmentPattern,
   Comments,
+  ComputedExpression,
   Data,
   Expression,
   MethodDefinition,
-  ObjectPattern,
   Parent,
+  Pattern,
   PropertyKind,
-  PropertyName
+  PropertyName,
+  SpreadElement
 } from '@flex-development/esast'
 
 /**
@@ -43,35 +43,25 @@ interface Property extends Parent {
   /**
    * List of children.
    *
-   * @see {@linkcode ArrayPattern}
    * @see {@linkcode AssignmentExpression}
    * @see {@linkcode AssignmentPattern}
    * @see {@linkcode Comments}
+   * @see {@linkcode ComputedExpression}
    * @see {@linkcode Expression}
    * @see {@linkcode MethodDefinition}
-   * @see {@linkcode ObjectPattern}
+   * @see {@linkcode Pattern}
    * @see {@linkcode PropertyName}
+   * @see {@linkcode SpreadElement}
    */
   children:
     | [
+      key: ComputedExpression | PropertyName,
       ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
-    ]
-    | [
-      ...comments: Comments,
-      shorthand: Expression,
-      ...comments: InternalComments
-    ]
-    | [
-      key: PropertyName,
-      ...comments: Comments,
-      value: ArrayPattern | AssignmentPattern | Expression | ObjectPattern
+      value: Expression | Pattern | SpreadElement
     ]
     | [assignment: AssignmentExpression | AssignmentPattern]
     | [method: MethodDefinition]
-    | [shorthand: PropertyName]
+    | [shorthand: ComputedExpression | PropertyName]
 
   /**
    * Boolean indicating if property is computed.

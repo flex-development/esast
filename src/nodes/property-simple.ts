@@ -3,13 +3,14 @@
  * @module esast/nodes/SimpleProperty
  */
 
-import type { InternalComments } from '#internal'
 import type {
   Comments,
+  ComputedExpression,
   Expression,
   Property,
   PropertyKind,
-  PropertyName
+  PropertyName,
+  SpreadElement
 } from '@flex-development/esast'
 
 /**
@@ -29,17 +30,16 @@ interface SimpleProperty extends Property {
    * List of children.
    *
    * @see {@linkcode Comments}
+   * @see {@linkcode ComputedExpression}
    * @see {@linkcode Expression}
    * @see {@linkcode PropertyName}
+   * @see {@linkcode SpreadElement}
    */
-  children:
-    | [
-      ...comments: Comments,
-      key: Expression,
-      ...comments: InternalComments,
-      value: Expression
-    ]
-    | [key: PropertyName, ...comments: Comments, value: Expression]
+  children: [
+    key: ComputedExpression | PropertyName,
+    ...comments: Comments,
+    value: Expression | SpreadElement
+  ]
 
   /**
    * Property kind.
