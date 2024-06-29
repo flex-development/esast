@@ -25,7 +25,7 @@ describe('unit-d:nodes/RegExpLiteral', () => {
     expectTypeOf<TestSubject>().toHaveProperty('type').toEqualTypeOf<'regexp'>()
   })
 
-  it('should match [value: RegExp]', () => {
-    expectTypeOf<TestSubject>().toHaveProperty('value').toEqualTypeOf<RegExp>()
+  it('should match [value: string]', () => {
+    expectTypeOf<TestSubject>().toHaveProperty('value').toEqualTypeOf<string>()
   })
 })
