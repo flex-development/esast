@@ -6,7 +6,7 @@
 import type { Literal } from '@flex-development/esast'
 
 /**
- * A literal boolean value.
+ * A boolean value.
  *
  * @see {@linkcode Literal}
  *

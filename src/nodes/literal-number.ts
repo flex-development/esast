@@ -6,7 +6,7 @@
 import type { Literal } from '@flex-development/esast'
 
 /**
- * A literal integer or floating point number.
+ * A number.
  *
  * @see {@linkcode Literal}
  *
@@ -17,6 +17,11 @@ interface NumberLiteral extends Literal {
    * Node type.
    */
   type: 'number'
+
+  /**
+   * Raw value.
+   */
+  raw: string
 
   /**
    * Plain value.

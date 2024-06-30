@@ -15,6 +15,10 @@ describe('unit-d:nodes/StringLiteral', () => {
     expectTypeOf<TestSubject>().toHaveProperty('type').toEqualTypeOf<'string'>()
   })
 
+  it('should match [raw: string]', () => {
+    expectTypeOf<TestSubject>().toHaveProperty('raw').toEqualTypeOf<string>()
+  })
+
   it('should match [value: string]', () => {
     expectTypeOf<TestSubject>().toHaveProperty('value').toEqualTypeOf<string>()
   })

@@ -30,8 +30,6 @@ interface RegExpLiteral extends Literal {
 
   /**
    * Plain value.
-   *
-   * @see {@linkcode RegExp.source}
    */
   value: string
 }

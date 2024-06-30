@@ -6,7 +6,7 @@
 import type { Literal } from '@flex-development/esast'
 
 /**
- * A literal string value.
+ * A string.
  *
  * @see {@linkcode Literal}
  *
@@ -17,6 +17,11 @@ interface StringLiteral extends Literal {
    * Node type.
    */
   type: 'string'
+
+  /**
+   * Raw value.
+   */
+  raw: string
 
   /**
    * Plain value.

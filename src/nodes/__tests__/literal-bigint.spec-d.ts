@@ -15,6 +15,10 @@ describe('unit-d:nodes/BigIntLiteral', () => {
     expectTypeOf<TestSubject>().toHaveProperty('type').toEqualTypeOf<'bigint'>()
   })
 
+  it('should match [raw: string]', () => {
+    expectTypeOf<TestSubject>().toHaveProperty('raw').toEqualTypeOf<string>()
+  })
+
   it('should match [value: bigint]', () => {
     expectTypeOf<TestSubject>().toHaveProperty('value').toEqualTypeOf<bigint>()
   })

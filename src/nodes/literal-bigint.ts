@@ -19,6 +19,11 @@ interface BigIntLiteral extends Literal {
   type: 'bigint'
 
   /**
+   * Raw value.
+   */
+  raw: string
+
+  /**
    * Plain value.
    */
   value: bigint
