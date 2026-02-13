@@ -13,7 +13,7 @@
   "failFast": false,
   "flagWords": [],
   "ignorePaths": [
-    "**/*.log",
+    "**/*.patch",
     "**/*.snap",
     "**/*.wasm",
     "**/.*ignore",
@@ -21,14 +21,12 @@
     "**/CHANGELOG.md",
     "**/LICENSE.md",
     "**/RELEASE_NOTES.md",
-    "**/scratch.*",
     ".cspell.json",
     ".dictionary.txt",
     ".git/",
     ".husky/_/",
     ".vscode/settings.json",
     ".yarn/",
-    "dist/",
     "patches/",
     "yarn.lock"
   ],
@@ -37,7 +35,7 @@
     "/from\\s+(['\"]).*\\1/",
     "import\\(.*\\)"
   ],
-  "ignoreWords": [],
+  "ignoreWords": ["docast", "esast", "fldv"],
   "language": "en-US",
   "patterns": [],
   "readonly": true,

@@ -1,0 +1,45 @@
+/**
+ * @file Type Tests - ArithmeticExpression
+ * @module esast/nodes/tests/unit-d/ArithmeticExpression
+ */
+
+import type * as TestSubject from '#nodes/expression-arithmetic'
+import type {
+  ArithmeticOperator,
+  BinaryExpression,
+  BinaryExpressionData
+} from '@flex-development/esast'
+import type { Optional } from '@flex-development/tutils'
+
+describe('unit-d:nodes/ArithmeticExpression', () => {
+  type Subject = TestSubject.default
+  type SubjectData = TestSubject.ArithmeticExpressionData
+
+  it('should extend BinaryExpression', () => {
+    expectTypeOf<Subject>().toExtend<BinaryExpression>()
+  })
+
+  it('should match [data?: ArithmeticExpressionData | undefined]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('data')
+      .toEqualTypeOf<Optional<SubjectData>>()
+  })
+
+  it('should match [operator: ArithmeticOperator]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('operator')
+      .toEqualTypeOf<ArithmeticOperator>()
+  })
+
+  it('should match [type: "arithmeticExpression"]', () => {
+    expectTypeOf<Subject>()
+      .toHaveProperty('type')
+      .toEqualTypeOf<'arithmeticExpression'>()
+  })
+
+  describe('ArithmeticExpressionData', () => {
+    it('should extend BinaryExpressionData', () => {
+      expectTypeOf<SubjectData>().toExtend<BinaryExpressionData>()
+    })
+  })
+})

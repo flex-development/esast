@@ -1,19 +1,19 @@
 # esast
 
-[![github release](https://img.shields.io/github/v/release/flex-development/esast.svg?include_prereleases&sort=semver)](https://github.com/flex-development/esast/releases/latest)
+[![github release](https://img.shields.io/github/v/release/flex-development/esast.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/esast/releases/latest)
 [![npm](https://img.shields.io/npm/v/@flex-development/esast.svg)](https://npmjs.com/package/@flex-development/esast)
 [![module type: esm](https://img.shields.io/badge/module%20type-esm-brightgreen)](https://github.com/voxpelli/badges-cjs-esm)
 [![license](https://img.shields.io/github/license/flex-development/esast.svg)](LICENSE.md)
-[![conventional commits](https://img.shields.io/badge/-conventional%20commits-fe5196?logo=conventional-commits&logoColor=ffffff)](https://conventionalcommits.org/)
-[![typescript](https://img.shields.io/badge/-typescript-3178c6?logo=typescript&logoColor=ffffff)](https://typescriptlang.org/)
-[![vitest](https://img.shields.io/badge/-vitest-6e9f18?style=flat&logo=vitest&logoColor=ffffff)](https://vitest.dev/)
-[![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat&logo=yarn&logoColor=ffffff)](https://yarnpkg.com/)
+[![conventional commits](https://img.shields.io/badge/-conventional%20commits-fe5196?logo=conventional-commits\&logoColor=ffffff)](https://conventionalcommits.org/)
+[![typescript](https://img.shields.io/badge/-typescript-3178c6?logo=typescript\&logoColor=ffffff)](https://typescriptlang.org/)
+[![vitest](https://img.shields.io/badge/-vitest-6e9f18?style=flat\&logo=vitest\&logoColor=ffffff)](https://vitest.dev/)
+[![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat\&logo=yarn\&logoColor=ffffff)](https://yarnpkg.com/)
 
 **E**CMA**S**cript **A**bstract **S**yntax **T**ree format.
 
 ---
 
-**esast** is a specification for representing [JavaScript][javascript] as an [abstract syntax tree][unist-syntax-tree].
+**esast** is a specification for representing [JavaScript][] as an [abstract syntax tree][unist-syntax-tree].
 
 It implements the [**unist**][unist] spec.
 
@@ -34,17 +34,17 @@ It implements the [**unist**][unist] spec.
 
 ## Introduction
 
-This document defines a format for representing ECMAScript as an [abstract syntax tree][unist-syntax-tree]. Development
-of esast started in March 2024. This specification is written in a [TypeScript][typescript]-like grammar.
+This document defines a format for representing ECMAScript as an [abstract syntax tree][unist-syntax-tree].
+Development of esast started in March 2024. This specification is written in a [TypeScript][]-like grammar.
 
 ### Where this specification fits
 
-esast extends [unist][unist], a format for syntax trees, to benefit from its [ecosystem of utilities][unist-utilities].
+esast extends [unist][], a format for syntax trees, to benefit from its [ecosystem of utilities][unist-utilities].
 
-esast relates to [ESTree][estree] in that the first is inspired by the latter; an esast is a unist-flavored estree.
+esast relates to [ESTree][] in that the first is inspired by the latter; an esast is a unist-flavored estree.
 
-esast relates to [JavaScript][javascript] in that it represents it, but esast is not limited to JavaScript and can be
-extended to support other JavaScript-based languages, like [TypeScript][typescript].
+esast relates to [JavaScript][] in that it represents it, but esast is not limited to JavaScript and can be
+extended to support other JavaScript-based languages, like [TypeScript][].
 
 ### ESTree
 
@@ -111,7 +111,8 @@ The `children` field is a list representing the children of a node.
 
 **TODO**: nodes
 
-This specification is a work in progess. Please refer to the [source code](src/nodes/) for preliminary documentation.
+This specification is a work in progess.
+Please refer to the [source code](src/nodes/) for preliminary documentation.
 
 ## Glossary
 
@@ -121,12 +122,12 @@ See the [unist glossary][unist-glossary].
 
 See the [unist list of utilities][unist-utilities] for more utilities.
 
-- [`estree-util-is-identifier-name`][estree-util-is-identifier-name] &mdash; check if something can be an identifier name
+- [`estree-util-is-identifier-name`][estree-util-is-identifier-name] — check if something can be an identifier name
 
 ## Related
 
-- [`docast`][docast] &mdash; docblock abstract syntax tree format
-- [`mdast`][mdast] &mdash; markdown abstract syntax tree format
+- [`docast`][docast] — docblock abstract syntax tree format
+- [`mdast`][mdast] — markdown abstract syntax tree format
 
 ## Contribute
 
@@ -134,26 +135,39 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 Ideas for new utilities and tools can be posted in [esast/ideas][esast-ideas].
 
-This project has a [code of conduct](CODE_OF_CONDUCT.md). By interacting with this repository, organization, or
-community you agree to abide by its terms.
+This project has a [code of conduct](CODE_OF_CONDUCT.md).
+By interacting with this repository, organization, or community you agree to abide by its terms.
 
 [docast]: https://github.com/flex-development/docast
+
 [esast-ideas]: https://github.com/flex-development/esast/discussions/new?category=idea
 
 <!-- [esast-util-attach-comments]: https://github.com/flex-development/esast-util-attach-comments -->
+
 <!-- [esast-util-from-estree]: https://github.com/flex-development/esast-util-from-estree -->
+
 <!-- [esast-util-from-js]: https://github.com/flex-development/esast-util-from-js -->
+
 <!-- [esast-util-from-value]: https://github.com/flex-development/esast-util-from-value -->
+
 <!-- [esast-util-to-estree]: https://github.com/flex-development/esast-util-to-estree -->
+
 <!-- [esast-util-to-js]: https://github.com/flex-development/esast-util-to-js -->
 
 [estree-util-is-identifier-name]: https://github.com/syntax-tree/estree-util-is-identifier-name
+
 [estree]: https://github.com/estree/estree
+
 [javascript]: https://tc39.es/ecma262
+
 [mdast]: https://github.com/syntax-tree/mdast
+
 [typescript]: https://typescriptlang.org
+
 [unist-child]: https://github.com/syntax-tree/unist#child
+
 [unist-glossary]: https://github.com/syntax-tree/unist#glossary
+
 [unist-node]: https://github.com/syntax-tree/unist#node
 
 <!-- [unist-root]: https://github.com/syntax-tree/unist#root -->
@@ -163,4 +177,5 @@ community you agree to abide by its terms.
 <!-- [unist-tree]: https://github.com/syntax-tree/unist#tree -->
 
 [unist-utilities]: https://github.com/syntax-tree/unist#list-of-utilities
+
 [unist]: https://github.com/syntax-tree/unist

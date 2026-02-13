@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
-    "customConditions": ["import", "node"],
+    "allowImportingTsExtensions": false,
+    "allowJs": false,
+    "checkJs": false,
+    "customConditions": [],
     "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": true,
     "noEmitOnError": true,
-    "skipLibCheck": false,
-    "target": "es2022"
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": false,
+    "target": "es2024"
   },
-  "exclude": [],
+  "exclude": ["**/__tests__/**"],
   "extends": "./tsconfig.json",
-  "include": ["./dist/*"]
+  "include": ["dist/**/*.d.mts", "src/**/**.mts"]
 }

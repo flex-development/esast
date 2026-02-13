@@ -1,0 +1,68 @@
+/**
+ * @file Nodes - ExportSpecifier
+ * @module esast/nodes/ExportSpecifier
+ */
+
+import type InternalComments from '#internal/internal-comments'
+import type {
+  Comments,
+  Data,
+  Identifier,
+  Parent,
+  StringLiteral
+} from '@flex-development/esast'
+
+/**
+ * Info associated with `export` specifiers.
+ *
+ * @see {@linkcode Data}
+ *
+ * @extends {Data}
+ */
+interface ExportSpecifierData extends Data {
+  /**
+   * Type-only export?
+   *
+   * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
+   */
+  typeOnly?: boolean | null | undefined
+}
+
+/**
+ * An `export` specifier.
+ *
+ * @see {@linkcode Parent}
+ *
+ * @extends {Parent}
+ */
+interface ExportSpecifier extends Parent {
+  /**
+   * List of children.
+   *
+   * @see {@linkcode Comments}
+   * @see {@linkcode Identifier}
+   * @see {@linkcode StringLiteral}
+   */
+  children:
+    | [
+      ...comments: Comments,
+      local: Identifier | StringLiteral,
+      ...comments: InternalComments,
+      exported: Identifier | StringLiteral
+    ]
+    | [...comments: Comments, exported: Identifier | StringLiteral]
+
+  /**
+   * Info from the ecosystem.
+   *
+   * @see {@linkcode ExportSpecifierData}
+   */
+  data?: ExportSpecifierData | undefined
+
+  /**
+   * Node type.
+   */
+  type: 'exportSpecifier'
+}
+
+export type { ExportSpecifier as default, ExportSpecifierData }
