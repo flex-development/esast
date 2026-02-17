@@ -115,7 +115,7 @@
     "@flex-development/docast": "1.0.0-alpha.17",
     "@flex-development/unist-util-types": "1.4.0",
     "@types/mdast": "4.0.3",
-    "@types/unist": "3.0.2"
+    "@types/unist": "3.0.3"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.2",
@@ -163,7 +163,7 @@
   "resolutions": {
     "@flex-development/unist-util-types": "1.4.0",
     "@types/mdast": "4.0.3",
-    "@types/unist": "3.0.2",
+    "@types/unist": "3.0.3",
     "acorn": "8.11.3"
   },
   "packageManager": "yarn@4.12.0",
