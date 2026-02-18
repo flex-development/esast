@@ -1500,15 +1500,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/docast@npm:1.0.0-alpha.17":
-  version: 1.0.0-alpha.17
-  resolution: "@flex-development/docast@npm:1.0.0-alpha.17"
+"@flex-development/docast@npm:1.0.0-beta.2":
+  version: 1.0.0-beta.2
+  resolution: "@flex-development/docast@npm:1.0.0-beta.2"
   dependencies:
-    "@flex-development/tutils": "npm:6.0.0-alpha.25"
-    "@flex-development/unist-util-types": "npm:1.3.1"
-    "@types/mdast": "npm:4.0.3"
-    "@types/unist": "npm:3.0.2"
-  checksum: 10/c51b15316ea10af54ab2463205d5c5b755761e031bf185cb14a50e38da38882a6b2dd3a1eff05d838a9aa3691982e64fd6cd3cdc431ba30362a16b9e03bc39cc
+    "@flex-development/unist-util-types": "npm:1.6.1"
+    "@types/mdast": "npm:4.0.4"
+    "@types/unist": "npm:3.0.3"
+  checksum: 10/9677b0694820dd1ff9539cc96107e37c07fe59d6da4124ff3f681ac5cf15318a0524956b709a84adb2c9fa4e89bd7cb945ae7998df99a7f0e1206faff5a53ab8
   languageName: node
   linkType: hard
 
@@ -1576,13 +1575,13 @@ __metadata:
     "@commitlint/cli": "npm:20.4.1"
     "@commitlint/types": "npm:20.4.0"
     "@flex-development/commitlint-config": "npm:1.0.1"
-    "@flex-development/docast": "npm:1.0.0-alpha.17"
+    "@flex-development/docast": "npm:1.0.0-beta.2"
     "@flex-development/eslint-config": "npm:1.1.1"
     "@flex-development/grease": "npm:3.0.0-alpha.9"
     "@flex-development/pathe": "npm:4.0.2"
     "@flex-development/remark-preset": "npm:1.0.0"
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
-    "@flex-development/unist-util-types": "npm:1.4.0"
+    "@flex-development/unist-util-types": "npm:1.6.1"
     "@rollup/plugin-node-resolve": "npm:16.0.3"
     "@tsconfig/strictest": "npm:2.0.8"
     "@types/concat-stream": "npm:2.0.3"
@@ -2099,12 +2098,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/unist-util-types@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@flex-development/unist-util-types@npm:1.4.0"
-  peerDependencies:
-    "@types/unist": ">=3.0.2"
-  checksum: 10/90f20be4a9617e5483b0ab9e8837022b78c5bd6dc12b65b30c1e7a10798f45fca4367716deeb666a9ec09d9321b8d51393be7f3bf9535ec2794a22dc9c6fd4f8
+"@flex-development/unist-util-types@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@flex-development/unist-util-types@npm:1.6.1"
+  dependencies:
+    "@types/unist": "npm:3.0.2"
+  checksum: 10/fd308bb9673987b588d54afc56821fefaad9233fecf8d76f352a055c339716979f3c2e1b2d145628ffa0d9ac033fbe28d942294a029d98b52334dd9703471f99
   languageName: node
   linkType: hard
 
