@@ -1589,7 +1589,7 @@ __metadata:
     "@types/estree": "npm:1.0.8"
     "@types/estree-jsx": "npm:1.0.5"
     "@types/is-ci": "npm:3.0.4"
-    "@types/mdast": "npm:4.0.3"
+    "@types/mdast": "npm:4.0.4"
     "@types/node-notifier": "npm:8.0.5"
     "@types/unist": "npm:3.0.3"
     "@vates/toggle-scripts": "npm:1.0.0"
@@ -2835,12 +2835,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdast@npm:4.0.3":
-  version: 4.0.3
-  resolution: "@types/mdast@npm:4.0.3"
+"@types/mdast@npm:4.0.4":
+  version: 4.0.4
+  resolution: "@types/mdast@npm:4.0.4"
   dependencies:
     "@types/unist": "npm:*"
-  checksum: 10/6d2d8f00ffaff6663dd67ea9ab999a5e52066c001432a9b99947fa9e76bccba819dfca40e419588a637a70d42cd405071f5b76efd4ddeb1dc721353b7cc73623
+  checksum: 10/efe3ec11b9ee0015a396c4fb4cd1b6f31b51b8ae9783c59560e6fc0bf6c2fa1dcc7fccaf45fa09a6c8b3397fab9dc8d431433935cae3835caa70a18f7fc775f8
   languageName: node
   linkType: hard
 
