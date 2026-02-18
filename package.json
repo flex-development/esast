@@ -137,7 +137,7 @@
     "@vates/toggle-scripts": "1.0.0",
     "@vitest/coverage-v8": "4.0.18",
     "@vitest/ui": "4.0.18",
-    "acorn": "8.11.3",
+    "acorn": "8.15.0",
     "concat-stream": "2.0.0",
     "cross-env": "10.1.0",
     "cspell": "9.6.4",
@@ -164,7 +164,7 @@
     "@flex-development/unist-util-types": "1.6.1",
     "@types/mdast": "4.0.4",
     "@types/unist": "3.0.3",
-    "acorn": "8.11.3"
+    "acorn": "8.15.0"
   },
   "packageManager": "yarn@4.12.0",
   "sideEffects": false
